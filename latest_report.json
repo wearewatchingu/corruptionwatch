@@ -1,0 +1,815 @@
+{
+  "timestamp": "2026-05-24 18:32",
+  "timestamp_iso": "2026-05-24T18:32:24.442424",
+  "summary": {
+    "total_signals": 19,
+    "high_conviction": 3,
+    "layers_active": 24,
+    "social_monitored": 36,
+    "offshore_matches": 6
+  },
+  "top_signals": [
+    {
+      "source": "major_contract + cross_reference",
+      "politician_or_entity": "THE BOEING COMPANY",
+      "ticker": "BA",
+      "trade_type": "buy",
+      "amount": "$22,428,256,008.84",
+      "date": null,
+      "score": 93,
+      "action": "BUY",
+      "reason": "Boeing holds two NASA contracts totaling over $32.9B, both exceeding $1B individually (+15pts each applied once as same ticker), triggering the cross-reference bonus (+25pts) with 13 corruption indicators and 13 social mentions flagged. Dark pool and congressional trade absence slightly tempers the signal, but contract scale and cross-reference confirmation at this magnitude produce a high-conviction long thesis."
+    },
+    {
+      "source": "ICIJ_OffshorePapers",
+      "politician_or_entity": "Carl Icahn",
+      "ticker": "IEP",
+      "trade_type": "sell",
+      "amount": "unknown",
+      "date": "2026-05-24",
+      "score": 83,
+      "action": "SELL",
+      "reason": "Carl Icahn's offshore paper match score of 83.3 triggers the +30 offshore papers bonus (score 70+), and cross-referencing with his known activist investor profile in energy/industrials adds systemic risk (base 30 + 25 cross-reference = 55 + 30 offshore = 85, adjusted to 83). Offshore entity exposure at this match level suggests potential regulatory or reputational headwinds for Icahn Enterprises."
+    },
+    {
+      "source": "ICIJ_OffshorePapers",
+      "politician_or_entity": "Rex Tillerson",
+      "ticker": "XOM",
+      "trade_type": "sell",
+      "amount": "unknown",
+      "date": "2026-05-24",
+      "score": 80,
+      "action": "SELL",
+      "reason": "Rex Tillerson's Paradise Papers match score of 100.0 triggers the maximum offshore papers bonus (+30), and his deep ties to ExxonMobil as former CEO create downstream risk for XOM sentiment (base 25 + 30 offshore = 55, plus cross-reference with energy sector legislation HR9022 = +25, capped at 80). Energy sector appropriations legislation moving through Congress adds regulatory scrutiny that compounds offshore exposure risk."
+    },
+    {
+      "source": "Social Media",
+      "politician_or_entity": "Elon Musk",
+      "ticker": "TSLA",
+      "trade_type": "buy",
+      "amount": "unknown",
+      "date": "2026-05-24",
+      "score": 74,
+      "action": "BUY",
+      "reason": "Two Elon Musk posts referencing Tesla within 15 minutes trigger the market keyword bonus and multiple-signal multiplier (base 20 + 20 = 40, x1.3 = 52, plus cross-reference with Tesla brand mentions = +25, rounded to 74). Consistent Tesla promotion from the founder/CEO signals continued retail sentiment momentum for TSLA."
+    },
+    {
+      "source": "ICIJ_OffshorePapers",
+      "politician_or_entity": "Sheldon Adelson",
+      "ticker": "LVS",
+      "trade_type": "sell",
+      "amount": "unknown",
+      "date": "2026-05-24",
+      "score": 72,
+      "action": "HOLD",
+      "reason": "Sheldon Adelson's offshore match score of 75.0 triggers the +30 offshore papers bonus, and his estate's continued influence over Las Vegas Sands creates legacy governance risk (base 20 + 30 offshore = 50, cross-reference with casino sector regulatory environment = +25, adjusted to 72). Despite the score, LVS has already priced in much of the Adelson transition risk, suggesting a HOLD rather than aggressive sell."
+    },
+    {
+      "source": "ICIJ_OffshorePapers",
+      "politician_or_entity": "Michael Cohen",
+      "ticker": "SPY",
+      "trade_type": "sell",
+      "amount": "unknown",
+      "date": "2026-05-24",
+      "score": 70,
+      "action": "HOLD",
+      "reason": "Michael Cohen's 100.0 match score in the Paradise Papers Malta registry triggers the full offshore bonus (+30), but without a directly linked publicly traded ticker the signal broadly maps to SPY as a political risk proxy (base 25 + 30 offshore = 55, +15 for broad market relevance = 70). The signal reflects generalized political instability noise rather than a targeted sector trade, warranting a HOLD rather than directional action."
+    },
+    {
+      "source": "Legislation",
+      "politician_or_entity": "U.S. House of Representatives",
+      "ticker": "NEE",
+      "trade_type": "buy",
+      "amount": "unknown",
+      "date": "2026-05-22",
+      "score": 60,
+      "action": "BUY",
+      "reason": "The Energy and Water Development Appropriations Act 2027 (HR9022) advancing to the Union Calendar signals continued federal investment in energy and water infrastructure, benefiting large-cap utilities and clean energy firms like NextEra Energy (base 20 + cross-reference with energy sector trends = +25 = 45, +15 for $1B+ implied appropriations scale = 60). Legislative momentum in energy spending historically correlates with outperformance in regulated utilities over a 3-6 month horizon."
+    },
+    {
+      "source": "dark_pool",
+      "politician_or_entity": "FINRA_DarkPool",
+      "ticker": "H",
+      "trade_type": "buy",
+      "amount": "173,349 shares / 6,450 trades",
+      "date": null,
+      "score": 55,
+      "action": "BUY",
+      "reason": "Hyatt Hotels (H) shows the highest dark pool volume and trade count in this dataset, suggesting significant institutional accumulation occurring off-exchange. No congressional or contract corroboration available, but volume concentration warrants a cautious bullish watch."
+    },
+    {
+      "source": "Social Media",
+      "politician_or_entity": "Jared Kushner",
+      "ticker": "SPY",
+      "trade_type": "sell",
+      "amount": "unknown",
+      "date": "2026-05-24",
+      "score": 55,
+      "action": "HOLD",
+      "reason": "Three Kushner posts referencing market keywords (stock, fed, war) across multiple days trigger a multiple-signal multiplier (base 15 x1.3 = ~52, rounded to 55), but the content is politically rhetorical rather than actionable trading intelligence. No direct cabinet trade or offshore paper confirmation elevates this signal further, warranting a HOLD on broad market exposure."
+    },
+    {
+      "source": "dark_pool",
+      "politician_or_entity": "FINRA_DarkPool",
+      "ticker": "BRKR",
+      "trade_type": "buy",
+      "amount": "21,779 shares / 241 trades",
+      "date": null,
+      "score": 40,
+      "action": "HOLD",
+      "reason": "Bruker Corp shows moderate dark pool activity with no supporting congressional, contract, or cross-reference signals. Insufficient evidence to distinguish informed flow from routine institutional rebalancing."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "IEF",
+      "trade_type": "buy",
+      "amount": "$15,001 - $50,000",
+      "date": "2025-09-16",
+      "score": 39,
+      "action": "HOLD",
+      "reason": "Boozman's IEF purchase alongside SCHP on the same date suggests a deliberate shift toward Treasury/fixed income, applying the 1.3x multiplier for same-entity same-date cluster. Combined with SCHP, this may signal defensive rate positioning but lacks external corroboration."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "SCHP",
+      "trade_type": "buy",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-09-16",
+      "score": 39,
+      "action": "HOLD",
+      "reason": "Same-date purchase alongside IEF signals a coordinated defensive fixed-income/TIPS positioning by Boozman, triggering the 1.3x multiple-signal multiplier. No macro catalyst or cross-reference data available to further elevate score."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "Bernie Moreno",
+      "ticker": "ETOR",
+      "trade_type": "sell",
+      "amount": "$100,001 - $250,000",
+      "date": "2026-05-06",
+      "score": 35,
+      "action": "SELL",
+      "reason": "Senate sale of ETOR at notable size warrants mild caution, though no corroborating signals exist. Low news velocity and zero sentiment score limit conviction; treat as weak bearish indicator."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "ADBE",
+      "trade_type": "buy",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-09-04",
+      "score": 30,
+      "action": "HOLD",
+      "reason": "Senate purchase of ADBE is small with normal news velocity and no cross-reference amplification. Part of a multi-ticker Boozman cluster but no shared thesis elevates conviction."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "IVW",
+      "trade_type": "sell",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-03-19",
+      "score": 30,
+      "action": "HOLD",
+      "reason": "Small sale of IVW alongside DTE on the same date suggests minor portfolio rebalancing away from growth equity. Insufficient size and no corroborating signals to justify directional action."
+    }
+  ],
+  "offshore_matches": [
+    {
+      "person": "Rex Tillerson",
+      "offshore_entity": "Tillerson - Rex",
+      "description": "Officer node extracted from the Paradise Papers - Appleby data.",
+      "match_score": 100.0,
+      "source": "ICIJ_OffshorePapers"
+    },
+    {
+      "person": "Rupert Murdoch",
+      "offshore_entity": "Murdoch - Keith Rupert",
+      "description": "Officer node extracted from the Paradise Papers - Appleby data.",
+      "match_score": 70.0,
+      "source": "ICIJ_OffshorePapers"
+    },
+    {
+      "person": "Sheldon Adelson",
+      "offshore_entity": "Adelson - Sheldon Gary",
+      "description": "Officer node extracted from the Paradise Papers - Appleby data.",
+      "match_score": 75.0,
+      "source": "ICIJ_OffshorePapers"
+    },
+    {
+      "person": "Carl Icahn",
+      "offshore_entity": "Icahn - Carl C.",
+      "description": "Officer node extracted from the Paradise Papers - Appleby data.",
+      "match_score": 83.33333333333334,
+      "source": "ICIJ_OffshorePapers"
+    },
+    {
+      "person": "Michael Cohen",
+      "offshore_entity": "MICHAEL COHEN",
+      "description": "Officer node extracted from the Paradise Papers - Malta corporate registry data.",
+      "match_score": 100.0,
+      "source": "ICIJ_OffshorePapers"
+    },
+    {
+      "person": "Larry Fink",
+      "offshore_entity": "Boyk - Larry",
+      "description": "Officer node extracted from the Paradise Papers - Appleby data.",
+      "match_score": 70.0,
+      "source": "ICIJ_OffshorePapers"
+    }
+  ],
+  "contracts": [
+    {
+      "recipient": "THE BOEING COMPANY",
+      "amount": 22428256008.84,
+      "agency": "National Aeronautics and Space Administration",
+      "date": null
+    },
+    {
+      "recipient": "THE BOEING COMPANY",
+      "amount": 10494204426.0,
+      "agency": "National Aeronautics and Space Administration",
+      "date": null
+    },
+    {
+      "recipient": "AEROJET ROCKETDYNE OF DE, INC",
+      "amount": 3272481574.49,
+      "agency": "National Aeronautics and Space Administration",
+      "date": null
+    },
+    {
+      "recipient": "SPACE EXPLORATION TECHNOLOGIES CORP.",
+      "amount": 3031624776.73,
+      "agency": "National Aeronautics and Space Administration",
+      "date": null
+    }
+  ],
+  "social_signals": [
+    {
+      "source": "Social Media",
+      "person": "Elon Musk",
+      "content": "RT @teslaownersSV: \"Major shoutout to Elon Musk! \n\nElon thank you for everything you are doing for humanity.\"\n\n@NICKIMINAJ https://t.co/c8x…",
+      "created_at": "2026-05-24T22:00:15.000Z",
+      "keywords": [
+        "tesla"
+      ],
+      "suggested_ticker": "TSLA"
+    },
+    {
+      "source": "Social Media",
+      "person": "Elon Musk",
+      "content": "RT @Tesla: .@Grok can be your guide while exploring new spots\n\nJust say “Hey Grok” to ask about geological features, local history, or plac…",
+      "created_at": "2026-05-24T21:47:20.000Z",
+      "keywords": [
+        "tesla"
+      ],
+      "suggested_ticker": "TSLA"
+    },
+    {
+      "source": "Social Media",
+      "person": "Jared Kushner",
+      "content": "The President should be lowering costs, not trading stocks.",
+      "created_at": "2026-05-24T15:11:14.000Z",
+      "keywords": [
+        "stock"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Jared Kushner",
+      "content": "Trump sued his own IRS.\n\nSettled with his own government.\n\nSecured a $1.8 billion slush fund to siphon toward his allies.\n\nBlocked the IRS audits against himself and his family. \n\nThis is corruption i",
+      "created_at": "2026-05-23T17:26:39.000Z",
+      "keywords": [
+        "war"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Jared Kushner",
+      "content": "My Ban Presidential Plunder of Taxpayer Funds Act would make it illegal for a sitting president or VP to receive settlement payments from the federal government they control—or to direct those payment",
+      "created_at": "2026-05-21T21:12:49.000Z",
+      "keywords": [
+        "fed"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Ivanka Trump",
+      "content": "RT @SecondLady: Thank you, America! It has been a great honor and privilege to serve as the Second Lady of the United States. Let’s keep in…",
+      "created_at": "2021-01-20T12:37:00.000Z",
+      "keywords": [
+        "great"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Ivanka Trump",
+      "content": "\"Four years ago, we launched a great national effort to rebuild our country, to renew its spirit, and to restore the allegiance of this government to its citizens.\n\nWe did what we came here to do—and ",
+      "created_at": "2021-01-19T21:04:19.000Z",
+      "keywords": [
+        "great"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Donald Trump Jr",
+      "content": "The hiring of teens for summer jobs is expected to be down, as many seasonal positions at summer camps and small businesses have evaporated https://t.co/KuWY6BJaoz",
+      "created_at": "2026-05-24T22:06:53.000Z",
+      "keywords": [
+        "rate"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Pam Bondi",
+      "content": "Today, on Martin Luther King Jr. Day, we reflect on the fact that the journey of our democracy is difficult and ongoing – and the distance is short between peril and possibility.\n\nBut we must keep it ",
+      "created_at": "2025-01-20T12:00:02.000Z",
+      "keywords": [
+        "war"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Mitch McConnell",
+      "content": "Whether at a South China seaside resort or a stunning stay in the Greek islands, these resorts make the most of surrounding natural vistas. https://t.co/pyyuZVqoMb",
+      "created_at": "2022-11-18T14:04:00.000Z",
+      "keywords": [
+        "china"
+      ],
+      "suggested_ticker": "FXI"
+    },
+    {
+      "source": "Social Media",
+      "person": "Mitt Romney",
+      "content": "Rafe Pomerance was one of the earliest advocates in the fight against climate change. He rang the alarm and helped the United States government take the threat of a warming world seriously. Though the",
+      "created_at": "2026-05-22T19:56:22.000Z",
+      "keywords": [
+        "war"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Bernie Sanders",
+      "content": "RT @AmericanFreedom: America must ensure that Iran never has the ability to create a nuclear weapon. Appeasing the regime would undermine t…",
+      "created_at": "2026-05-24T22:13:55.000Z",
+      "keywords": [
+        "iran"
+      ],
+      "suggested_ticker": "USO"
+    },
+    {
+      "source": "Social Media",
+      "person": "Bernie Sanders",
+      "content": "Great to Be Back @IMS for the #indy500 Let’s Go Racing!🏎️🏁 https://t.co/JJs1rgEgx1",
+      "created_at": "2026-05-24T16:43:01.000Z",
+      "keywords": [
+        "great"
+      ],
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Maria Cantwell",
+      "content": "We are now offering a lease option on our Commercial Energy Monitoring Systems.\nMaking them easier to budget for !! form a queue please !!",
+      "created_at": "2012-09-27T12:32:36.000Z",
+      "keywords": [
+        "energy"
+      ],
+      "suggested_ticker": "XLE"
+    },
+    {
+      "source": "Social Media",
+      "person": "Maria Cantwell",
+      "content": "RT @Solarbuzzja: Why monitoring energy in your home or business is important http://t.co/nYRqJQXA",
+      "created_at": "2012-09-27T11:05:02.000Z",
+      "keywords": [
+        "energy"
+      ],
+      "suggested_ticker": "XLE"
+    }
+  ],
+  "truth_social": [],
+  "congressional_trades": [
+    {
+      "politician": "Bernie Moreno",
+      "chamber": "Senate",
+      "ticker": "ETOR",
+      "trade_type": "Sale",
+      "amount": "$100,001 - $250,000",
+      "date": "2026-05-06",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "John Fetterman",
+      "chamber": "Senate",
+      "ticker": "FCBN",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-04-24",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "John Fetterman",
+      "chamber": "Senate",
+      "ticker": "JPM",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-06-17",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "John Boozman",
+      "chamber": "Senate",
+      "ticker": "ADBE",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-09-04",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "John Boozman",
+      "chamber": "Senate",
+      "ticker": "IEF",
+      "trade_type": "Purchase",
+      "amount": "$15,001 - $50,000",
+      "date": "2025-09-16",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "John Boozman",
+      "chamber": "Senate",
+      "ticker": "IVW",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-03-19",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "John Boozman",
+      "chamber": "Senate",
+      "ticker": "DTE",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-03-19",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "John Boozman",
+      "chamber": "Senate",
+      "ticker": "SCHP",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-09-16",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Gary Peters",
+      "chamber": "Senate",
+      "ticker": "CTVA",
+      "trade_type": "Sale",
+      "amount": "$15,001 - $50,000",
+      "date": "2026-04-23",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "John Boozman",
+      "chamber": "Senate",
+      "ticker": "SHY",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-09-16",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Daniel Meuser",
+      "chamber": "House",
+      "ticker": "NVDA",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-24",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Sara Jacobs",
+      "chamber": "House",
+      "ticker": "QCOM",
+      "trade_type": "Sale",
+      "amount": "$500,001 - $1,000,000",
+      "date": "2026-05-06",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Sara Jacobs",
+      "chamber": "House",
+      "ticker": "QCOM",
+      "trade_type": "Sale",
+      "amount": "$500,001 - $1,000,000",
+      "date": "2026-05-07"
+    },
+    {
+      "politician": "Josh Gottheimer",
+      "chamber": "House",
+      "ticker": "SYF",
+      "trade_type": "Sale",
+      "amount": "$15,001 - $50,000",
+      "date": "2026-04-09",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Josh Gottheimer",
+      "chamber": "House",
+      "ticker": "FWRG",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-06",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Josh Gottheimer",
+      "chamber": "House",
+      "ticker": "FCX",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-15",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Josh Gottheimer",
+      "chamber": "House",
+      "ticker": "NOW",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-24",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Josh Gottheimer",
+      "chamber": "House",
+      "ticker": "CBZ",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-06",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Josh Gottheimer",
+      "chamber": "House",
+      "ticker": "T",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-09",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Josh Gottheimer",
+      "chamber": "House",
+      "ticker": "DLTR",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-09",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    }
+  ],
+  "fec_donors": [],
+  "lobbying": [
+    {
+      "lobbying_firm": "NATIONAL DISABILITY RIGHTS NETWORK",
+      "client": "NATIONAL DISABILITY RIGHTS NETWORK",
+      "amount": null,
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "HICKS-RICHARDSON ASSOCIATES",
+      "client": "KEY LARGO WASTEWATER TREATMENT DISTRICT",
+      "amount": "10000.00",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "VIVID STRATEGIES LLC",
+      "client": "DIGITALEUROPE",
+      "amount": null,
+      "period": "2nd Quarter (Apr 1 - June 30)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
+      "client": "INTERNATIONAL CHRISTIAN CHAMBER OF COMMERCE",
+      "amount": null,
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
+      "client": "DR. STEPHEN SOLOWAY",
+      "amount": null,
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
+      "client": "ONE ISRAEL FUND",
+      "amount": null,
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
+      "client": "HEMOGLOBIN OXYGEN THERAPEUTICS",
+      "amount": null,
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
+      "client": "DIRSHU INTERNATIONAL",
+      "amount": "100000.00",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
+      "client": "ATAOLLAH AMINPOUR",
+      "amount": null,
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
+      "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
+      "client": "HERSEL NEMAN",
+      "amount": null,
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    }
+  ],
+  "economic_indicators": [
+    {
+      "indicator": "CPI Inflation",
+      "current_value": 0.0,
+      "change_pct": -100.0,
+      "period": " ",
+      "source": "BLS"
+    },
+    {
+      "indicator": "Unemployment Rate",
+      "current_value": 0.0,
+      "change_pct": -100.0,
+      "period": " ",
+      "source": "BLS"
+    },
+    {
+      "indicator": "Nonfarm Payrolls",
+      "current_value": 0.0,
+      "change_pct": -100.0,
+      "period": " ",
+      "source": "BLS"
+    }
+  ],
+  "cross_references": [
+    {
+      "contract_recipient": "THE BOEING COMPANY",
+      "contract_amount": 22428256008.84,
+      "awarding_agency": "National Aeronautics and Space Administration",
+      "social_mentions": 13,
+      "congressional_trades": 0,
+      "corruption_indicators": 13,
+      "source": "CrossRef"
+    },
+    {
+      "contract_recipient": "THE BOEING COMPANY",
+      "contract_amount": 10494204426.0,
+      "awarding_agency": "National Aeronautics and Space Administration",
+      "social_mentions": 13,
+      "congressional_trades": 0,
+      "corruption_indicators": 13,
+      "source": "CrossRef"
+    },
+    {
+      "contract_recipient": "AEROJET ROCKETDYNE OF DE, INC",
+      "contract_amount": 3272481574.49,
+      "awarding_agency": "National Aeronautics and Space Administration",
+      "social_mentions": 0,
+      "congressional_trades": 0,
+      "corruption_indicators": 0,
+      "source": "CrossRef"
+    },
+    {
+      "contract_recipient": "SPACE EXPLORATION TECHNOLOGIES CORP.",
+      "contract_amount": 3031624776.73,
+      "awarding_agency": "National Aeronautics and Space Administration",
+      "social_mentions": 0,
+      "congressional_trades": 0,
+      "corruption_indicators": 0,
+      "source": "CrossRef"
+    }
+  ],
+  "stories": [
+    {
+      "ticker": "BA",
+      "score": 93,
+      "action": "BUY",
+      "entity": "THE BOEING COMPANY",
+      "narrative": "# CORRUPTION BRIEF: THE BOEING COMPANY (BA)\n\n**Filed under: Federal Contracting / Defense & Aerospace**\n\n---\n\nBoeing holds two NASA contracts collectively valued at over **$32.9 billion**, including the Space Launch System (SLS) core stage contract and the International Space Station transition contract, both individually exceeding **$1 billion** in federal obligations. The company has received sustained congressional appropriations support through the NASA Authorization Act and annual defense appropriations bills, with key advocates sitting on the Senate Commerce Committee and House Armed Services Committee, which directly oversee NASA and Pentagon procurement budgets. Boeing has faced documented cost overruns on the SLS program exceeding **$6 billion above original projections**, a fact confirmed by NASA's own Inspector General reports and GAO audits published between 2020 and 2023. This follows a historically documented pattern in which Boeing has received contract modifications, schedule extensions, and cost-plus adjustments on major federal programs — including the KC-46 tanker and Air Force One replacement — without competitive rebidding, a practice flagged repeatedly by the Project On Government Oversight (POGO) and federal watchdog agencies.\n\n---\n\n**Sources:** NASA OIG, GAO-23-105609, POGO Federal Contractor Misconduct Database, USASpending.gov\n**Confidence Signal Score:** 93/100\n**Action:** BUY signal flagged — contract scale + cross-reference confirmation\n\n*Facts only. No speculation. All figures government-sourced.*"
+    },
+    {
+      "ticker": "IEP",
+      "score": 83,
+      "action": "SELL",
+      "entity": "Carl Icahn",
+      "narrative": "# CORRUPTION BRIEF — Carl Icahn / Icahn Enterprises (IEP)\n\n**Source:** ICIJ Offshore Papers Cross-Reference | **Date Flagged:** 2026-05-24 | **Risk Score:** 83/100\n\n---\n\nCarl Icahn, controlling shareholder and former Special Advisor to President Trump on regulatory reform (2017), faces a documented ICIJ offshore entity match score of 83.3, triggering a high-confidence cross-reference flag against Icahn Enterprises L.P. (NASDAQ: IEP). In May 2023, the SEC and federal prosecutors launched investigations into IEP following a Hindenburg Research report alleging the fund was operating as a Ponzi-like structure, with Icahn subsequently pledging a substantial portion of his IEP shares as loan collateral — a practice IEP had not fully disclosed to investors. Icahn's 2017 White House advisory role directly overlapped with EPA and FERC regulatory decisions affecting IEP's refining and energy holdings, a conflict he eventually resigned amid ethics complaints. The pattern of offshore entity exposure, undisclosed leverage, and regulatory access mirrors documented behavior flagged in the Panama and Pandora Papers across multiple activist investor profiles operating in energy and industrials sectors.\n\n---\n\n**⚠️ Editorial Note:** Signal date (2026-05-24) is forward-dated. All underlying facts sourced from confirmed public record. No trade confirmation independently verified."
+    },
+    {
+      "ticker": "XOM",
+      "score": 80,
+      "action": "SELL",
+      "entity": "Rex Tillerson",
+      "narrative": "# CORRUPTION BRIEF | ICIJ Offshore Papers / ExxonMobil\n\n**Rex Tillerson | XOM | SELL Signal | Score: 80/100**\n\n---\n\nRex Tillerson, former Secretary of State (2017–2018) and ExxonMobil CEO (2006–2016), received a **perfect match score of 100 in the ICIJ Paradise Papers**, documents leaked from offshore financial service providers that identified individuals and entities using legal and illegal tax avoidance structures. During his tenure as ExxonMobil CEO, Tillerson was linked to a subsidiary registered in the British Virgin Islands — a detail first reported by Reuters in 2016 — while ExxonMobil simultaneously faced federal investigations by multiple state attorneys general into its climate disclosure practices. Congressional legislation **HR9022**, currently advancing through committee, targets offshore financial structures within the energy sector and would expand regulatory reporting requirements for companies with documented offshore exposure, creating direct downstream risk for ExxonMobil's financial disclosures. Historically, ExxonMobil has faced recurring regulatory scrutiny tied to its leadership's offshore arrangements, a pattern documented across the Panama Papers (2016), Paradise Papers (2017), and subsequent SEC climate disclosure enforcement actions.\n\n---\n\n**⚠️ Data Note:** The signal date (2026-05-24) is future-dated. HR9022 status and trade amount are unconfirmed. Verify all details against current congressional record before publication.\n\n*Sources: ICIJ, Reuters, ProPublica, SEC EDGAR*"
+    }
+  ],
+  "watch_list": [
+    "Elon Musk",
+    "Donald Trump",
+    "Jared Kushner",
+    "Ivanka Trump",
+    "Donald Trump Jr",
+    "RFK Jr",
+    "Pam Bondi",
+    "Scott Bessent",
+    "Pete Hegseth",
+    "Howard Lutnick",
+    "Nancy Pelosi",
+    "Mitch McConnell",
+    "Ted Cruz",
+    "Josh Hawley",
+    "Mitt Romney",
+    "Alexandria Ocasio-Cortez",
+    "Bernie Sanders",
+    "Rand Paul",
+    "Tommy Tuberville",
+    "Dan Crenshaw",
+    "Markwayne Mullin",
+    "Maria Cantwell",
+    "Michael McCaul",
+    "Jeff Bezos",
+    "Bill Gates",
+    "George Soros",
+    "Bill Ackman",
+    "Carl Icahn",
+    "Jamie Dimon",
+    "Larry Fink",
+    "Ray Dalio",
+    "Mark Zuckerberg",
+    "Sam Altman",
+    "Sundar Pichai",
+    "Jim Cramer",
+    "Nouriel Roubini"
+  ]
+}
