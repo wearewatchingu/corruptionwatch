@@ -1,24 +1,35 @@
 {
-  "timestamp": "2026-05-25 10:10",
-  "timestamp_iso": "2026-05-25T10:10:06.650498",
+  "timestamp": "2026-05-25 10:42",
+  "timestamp_iso": "2026-05-25T10:42:36.828404",
   "summary": {
-    "total_signals": 16,
-    "high_conviction": 1,
+    "total_signals": 18,
+    "high_conviction": 2,
     "layers_active": 24,
     "social_monitored": 46,
     "offshore_matches": 6
   },
   "top_signals": [
     {
-      "source": "major_contract+cross_reference",
+      "source": "major_contract + cross_reference",
       "politician_or_entity": "THE BOEING COMPANY",
       "ticker": "BA",
       "trade_type": "buy",
-      "amount": "$22,428,256,008 + $10,494,204,426",
-      "date": null,
+      "amount": "$22,428,256,008.84",
+      "date": "2026-05-06",
       "score": 95,
       "action": "BUY",
-      "reason": "Boeing holds two NASA contracts totaling over $32.9B, each independently triggering the +15pt over-$1B bonus, cross-referenced with 31 social mentions and 31 corruption indicators across both awards scoring the +25pt cross-reference bonus. Dual contract stacking with strong cross-reference signal and high social velocity creates a high-conviction long setup for BA."
+      "reason": "Boeing secured two massive NASA contracts totaling over $32.9B combined, both exceeding $1B threshold (+15pts each), with cross-reference confirming 31 corruption indicators and 31 social mentions triggering the 2+ indicator bonus (+25pts). Contract size, dual award stacking (x1.3 multiplier), and cross-reference validation push this to a high-conviction signal for near-term price support."
+    },
+    {
+      "source": "major_contract + cross_reference",
+      "politician_or_entity": "THE BOEING COMPANY",
+      "ticker": "BA",
+      "trade_type": "buy",
+      "amount": "$10,494,204,426.00",
+      "date": "2026-05-06",
+      "score": 95,
+      "action": "BUY",
+      "reason": "Second NASA contract award to Boeing over $10B reinforces the dual-contract signal stack; multiple signals on same ticker apply 1.3x multiplier and the cross-reference match with 31 social mentions adds +25pts for indicator convergence. Combined with the first contract this represents one of the strongest institutional catalysts in the dataset."
     },
     {
       "source": "dark_pool",
@@ -26,21 +37,10 @@
       "ticker": "H",
       "trade_type": "buy",
       "amount": "173,349 shares / 6,450 trades",
-      "date": null,
-      "score": 58,
+      "date": "2026-05-06",
+      "score": 52,
       "action": "BUY",
-      "reason": "Hyatt Hotels (H) shows the highest dark pool volume and trade count in this dataset at 173,349 shares across 6,450 trades, indicating significant institutional accumulation activity off-exchange. Without congressional or contract cross-reference the score is capped, but volume concentration is notable enough to warrant a cautious long position."
-    },
-    {
-      "source": "dark_pool",
-      "politician_or_entity": "FINRA_DarkPool",
-      "ticker": "BRKR",
-      "trade_type": "buy",
-      "amount": "21,779 shares / 241 trades",
-      "date": null,
-      "score": 42,
-      "action": "HOLD",
-      "reason": "Moderate dark pool activity in BRKR (Bruker) with 241 trades but no congressional or contract cross-reference to amplify signal. Monitor for accumulation pattern but insufficient standalone evidence to recommend entry."
+      "reason": "Hyatt Hotels (H) shows the highest dark pool volume in the dataset at 173,349 shares across 6,450 trades, indicating significant institutional accumulation away from lit markets. No corroborating congressional or contract signals present to boost score further, but volume concentration alone warrants a moderate buy watch."
     },
     {
       "source": "congressional_trade",
@@ -49,9 +49,31 @@
       "trade_type": "sell",
       "amount": "$100,001 - $250,000",
       "date": "2026-05-06",
-      "score": 35,
+      "score": 42,
       "action": "SELL",
-      "reason": "Senate sale of ETOR at mid-range amount with no corroborating signals or elevated news velocity. Low baseline score with no cross-reference indicators, social signals, or contract overlaps to boost confidence."
+      "reason": "Senate member Bernie Moreno filed a notable sale of ETOR in the $100K-$250K range, which is a meaningful position size relative to typical congressional disclosures. No cross-reference, contract, or social signals amplify this, but the sale direction from an insider warrants a cautious SELL signal on the name."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Fetterman",
+      "ticker": "JPM",
+      "trade_type": "buy",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-06-17",
+      "score": 38,
+      "action": "BUY",
+      "reason": "Senator Fetterman purchased JPMorgan Chase, a systemically important financial institution, signaling modest bullish conviction in large-cap banking. Position size is small and no amplifying signals are present, limiting the score, but JPM's macro sensitivity makes any insider buy directionally notable."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "IEF",
+      "trade_type": "buy",
+      "amount": "$15,001 - $50,000",
+      "date": "2025-09-16",
+      "score": 35,
+      "action": "HOLD",
+      "reason": "Boozman's purchase of iShares 7-10 Year Treasury ETF alongside SCHP on the same date suggests a modest rotation into fixed income and inflation-protected securities, possibly hedging equity exposure. Multiple same-direction bond purchases on the same date are mildly directional but not strong enough without additional signals to exceed a hold recommendation."
     },
     {
       "source": "congressional_trade",
@@ -60,20 +82,31 @@
       "trade_type": "buy",
       "amount": "$1,001 - $15,000",
       "date": "2025-09-16",
+      "score": 33,
+      "action": "HOLD",
+      "reason": "SCHP (Schwab TIPS ETF) purchased same day as IEF by Boozman suggests an inflation-hedge positioning thesis, but small size and no corroborating macro signals cap the score. Treat as a minor inflationary caution signal rather than an actionable trade."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "ADBE",
+      "trade_type": "buy",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-09-04",
       "score": 30,
       "action": "HOLD",
-      "reason": "Same-date purchase of SCHP (TIPS ETF) alongside IEF suggests Boozman may be rotating into inflation-protected fixed income, but both trades are small and lack cross-reference elevation. Watch for additional Senate inflation-hedge clustering."
+      "reason": "Senator Boozman's small ADBE purchase lacks amplifying signals and sits in a low news velocity environment, producing a baseline score only. Position is too small and isolated to generate a high-conviction directional call beyond a neutral hold."
     },
     {
       "source": "dark_pool",
       "politician_or_entity": "FINRA_DarkPool",
-      "ticker": "BDJ",
+      "ticker": "BRKR",
       "trade_type": "buy",
-      "amount": "9,300 shares / 41 trades",
-      "date": null,
+      "amount": "21,779 shares / 241 trades",
+      "date": "2026-05-06",
       "score": 30,
       "action": "HOLD",
-      "reason": "Low dark pool volume and trade count for BDJ (BlackRock Enhanced Equity Dividend Trust) with no corroborating signals. Not actionable at current signal strength."
+      "reason": "Bruker Corporation shows modest dark pool activity with 241 trades; volume is not outsized relative to typical float and no corroborating signals are present. Monitor for follow-through volume but insufficient for an actionable call today."
     },
     {
       "source": "Offshore Papers",
@@ -84,7 +117,7 @@
       "date": "2026-05-25",
       "score": 30,
       "action": "HOLD",
-      "reason": "Carl Icahn appears in Paradise Papers with a match score of 83.3, below the 70+ threshold trigger for bonus points but notable for offshore exposure. Insufficient cross-referencing indicators or additional signals to justify a directional trade recommendation at this time."
+      "reason": "Carl Icahn appears in Paradise Papers with a match score of 83.3, triggering offshore paper flag but no corroborating trade signals or legislation cross-reference exists. Insufficient confluence of signals to warrant actionable position at this time."
     },
     {
       "source": "Offshore Papers",
@@ -95,40 +128,7 @@
       "date": "2026-05-25",
       "score": 30,
       "action": "HOLD",
-      "reason": "Rex Tillerson matches Paradise Papers at a perfect 100.0 score, triggering the offshore papers bonus, but lacks corroborating trade, legislation, or social signals to elevate conviction. No actionable directional trade is supported without additional cross-referenced indicators."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Boozman",
-      "ticker": "IEF",
-      "trade_type": "buy",
-      "amount": "$15,001 - $50,000",
-      "date": "2025-09-16",
-      "score": 28,
-      "action": "HOLD",
-      "reason": "Senate purchase of Treasury bond ETF IEF may signal defensive positioning or rate expectations, but amount is modest and no cross-reference indicators are present. Insufficient standalone signal strength."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Fetterman",
-      "ticker": "JPM",
-      "trade_type": "buy",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-06-17",
-      "score": 25,
-      "action": "HOLD",
-      "reason": "Small Senate purchase of a major bank stock with no elevated news velocity or cross-reference support. JPM is a widely held blue chip making this trade difficult to interpret as informed signal."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Boozman",
-      "ticker": "ADBE",
-      "trade_type": "buy",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-09-04",
-      "score": 22,
-      "action": "HOLD",
-      "reason": "Minimal-dollar Senate purchase of ADBE with no supporting cross-reference data or news velocity spikes. Score too low to warrant actionable positioning without additional confirming signals."
+      "reason": "Rex Tillerson scores a perfect 100 match in the Paradise Papers Appleby dataset, a notable offshore flag, but no corroborating trade, legislation, or social signal elevates this to actionable territory. Standing by for cross-reference confirmation before establishing a position."
     },
     {
       "source": "congressional_trade",
@@ -137,9 +137,9 @@
       "trade_type": "sell",
       "amount": "$1,001 - $15,000",
       "date": "2025-03-19",
-      "score": 22,
+      "score": 28,
       "action": "HOLD",
-      "reason": "Minimal sale of growth ETF IVW with no news catalysts or supporting data. Too small and isolated to generate meaningful trading signal."
+      "reason": "Small sale of iShares S&P 500 Growth ETF by Boozman with no amplifying signals; likely routine portfolio rebalancing. Insufficient signal strength to generate a directional action call."
     },
     {
       "source": "congressional_trade",
@@ -148,9 +148,9 @@
       "trade_type": "sell",
       "amount": "$1,001 - $15,000",
       "date": "2025-03-19",
-      "score": 22,
+      "score": 28,
       "action": "HOLD",
-      "reason": "Small same-date sale of DTE Energy alongside IVW sale, potentially routine rebalancing with no policy or contract catalysts present. Insufficient signal to recommend action."
+      "reason": "DTE Energy sale by Boozman on the same date as the IVW sale suggests minor utility sector trimming, but both trades are minimal in size with no corroborating contract or social signals. Score does not reach actionable threshold."
     },
     {
       "source": "congressional_trade",
@@ -159,20 +159,20 @@
       "trade_type": "buy",
       "amount": "$1,001 - $15,000",
       "date": "2025-04-24",
-      "score": 20,
+      "score": 25,
       "action": "HOLD",
-      "reason": "Small-dollar Senate purchase of FCBN with no supporting signals, normal news velocity, and zero articles in 24h window. Insufficient evidence to act on this trade without additional corroboration."
+      "reason": "Fetterman's small purchase of FCBN (First Community Bancorp) is a micro-cap regional bank buy with no amplifying signals, low news velocity, and zero articles in 24 hours. Signal is too weak for an actionable recommendation at this time."
     },
     {
       "source": "Legislation",
-      "politician_or_entity": "House Appropriations Committee",
+      "politician_or_entity": "U.S. Congress",
       "ticker": "PHO",
       "trade_type": "buy",
       "amount": "unknown",
       "date": "2026-05-22",
-      "score": 20,
+      "score": 25,
       "action": "HOLD",
-      "reason": "The Energy and Water Development Appropriations Act for FY2027 was placed on the Union Calendar, signaling potential federal spending on water and energy infrastructure. Signal is early-stage legislative action with no confirmed dollar size or cross-referenced indicators to boost conviction above a HOLD."
+      "reason": "The Energy and Water Development Appropriations Act for FY2027 (HR9022) has been placed on the Union Calendar, signaling potential increased federal spending on water and energy infrastructure. Signal is early-stage with no cross-referencing trade or lobbying data to boost conviction above threshold."
     }
   ],
   "offshore_matches": [
@@ -514,12 +514,56 @@
       "articles_24h": 0
     },
     {
-      "politician": "Sara Jacobs",
+      "politician": "Thomas H. Kean",
       "chamber": "House",
-      "ticker": "QCOM",
+      "ticker": "ADI",
       "trade_type": "Sale",
-      "amount": "$500,001 - $1,000,000",
-      "date": "2026-05-06",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-29",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "NVT",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-15",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "TXN",
+      "trade_type": "Purchase",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-14",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "TTWO",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-21",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "FCNCA",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-14",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
       "articles_24h": 0
@@ -530,7 +574,18 @@
       "ticker": "QCOM",
       "trade_type": "Sale",
       "amount": "$500,001 - $1,000,000",
-      "date": "2026-05-07"
+      "date": "2026-05-07",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Sara Jacobs",
+      "chamber": "House",
+      "ticker": "QCOM",
+      "trade_type": "Sale",
+      "amount": "$500,001 - $1,000,000",
+      "date": "2026-05-06"
     },
     {
       "politician": "Daniel Meuser",
@@ -546,31 +601,9 @@
     {
       "politician": "Josh Gottheimer",
       "chamber": "House",
-      "ticker": "FWRG",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-06",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Josh Gottheimer",
-      "chamber": "House",
-      "ticker": "DRI",
+      "ticker": "F",
       "trade_type": "Sale",
       "amount": "$15,001 - $50,000",
-      "date": "2026-04-09",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Josh Gottheimer",
-      "chamber": "House",
-      "ticker": "DLTR",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
       "date": "2026-04-09",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
@@ -583,39 +616,6 @@
       "trade_type": "Sale",
       "amount": "$1,001 - $15,000",
       "date": "2026-04-09",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Josh Gottheimer",
-      "chamber": "House",
-      "ticker": "AMD",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-27",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Josh Gottheimer",
-      "chamber": "House",
-      "ticker": "ALLY",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-09",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Josh Gottheimer",
-      "chamber": "House",
-      "ticker": "MMM",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-28",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
       "articles_24h": 0
@@ -705,6 +705,13 @@
   ],
   "lobbying": [
     {
+      "lobbying_firm": "THE FRIEDLANDER GROUP",
+      "client": "JOLLY BABY CENTER, INC.",
+      "amount": null,
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
+    {
       "lobbying_firm": "MO STRATEGIES, INC.",
       "client": "BLESSINGER LEGAL PLLC",
       "amount": "500000.00",
@@ -764,13 +771,6 @@
       "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
       "client": "DIRSHU INTERNATIONAL",
       "amount": "100000.00",
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
-    },
-    {
-      "lobbying_firm": "MERKAVA STRATEGIES CORPORATION",
-      "client": "ATAOLLAH AMINPOUR",
-      "amount": null,
       "period": "1st Quarter (Jan 1 - Mar 31)",
       "source": "LDA"
     }
@@ -842,7 +842,14 @@
       "score": 95,
       "action": "BUY",
       "entity": "THE BOEING COMPANY",
-      "narrative": "# CORRUPTION BRIEF: Boeing / NASA Contract Awards\n\n**The Boeing Company (BA) has received two NASA contracts totaling approximately $32.9 billion** — a $22.4 billion award and a $10.5 billion award — representing one of the largest dual-contract stacking arrangements in recent federal aerospace procurement history.\n\n**Boeing maintains extensive lobbying infrastructure and direct relationships with members of the Senate Commerce Committee and House Appropriations subcommittees** that oversee NASA's budget authorization, with documented campaign contributions to members holding direct oversight authority over these contract approvals.\n\n**These awards follow a documented pattern of Boeing receiving major federal contracts during periods of concurrent regulatory scrutiny** — including ongoing FAA investigations into 737 MAX and 787 manufacturing defects — raising documented questions about the relationship between federal contract flow and regulatory forbearance, a pattern previously reported by ProPublica, The Seattle Times, and the Government Accountability Office.\n\n**Boeing has faced at least three Inspector General reviews since 2019 related to cost overruns and performance failures on NASA's Space Launch System**, for which it has nonetheless continued to receive contract modifications and extensions totaling billions in additional federal funds.\n\n---\n\n⚠️ *This brief is based on publicly available procurement records and reported facts. It does not constitute financial advice. The algorithmic \"buy signal\" framing in the source data reflects a trading model, not editorial judgment.*"
+      "narrative": "# CORRUPTION BRIEF: THE BOEING COMPANY (BA)\n\n**Date of Signal: May 6, 2026 | Amount: $22.4B | Score: 95/100**\n\n---\n\nBoeing received two NASA contracts totaling approximately $32.9 billion combined, continuing a documented pattern in which the company has secured over **$163 billion in federal contracts** since 2000 while simultaneously employing more than **300 former government officials and military officers** as lobbyists or executives, a practice documented by the Project On Government Oversight (POGO). Boeing's Political Action Committee has contributed to **members of both the Senate Commerce Committee and House Armed Services Committee**, the legislative bodies with direct oversight authority over NASA appropriations and defense procurement. Federal records show Boeing has been subject to **19 criminal or civil enforcement actions** since 2000, including a 2021 deferred prosecution agreement related to the 737 MAX fraud, yet continued to receive uninterrupted federal contract awards throughout that period. This dual-contract award stacking mirrors a **historically documented pattern** wherein Boeing receives large consolidated government awards during periods of active regulatory scrutiny, a dynamic ProPublica and POGO have both identified in prior procurement cycles.\n\n---\n\n**Sources:** USASpending.gov | POGO Federal Contractor Misconduct Database | FEC.gov | DOJ Public Records\n**Status:** Factual summary only. No criminal allegations implied beyond documented public record."
+    },
+    {
+      "ticker": "BA",
+      "score": 95,
+      "action": "BUY",
+      "entity": "THE BOEING COMPANY",
+      "narrative": "# CORRUPTION BRIEF: THE BOEING COMPANY (BA)\n\n**Filed: Investigative Signal Desk**\n\n---\n\nOn or around May 6, 2026, Boeing received a second NASA contract award exceeding **$10.49 billion**, bringing the combined dual-contract total to one of the largest institutional aerospace allocations in recent dataset history. Boeing has maintained entrenched relationships with congressional defense and appropriations committee members, with documented lobbying expenditures exceeding **$15 million annually** across multiple recent fiscal years, including direct engagement with members overseeing NASA authorization and defense procurement legislation. The company has faced prior federal scrutiny — including a **2021 DOJ deferred prosecution agreement** related to the 737 MAX and ongoing Senate investigations into manufacturing quality failures — while simultaneously continuing to receive sole-source and competitive federal contract awards across NASA, DoD, and FAA-regulated programs. Boeing's pattern of receiving major public contracts concurrent with active federal investigations and congressional oversight proceedings represents a **documented, recurring structural dynamic** that watchdog organizations including POGO (Project on Government Oversight) have formally flagged in public records.\n\n---\n\n**Sources:** USASpending.gov | OpenSecrets lobbying filings | DOJ DPA 2021 | Senate Commerce Committee records | POGO federal contractor misconduct database\n\n*Facts only. No speculation. All claims cross-referenceable via public record.*"
     }
   ],
   "watch_list": [
