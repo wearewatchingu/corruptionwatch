@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-05-25 18:50",
-  "timestamp_iso": "2026-05-25T18:50:17.240939",
+  "timestamp": "2026-05-25 19:22",
+  "timestamp_iso": "2026-05-25T19:22:32.143267",
   "summary": {
     "total_signals": 19,
     "high_conviction": 1,
@@ -18,7 +18,8 @@
       "date": "2026-05-06",
       "score": 95,
       "action": "BUY",
-      "reason": "Boeing holds two massive NASA contracts totaling over $32.9B, both exceeding $1B threshold (+15pts each applied once as same entity), cross-referenced with 31 social mentions and 31 corruption indicators triggering the 2+ indicator bonus (+25pts), and contract over $1B rule (+15pts) yields a top-tier score. Dark pool and congressional silence on BA is notable given contract size, suggesting institutional front-running risk is elevated — strong BUY signal on government contract flow."
+      "reason": "Boeing has received two massive NASA contracts totaling over $32.9 billion, both triggering the >$1B contract bonus (+15pts each applied once as issuer) and confirmed cross-reference with 31 corruption/social indicators and 31 social mentions, unlocking the 2+ indicator cross-reference bonus (+25pts). The combined contract scale, cross-reference confirmation, and elevated corruption indicator count create a high-conviction institutional tailwind for BA despite legacy operational risks.",
+      "scoring_breakdown": "Base 40 + Contract >$1B (+15) + Cross-reference 2+ indicators (+25) + Dual contract signal 1.3x multiplier = ~95"
     },
     {
       "source": "dark_pool",
@@ -27,20 +28,10 @@
       "trade_type": "buy",
       "amount": "173,349 shares / 6,450 trades",
       "date": "2026-05-06",
-      "score": 58,
+      "score": 62,
       "action": "BUY",
-      "reason": "Hyatt Hotels shows the highest dark pool volume and trade count in this dataset at 173K shares across 6,450 transactions, indicating significant institutional off-exchange accumulation. Volume dispersion across thousands of trades suggests deliberate stealth positioning — elevated conviction BUY signal pending macro hospitality catalysts."
-    },
-    {
-      "source": "Offshore Papers",
-      "politician_or_entity": "Rex Tillerson",
-      "ticker": "XOM",
-      "trade_type": "sell",
-      "amount": "unknown",
-      "date": "2026-05-25",
-      "score": 55,
-      "action": "HOLD",
-      "reason": "Rex Tillerson scores a perfect 100 match in the Paradise Papers-Appleby data, triggering the offshore papers bonus of 30 points, and his historical ties to ExxonMobil create a plausible energy sector linkage. However, no current trade disclosures, legislation, or social signals cross-reference this to generate a high-conviction directional trade."
+      "reason": "Hyatt Hotels (H) shows the highest dark pool volume and trade count in this dataset at 173,349 shares across 6,450 trades, indicating significant institutional off-exchange accumulation that is difficult to ignore. No congressional or contract signal cross-references this move, but the sheer trade count relative to peers elevates this to a cautious buy signal pending further confirmation.",
+      "scoring_breakdown": "Base 35 + high dark pool volume/count signal +15 + relative outlier premium +12 = 62"
     },
     {
       "source": "dark_pool",
@@ -51,18 +42,8 @@
       "date": "2026-05-06",
       "score": 42,
       "action": "HOLD",
-      "reason": "Moderate dark pool activity in Bruker Corp with 241 discrete trades suggesting institutional accumulation below radar. Without congressional trade overlap or contract linkage, signal is speculative but worth monitoring for follow-through volume."
-    },
-    {
-      "source": "Legislation",
-      "politician_or_entity": "U.S. House of Representatives",
-      "ticker": "NEE",
-      "trade_type": "buy",
-      "amount": "unknown",
-      "date": "2026-05-22",
-      "score": 40,
-      "action": "HOLD",
-      "reason": "HR9022, the Energy and Water Development Appropriations Act for FY2027, has been placed on the Union Calendar, signaling potential federal energy infrastructure spending ahead. No lobbying cross-reference or social signal elevates this enough for a high-conviction buy, but clean energy and water utilities warrant monitoring."
+      "reason": "Moderate dark pool volume in BRKR (Bruker) with 241 trade counts suggests quiet institutional accumulation, but no congressional trade, contract, or social signal corroborates a high-conviction move. Monitor for volume escalation or paired congressional activity in life sciences.",
+      "scoring_breakdown": "Base 35 + dark pool signal +7; no cross-reference bonus unlocked"
     },
     {
       "source": "congressional_trade",
@@ -73,18 +54,32 @@
       "date": "2026-05-06",
       "score": 35,
       "action": "SELL",
-      "reason": "Senate sale of ETOR in the $100K-$250K range warrants attention but lacks cross-reference indicators or news velocity to elevate confidence. Low sentiment score and normal news environment limit signal strength; mirror the sell posture cautiously."
+      "reason": "Senate sale of ETOR at a meaningful amount warrants attention, though no cross-reference indicators, dark pool activity, or corroborating signals are present. Low news velocity and zero sentiment score limit conviction; treat as a mild bearish signal.",
+      "scoring_breakdown": "Base 35 — no multipliers triggered"
     },
     {
-      "source": "Lobbying",
-      "politician_or_entity": "ALPHA TERRA RESOURCES CORP",
-      "ticker": "MP",
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "IEF",
       "trade_type": "buy",
-      "amount": "unknown",
-      "date": "2026-05-25",
-      "score": 35,
+      "amount": "$15,001 - $50,000",
+      "date": "2025-09-16",
+      "score": 32,
       "action": "HOLD",
-      "reason": "Alpha Terra Resources is actively lobbying via Government Relations Group in Q1 2026, suggesting early-stage regulatory or contract pursuit in the natural resources space with possible rare earth or critical mineral exposure. Without a confirmed China escalation signal or cross-referenced indicator, score remains below actionable threshold."
+      "reason": "Moderate Treasury bond ETF purchase may signal defensive repositioning by a Senate member anticipating rate or macro shifts, but no cross-reference or dark pool data supports a strong directional trade. Worth monitoring alongside SCHP purchase on the same date as a paired bond rotation signal.",
+      "scoring_breakdown": "Base 25 + slight size bump to 32; same-date SCHP purchase noted but insufficient for full 1.3x multiplier without shared ticker"
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "SCHP",
+      "trade_type": "buy",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-09-16",
+      "score": 32,
+      "action": "HOLD",
+      "reason": "TIPS ETF purchase on the same date as IEF buy suggests Boozman is rotating into inflation-protected and nominal Treasuries simultaneously, a defensive macro signal. Amounts remain small and no corroborating cross-reference data elevates this above a monitoring-level signal.",
+      "scoring_breakdown": "Base 25 + same-date IEF paired bond rotation bump; below 1.3x multiplier threshold without shared ticker"
     },
     {
       "source": "dark_pool",
@@ -95,7 +90,8 @@
       "date": "2026-05-06",
       "score": 30,
       "action": "HOLD",
-      "reason": "Low volume and trade count in BDJ closed-end fund limits signal reliability. No corroborating congressional, contract, or social indicators to support an actionable position at this time."
+      "reason": "BDJ (BlackRock Enhanced Dividend Achievers) dark pool activity is low in both volume and trade count, suggesting routine institutional rebalancing rather than an informed directional signal. No corroborating signals present; insufficient to act upon.",
+      "scoring_breakdown": "Base 30 — low dark pool volume, no multipliers triggered"
     },
     {
       "source": "Offshore Papers",
@@ -106,62 +102,76 @@
       "date": "2026-05-25",
       "score": 30,
       "action": "HOLD",
-      "reason": "Carl Icahn appears in Paradise Papers with a match score of 83.3, triggering offshore paper signal, but no corroborating trade data, legislation, or market keyword post exists to elevate conviction. Insufficient cross-referencing to generate actionable directional signal beyond monitoring."
+      "reason": "Carl Icahn appears in Paradise Papers with a match score of 83.33, triggering the offshore papers rule, but no corroborating trade signals, legislation, or cross-indicators exist to elevate confidence. Insufficient actionable signal without additional catalysts or confirmed trades."
     },
     {
       "source": "Offshore Papers",
       "politician_or_entity": "Michael Cohen",
-      "ticker": "SPY",
+      "ticker": "N/A",
       "trade_type": "sell",
       "amount": "unknown",
       "date": "2026-05-25",
       "score": 30,
       "action": "HOLD",
-      "reason": "Michael Cohen appears in Malta corporate registry with a perfect match score of 100, meeting the offshore papers threshold, but he holds no current market-relevant position or cross-referenced signal. No actionable ticker linkage identified beyond broad market proxy."
+      "reason": "Michael Cohen appears in the Malta corporate registry Paradise Papers data with a perfect match score of 100, but he holds no current political or market-moving position that maps to a tradeable ticker. No cross-referenced indicators support an actionable trade at this time."
     },
     {
-      "source": "Lobbying",
-      "politician_or_entity": "NEXTNRG INC",
-      "ticker": "PLUG",
-      "trade_type": "buy",
-      "amount": "$6000 lobbying spend",
+      "source": "Offshore Papers",
+      "politician_or_entity": "Rex Tillerson",
+      "ticker": "XOM",
+      "trade_type": "sell",
+      "amount": "unknown",
       "date": "2026-05-25",
       "score": 30,
       "action": "HOLD",
-      "reason": "NextNRG Inc. is actively lobbying with a disclosed $6,000 spend in Q1 2026, indicating early-stage regulatory engagement in the clean energy space potentially linked to EV charging or hydrogen infrastructure. Signal is too isolated without legislation co-movement or social amplification to warrant a directional trade."
+      "reason": "Rex Tillerson scores a perfect 100 match in the Paradise Papers Appleby data, historically linked to energy sector interests via ExxonMobil, but no current trade, legislation, or cross-indicator confirms directional exposure. Signal is noted but insufficient for a high-conviction action."
+    },
+    {
+      "source": "Offshore Papers",
+      "politician_or_entity": "Sheldon Adelson",
+      "ticker": "LVS",
+      "trade_type": "sell",
+      "amount": "unknown",
+      "date": "2026-05-25",
+      "score": 30,
+      "action": "HOLD",
+      "reason": "Sheldon Adelson appears in the Paradise Papers with a match score of 75, crossing the 70+ threshold, but he is deceased and no active political or lobbying signal links to Las Vegas Sands or related gaming tickers. No actionable trade is supported without additional corroborating signals."
     },
     {
       "source": "congressional_trade",
       "politician_or_entity": "John Boozman",
-      "ticker": "IEF",
-      "trade_type": "buy",
-      "amount": "$15,001 - $50,000",
-      "date": "2025-09-16",
+      "ticker": "IVW",
+      "trade_type": "sell",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-03-19",
       "score": 28,
       "action": "HOLD",
-      "reason": "IEF purchase alongside SCHP on the same date suggests a defensive bond rotation play by Boozman, potentially signaling macro caution. Multiple same-date trades in fixed income are mildly notable but lack corroborating indicators to exceed action threshold."
+      "reason": "Small growth ETF sale on the same date as a DTE sale suggests mild risk-off rotation, but dollar amounts are too small and lack corroborating signals to generate a high-conviction trade. Monitor for larger follow-on sales.",
+      "scoring_breakdown": "Base 25 + minor same-day dual-sell pattern; insufficient for full 1.3x multiplier"
     },
     {
       "source": "congressional_trade",
       "politician_or_entity": "John Boozman",
-      "ticker": "SCHP",
+      "ticker": "DTE",
+      "trade_type": "sell",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-03-19",
+      "score": 28,
+      "action": "HOLD",
+      "reason": "Utility sector sale paired with an IVW sale on the same date hints at portfolio rebalancing rather than informed political trading. No dark pool, contract, or cross-reference signal reinforces this move.",
+      "scoring_breakdown": "Base 25 + minor same-day dual-sell pattern; insufficient for full 1.3x multiplier"
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Fetterman",
+      "ticker": "FCBN",
       "trade_type": "buy",
       "amount": "$1,001 - $15,000",
-      "date": "2025-09-16",
-      "score": 28,
-      "action": "HOLD",
-      "reason": "SCHP purchase on same date as IEF reinforces a TIPS/inflation-protected bond positioning thesis, suggesting Boozman is hedging against inflation or rate volatility. Absent cross-reference or contract linkage, signal remains observational only."
-    },
-    {
-      "source": "Social Media",
-      "politician_or_entity": "Josh Gottheimer",
-      "ticker": "SPY",
-      "trade_type": "sell",
-      "amount": "unknown",
-      "date": "2026-05-24",
+      "date": "2025-04-24",
       "score": 25,
       "action": "HOLD",
-      "reason": "Josh Gottheimer's repeated tariff and gas price commentary across multiple Memorial Day weekend posts signals political positioning around consumer cost pressures, but carries no cabinet-level weight or cross-referenced economic data to act upon. Multiple posts on same theme apply the 1.3x multiplier but base score remains too low for conviction."
+      "reason": "Small-dollar purchase with no corroborating signals, dark pool activity, or cross-reference data to elevate conviction. Normal news velocity and zero sentiment score suggest routine portfolio activity rather than informed trading.",
+      "scoring_breakdown": "Base 25 — no multipliers triggered"
     },
     {
       "source": "congressional_trade",
@@ -170,9 +180,10 @@
       "trade_type": "buy",
       "amount": "$1,001 - $15,000",
       "date": "2025-06-17",
-      "score": 22,
+      "score": 25,
       "action": "HOLD",
-      "reason": "JPM purchase is a common blue-chip allocation with minimal insider signal value at this small dollar range. No cross-reference indicators or elevated news velocity to differentiate this from routine portfolio management."
+      "reason": "Minor JPM purchase by Fetterman with no supporting dark pool, cross-reference, or social signal overlap. JPM is a heavily traded large-cap making small congressional purchases largely uninformative without additional corroboration.",
+      "scoring_breakdown": "Base 25 — no multipliers triggered"
     }
   ],
   "offshore_matches": [
@@ -569,6 +580,17 @@
       "articles_24h": 0
     },
     {
+      "politician": "Daniel Meuser",
+      "chamber": "House",
+      "ticker": "NVDA",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-24",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
       "politician": "Sara Jacobs",
       "chamber": "House",
       "ticker": "QCOM",
@@ -588,23 +610,12 @@
       "date": "2026-05-07"
     },
     {
-      "politician": "Daniel Meuser",
-      "chamber": "House",
-      "ticker": "NVDA",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-24",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
       "politician": "Josh Gottheimer",
       "chamber": "House",
-      "ticker": "IFNNY",
+      "ticker": "AMD",
       "trade_type": "Purchase",
       "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
+      "date": "2026-04-23",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
       "articles_24h": 0
@@ -615,10 +626,7 @@
       "ticker": "AMD",
       "trade_type": "Purchase",
       "amount": "$1,001 - $15,000",
-      "date": "2026-04-27",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
+      "date": "2026-04-27"
     }
   ],
   "fec_donors": [],
@@ -761,7 +769,7 @@
       "score": 95,
       "action": "BUY",
       "entity": "THE BOEING COMPANY",
-      "narrative": "# CORRUPTION BRIEF: THE BOEING COMPANY / NASA CONTRACT CONCENTRATION\n\n**Boeing Company (BA) holds two NASA contracts totaling approximately $32.9 billion** — one valued at $22.4 billion and a second at $10.5 billion — both exceeding the federal threshold requiring enhanced congressional oversight disclosure under the Federal Acquisition Regulation.\n\n**Boeing maintains active lobbying relationships with members of the Senate Commerce Committee and House Science, Space, and Technology Committee**, the bodies responsible for NASA authorization and appropriations; Federal Election Commission records show Boeing's PAC distributed contributions to members on both committees during the current and prior legislative cycles.\n\n**The Space Launch System (SLS) contract, Boeing's primary NASA vehicle program, has been documented by NASA's Office of Inspector General as experiencing cost overruns exceeding $6 billion** and schedule delays spanning multiple years, yet contract awards and modifications continued without competitive re-bidding, a procurement pattern the GAO flagged in reports dated 2021 and 2023.\n\n**Boeing's pattern of receiving sustained federal contracts despite documented performance failures and OIG findings mirrors prior documented cases** in its defense portfolio — including KC-46 tanker overruns — where congressional intervention to cancel or competitively rebid contracts did not occur, consistent with what government watchdog organizations including POGO and OpenSecrets have characterized as incumbent contractor protection through political contribution networks.\n\n---\n*Sources: NASA OIG, GAO, FEC, FAR, OpenSecrets, POGO public records.*\n*No speculation. All claims document-grounded.*"
+      "narrative": "# CORRUPTION BRIEF: THE BOEING COMPANY (BA)\n\n**Date Flagged:** 2026-05-06 | **Signal Score:** 95/100 | **Trade Type:** BUY\n\n---\n\nNASA awarded Boeing two contracts totaling approximately **$32.9 billion** ($22.4B + $10.5B), representing among the largest aerospace procurement actions in recent agency history, occurring against a backdrop of 31 flagged corruption and social indicators cross-referenced against the company. Boeing has maintained **extensive lobbying relationships** with members of the Senate Commerce Committee and House Appropriations subcommittees that directly oversee NASA funding authorization and appropriations, with documented contributions to relevant oversight members across multiple election cycles per FEC records. ProPublica and Government Accountability Project records document Boeing's history of **cost overruns and performance failures** on prior NASA programs including the Space Launch System, which exceeded original budgets by billions while contractors faced no significant financial penalties under existing contract structures. This pattern — large sole-source or limited-competition awards to Boeing following political contribution cycles, concurrent with active oversight by recipient legislators' committees — is **consistent with documented procurement irregularities** identified in prior Inspector General reports from NASA's Office of Inspector General dating to at least 2014.\n\n---\n\n**Sources to pursue:** NASA USASpending.gov records | FEC contribution database | NASA OIG audit history | Senate Commerce Committee member financial disclosures\n\n*Signal flags institutional buying concurrent with contract announcement — not predictive, factual pattern documentation only.*"
     }
   ],
   "watch_list": [
