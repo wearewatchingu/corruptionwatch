@@ -4,516 +4,353 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CorruptionWatch — We Are Watching</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --red:#cc0000;--red-dim:#880000;--red-glow:rgba(204,0,0,0.15);
+  --bg:#000;--bg2:#050000;--bg3:#080000;
+  --border:#1a0000;--border2:#2a0000;
+  --text:#d0d0d0;--text2:#888;--text3:#444;--text4:#222;
+  --green:#00cc44;--orange:#cc6600;--purple:#8844cc;--blue:#2266cc;
+}
+body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monospace;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,0,0,0.008) 3px,rgba(255,0,0,0.008) 4px);pointer-events:none;z-index:9999;}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* HEADER */
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--border);background:rgba(4,0,0,0.97);position:sticky;top:0;z-index:100;}
+.hdr-left{display:flex;align-items:center;gap:14px;}
+.eye{font-size:32px;animation:blink 5s infinite;}
+@keyframes blink{0%,85%,100%{opacity:1}90%{opacity:0}}
+.logo{font-family:'Orbitron',monospace;font-size:24px;font-weight:900;color:var(--red);letter-spacing:.12em;text-shadow:0 0 30px rgba(204,0,0,.5);}
+.tagline{font-size:11px;color:#440000;letter-spacing:.25em;margin-top:3px;text-transform:uppercase;}
+.hdr-right{text-align:right;}
+.clock{font-family:'Orbitron',monospace;font-size:32px;color:var(--red);letter-spacing:.08em;text-shadow:0 0 12px rgba(204,0,0,.4);}
+.datestamp{font-size:11px;color:var(--text3);margin-top:3px;}
 
-  body {
-    background: #000;
-    color: #d0d0d0;
-    font-family: 'Share Tech Mono', monospace;
-    min-height: 100vh;
-    font-size: 14px;
-  }
+/* TRADINGVIEW */
+.tv-wrap{height:46px;background:var(--bg2);border-bottom:1px solid var(--border);}
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-      0deg, transparent, transparent 3px,
-      rgba(255,0,0,0.012) 3px, rgba(255,0,0,0.012) 4px
-    );
-    pointer-events: none;
-    z-index: 999;
-  }
+/* LIVE BAR */
+.livebar{background:#030000;border-bottom:1px solid var(--border);padding:9px 28px;display:flex;align-items:center;gap:20px;font-size:12px;flex-wrap:wrap;}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.3s infinite;display:inline-block;}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 6px var(--red)}50%{opacity:.3;box-shadow:none}}
+.live-label{color:var(--red);font-weight:700;}
+.lstat{color:var(--text3);}
+.lstat span{color:var(--red);}
 
-  .header {
-    border-bottom: 1px solid #2a0000;
-    padding: 16px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(8,0,0,0.95);
-  }
+/* TABS */
+.tabs{display:flex;border-bottom:1px solid var(--border);background:#020000;padding:0 28px;overflow-x:auto;}
+.tab{padding:13px 18px;font-size:11px;letter-spacing:.1em;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;font-family:'Orbitron',monospace;}
+.tab:hover{color:var(--text2);}
+.tab.active{color:var(--red);border-bottom-color:var(--red);}
 
-  .logo-block { display: flex; align-items: center; gap: 16px; }
+/* CONTENT */
+.content{padding:22px 28px;max-width:1600px;margin:0 auto;}
+.panel{display:none;}
+.panel.active{display:block;}
 
-  .eye { font-size: 36px; animation: blink 4s infinite; }
-  @keyframes blink {
-    0%,88%,100%{opacity:1} 92%{opacity:0}
-  }
+/* GRID */
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px;}
+.g2l{display:grid;grid-template-columns:2fr 1fr;gap:16px;}
 
-  .logo {
-    font-family: 'Orbitron', monospace;
-    font-size: 28px;
-    font-weight: 900;
-    color: #cc0000;
-    letter-spacing: 0.12em;
-    text-shadow: 0 0 30px rgba(204,0,0,0.6);
-  }
+/* METRIC */
+.metric{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:16px;}
+.metric-label{font-size:10px;color:#440000;letter-spacing:.12em;margin-bottom:8px;text-transform:uppercase;}
+.metric-value{font-family:'Orbitron',monospace;font-size:30px;color:var(--red);line-height:1;}
+.metric-sub{font-size:11px;color:var(--text3);margin-top:5px;}
 
-  .tagline {
-    font-size: 13px;
-    color: #550000;
-    letter-spacing: 0.25em;
-    margin-top: 4px;
-    text-transform: uppercase;
-  }
+/* CARD */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:16px;margin-bottom:16px;}
+.card-title{font-size:10px;color:#550000;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);}
 
-  .clock-block { text-align: right; }
+/* SIGNAL ROW */
+.sig-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #0a0000;cursor:pointer;transition:all .15s;}
+.sig-row:last-child{border-bottom:none;}
+.sig-row:hover{background:var(--red-glow);padding-left:6px;}
+.score-box{min-width:44px;height:44px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:14px;font-weight:700;flex-shrink:0;}
+.sh{background:rgba(204,0,0,.12);color:var(--red);border:1px solid var(--red);}
+.sm{background:rgba(180,100,0,.12);color:var(--orange);border:1px solid var(--orange);}
+.sl{background:rgba(0,150,0,.12);color:var(--green);border:1px solid var(--green);}
+.sig-info{flex:1;min-width:0;}
+.sig-ticker{font-size:15px;font-weight:700;color:#eee;letter-spacing:.05em;}
+.sig-entity{font-size:12px;color:var(--text3);margin-top:2px;}
+.sig-reason{font-size:11px;color:#333;margin-top:3px;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.action-badge{font-size:11px;font-weight:700;padding:5px 12px;border-radius:3px;letter-spacing:.08em;flex-shrink:0;align-self:center;}
+.ab-buy{background:rgba(0,150,0,.12);color:var(--green);border:1px solid #00aa33;}
+.ab-sell{background:var(--red-glow);color:var(--red);border:1px solid var(--red);}
+.ab-hold{background:rgba(80,80,80,.1);color:var(--text3);border:1px solid #2a2a2a;}
 
-  .clock {
-    font-family: 'Orbitron', monospace;
-    font-size: 36px;
-    color: #cc0000;
-    letter-spacing: 0.08em;
-    text-shadow: 0 0 15px rgba(204,0,0,0.5);
-  }
+/* OFFSHORE */
+.off-row{padding:13px 0;border-bottom:1px solid #0a0000;}
+.off-row:last-child{border-bottom:none;}
+.off-person{font-size:16px;color:var(--red);font-weight:700;margin-bottom:4px;}
+.off-entity{font-size:13px;color:var(--text2);margin-bottom:3px;}
+.off-score{font-family:'Orbitron',monospace;font-size:12px;color:#550000;margin-bottom:3px;}
+.off-source{font-size:11px;color:var(--text3);}
+.confirmed-badge{background:var(--red-glow);color:var(--red);border:1px solid var(--red);font-size:10px;padding:2px 8px;border-radius:2px;margin-right:8px;letter-spacing:.1em;}
 
-  .date-display { font-size: 12px; color: #555; margin-top: 4px; letter-spacing: 0.05em; }
+/* CORRUPTION INDEX */
+.ci-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #0a0000;cursor:pointer;transition:all .15s;}
+.ci-row:hover{background:var(--red-glow);padding-left:6px;}
+.ci-row:last-child{border-bottom:none;}
+.ci-rank{font-family:'Orbitron',monospace;font-size:12px;color:var(--text3);min-width:28px;}
+.ci-name{flex:1;font-size:13px;color:var(--text);font-weight:600;}
+.ci-bar-wrap{width:120px;}
+.ci-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
+.ci-fill{height:100%;border-radius:2px;}
+.ci-score{font-family:'Orbitron',monospace;font-size:13px;min-width:50px;text-align:right;}
+.ci-quality{font-size:10px;color:var(--text3);min-width:20px;text-align:center;}
 
+/* DOSSIER MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;display:none;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal{background:#060000;border:1px solid var(--border2);border-radius:6px;width:90%;max-width:800px;max-height:85vh;overflow-y:auto;padding:24px;position:relative;}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--red);font-size:20px;cursor:pointer;font-family:'Orbitron',monospace;}
+.modal-name{font-family:'Orbitron',monospace;font-size:20px;color:var(--red);margin-bottom:4px;}
+.modal-role{font-size:12px;color:var(--text3);margin-bottom:16px;}
+.modal-score{font-family:'Orbitron',monospace;font-size:36px;color:var(--red);margin-bottom:6px;}
+.modal-score-label{font-size:11px;color:var(--text3);margin-bottom:16px;}
+.modal-section{margin-bottom:16px;}
+.modal-section-title{font-size:10px;color:#440000;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.modal-item{padding:8px 0;border-bottom:1px solid #0a0000;font-size:12px;color:var(--text2);line-height:1.5;}
+.modal-item:last-child{border-bottom:none;}
+.modal-item strong{color:var(--text);}
+.no-data{font-size:12px;color:var(--text3);padding:12px 0;font-style:italic;}
+.breakdown-item{font-size:12px;color:var(--green);padding:3px 0;}
 
+/* NETWORK */
+.net-wrap{background:#020000;border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:14px;}
+.net-svg{width:100%;height:520px;display:block;}
+.legend{display:flex;gap:20px;flex-wrap:wrap;padding:12px 16px;border-top:1px solid #0a0000;background:#030000;}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text3);}
+.ldot{width:11px;height:11px;border-radius:50%;}
 
-  .live-bar {
-    background: #040000;
-    border-bottom: 1px solid #1a0000;
-    padding: 10px 30px;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    font-size: 13px;
-    flex-wrap: wrap;
-  }
+/* WATCH LIST */
+.search-bar{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:11px 14px;font-family:'Share Tech Mono',monospace;font-size:13px;border-radius:4px;margin-bottom:16px;outline:none;}
+.search-bar:focus{border-color:var(--red);}
+.search-bar::placeholder{color:#2a0000;}
+.filter-row{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.filter-btn{padding:6px 14px;font-size:11px;border:1px solid var(--border);background:var(--bg3);color:var(--text3);border-radius:3px;cursor:pointer;font-family:'Share Tech Mono',monospace;letter-spacing:.05em;}
+.filter-btn.active,.filter-btn:hover{border-color:var(--red);color:var(--red);}
+.person-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.person-card{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:13px;cursor:pointer;transition:all .2s;}
+.person-card:hover{border-color:var(--red);background:var(--bg2);}
+.pc-name{font-size:14px;color:var(--text);font-weight:700;margin-bottom:3px;}
+.pc-role{font-size:11px;color:var(--text3);margin-bottom:8px;line-height:1.4;}
+.pc-score{font-family:'Orbitron',monospace;font-size:12px;margin-bottom:4px;}
+.pc-signal{font-size:11px;color:var(--red);}
+.pc-offshore{font-size:10px;color:var(--orange);margin-top:4px;}
 
-  .live-dot {
-    width: 9px; height: 9px; border-radius: 50%;
-    background: #cc0000;
-    animation: pulse 1.3s infinite;
-    display: inline-block;
-  }
+/* MONEY FLOWS */
+.flow-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #0a0000;font-size:12px;}
+.flow-row:last-child{border-bottom:none;}
+.flow-from{color:var(--text);min-width:150px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.flow-arrow{color:#330000;flex-shrink:0;}
+.flow-to{color:var(--text2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.flow-amount{font-family:'Orbitron',monospace;font-size:11px;color:var(--red);flex-shrink:0;}
 
-  @keyframes pulse {
-    0%,100%{opacity:1;box-shadow:0 0 8px #cc0000}
-    50%{opacity:0.3;box-shadow:none}
-  }
+/* AGENCY */
+.agency-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #0a0000;}
+.agency-row:last-child{border-bottom:none;}
+.agency-name{font-size:13px;color:var(--text);flex:1;font-weight:600;}
+.agency-bar-wrap{width:150px;}
+.agency-bar{height:5px;background:var(--border);border-radius:3px;overflow:hidden;}
+.agency-bar-fill{height:100%;background:var(--red);border-radius:3px;}
+.agency-amount{font-family:'Orbitron',monospace;font-size:11px;color:var(--red);min-width:70px;text-align:right;}
 
-  .live-label { color: #cc0000; font-weight: bold; font-size: 13px; }
-  .live-stat { color: #666; font-size: 13px; }
-  .live-stat span { color: #cc0000; }
+/* ECON */
+.econ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.econ-item{text-align:center;padding:14px;}
+.econ-label{font-size:11px;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em;}
+.econ-value{font-family:'Orbitron',monospace;font-size:22px;color:var(--red);margin-bottom:5px;}
+.econ-change{font-size:12px;}
 
-  .tabs {
-    display: flex;
-    border-bottom: 1px solid #1a0000;
-    background: #030000;
-    padding: 0 30px;
-    overflow-x: auto;
-  }
+/* STORIES */
+.story-block{border-left:3px solid var(--red);padding-left:16px;margin-bottom:20px;}
+.story-header{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.story-ticker{font-family:'Orbitron',monospace;font-size:16px;color:var(--red);}
+.story-score{font-size:12px;color:var(--text3);}
+.story-entity{font-size:13px;color:var(--text2);margin-bottom:8px;}
+.story-text{font-size:13px;color:var(--text2);line-height:1.8;}
+.story-label{font-size:10px;color:#440000;margin-top:8px;font-style:italic;}
 
-  .tab {
-    padding: 14px 22px;
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    color: #444;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    transition: all 0.2s;
-  }
+/* BAR ROW */
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.bar-label{font-size:12px;color:var(--text3);min-width:130px;}
+.bar-track{flex:1;height:4px;background:var(--border);border-radius:2px;}
+.bar-fill-red{height:100%;border-radius:2px;background:var(--red);}
+.bar-val{font-family:'Orbitron',monospace;font-size:12px;color:var(--red);min-width:28px;text-align:right;}
 
-  .tab:hover { color: #888; }
-  .tab.active { color: #cc0000; border-bottom-color: #cc0000; }
+/* ALERT */
+.alert-row{display:flex;align-items:flex-start;gap:12px;padding:11px 12px;background:rgba(204,0,0,.03);border:1px solid #150000;border-radius:4px;margin-bottom:8px;}
+.alert-icon{color:var(--red);font-size:15px;flex-shrink:0;margin-top:1px;}
+.alert-text{flex:1;font-size:12px;color:var(--text2);line-height:1.5;}
+.alert-time{font-size:10px;color:var(--text3);flex-shrink:0;}
 
-  .content { padding: 24px 30px; }
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#000;}
+::-webkit-scrollbar-thumb{background:#1a0000;border-radius:2px;}
+::-webkit-scrollbar-thumb:hover{background:var(--red);}
 
-  .panel { display: none; }
-  .panel.active { display: block; }
+.loading{text-align:center;padding:40px;color:#220000;font-size:13px;letter-spacing:.2em;}
+.empty{text-align:center;padding:20px;color:var(--text3);font-size:12px;}
 
-  .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 22px; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 18px; }
-
-  .metric {
-    background: #070000;
-    border: 1px solid #1a0000;
-    border-radius: 4px;
-    padding: 18px;
-  }
-
-  .metric-label { font-size: 11px; color: #440000; letter-spacing: 0.12em; margin-bottom: 10px; text-transform: uppercase; }
-  .metric-value { font-family: 'Orbitron', monospace; font-size: 32px; color: #cc0000; line-height: 1; }
-  .metric-sub { font-size: 12px; color: #444; margin-top: 6px; }
-
-  .card {
-    background: #040000;
-    border: 1px solid #1a0000;
-    border-radius: 4px;
-    padding: 18px;
-    margin-bottom: 18px;
-  }
-
-  .card-title {
-    font-size: 11px;
-    color: #550000;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #1a0000;
-  }
-
-  .signal-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 12px 0;
-    border-bottom: 1px solid #0d0000;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-
-  .signal-row:last-child { border-bottom: none; }
-  .signal-row:hover { background: rgba(204,0,0,0.04); padding-left: 6px; }
-
-  .score-box {
-    min-width: 46px;
-    height: 46px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Orbitron', monospace;
-    font-size: 15px;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .score-high { background: rgba(204,0,0,0.12); color: #cc0000; border: 1px solid #cc0000; }
-  .score-med { background: rgba(180,100,0,0.12); color: #cc6600; border: 1px solid #cc6600; }
-  .score-low { background: rgba(0,100,0,0.12); color: #00aa44; border: 1px solid #00aa44; }
-
-  .signal-info { flex: 1; min-width: 0; }
-  .signal-ticker { font-size: 16px; font-weight: bold; color: #eee; letter-spacing: 0.05em; }
-  .signal-entity { font-size: 13px; color: #666; margin-top: 3px; }
-  .signal-reason { font-size: 12px; color: #444; margin-top: 4px; line-height: 1.5; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-
-  .action-badge {
-    font-size: 12px;
-    font-weight: bold;
-    padding: 6px 14px;
-    border-radius: 3px;
-    letter-spacing: 0.08em;
-    flex-shrink: 0;
-    align-self: center;
-  }
-
-  .badge-buy { background: rgba(0,150,0,0.12); color: #00cc44; border: 1px solid #00aa33; }
-  .badge-sell { background: rgba(204,0,0,0.12); color: #cc0000; border: 1px solid #cc0000; }
-  .badge-hold { background: rgba(80,80,80,0.1); color: #555; border: 1px solid #2a2a2a; }
-
-  .offshore-row {
-    padding: 14px 0;
-    border-bottom: 1px solid #0d0000;
-  }
-
-  .offshore-row:last-child { border-bottom: none; }
-  .offshore-person { font-size: 16px; color: #cc0000; font-weight: bold; margin-bottom: 4px; }
-  .offshore-entity { font-size: 14px; color: #888; margin-bottom: 4px; }
-  .offshore-score { font-family: 'Orbitron', monospace; font-size: 13px; color: #550000; margin-bottom: 3px; }
-  .offshore-source { font-size: 12px; color: #333; }
-  .offshore-warning { color: #cc0000; margin-right: 6px; }
-
-  .contract-row {
-    padding: 12px 0;
-    border-bottom: 1px solid #0d0000;
-  }
-
-  .contract-row:last-child { border-bottom: none; }
-  .contract-name { font-size: 14px; color: #ddd; font-weight: bold; margin-bottom: 4px; }
-  .contract-amount { font-family: 'Orbitron', monospace; font-size: 16px; color: #cc0000; margin-bottom: 3px; }
-  .contract-agency { font-size: 12px; color: #555; }
-
-  .story-block {
-    border-left: 3px solid #cc0000;
-    padding-left: 18px;
-    margin-bottom: 22px;
-  }
-
-  .story-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-  .story-ticker { font-family: 'Orbitron', monospace; font-size: 18px; color: #cc0000; }
-  .story-score { font-size: 13px; color: #555; }
-  .story-entity { font-size: 14px; color: #777; margin-bottom: 10px; }
-  .story-text { font-size: 14px; color: #888; line-height: 1.8; }
-
-  .social-row {
-    padding: 10px 0;
-    border-bottom: 1px solid #0d0000;
-  }
-
-  .social-row:last-child { border-bottom: none; }
-  .social-person { font-size: 14px; color: #cc0000; font-weight: bold; margin-bottom: 4px; }
-  .social-content { font-size: 13px; color: #666; line-height: 1.5; }
-  .social-keywords { font-size: 11px; color: #333; margin-top: 4px; }
-
-  .network-wrap {
-    background: #020000;
-    border: 1px solid #1a0000;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 16px;
-  }
-
-  .network-svg { width: 100%; height: 500px; display: block; }
-
-  .legend {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    padding: 14px 18px;
-    border-top: 1px solid #0d0000;
-    background: #030000;
-  }
-
-  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #555; }
-  .legend-dot { width: 12px; height: 12px; border-radius: 50%; }
-
-  .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .bar-label { font-size: 13px; color: #555; min-width: 120px; }
-  .bar-track { flex: 1; height: 5px; background: #0d0000; border-radius: 3px; }
-  .bar-fill { height: 100%; border-radius: 3px; background: #cc0000; }
-  .bar-val { font-family: 'Orbitron', monospace; font-size: 13px; color: #cc0000; min-width: 30px; text-align: right; }
-
-  .alert-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 14px;
-    background: rgba(204,0,0,0.03);
-    border: 1px solid #150000;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-
-  .alert-icon { color: #cc0000; font-size: 16px; margin-top: 1px; flex-shrink: 0; }
-  .alert-text { flex: 1; font-size: 13px; color: #888; line-height: 1.5; }
-  .alert-time { font-size: 11px; color: #333; flex-shrink: 0; margin-top: 2px; }
-
-  .search-bar {
-    background: #060000;
-    border: 1px solid #1a0000;
-    color: #d0d0d0;
-    padding: 12px 16px;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 14px;
-    border-radius: 4px;
-    width: 100%;
-    margin-bottom: 18px;
-    outline: none;
-  }
-
-  .search-bar:focus { border-color: #cc0000; }
-  .search-bar::placeholder { color: #2a0000; }
-
-  .person-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-
-  .person-card {
-    background: #060000;
-    border: 1px solid #1a0000;
-    border-radius: 4px;
-    padding: 14px;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .person-card:hover { border-color: #cc0000; background: #080000; }
-  .person-name { font-size: 15px; color: #ddd; font-weight: bold; margin-bottom: 4px; }
-  .person-role { font-size: 12px; color: #444; margin-bottom: 8px; line-height: 1.4; }
-  .person-signal { font-size: 12px; color: #cc0000; }
-
-  .flow-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px solid #0d0000;
-    font-size: 13px;
-  }
-
-  .flow-row:last-child { border-bottom: none; }
-  .flow-from { color: #ddd; min-width: 140px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .flow-arrow { color: #330000; flex-shrink: 0; }
-  .flow-to { color: #666; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .flow-amount { font-family: 'Orbitron', monospace; font-size: 12px; color: #cc0000; flex-shrink: 0; }
-
-  .econ-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .econ-item { text-align: center; padding: 16px; }
-  .econ-label { font-size: 12px; color: #444; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.1em; }
-  .econ-value { font-family: 'Orbitron', monospace; font-size: 24px; color: #cc0000; margin-bottom: 6px; }
-  .econ-change { font-size: 13px; }
-
-  .loading { text-align: center; padding: 50px; color: #220000; font-size: 14px; letter-spacing: 0.2em; }
-
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: #000; }
-  ::-webkit-scrollbar-thumb { background: #1a0000; border-radius: 2px; }
-  ::-webkit-scrollbar-thumb:hover { background: #cc0000; }
+.tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:2px;margin:2px;background:var(--red-glow);color:var(--red);border:1px solid #330000;}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="logo-block">
+<div class="hdr">
+  <div class="hdr-left">
     <div class="eye">👁</div>
     <div>
       <div class="logo">CORRUPTIONWATCH</div>
       <div class="tagline">We Are Watching.</div>
     </div>
   </div>
-  <div class="clock-block">
+  <div class="hdr-right">
     <div class="clock" id="clock">00:00:00</div>
-    <div class="date-display" id="dateDisp"></div>
+    <div class="datestamp" id="datestamp"></div>
   </div>
 </div>
 
-<div class="tradingview-widget-container" style="height:46px;background:#040000;border-bottom:1px solid #1a0000;">
-  <div class="tradingview-widget-container__widget"></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
-    {"proName": "NYSE:BA", "title": "Boeing"},
-    {"proName": "NYSE:GEO", "title": "GEO Group"},
-    {"proName": "NYSE:IEP", "title": "Icahn Ent"},
-    {"proName": "NYSE:XOM", "title": "ExxonMobil"},
-    {"proName": "NASDAQ:PLTR", "title": "Palantir"},
-    {"proName": "NASDAQ:NVDA", "title": "Nvidia"},
-    {"proName": "NYSE:LMT", "title": "Lockheed"},
-    {"proName": "NASDAQ:TSLA", "title": "Tesla"},
-    {"proName": "NYSE:GS", "title": "Goldman"},
-    {"proName": "NYSE:JPM", "title": "JPMorgan"},
-    {"proName": "NYSE:BLK", "title": "BlackRock"},
-    {"proName": "NASDAQ:ORCL", "title": "Oracle"},
-    {"proName": "NASDAQ:MSFT", "title": "Microsoft"},
-    {"proName": "NYSE:RTX", "title": "Raytheon"},
-    {"proName": "NYSE:CXW", "title": "CoreCivic"},
-    {"proName": "NASDAQ:COIN", "title": "Coinbase"},
-    {"proName": "NASDAQ:MSTR", "title": "MicroStrategy"},
-    {"proName": "NYSE:XLE", "title": "Energy ETF"},
-    {"proName": "AMEX:USO", "title": "Oil ETF"},
-    {"proName": "NYSE:DJT", "title": "Trump Media"}
-  ],
-  "showSymbolLogo": true,
-  "isTransparent": true,
-  "displayMode": "adaptive",
-  "colorTheme": "dark",
-  "locale": "en"
-  }
-  </script>
+<div class="tv-wrap">
+  <div class="tradingview-widget-container" style="height:46px;">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols":[
+      {"proName":"NYSE:BA","title":"Boeing"},
+      {"proName":"NYSE:GEO","title":"GEO Group"},
+      {"proName":"NYSE:IEP","title":"Icahn Ent"},
+      {"proName":"NYSE:XOM","title":"ExxonMobil"},
+      {"proName":"NASDAQ:PLTR","title":"Palantir"},
+      {"proName":"NASDAQ:NVDA","title":"Nvidia"},
+      {"proName":"NYSE:LMT","title":"Lockheed"},
+      {"proName":"NASDAQ:TSLA","title":"Tesla"},
+      {"proName":"NYSE:GS","title":"Goldman"},
+      {"proName":"NYSE:JPM","title":"JPMorgan"},
+      {"proName":"NYSE:BLK","title":"BlackRock"},
+      {"proName":"NASDAQ:ORCL","title":"Oracle"},
+      {"proName":"NASDAQ:MSFT","title":"Microsoft"},
+      {"proName":"NYSE:RTX","title":"Raytheon"},
+      {"proName":"NYSE:CXW","title":"CoreCivic"},
+      {"proName":"NASDAQ:COIN","title":"Coinbase"},
+      {"proName":"NASDAQ:MSTR","title":"MicroStrategy"},
+      {"proName":"NYSE:XLE","title":"Energy ETF"},
+      {"proName":"AMEX:USO","title":"Oil ETF"},
+      {"proName":"NYSE:DJT","title":"Trump Media"}
+    ],
+    "showSymbolLogo":true,
+    "isTransparent":true,
+    "displayMode":"adaptive",
+    "colorTheme":"dark",
+    "locale":"en"
+    }
+    </script>
+  </div>
 </div>
 
-<div class="live-bar">
+<div class="livebar">
   <span class="live-dot"></span>
   <span class="live-label">LIVE</span>
-  <span class="live-stat">24 layers active</span>
-  <span class="live-stat">36 people monitored</span>
-  <span class="live-stat">Last run: <span id="lastRun">loading...</span></span>
-  <span class="live-stat">Offshore matches: <span id="offshoreCount">0</span></span>
-  <span class="live-stat">High conviction: <span id="highConvCount">0</span></span>
+  <span class="lstat" id="layersStat">26 layers active</span>
+  <span class="lstat">Monitored: <span id="monitoredCount">--</span></span>
+  <span class="lstat">Last run: <span id="lastRun">loading...</span></span>
+  <span class="lstat">Offshore: <span id="offshoreCount">--</span></span>
+  <span class="lstat">High conviction: <span id="highConv">--</span></span>
+  <span class="lstat">Profiled: <span id="profiledCount">--</span></span>
 </div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchTab('signals')">LIVE SIGNALS</div>
+  <div class="tab" onclick="switchTab('index')">CORRUPTION INDEX</div>
   <div class="tab" onclick="switchTab('offshore')">OFFSHORE PAPERS</div>
   <div class="tab" onclick="switchTab('network')">CORRUPTION WEB</div>
   <div class="tab" onclick="switchTab('watchlist')">WATCH LIST</div>
   <div class="tab" onclick="switchTab('money')">MONEY FLOWS</div>
+  <div class="tab" onclick="switchTab('agencies')">AGENCIES</div>
   <div class="tab" onclick="switchTab('stories')">INTELLIGENCE</div>
 </div>
 
 <div class="content">
 
+  <!-- SIGNALS TAB -->
   <div id="tab-signals" class="panel active">
-    <div class="grid-4">
-      <div class="metric">
-        <div class="metric-label">Top Signal Score</div>
-        <div class="metric-value" id="topScore">--</div>
-        <div class="metric-sub" id="topTicker">loading...</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">High Conviction</div>
-        <div class="metric-value" id="convCount">--</div>
-        <div class="metric-sub">signals above 80</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Offshore Matches</div>
-        <div class="metric-value" id="offMetric">--</div>
-        <div class="metric-sub">paradise + panama papers</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Contracts Flagged</div>
-        <div class="metric-value" id="contractMetric">--</div>
-        <div class="metric-sub">this week</div>
-      </div>
+    <div class="g4" id="metricsRow">
+      <div class="metric"><div class="metric-label">Top Signal</div><div class="metric-value" id="topScore">--</div><div class="metric-sub" id="topTicker">loading...</div></div>
+      <div class="metric"><div class="metric-label">High Conviction</div><div class="metric-value" id="convCount">--</div><div class="metric-sub">signals above 80</div></div>
+      <div class="metric"><div class="metric-label">Offshore Confirmed</div><div class="metric-value" id="offMetric">--</div><div class="metric-sub">exact name matches</div></div>
+      <div class="metric"><div class="metric-label">Contracts Flagged</div><div class="metric-value" id="contractMetric">--</div><div class="metric-sub">this week</div></div>
     </div>
-
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-title">Top Scored Signals</div>
-        <div id="signalsList"><div class="loading">LOADING SIGNALS...</div></div>
+    <div class="g2">
+      <div>
+        <div class="card"><div class="card-title">Top Scored Signals</div><div id="signalsList"><div class="loading">LOADING SIGNALS...</div></div></div>
       </div>
       <div>
-        <div class="card">
-          <div class="card-title">Signal Source Breakdown</div>
-          <div id="sourceBreak"></div>
-        </div>
-        <div class="card">
-          <div class="card-title">Live Alerts</div>
-          <div id="alertsList"></div>
-        </div>
+        <div class="card"><div class="card-title">Signal Source Breakdown</div><div id="sourceBreak"></div></div>
+        <div class="card"><div class="card-title">Live Alerts</div><div id="alertsList"></div></div>
       </div>
     </div>
   </div>
 
+  <!-- CORRUPTION INDEX TAB -->
+  <div id="tab-index" class="panel">
+    <div class="card">
+      <div class="card-title">Corruption Index — All Scored Individuals (click for dossier)</div>
+      <div id="indexList"><div class="loading">BUILDING CORRUPTION INDEX...</div></div>
+    </div>
+  </div>
+
+  <!-- OFFSHORE TAB -->
   <div id="tab-offshore" class="panel">
     <div class="card">
-      <div class="card-title">ICIJ Offshore Papers — Confirmed Matches</div>
-      <div id="offshoreList"><div class="loading">CROSS-REFERENCING PANAMA PAPERS...</div></div>
+      <div class="card-title">ICIJ Offshore Papers — Confirmed Exact Matches Only</div>
+      <div style="font-size:11px;color:#440000;margin-bottom:14px;padding:8px;background:#080000;border-radius:3px;">
+        ⚠ Only matches with score 90+ are shown. Lower scores are excluded as unconfirmed. Inclusion in offshore papers does not indicate illegal activity — it indicates documented offshore financial structures.
+      </div>
+      <div id="offshoreList"><div class="loading">CROSS-REFERENCING PAPERS...</div></div>
     </div>
   </div>
 
+  <!-- NETWORK TAB -->
   <div id="tab-network" class="panel">
-    <div class="network-wrap">
-      <svg class="network-svg" id="netSvg" viewBox="0 0 1000 500"></svg>
-    </div>
+    <div class="net-wrap"><svg class="net-svg" id="netSvg" viewBox="0 0 1000 520"></svg></div>
     <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#cc0000"></div>Politicians</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#cc6600"></div>Companies</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#006600"></div>Agencies</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#660066"></div>Billionaires</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#004466"></div>Foreign</div>
-      <div style="margin-left:auto;font-size:13px;color:#333">Line weight = $ amount — Click nodes to investigate</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--red)"></div>Politicians</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--orange)"></div>Companies</div>
+      <div class="legend-item"><div class="ldot" style="background:#006600"></div>Agencies</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--purple)"></div>Billionaires</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--blue)"></div>Foreign</div>
+      <div style="margin-left:auto;font-size:11px;color:var(--text3)">Line weight = $ amount — Click nodes for dossier</div>
     </div>
   </div>
 
+  <!-- WATCH LIST TAB -->
   <div id="tab-watchlist" class="panel">
-    <input type="text" class="search-bar" placeholder="Search politicians, executives, billionaires..." id="watchSearch" oninput="filterWatch(this.value)">
+    <input type="text" class="search-bar" placeholder="Search by name or role..." id="watchSearch" oninput="filterWatch(this.value)">
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filterByType('all',this)">All</button>
+      <button class="filter-btn" onclick="filterByType('cabinet',this)">Cabinet</button>
+      <button class="filter-btn" onclick="filterByType('congress',this)">Congress</button>
+      <button class="filter-btn" onclick="filterByType('governor',this)">Governors</button>
+      <button class="filter-btn" onclick="filterByType('tech',this)">Tech/AI</button>
+      <button class="filter-btn" onclick="filterByType('finance',this)">Finance</button>
+      <button class="filter-btn" onclick="filterByType('offshore',this)">Offshore ⚠</button>
+    </div>
     <div class="person-grid" id="watchGrid"></div>
   </div>
 
+  <!-- MONEY FLOWS TAB -->
   <div id="tab-money" class="panel">
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-title">Government Contracts</div>
-        <div id="contractsList"></div>
-      </div>
-      <div class="card">
-        <div class="card-title">FEC Donations</div>
-        <div id="donorsList"></div>
-      </div>
-      <div class="card">
-        <div class="card-title">Lobbying Disclosures</div>
-        <div id="lobbyList"></div>
-      </div>
+    <div class="g3">
+      <div class="card"><div class="card-title">Government Contracts</div><div id="contractsList"></div></div>
+      <div class="card"><div class="card-title">FEC Donations</div><div id="donorsList"></div></div>
+      <div class="card"><div class="card-title">Lobbying Disclosures</div><div id="lobbyList"></div></div>
     </div>
     <div class="card">
       <div class="card-title">Economic Indicators</div>
@@ -521,121 +358,118 @@
     </div>
   </div>
 
+  <!-- AGENCIES TAB -->
+  <div id="tab-agencies" class="panel">
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Agency Spending — Top 20 by Budget</div>
+        <div id="agencyList"><div class="loading">LOADING AGENCY DATA...</div></div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="card-title">Key Agency Watch</div>
+          <div id="agencyWatch"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Cross-Reference Findings</div>
+          <div id="crossRefList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORIES TAB -->
   <div id="tab-stories" class="panel">
+    <div style="font-size:11px;color:#440000;margin-bottom:16px;padding:10px;background:#080000;border-radius:3px;">
+      ⚠ The following are AI-generated analysis briefs based on publicly available data. They represent pattern analysis, not established legal findings. All claims are sourced from public records.
+    </div>
     <div id="storiesList"><div class="loading">GENERATING INTELLIGENCE NARRATIVES...</div></div>
   </div>
 
 </div>
 
+<!-- DOSSIER MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
 <script>
 let reportData = null;
-let networkDrawn = false;
+let currentFilter = 'all';
+let allPeople = [];
 
+// Clock
 function updateClock() {
   const n = new Date();
   document.getElementById('clock').textContent = n.toLocaleTimeString('en-US',{hour12:false});
-  document.getElementById('dateDisp').textContent = n.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
+  document.getElementById('datestamp').textContent = n.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
 }
-setInterval(updateClock, 1000);
+setInterval(updateClock,1000);
 updateClock();
 
+// Tab switching
 function switchTab(name) {
-  document.querySelectorAll('.tab').forEach((t,i) => {
-    t.classList.toggle('active', ['signals','offshore','network','watchlist','money','stories'][i] === name);
-  });
+  const names = ['signals','index','offshore','network','watchlist','money','agencies','stories'];
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', names[i]===name));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
-  if (name === 'network') setTimeout(drawNetwork, 150);
+  document.getElementById('tab-'+name).classList.add('active');
+  if (name==='network') setTimeout(drawNetwork,150);
 }
 
+// Utilities
 function fmt(n) {
-  if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
-  if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
-  if (n >= 1e3) return '$' + (n/1e3).toFixed(0) + 'K';
-  return '$' + n;
+  if (!n) return '$0';
+  n = parseFloat(n);
+  if (n>=1e9) return '$'+(n/1e9).toFixed(1)+'B';
+  if (n>=1e6) return '$'+(n/1e6).toFixed(1)+'M';
+  if (n>=1e3) return '$'+(n/1e3).toFixed(0)+'K';
+  return '$'+n;
 }
+function scoreClass(s){return s>=80?'sh':s>=60?'sm':'sl';}
+function actionClass(a){return a==='BUY'?'ab-buy':a==='SELL'?'ab-sell':'ab-hold';}
+function scoreColor(s){return s>=80?'var(--red)':s>=60?'var(--orange)':s>=40?'#cc9900':'var(--green)';}
 
-function scoreClass(s) { return s>=80?'score-high':s>=60?'score-med':'score-low'; }
-function actionClass(a) { return a==='BUY'?'badge-buy':a==='SELL'?'badge-sell':'badge-hold'; }
-
+// Load data
 function loadData() {
-  fetch('latest_report.json?t=' + Date.now())
-    .then(r => r.json())
-    .then(data => { reportData = data; renderAll(data); })
-    .catch(() => { reportData = getSample(); renderAll(getSample()); });
-}
-
-function getSample() {
-  return {
-    timestamp: new Date().toLocaleString(),
-    summary: {total_signals:15,high_conviction:1,layers_active:24,social_monitored:36,offshore_matches:6},
-    top_signals: [
-      {ticker:'BA',score:91,action:'BUY',politician_or_entity:'THE BOEING COMPANY',source:'Contract+CrossRef',reason:'Boeing holds two NASA contracts totaling $32.9B combined. Sole source since 1993 — zero competitive bids in 33 years.'},
-      {ticker:'XOM',score:55,action:'HOLD',politician_or_entity:'Rex Tillerson',source:'ICIJ_OffshorePapers',reason:'Paradise Papers match score 100. Former Secretary of State under Trump.'},
-      {ticker:'IEP',score:50,action:'HOLD',politician_or_entity:'Carl Icahn',source:'ICIJ_OffshorePapers',reason:'Paradise Papers Appleby data. Match score 83.'},
-      {ticker:'LVS',score:45,action:'HOLD',politician_or_entity:'Sheldon Adelson',source:'ICIJ_OffshorePapers',reason:'Paradise Papers + Panama Papers + Bahamas Leaks. Multiple offshore entities.'},
-      {ticker:'ETOR',score:35,action:'SELL',politician_or_entity:'Bernie Moreno',source:'Congressional',reason:'Senate Banking Committee member sold $100K-$250K in eToro stock.'}
-    ],
-    offshore_matches: [
-      {person:'Rex Tillerson',offshore_entity:'Tillerson - Rex',description:'Officer node — Paradise Papers Appleby data',match_score:100},
-      {person:'Michael Cohen',offshore_entity:'MICHAEL COHEN',description:'Officer node — Paradise Papers Malta registry',match_score:100},
-      {person:'Carl Icahn',offshore_entity:'Icahn - Carl C.',description:'Officer node — Paradise Papers Appleby data',match_score:83},
-      {person:'Sheldon Adelson',offshore_entity:'Adelson - Sheldon Gary',description:'Officer node — Paradise Papers Appleby data',match_score:75},
-      {person:'Rupert Murdoch',offshore_entity:'Murdoch - Keith Rupert',description:'Officer node — Paradise Papers Appleby data',match_score:70},
-      {person:'Larry Fink',offshore_entity:'Boyk - Larry',description:'Officer node — Paradise Papers Appleby data',match_score:70}
-    ],
-    contracts: [
-      {recipient:'THE BOEING COMPANY',amount:22428256009,agency:'NASA'},
-      {recipient:'THE BOEING COMPANY',amount:10494204426,agency:'NASA'},
-      {recipient:'SPACE EXPLORATION TECHNOLOGIES',amount:3031624777,agency:'NASA'}
-    ],
-    social_signals: [
-      {person:'Jared Kushner',content:'The President should be lowering costs, not trading stocks.',keywords:['stock']},
-      {person:'Donald Trump Jr',content:'Former Air Force pilot recruited to train China military.',keywords:['china','military']},
-      {person:'Maria Cantwell',content:'Energy monitoring contract secured — 100k contract.',keywords:['energy','contract']},
-      {person:'Jim Cramer',content:'Palantir thinktank pays me to pretend to like their stock.',keywords:['palantir']}
-    ],
-    fec_donors: [
-      {donor:'AMERICAN VALUES PROJECT PAC',amount:200000,recipient:'PROGRESSIVE VET PAC'},
-      {donor:'ANDREW, PHIL',amount:200000,recipient:'PHIL ANDREW FOR CONGRESS'}
-    ],
-    lobbying: [
-      {client:'DIGITALEUROPE',lobbying_firm:'VIVID STRATEGIES LLC',period:'Q2 2026'},
-      {client:'ONE ISRAEL FUND',lobbying_firm:'MERKAVA STRATEGIES',period:'Q1 2026'}
-    ],
-    economic_indicators: [
-      {indicator:'CPI Inflation',current_value:333.02,change_pct:0.85},
-      {indicator:'Unemployment Rate',current_value:4.3,change_pct:0.0},
-      {indicator:'Nonfarm Payrolls',current_value:158736,change_pct:0.07}
-    ],
-    stories: [
-      {ticker:'BA',score:91,entity:'THE BOEING COMPANY',narrative:'NASA awarded The Boeing Company contracts totaling over $32.9 billion. The primary contract, valued at $22.4 billion, has operated as a sole-source arrangement since November 1993 — meaning no competitive bids have been solicited in 33 years. USASpending.gov records confirm "number_of_offers_received: 1" for this contract. Congressional oversight of NASA appropriations falls under the Senate Commerce Committee, whose members have not been cross-referenced against Boeing stock disclosure dates.'}
-    ],
-    watch_list:['Elon Musk','Donald Trump','Jared Kushner','Nancy Pelosi','Pam Bondi','Scott Bessent','Pete Hegseth','RFK Jr','Ted Cruz','Tommy Tuberville','Jeff Bezos','Bill Gates','George Soros','Carl Icahn','Rex Tillerson','Larry Fink','Jamie Dimon','Mark Zuckerberg','Jim Cramer','Maria Cantwell','Rupert Murdoch','Sheldon Adelson']
-  };
+  fetch('latest_report.json?t='+Date.now())
+    .then(r=>r.json())
+    .then(data=>{reportData=data;renderAll(data);})
+    .catch(()=>{renderAll(getSample());});
 }
 
 function renderAll(data) {
-  const signals = data.top_signals || [];
-  const offshore = data.offshore_matches || [];
-  const contracts = data.contracts || [];
+  const signals = data.top_signals||[];
+  const offshore = data.offshore_matches||[];
+  const contracts = data.contracts||[];
+  const profiles = data.person_profiles||{};
+  const index = data.corruption_index||[];
+  const agencies = data.agency_spending||[];
 
-  document.getElementById('lastRun').textContent = data.timestamp || 'Unknown';
+  // Live bar
+  document.getElementById('lastRun').textContent = data.timestamp||'Unknown';
   document.getElementById('offshoreCount').textContent = offshore.length;
-  document.getElementById('highConvCount').textContent = signals.filter(s=>s.score>=80).length;
+  document.getElementById('highConv').textContent = signals.filter(s=>s.score>=80).length;
+  document.getElementById('monitoredCount').textContent = data.summary?.social_monitored||'--';
+  document.getElementById('profiledCount').textContent = data.summary?.people_profiled||Object.keys(profiles).length;
 
-  const top = signals[0] || {};
-  document.getElementById('topScore').textContent = top.score || '--';
-  document.getElementById('topTicker').textContent = (top.ticker||'--') + ' — ' + (top.action||'');
+  // Metrics
+  const top = signals[0]||{};
+  document.getElementById('topScore').textContent = top.score||'--';
+  document.getElementById('topTicker').textContent = (top.ticker||'--')+' — '+(top.action||'');
   document.getElementById('convCount').textContent = signals.filter(s=>s.score>=80).length;
   document.getElementById('offMetric').textContent = offshore.length;
   document.getElementById('contractMetric').textContent = contracts.length;
 
   renderSignals(signals);
   renderOffshore(offshore);
-  renderWatchList(data.watch_list||[]);
+  renderIndex(index, profiles);
+  renderWatchList(profiles, offshore);
   renderContracts(contracts, data.fec_donors||[], data.lobbying||[]);
   renderEconomic(data.economic_indicators||[]);
+  renderAgencies(agencies, data.cross_references||[]);
   renderStories(data.stories||[]);
   renderAlerts(signals, offshore, data.social_signals||[]);
   renderSources(signals);
@@ -643,14 +477,14 @@ function renderAll(data) {
 
 function renderSignals(signals) {
   const el = document.getElementById('signalsList');
-  if (!signals.length) { el.innerHTML = '<div class="loading">NO SIGNALS</div>'; return; }
-  el.innerHTML = signals.slice(0,10).map(s => `
-    <div class="signal-row">
+  if (!signals.length){el.innerHTML='<div class="empty">No signals yet</div>';return;}
+  el.innerHTML = signals.slice(0,12).map(s=>`
+    <div class="sig-row" onclick="openSignalDossier(${JSON.stringify(s).replace(/"/g,'&quot;')})">
       <div class="score-box ${scoreClass(s.score)}">${s.score}</div>
-      <div class="signal-info">
-        <div class="signal-ticker">${s.ticker}</div>
-        <div class="signal-entity">${s.politician_or_entity||''} — ${s.source||''}</div>
-        <div class="signal-reason">${s.reason||''}</div>
+      <div class="sig-info">
+        <div class="sig-ticker">${s.ticker}</div>
+        <div class="sig-entity">${s.politician_or_entity||''} — ${s.source||''}</div>
+        <div class="sig-reason">${s.reason||''}</div>
       </div>
       <div class="action-badge ${actionClass(s.action)}">${s.action}</div>
     </div>
@@ -659,107 +493,231 @@ function renderSignals(signals) {
 
 function renderOffshore(offshore) {
   const el = document.getElementById('offshoreList');
-  if (!offshore.length) { el.innerHTML = '<div class="loading">NO MATCHES ABOVE THRESHOLD</div>'; return; }
-  el.innerHTML = offshore.map(o => `
-    <div class="offshore-row">
-      <div class="offshore-person"><span class="offshore-warning">⚠</span>${o.person}</div>
-      <div class="offshore-entity">${o.offshore_entity}</div>
-      <div class="offshore-score">Match Score: ${Math.round(o.match_score)}/100</div>
-      <div class="offshore-source">${o.description}</div>
+  if (!offshore.length){el.innerHTML='<div class="empty">No confirmed matches above threshold</div>';return;}
+  el.innerHTML = offshore.map(o=>`
+    <div class="off-row">
+      <div class="off-person">
+        <span class="confirmed-badge">${o.confidence||'CONFIRMED'}</span>${o.person}
+      </div>
+      <div class="off-entity">${o.offshore_entity}</div>
+      <div class="off-score">Match Score: ${Math.round(o.match_score)}/100</div>
+      <div class="off-source">${o.description}</div>
     </div>
   `).join('');
 }
 
-const PEOPLE = [
-  {name:'Elon Musk',role:'DOGE / SpaceX / Tesla — $38B govt contracts',signal:'WATCH TSLA LUNR'},
-  {name:'Donald Trump',role:'President / DJT / Crypto empire $11.6B',signal:'WATCH DJT MSTR'},
-  {name:'Jared Kushner',role:'Envoy / $2B Saudi PIF / Qatar investor',signal:'WATCH SPY'},
-  {name:'Nancy Pelosi',role:'House — 16,930% portfolio returns',signal:'FOLLOW ALL TRADES'},
-  {name:'Pam Bondi',role:'AG — sold $1-5M Trump Media on tariff day',signal:'WATCH DJT'},
-  {name:'Scott Bessent',role:'Treasury — knows tariffs before markets',signal:'WATCH SPY'},
-  {name:'Pete Hegseth',role:'Defense — controls $1T budget',signal:'WATCH LMT RTX NOC'},
-  {name:'RFK Jr',role:'HHS — every statement moves pharma stocks',signal:'WATCH PFE MRNA'},
-  {name:'Ted Cruz',role:'Commerce Committee — NASA oversight',signal:'WATCH BA'},
-  {name:'Tommy Tuberville',role:'Armed Services — defense stock trades',signal:'WATCH LMT'},
-  {name:'Rex Tillerson',role:'PARADISE PAPERS SCORE 100 — Appleby data',signal:'WATCH XOM'},
-  {name:'Michael Cohen',role:'PARADISE PAPERS SCORE 100 — Malta registry',signal:'WATCH SPY'},
-  {name:'Carl Icahn',role:'PARADISE PAPERS SCORE 83 — Appleby data',signal:'WATCH IEP'},
-  {name:'Sheldon Adelson',role:'PARADISE+PANAMA+BAHAMAS PAPERS — score 75',signal:'WATCH LVS'},
-  {name:'Rupert Murdoch',role:'PARADISE PAPERS SCORE 70 — Appleby data',signal:'WATCH NWS'},
-  {name:'Jeff Bezos',role:'Amazon / Blue Origin / Washington Post',signal:'WATCH AMZN'},
-  {name:'Larry Fink',role:'BlackRock $10T AUM — Paradise Papers 70',signal:'FOLLOW 13F'},
-  {name:'Jamie Dimon',role:'JPMorgan CEO — most connected banker',signal:'WATCH JPM'},
-  {name:'George Soros',role:'Open Society — SOROS INC in Bahamas Leaks',signal:'FOLLOW 990s'},
-  {name:'Mark Zuckerberg',role:'Meta CEO — FTC antitrust case active',signal:'WATCH META'},
-  {name:'Jim Cramer',role:'CNBC — Palantir thinktank conflict',signal:'WATCH PLTR'},
-  {name:'Maria Cantwell',role:'Commerce Committee — energy contracts',signal:'WATCH XLE'},
+function renderIndex(index, profiles) {
+  const el = document.getElementById('indexList');
+  const data = index.length ? index : Object.values(profiles)
+    .filter(p=>p.corruption_score>0)
+    .sort((a,b)=>b.corruption_score-a.corruption_score);
+
+  if (!data.length){el.innerHTML='<div class="empty">Building index — check back after next run</div>';return;}
+
+  el.innerHTML = data.map((p,i)=>{
+    const score = p.score||p.corruption_score||0;
+    const name = p.name;
+    const quality = p.data_quality||p.quality||'LOW';
+    const color = scoreColor(score);
+    return `
+      <div class="ci-row" onclick="openPersonDossier('${name.replace(/'/g,"\\'")}')">
+        <div class="ci-rank">#${i+1}</div>
+        <div class="ci-name">${name}</div>
+        <div class="ci-bar-wrap">
+          <div class="ci-bar"><div class="ci-fill" style="width:${score}%;background:${color}"></div></div>
+        </div>
+        <div class="ci-score" style="color:${color}">${score}/100</div>
+        <div class="ci-quality">${quality==='HIGH'?'★':'○'}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Watch list people data
+const PEOPLE_DATA = [
+  {name:"Donald Trump",role:"President / DJT / Crypto empire",type:"cabinet",signal:"WATCH DJT MSTR"},
+  {name:"Jared Kushner",role:"Envoy / $2B Saudi PIF investor",type:"cabinet",signal:"WATCH SPY"},
+  {name:"Pam Bondi",role:"Attorney General — sold DJT on tariff day",type:"cabinet",signal:"WATCH DJT"},
+  {name:"Scott Bessent",role:"Treasury Secretary — knows tariffs before markets",type:"cabinet",signal:"WATCH SPY BONDS"},
+  {name:"Pete Hegseth",role:"Defense Secretary — controls $1T budget",type:"cabinet",signal:"WATCH LMT RTX NOC"},
+  {name:"Howard Lutnick",role:"Commerce Secretary — PARADISE PAPERS CONFIRMED",type:"cabinet",signal:"WATCH BGC",offshore:true},
+  {name:"Marco Rubio",role:"Secretary of State — foreign policy = market moves",type:"cabinet",signal:"WATCH USO FXI"},
+  {name:"Chris Wright",role:"Energy Secretary — former Liberty Energy CEO",type:"cabinet",signal:"WATCH XLE CVX"},
+  {name:"Doug Burgum",role:"Interior Secretary — controls public land energy",type:"cabinet",signal:"WATCH XOM COP"},
+  {name:"RFK Jr",role:"HHS Secretary — every statement moves pharma",type:"cabinet",signal:"WATCH PFE MRNA"},
+  {name:"Tulsi Gabbard",role:"Dir. National Intelligence — security clearances",type:"cabinet",signal:"WATCH PLTR"},
+  {name:"Nancy Pelosi",role:"House — 16,930% portfolio returns documented",type:"congress",signal:"FOLLOW ALL TRADES"},
+  {name:"Alexandria Ocasio-Cortez",role:"House Financial Services Committee",type:"congress",signal:"FOLLOW TRADES"},
+  {name:"Bernie Sanders",role:"Senate HELP Committee — healthcare policy",type:"congress",signal:"WATCH PFE MRK"},
+  {name:"Rand Paul",role:"Senate — foreign aid critic, defense votes",type:"congress",signal:"WATCH LMT"},
+  {name:"Ted Cruz",role:"Senate Commerce — NASA oversight, Boeing",type:"congress",signal:"WATCH BA"},
+  {name:"Josh Hawley",role:"Senate — tech antitrust, China hawk",type:"congress",signal:"WATCH META GOOGL FXI"},
+  {name:"Tommy Tuberville",role:"Armed Services — documented defense trades",type:"congress",signal:"WATCH LMT RTX"},
+  {name:"Maria Cantwell",role:"Commerce — energy and tech contracts",type:"congress",signal:"WATCH XLE MSFT"},
+  {name:"Mitch McConnell",role:"Senate — decades of influence on contracts",type:"congress",signal:"FOLLOW TRADES"},
+  {name:"Mitt Romney",role:"Senate Finance — investment connections",type:"congress",signal:"FOLLOW TRADES"},
+  {name:"John Boozman",role:"Agriculture/Appropriations — active trader",type:"congress",signal:"WATCH DTE IEF"},
+  {name:"Gary Peters",role:"Homeland Security Committee — DHS contracts",type:"congress",signal:"WATCH GEO CXW"},
+  {name:"John Fetterman",role:"Banking Committee — financial sector votes",type:"congress",signal:"WATCH JPM GS"},
+  {name:"Josh Gottheimer",role:"Intelligence & Financial Services — active trader",type:"congress",signal:"WATCH SPY"},
+  {name:"Dan Crenshaw",role:"Intelligence Committee — defense contracts",type:"congress",signal:"WATCH LMT PLTR"},
+  {name:"Dan Meuser",role:"House Financial Services — banking votes",type:"congress",signal:"WATCH JPM"},
+  {name:"Gavin Newsom",role:"California Governor — tech regulation",type:"governor",signal:"WATCH META GOOGL AAPL"},
+  {name:"Ron DeSantis",role:"Florida Governor — financial deregulation",type:"governor",signal:"WATCH GS JPM"},
+  {name:"Greg Abbott",role:"Texas Governor — energy and border policy",type:"governor",signal:"WATCH XLE GEO"},
+  {name:"Gretchen Whitmer",role:"Michigan Governor — EV and auto policy",type:"governor",signal:"WATCH TSLA GM F"},
+  {name:"JB Pritzker",role:"Illinois Governor — financial sector ties",type:"governor",signal:"WATCH CME"},
+  {name:"Abigail Spanberger",role:"Virginia Governor — data center corridor",type:"governor",signal:"WATCH EQIX DLR"},
+  {name:"Elon Musk",role:"DOGE / SpaceX $38B contracts / Tesla / X",type:"tech",signal:"WATCH TSLA LUNR DOGE"},
+  {name:"Sam Altman",role:"OpenAI CEO — Stargate $500B AI infrastructure",type:"tech",signal:"WATCH MSFT ORCL NVDA"},
+  {name:"Jensen Huang",role:"Nvidia CEO — every AI data center needs GPUs",type:"tech",signal:"WATCH NVDA AMD"},
+  {name:"Satya Nadella",role:"Microsoft CEO — Stargate partner, govt cloud",type:"tech",signal:"WATCH MSFT"},
+  {name:"Larry Ellison",role:"Oracle CEO — Stargate partner, govt contracts",type:"tech",signal:"WATCH ORCL"},
+  {name:"Mark Zuckerberg",role:"Meta CEO — $65B data center investment",type:"tech",signal:"WATCH META"},
+  {name:"Sundar Pichai",role:"Google CEO — AI infrastructure, cloud contracts",type:"tech",signal:"WATCH GOOGL"},
+  {name:"Bill Gates",role:"Gates Foundation $70B — vaccine policy influence",type:"finance",signal:"FOLLOW 990s"},
+  {name:"Jeff Bezos",role:"Amazon / AWS dominates govt cloud contracts",type:"finance",signal:"WATCH AMZN"},
+  {name:"George Soros",role:"Open Society — SOROS INC in Bahamas Leaks",type:"finance",signal:"FOLLOW 990s"},
+  {name:"Larry Fink",role:"BlackRock $10T — pension fund redirection",type:"finance",signal:"WATCH BLK"},
+  {name:"Jamie Dimon",role:"JPMorgan CEO — most connected banker",type:"finance",signal:"WATCH JPM"},
+  {name:"Carl Icahn",role:"PARADISE PAPERS CONFIRMED score 83",type:"finance",signal:"WATCH IEP",offshore:true},
+  {name:"Rex Tillerson",role:"PARADISE PAPERS CONFIRMED score 100 — Appleby",type:"finance",signal:"WATCH XOM",offshore:true},
+  {name:"Bill Ackman",role:"Pershing Square — activist investor",type:"finance",signal:"FOLLOW 13F"},
+  {name:"Ray Dalio",role:"Bridgewater — largest hedge fund",type:"finance",signal:"FOLLOW 13F"},
+  {name:"Jim Cramer",role:"CNBC — documented Palantir conflict",type:"finance",signal:"WATCH PLTR"},
+  {name:"Brian Armstrong",role:"Coinbase CEO — crypto regulation directly affects",type:"tech",signal:"WATCH COIN"},
+  {name:"Michael Saylor",role:"MicroStrategy — Bitcoin proxy for political crypto",type:"tech",signal:"WATCH MSTR BTC"},
 ];
 
-window.ALL_PEOPLE = PEOPLE;
+window.ALL_PEOPLE = PEOPLE_DATA;
 
-function renderWatchList(watchList) {
-  renderPeopleGrid(PEOPLE);
+function renderWatchList(profiles, offshore) {
+  const offshoreNames = offshore.map(o=>o.person);
+  allPeople = PEOPLE_DATA.map(p => ({
+    ...p,
+    score: profiles[p.name]?.corruption_score||0,
+    trades: profiles[p.name]?.trades||[],
+    posts: profiles[p.name]?.recent_posts||[],
+    offshore_confirmed: offshoreNames.includes(p.name)||p.offshore
+  }));
+  renderPeopleGrid(allPeople);
 }
 
 function renderPeopleGrid(people) {
-  document.getElementById('watchGrid').innerHTML = people.map(p => `
-    <div class="person-card">
-      <div class="person-name">${p.name}</div>
-      <div class="person-role">${p.role}</div>
-      <div class="person-signal">${p.signal}</div>
-    </div>
-  `).join('');
+  document.getElementById('watchGrid').innerHTML = people.map(p => {
+    const color = scoreColor(p.score||0);
+    return `
+      <div class="person-card" onclick="openPersonDossier('${p.name.replace(/'/g,"\\'")}')">
+        <div class="pc-name">${p.name}</div>
+        <div class="pc-role">${p.role}</div>
+        <div class="pc-score" style="color:${color}">Score: ${p.score||0}/100</div>
+        <div class="pc-signal">${p.signal}</div>
+        ${p.offshore_confirmed?'<div class="pc-offshore">⚠ OFFSHORE PAPERS MATCH</div>':''}
+      </div>
+    `;
+  }).join('');
 }
 
 function filterWatch(val) {
   const v = val.toLowerCase();
-  renderPeopleGrid((window.ALL_PEOPLE||[]).filter(p =>
-    p.name.toLowerCase().includes(v) || p.role.toLowerCase().includes(v)
-  ));
+  const filtered = allPeople.filter(p=>
+    p.name.toLowerCase().includes(v)||p.role.toLowerCase().includes(v)
+  );
+  renderPeopleGrid(filtered);
+}
+
+function filterByType(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = type;
+  let filtered = allPeople;
+  if (type==='offshore') filtered = allPeople.filter(p=>p.offshore_confirmed);
+  else if (type!=='all') filtered = allPeople.filter(p=>p.type===type);
+  renderPeopleGrid(filtered);
 }
 
 function renderContracts(contracts, donors, lobbying) {
-  document.getElementById('contractsList').innerHTML = contracts.slice(0,5).map(c => `
-    <div class="contract-row">
-      <div class="contract-name">${c.recipient}</div>
-      <div class="contract-amount">${fmt(c.amount)}</div>
-      <div class="contract-agency">${c.agency}</div>
+  document.getElementById('contractsList').innerHTML = contracts.slice(0,8).map(c=>`
+    <div class="flow-row">
+      <div class="flow-from" style="min-width:120px">${(c.recipient||'').slice(0,22)}</div>
+      <div class="flow-arrow">←</div>
+      <div class="flow-to">${(c.agency||'').slice(0,25)}</div>
+      <div class="flow-amount">${fmt(c.amount)}</div>
     </div>
-  `).join('') || '<div class="loading" style="padding:20px">No contracts</div>';
+  `).join('')||'<div class="empty">No contracts</div>';
 
-  document.getElementById('donorsList').innerHTML = donors.slice(0,5).map(d => `
+  document.getElementById('donorsList').innerHTML = donors.slice(0,8).map(d=>`
     <div class="flow-row">
       <div class="flow-from">${(d.donor||'').slice(0,22)}</div>
       <div class="flow-arrow">→</div>
       <div class="flow-to">${(d.recipient||'').slice(0,22)}</div>
       <div class="flow-amount">${fmt(d.amount||0)}</div>
     </div>
-  `).join('') || '<div class="loading" style="padding:20px">No donations</div>';
+  `).join('')||'<div class="empty">No donations</div>';
 
-  document.getElementById('lobbyList').innerHTML = lobbying.slice(0,5).map(l => `
+  document.getElementById('lobbyList').innerHTML = lobbying.slice(0,8).map(l=>`
     <div class="flow-row">
       <div class="flow-from">${(l.client||'').slice(0,22)}</div>
       <div class="flow-arrow">→</div>
       <div class="flow-to">${(l.lobbying_firm||'').slice(0,22)}</div>
-      <div class="flow-amount" style="font-size:11px;font-family:inherit">${l.period||''}</div>
+      <div class="flow-amount" style="font-size:10px;font-family:inherit">${l.period||''}</div>
     </div>
-  `).join('') || '<div class="loading" style="padding:20px">No lobbying data</div>';
+  `).join('')||'<div class="empty">No lobbying data</div>';
 }
 
 function renderEconomic(indicators) {
-  document.getElementById('econData').innerHTML = indicators.map(i => `
+  document.getElementById('econData').innerHTML = indicators.map(i=>`
     <div class="econ-item">
       <div class="econ-label">${i.indicator}</div>
-      <div class="econ-value">${typeof i.current_value === 'number' ? i.current_value.toLocaleString() : i.current_value}</div>
-      <div class="econ-change" style="color:${(i.change_pct||0)>=0?'#00cc44':'#cc0000'}">${(i.change_pct||0)>=0?'+':''}${i.change_pct}%</div>
+      <div class="econ-value">${typeof i.current_value==='number'?i.current_value.toLocaleString():i.current_value||'N/A'}</div>
+      <div class="econ-change" style="color:${(i.change_pct||0)>=0?'var(--green)':'var(--red)'}">${(i.change_pct||0)>=0?'+':''}${i.change_pct||0}%</div>
     </div>
   `).join('');
 }
 
+function renderAgencies(agencies, crossRefs) {
+  const el = document.getElementById('agencyList');
+  if (!agencies.length){el.innerHTML='<div class="empty">Agency data loading...</div>';return;}
+  const maxBudget = Math.max(...agencies.map(a=>a.budget||0),1);
+  el.innerHTML = agencies.slice(0,20).map(a=>`
+    <div class="agency-row">
+      <div class="agency-name">${(a.agency||'Unknown').slice(0,35)}</div>
+      <div class="agency-bar-wrap">
+        <div class="agency-bar">
+          <div class="agency-bar-fill" style="width:${Math.round((a.budget||0)/maxBudget*100)}%"></div>
+        </div>
+      </div>
+      <div class="agency-amount">${fmt(a.budget||a.obligated||0)}</div>
+    </div>
+  `).join('');
+
+  const keyAgencies = [
+    {name:'NASA',note:'Boeing $32.9B sole source — SpaceX Musk conflict'},
+    {name:'DHS/ICE',note:'GEO Group $2.1B — CoreCivic detention contracts'},
+    {name:'DOD',note:'$35T unaccounted — 7 consecutive failed audits'},
+    {name:'DOE',note:'Bechtel $17.2B — nuclear infrastructure contracts'},
+    {name:'USAID',note:'Dissolved by DOGE — contractor fraud documented'},
+  ];
+  document.getElementById('agencyWatch').innerHTML = keyAgencies.map(a=>`
+    <div class="flow-row">
+      <div class="flow-from" style="min-width:80px;color:var(--red)">${a.name}</div>
+      <div class="flow-to" style="font-size:11px">${a.note}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('crossRefList').innerHTML = crossRefs.slice(0,5).map(c=>`
+    <div class="flow-row">
+      <div class="flow-from">${(c.contract_recipient||'').slice(0,20)}</div>
+      <div class="flow-to" style="font-size:11px">${c.corruption_indicators||0} indicators · ${c.social_mentions||0} social</div>
+      <div class="flow-amount">${fmt(c.contract_amount||0)}</div>
+    </div>
+  `).join('')||'<div class="empty">No cross-references</div>';
+}
+
 function renderStories(stories) {
   const el = document.getElementById('storiesList');
-  if (!stories.length) { el.innerHTML = '<div class="loading">NO HIGH CONVICTION SIGNALS FOR NARRATIVE GENERATION</div>'; return; }
-  el.innerHTML = stories.map(s => `
+  if (!stories.length){el.innerHTML='<div class="empty">No high conviction signals for narrative generation this run</div>';return;}
+  el.innerHTML = stories.map(s=>`
     <div class="story-block">
       <div class="story-header">
         <div class="story-ticker">${s.ticker}</div>
@@ -767,22 +725,17 @@ function renderStories(stories) {
       </div>
       <div class="story-entity">${s.entity}</div>
       <div class="story-text">${s.narrative}</div>
+      <div class="story-label">AI Analysis — based on public records — not legal findings</div>
     </div>
   `).join('');
 }
 
 function renderAlerts(signals, offshore, social) {
   const alerts = [];
-  offshore.slice(0,2).forEach(o => alerts.push({
-    icon:'⚠', text:`${o.person} found in Paradise Papers — match score ${Math.round(o.match_score)}/100`, time:'today'
-  }));
-  signals.filter(s=>s.score>=80).slice(0,2).forEach(s => alerts.push({
-    icon:'▲', text:`${s.ticker} scored ${s.score}/100 — ${s.action} — ${s.source}`, time:'today'
-  }));
-  social.slice(0,2).forEach(s => alerts.push({
-    icon:'●', text:`${s.person}: ${(s.content||'').slice(0,80)}`, time:'today'
-  }));
-  document.getElementById('alertsList').innerHTML = alerts.slice(0,5).map(a => `
+  offshore.forEach(o=>alerts.push({icon:'⚠',text:`${o.person} confirmed in Paradise Papers — match score ${Math.round(o.match_score)}/100`,time:'today'}));
+  signals.filter(s=>s.score>=80).forEach(s=>alerts.push({icon:'▲',text:`${s.ticker} scored ${s.score}/100 — ${s.action} — ${s.source}`,time:'today'}));
+  social.slice(0,3).forEach(s=>alerts.push({icon:'●',text:`${s.person}: ${(s.content||'').slice(0,80)}`,time:'today'}));
+  document.getElementById('alertsList').innerHTML = alerts.slice(0,6).map(a=>`
     <div class="alert-row">
       <div class="alert-icon">${a.icon}</div>
       <div class="alert-text">${a.text}</div>
@@ -793,143 +746,278 @@ function renderAlerts(signals, offshore, social) {
 
 function renderSources(signals) {
   const sources = {};
-  signals.forEach(s => {
-    const src = (s.source||'unknown').split('+')[0].trim().slice(0,16);
-    sources[src] = (sources[src]||0) + 1;
-  });
-  const max = Math.max(...Object.values(sources), 1);
-  document.getElementById('sourceBreak').innerHTML = Object.entries(sources).map(([src,count]) => `
+  signals.forEach(s=>{const src=(s.source||'unknown').split('+')[0].trim().slice(0,18);sources[src]=(sources[src]||0)+1;});
+  const max = Math.max(...Object.values(sources),1);
+  document.getElementById('sourceBreak').innerHTML = Object.entries(sources).map(([src,count])=>`
     <div class="bar-row">
       <div class="bar-label">${src}</div>
-      <div class="bar-track"><div class="bar-fill" style="width:${count/max*100}%"></div></div>
+      <div class="bar-track"><div class="bar-fill-red" style="width:${count/max*100}%"></div></div>
       <div class="bar-val">${count}</div>
     </div>
   `).join('');
 }
 
+// DOSSIER MODAL
+function openPersonDossier(name) {
+  const person = allPeople.find(p=>p.name===name);
+  const profiles = reportData?.person_profiles||{};
+  const profile = profiles[name]||{};
+  const offshore = (reportData?.offshore_matches||[]).filter(o=>o.person===name);
+  const score = profile.corruption_score||person?.score||0;
+  const color = scoreColor(score);
 
+  let html = `
+    <div class="modal-name">${name}</div>
+    <div class="modal-role">${person?.role||'Watch list member'}</div>
+    <div class="modal-score" style="color:${color}">${score}</div>
+    <div class="modal-score-label">/ 100 Corruption Index Score</div>
+  `;
+
+  if (profile.score_breakdown?.length) {
+    html += `<div class="modal-section"><div class="modal-section-title">Score Breakdown</div>`;
+    profile.score_breakdown.forEach(b=>{html+=`<div class="breakdown-item">+ ${b}</div>`;});
+    html += `</div>`;
+  }
+
+  if (offshore.length) {
+    html += `<div class="modal-section"><div class="modal-section-title">⚠ Offshore Paper Matches</div>`;
+    offshore.forEach(o=>{
+      html += `<div class="modal-item"><strong>${o.offshore_entity}</strong><br>${o.description}<br>Match Score: ${Math.round(o.match_score)}/100 — ${o.confidence||'CONFIRMED'}</div>`;
+    });
+    html += `</div>`;
+  }
+
+  const trades = profile.trades||[];
+  if (trades.length) {
+    html += `<div class="modal-section"><div class="modal-section-title">Congressional Trades (${trades.length})</div>`;
+    trades.slice(0,5).forEach(t=>{
+      html += `<div class="modal-item"><strong>${t.ticker}</strong> — ${t.trade_type} — ${t.amount} — ${t.date}</div>`;
+    });
+    html += `</div>`;
+  } else {
+    html += `<div class="modal-section"><div class="modal-section-title">Congressional Trades</div><div class="no-data">No trades found in current data window</div></div>`;
+  }
+
+  const posts = profile.recent_posts||[];
+  if (posts.length) {
+    html += `<div class="modal-section"><div class="modal-section-title">Recent Posts Flagged (${posts.length})</div>`;
+    posts.slice(0,3).forEach(p=>{
+      html += `<div class="modal-item">${(p.content||'').slice(0,120)}<br><span style="color:var(--text3);font-size:10px">Keywords: ${(p.keywords||[]).join(', ')} → ${p.suggested_ticker}</span></div>`;
+    });
+    html += `</div>`;
+  }
+
+  const sigs = profile.market_signals||[];
+  if (sigs.length) {
+    html += `<div class="modal-section"><div class="modal-section-title">Market Signals</div>`;
+    sigs.slice(0,3).forEach(s=>{
+      html += `<div class="modal-item"><strong>${s.ticker}</strong> — ${s.score}/100 — ${s.action}<br><span style="font-size:11px;color:var(--text3)">${(s.reason||'').slice(0,100)}</span></div>`;
+    });
+    html += `</div>`;
+  }
+
+  html += `<div class="modal-section"><div class="modal-section-title">Data Quality</div><div class="modal-item">${profile.data_quality==='HIGH'?'★ HIGH — documented trades or confirmed offshore matches present':'○ LOW — currently monitoring, limited data collected. Scores will build over time.'}</div></div>`;
+
+  document.getElementById('modalBody').innerHTML = html;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function openSignalDossier(signal) {
+  const color = scoreColor(signal.score||0);
+  let html = `
+    <div class="modal-name">${signal.ticker}</div>
+    <div class="modal-role">${signal.politician_or_entity||''} — ${signal.source||''}</div>
+    <div class="modal-score" style="color:${color}">${signal.score}</div>
+    <div class="modal-score-label">/ 100 Signal Score — ${signal.action}</div>
+    <div class="modal-section">
+      <div class="modal-section-title">Analysis</div>
+      <div class="modal-item">${signal.reason||''}</div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Signal Details</div>
+      <div class="modal-item"><strong>Source:</strong> ${signal.source||'Unknown'}</div>
+      <div class="modal-item"><strong>Trade Type:</strong> ${signal.trade_type||'Unknown'}</div>
+      <div class="modal-item"><strong>Amount:</strong> ${signal.amount||'Unknown'}</div>
+      <div class="modal-item"><strong>Date:</strong> ${signal.date||'Unknown'}</div>
+    </div>
+    <div class="modal-item" style="margin-top:12px;font-size:10px;color:#440000">AI-generated analysis based on public records. Not a trading recommendation.</div>
+  `;
+  document.getElementById('modalBody').innerHTML = html;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal(e) {
+  if (!e||e.target===document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+}
+
+// CORRUPTION WEB NETWORK
 function drawNetwork() {
   const svg = document.getElementById('netSvg');
   svg.innerHTML = '';
 
+  const offshore = reportData?.offshore_matches||[];
+  const contracts = reportData?.contracts||[];
+
   const nodes = [
-    {id:'Boeing',x:500,y:230,r:32,color:'#cc6600',label:'Boeing',sub:'$32.9B NASA'},
-    {id:'NASA',x:360,y:120,r:26,color:'#006600',label:'NASA',sub:'Agency'},
+    {id:'Boeing',x:500,y:240,r:30,color:'#cc6600',label:'Boeing',sub:'$32.9B NASA'},
+    {id:'NASA',x:360,y:120,r:24,color:'#006600',label:'NASA',sub:'Agency'},
     {id:'SpaceX',x:640,y:120,r:22,color:'#cc6600',label:'SpaceX',sub:'$3B NASA'},
-    {id:'Musk',x:760,y:60,r:20,color:'#660066',label:'E. Musk',sub:'DOGE'},
-    {id:'Pelosi',x:160,y:200,r:22,color:'#cc0000',label:'Pelosi',sub:'16,930%'},
+    {id:'Musk',x:760,y:60,r:20,color:'#8844cc',label:'E. Musk',sub:'DOGE+SpaceX'},
+    {id:'DOGE',x:860,y:150,r:16,color:'#cc6600',label:'DOGE',sub:'Cuts budgets'},
+    {id:'Pelosi',x:150,y:200,r:22,color:'#cc0000',label:'Pelosi',sub:'16,930%'},
     {id:'Kushner',x:660,y:340,r:22,color:'#cc0000',label:'Kushner',sub:'$2B Saudi'},
-    {id:'Saudi',x:800,y:400,r:20,color:'#004466',label:'Saudi PIF',sub:'$700B'},
-    {id:'Tillerson',x:100,y:350,r:18,color:'#660066',label:'Tillerson',sub:'Papers 100'},
-    {id:'Icahn',x:880,y:220,r:18,color:'#660066',label:'Icahn',sub:'Papers 83'},
-    {id:'Cohen',x:100,y:100,r:16,color:'#cc0000',label:'M. Cohen',sub:'Papers 100'},
-    {id:'GEO',x:300,y:380,r:18,color:'#cc6600',label:'GEO Group',sub:'$2.1B ICE'},
-    {id:'ICE',x:180,y:420,r:16,color:'#006600',label:'ICE/DHS',sub:'Agency'},
-    {id:'Adelson',x:880,y:100,r:16,color:'#660066',label:'Adelson',sub:'Papers 75'},
-    {id:'Murdoch',x:500,y:60,r:16,color:'#660066',label:'Murdoch',sub:'Papers 70'},
-    {id:'Cruz',x:240,y:120,r:16,color:'#cc0000',label:'Ted Cruz',sub:'NASA commit.'},
+    {id:'Saudi',x:800,y:400,r:20,color:'#2266cc',label:'Saudi PIF',sub:'$700B fund'},
+    {id:'Tillerson',x:100,y:350,r:18,color:'#8844cc',label:'Tillerson',sub:'Papers 100'},
+    {id:'Icahn',x:900,y:280,r:18,color:'#8844cc',label:'Icahn',sub:'Papers 83'},
+    {id:'Cohen',x:100,y:120,r:16,color:'#cc0000',label:'M.Cohen',sub:'Papers 100'},
+    {id:'Lutnick',x:250,y:380,r:18,color:'#cc0000',label:'Lutnick',sub:'Papers 100'},
+    {id:'GEO',x:320,y:400,r:18,color:'#cc6600',label:'GEO Group',sub:'$2.1B ICE'},
+    {id:'ICE',x:200,y:450,r:14,color:'#006600',label:'ICE/DHS',sub:'Agency'},
+    {id:'BlackRock',x:500,y:420,r:20,color:'#8844cc',label:'BlackRock',sub:'$10T pensions'},
+    {id:'Cruz',x:240,y:130,r:16,color:'#cc0000',label:'Ted Cruz',sub:'NASA commit.'},
+    {id:'Bechtel',x:680,y:220,r:16,color:'#cc6600',label:'Bechtel',sub:'$17.2B DOE'},
+    {id:'DOE',x:820,y:180,r:14,color:'#006600',label:'DOE',sub:'Energy agency'},
   ];
 
   const edges = [
     {from:'NASA',to:'Boeing',w:6,color:'#cc6600'},
     {from:'NASA',to:'SpaceX',w:4,color:'#cc6600'},
-    {from:'Musk',to:'SpaceX',w:3,color:'#660066'},
+    {from:'Musk',to:'SpaceX',w:3,color:'#8844cc'},
+    {from:'Musk',to:'DOGE',w:2,color:'#8844cc'},
+    {from:'DOGE',to:'NASA',w:1,color:'#cc0000',dash:'5,3'},
     {from:'Kushner',to:'Saudi',w:4,color:'#cc0000'},
     {from:'ICE',to:'GEO',w:4,color:'#006600'},
+    {from:'Lutnick',to:'Boeing',w:1,color:'#8844cc',dash:'4,3'},
+    {from:'Tillerson',to:'Boeing',w:1,color:'#8844cc',dash:'4,3'},
     {from:'Cruz',to:'NASA',w:2,color:'#cc0000',dash:'5,3'},
-    {from:'Tillerson',to:'Boeing',w:1,color:'#660066',dash:'4,3'},
     {from:'Cohen',to:'Kushner',w:1,color:'#cc0000',dash:'4,3'},
-    {from:'Icahn',to:'Musk',w:1,color:'#660066',dash:'4,3'},
-    {from:'Murdoch',to:'Musk',w:1,color:'#660066',dash:'4,3'},
+    {from:'BlackRock',to:'Boeing',w:2,color:'#8844cc',dash:'4,3'},
+    {from:'DOE',to:'Bechtel',w:3,color:'#006600'},
+    {from:'Icahn',to:'Musk',w:1,color:'#8844cc',dash:'4,3'},
   ];
 
   const nMap = {};
-  nodes.forEach(n => nMap[n.id] = n);
+  nodes.forEach(n=>nMap[n.id]=n);
 
   const defs = document.createElementNS('http://www.w3.org/2000/svg','defs');
-  nodes.forEach(n => {
+  nodes.forEach(n=>{
     const grad = document.createElementNS('http://www.w3.org/2000/svg','radialGradient');
-    grad.setAttribute('id', 'g'+n.id);
+    grad.setAttribute('id','g'+n.id);
     const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop');
-    s1.setAttribute('offset','0%');
-    s1.setAttribute('stop-color', n.color);
-    s1.setAttribute('stop-opacity','0.3');
+    s1.setAttribute('offset','0%');s1.setAttribute('stop-color',n.color);s1.setAttribute('stop-opacity','0.3');
     const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop');
-    s2.setAttribute('offset','100%');
-    s2.setAttribute('stop-color', n.color);
-    s2.setAttribute('stop-opacity','0.05');
-    grad.appendChild(s1);
-    grad.appendChild(s2);
-    defs.appendChild(grad);
+    s2.setAttribute('offset','100%');s2.setAttribute('stop-color',n.color);s2.setAttribute('stop-opacity','0.05');
+    grad.appendChild(s1);grad.appendChild(s2);defs.appendChild(grad);
   });
   svg.appendChild(defs);
 
-  edges.forEach(e => {
-    const a = nMap[e.from], b = nMap[e.to];
-    if (!a || !b) return;
-    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
-    line.setAttribute('x1',a.x);
-    line.setAttribute('y1',a.y);
-    line.setAttribute('x2',b.x);
-    line.setAttribute('y2',b.y);
-    line.setAttribute('stroke',e.color);
-    line.setAttribute('stroke-width',e.w);
-    line.setAttribute('stroke-opacity','0.35');
-    if (e.dash) line.setAttribute('stroke-dasharray',e.dash);
+  edges.forEach(e=>{
+    const a=nMap[e.from],b=nMap[e.to];
+    if(!a||!b)return;
+    const line=document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1',a.x);line.setAttribute('y1',a.y);
+    line.setAttribute('x2',b.x);line.setAttribute('y2',b.y);
+    line.setAttribute('stroke',e.color);line.setAttribute('stroke-width',e.w);
+    line.setAttribute('stroke-opacity','0.3');
+    if(e.dash)line.setAttribute('stroke-dasharray',e.dash);
     svg.appendChild(line);
   });
 
-  nodes.forEach(n => {
-    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
-    g.style.cursor = 'pointer';
-    g.addEventListener('click', () => alert(`${n.label}\n${n.sub}\n\nClick a signal to investigate this connection.`));
+  nodes.forEach(n=>{
+    const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.style.cursor='pointer';
+    g.addEventListener('click',()=>openPersonDossier(n.id));
 
-    const glow = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    glow.setAttribute('cx',n.x);
-    glow.setAttribute('cy',n.y);
-    glow.setAttribute('r',n.r+8);
-    glow.setAttribute('fill','none');
-    glow.setAttribute('stroke',n.color);
-    glow.setAttribute('stroke-width','1');
-    glow.setAttribute('stroke-opacity','0.15');
+    const glow=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    glow.setAttribute('cx',n.x);glow.setAttribute('cy',n.y);glow.setAttribute('r',n.r+10);
+    glow.setAttribute('fill','none');glow.setAttribute('stroke',n.color);
+    glow.setAttribute('stroke-width','1');glow.setAttribute('stroke-opacity','0.1');
     g.appendChild(glow);
 
-    const fill = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    fill.setAttribute('cx',n.x);
-    fill.setAttribute('cy',n.y);
-    fill.setAttribute('r',n.r);
-    fill.setAttribute('fill',`url(#g${n.id})`);
-    fill.setAttribute('stroke',n.color);
+    const fill=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    fill.setAttribute('cx',n.x);fill.setAttribute('cy',n.y);fill.setAttribute('r',n.r);
+    fill.setAttribute('fill','url(#g'+n.id+')');fill.setAttribute('stroke',n.color);
     fill.setAttribute('stroke-width','1.5');
     g.appendChild(fill);
 
-    const label = document.createElementNS('http://www.w3.org/2000/svg','text');
-    label.setAttribute('x',n.x);
-    label.setAttribute('y',n.y+1);
-    label.setAttribute('text-anchor','middle');
-    label.setAttribute('dominant-baseline','middle');
-    label.setAttribute('fill',n.color);
-    label.setAttribute('font-size','12');
+    const label=document.createElementNS('http://www.w3.org/2000/svg','text');
+    label.setAttribute('x',n.x);label.setAttribute('y',n.y+1);
+    label.setAttribute('text-anchor','middle');label.setAttribute('dominant-baseline','middle');
+    label.setAttribute('fill',n.color);label.setAttribute('font-size','11');
     label.setAttribute('font-family','Share Tech Mono,monospace');
-    label.textContent = n.label;
-    g.appendChild(label);
+    label.textContent=n.label;g.appendChild(label);
 
-    const sub = document.createElementNS('http://www.w3.org/2000/svg','text');
-    sub.setAttribute('x',n.x);
-    sub.setAttribute('y',n.y+n.r+14);
-    sub.setAttribute('text-anchor','middle');
-    sub.setAttribute('fill','#333');
-    sub.setAttribute('font-size','10');
-    sub.setAttribute('font-family','Share Tech Mono,monospace');
-    sub.textContent = n.sub;
-    g.appendChild(sub);
+    const sub=document.createElementNS('http://www.w3.org/2000/svg','text');
+    sub.setAttribute('x',n.x);sub.setAttribute('y',n.y+n.r+13);
+    sub.setAttribute('text-anchor','middle');sub.setAttribute('fill','#333');
+    sub.setAttribute('font-size','9');sub.setAttribute('font-family','Share Tech Mono,monospace');
+    sub.textContent=n.sub;g.appendChild(sub);
 
     svg.appendChild(g);
   });
 }
 
+function getSample() {
+  return {
+    timestamp: new Date().toLocaleString(),
+    summary:{total_signals:15,high_conviction:1,layers_active:26,social_monitored:61,offshore_matches:3,people_profiled:51},
+    top_signals:[
+      {ticker:'BA',score:95,action:'BUY',politician_or_entity:'THE BOEING COMPANY',source:'Contract+CrossRef',reason:'Boeing holds two NASA contracts totaling $32.9B combined. Sole source since 1993 — zero competitive bids in 33 years. USASpending confirms number_of_offers_received: 1.',trade_type:'contract',amount:'$32.9B',date:'2026-05-06'},
+      {ticker:'BGC',score:55,action:'HOLD',politician_or_entity:'Howard Lutnick',source:'ICIJ_OffshorePapers',reason:'Commerce Secretary confirmed in Paradise Papers Malta registry. Score 100 exact match. BGC is Cantor Fitzgerald.',trade_type:'offshore',amount:'unknown',date:'2026'},
+      {ticker:'XOM',score:50,action:'HOLD',politician_or_entity:'Rex Tillerson',source:'ICIJ_OffshorePapers',reason:'Former Secretary of State confirmed in Paradise Papers Appleby data. Score 100 exact match.',trade_type:'offshore',amount:'unknown',date:'2026'},
+    ],
+    corruption_index:[
+      {name:'John Boozman',score:39,data_quality:'HIGH',breakdown:['Trading activity: +30','Market signals: +9']},
+      {name:'Gary Peters',score:31,data_quality:'HIGH',breakdown:['Trading activity: +25','Market signals: +6']},
+      {name:'Josh Gottheimer',score:30,data_quality:'HIGH',breakdown:['Trading activity: +24','Market signals: +6']},
+      {name:'John Fetterman',score:23,data_quality:'HIGH',breakdown:['Trading activity: +20','Market signals: +3']},
+    ],
+    offshore_matches:[
+      {person:'Rex Tillerson',offshore_entity:'Tillerson - Rex',description:'Officer node — Paradise Papers Appleby data',match_score:100,confidence:'CONFIRMED'},
+      {person:'Michael Cohen',offshore_entity:'MICHAEL COHEN',description:'Officer node — Paradise Papers Malta registry',match_score:100,confidence:'CONFIRMED'},
+      {person:'Howard Lutnick',offshore_entity:'HOWARD LUTNICK',description:'Officer node — Paradise Papers Malta registry',match_score:100,confidence:'CONFIRMED'},
+    ],
+    contracts:[
+      {recipient:'THE BOEING COMPANY',amount:22428256009,agency:'NASA'},
+      {recipient:'BECHTEL NATIONAL INC',amount:17244586106,agency:'Department of Energy'},
+      {recipient:'THE BOEING COMPANY',amount:10494204426,agency:'NASA'},
+      {recipient:'SPACE EXPLORATION TECHNOLOGIES',amount:3031624777,agency:'NASA'},
+    ],
+    agency_spending:[
+      {agency:'Department of Defense',budget:850000000000,obligated:750000000000},
+      {agency:'Health and Human Services',budget:180000000000,obligated:160000000000},
+      {agency:'Department of Energy',budget:50000000000,obligated:45000000000},
+      {agency:'NASA',budget:25000000000,obligated:22000000000},
+      {agency:'Dept of Homeland Security',budget:70000000000,obligated:65000000000},
+    ],
+    social_signals:[
+      {person:'Jared Kushner',content:'The President should be lowering costs, not trading stocks.',keywords:['stock']},
+      {person:'Howard Lutnick',content:'Commerce Department announces new trade policy framework.',keywords:['trade']},
+    ],
+    fec_donors:[{donor:'AMERICAN VALUES PROJECT PAC',amount:200000,recipient:'PROGRESSIVE VET PAC'}],
+    lobbying:[{client:'DIGITALEUROPE',lobbying_firm:'VIVID STRATEGIES LLC',period:'Q2 2026'}],
+    economic_indicators:[
+      {indicator:'CPI Inflation',current_value:333.02,change_pct:0.85},
+      {indicator:'Unemployment Rate',current_value:4.3,change_pct:0.0},
+      {indicator:'Nonfarm Payrolls',current_value:158736,change_pct:0.07}
+    ],
+    cross_references:[
+      {contract_recipient:'THE BOEING COMPANY',contract_amount:22428256009,corruption_indicators:31,social_mentions:31}
+    ],
+    stories:[
+      {ticker:'BA',score:95,entity:'THE BOEING COMPANY',narrative:'NASA awarded The Boeing Company contracts totaling over $32.9 billion. The primary contract has operated as a sole-source arrangement since November 1993 — meaning no competitive bids have been solicited in 33 years. USASpending.gov records confirm number_of_offers_received: 1 for this contract. This analysis is based on public USASpending.gov data and represents a documented pattern, not a legal finding.'}
+    ],
+    person_profiles:{
+      'Howard Lutnick':{corruption_score:55,score_breakdown:['Offshore papers confirmed: +35','Market signals: +20'],trades:[],recent_posts:[],offshore_matches:[{offshore_entity:'HOWARD LUTNICK',match_score:100,description:'Paradise Papers Malta',confidence:'CONFIRMED'}],market_signals:[{ticker:'BGC',score:55,action:'HOLD',reason:'Commerce Secretary confirmed in offshore papers'}],data_quality:'HIGH'},
+    },
+    watch_list:PEOPLE_DATA.map(p=>p.name)
+  };
+}
+
 loadData();
-setInterval(loadData, 60000);
+setInterval(loadData,60000);
 </script>
 </body>
 </html>
