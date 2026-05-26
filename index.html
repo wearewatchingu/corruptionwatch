@@ -74,21 +74,7 @@
 
   .date-display { font-size: 12px; color: #555; margin-top: 4px; letter-spacing: 0.05em; }
 
-  .ticker-tape {
-    background: #060000;
-    border-bottom: 1px solid #1a0000;
-    padding: 8px 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
 
-  .ticker-scroll { display: inline-block; animation: scroll 45s linear infinite; padding-left: 100%; }
-  @keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-100%)} }
-
-  .ticker-item { margin-right: 50px; font-size: 13px; }
-  .ticker-up { color: #00cc44; }
-  .ticker-down { color: #cc0000; }
-  .ticker-hold { color: #666; }
 
   .live-bar {
     background: #040000;
@@ -390,8 +376,39 @@
   </div>
 </div>
 
-<div class="ticker-tape">
-  <div class="ticker-scroll" id="tickerScroll">Loading intelligence feed...</div>
+<div class="tradingview-widget-container" style="height:46px;background:#040000;border-bottom:1px solid #1a0000;">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {"proName": "NYSE:BA", "title": "Boeing"},
+    {"proName": "NYSE:GEO", "title": "GEO Group"},
+    {"proName": "NYSE:IEP", "title": "Icahn Ent"},
+    {"proName": "NYSE:XOM", "title": "ExxonMobil"},
+    {"proName": "NASDAQ:PLTR", "title": "Palantir"},
+    {"proName": "NASDAQ:NVDA", "title": "Nvidia"},
+    {"proName": "NYSE:LMT", "title": "Lockheed"},
+    {"proName": "NASDAQ:TSLA", "title": "Tesla"},
+    {"proName": "NYSE:GS", "title": "Goldman"},
+    {"proName": "NYSE:JPM", "title": "JPMorgan"},
+    {"proName": "NYSE:BLK", "title": "BlackRock"},
+    {"proName": "NASDAQ:ORCL", "title": "Oracle"},
+    {"proName": "NASDAQ:MSFT", "title": "Microsoft"},
+    {"proName": "NYSE:RTX", "title": "Raytheon"},
+    {"proName": "NYSE:CXW", "title": "CoreCivic"},
+    {"proName": "NASDAQ:COIN", "title": "Coinbase"},
+    {"proName": "NASDAQ:MSTR", "title": "MicroStrategy"},
+    {"proName": "NYSE:XLE", "title": "Energy ETF"},
+    {"proName": "AMEX:USO", "title": "Oil ETF"},
+    {"proName": "NYSE:DJT", "title": "Trump Media"}
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "displayMode": "adaptive",
+  "colorTheme": "dark",
+  "locale": "en"
+  }
+  </script>
 </div>
 
 <div class="live-bar">
@@ -622,7 +639,6 @@ function renderAll(data) {
   renderStories(data.stories||[]);
   renderAlerts(signals, offshore, data.social_signals||[]);
   renderSources(signals);
-  renderTicker(signals);
 }
 
 function renderSignals(signals) {
@@ -791,14 +807,6 @@ function renderSources(signals) {
   `).join('');
 }
 
-function renderTicker(signals) {
-  const items = signals.map(s => {
-    const cls = s.action==='BUY'?'ticker-up':s.action==='SELL'?'ticker-down':'ticker-hold';
-    return `<span class="ticker-item ${cls}">${s.ticker} ${s.score}/100 ${s.action}</span>`;
-  }).join('');
-  const el = document.getElementById('tickerScroll');
-  el.innerHTML = items + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + items;
-}
 
 function drawNetwork() {
   const svg = document.getElementById('netSvg');
