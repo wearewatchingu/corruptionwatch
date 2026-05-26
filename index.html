@@ -856,107 +856,212 @@ function closeModal(e) {
 function drawNetwork() {
   const svg = document.getElementById('netSvg');
   svg.innerHTML = '';
+  if (!reportData) return;
 
-  const offshore = reportData?.offshore_matches||[];
-  const contracts = reportData?.contracts||[];
+  const signals = reportData.top_signals || [];
+  const offshore = reportData.offshore_matches || [];
+  const contracts = reportData.contracts || [];
+  const social = reportData.social_signals || [];
+  const profiles = reportData.person_profiles || {};
 
-  const nodes = [
-    {id:'Boeing',x:500,y:240,r:30,color:'#cc6600',label:'Boeing',sub:'$32.9B NASA'},
-    {id:'NASA',x:360,y:120,r:24,color:'#006600',label:'NASA',sub:'Agency'},
-    {id:'SpaceX',x:640,y:120,r:22,color:'#cc6600',label:'SpaceX',sub:'$3B NASA'},
-    {id:'Musk',x:760,y:60,r:20,color:'#8844cc',label:'E. Musk',sub:'DOGE+SpaceX'},
-    {id:'DOGE',x:860,y:150,r:16,color:'#cc6600',label:'DOGE',sub:'Cuts budgets'},
-    {id:'Pelosi',x:150,y:200,r:22,color:'#cc0000',label:'Pelosi',sub:'16,930%'},
-    {id:'Kushner',x:660,y:340,r:22,color:'#cc0000',label:'Kushner',sub:'$2B Saudi'},
-    {id:'Saudi',x:800,y:400,r:20,color:'#2266cc',label:'Saudi PIF',sub:'$700B fund'},
-    {id:'Tillerson',x:100,y:350,r:18,color:'#8844cc',label:'Tillerson',sub:'Papers 100'},
-    {id:'Icahn',x:900,y:280,r:18,color:'#8844cc',label:'Icahn',sub:'Papers 83'},
-    {id:'Cohen',x:100,y:120,r:16,color:'#cc0000',label:'M.Cohen',sub:'Papers 100'},
-    {id:'Lutnick',x:250,y:380,r:18,color:'#cc0000',label:'Lutnick',sub:'Papers 100'},
-    {id:'GEO',x:320,y:400,r:18,color:'#cc6600',label:'GEO Group',sub:'$2.1B ICE'},
-    {id:'ICE',x:200,y:450,r:14,color:'#006600',label:'ICE/DHS',sub:'Agency'},
-    {id:'BlackRock',x:500,y:420,r:20,color:'#8844cc',label:'BlackRock',sub:'$10T pensions'},
-    {id:'Cruz',x:240,y:130,r:16,color:'#cc0000',label:'Ted Cruz',sub:'NASA commit.'},
-    {id:'Bechtel',x:680,y:220,r:16,color:'#cc6600',label:'Bechtel',sub:'$17.2B DOE'},
-    {id:'DOE',x:820,y:180,r:14,color:'#006600',label:'DOE',sub:'Energy agency'},
-  ];
+  // Build node list dynamically from data
+  const nodeMap = {};
+  const edgeList = [];
 
-  const edges = [
-    {from:'NASA',to:'Boeing',w:6,color:'#cc6600'},
-    {from:'NASA',to:'SpaceX',w:4,color:'#cc6600'},
-    {from:'Musk',to:'SpaceX',w:3,color:'#8844cc'},
-    {from:'Musk',to:'DOGE',w:2,color:'#8844cc'},
-    {from:'DOGE',to:'NASA',w:1,color:'#cc0000',dash:'5,3'},
-    {from:'Kushner',to:'Saudi',w:4,color:'#cc0000'},
-    {from:'ICE',to:'GEO',w:4,color:'#006600'},
-    {from:'Lutnick',to:'Boeing',w:1,color:'#8844cc',dash:'4,3'},
-    {from:'Tillerson',to:'Boeing',w:1,color:'#8844cc',dash:'4,3'},
-    {from:'Cruz',to:'NASA',w:2,color:'#cc0000',dash:'5,3'},
-    {from:'Cohen',to:'Kushner',w:1,color:'#cc0000',dash:'4,3'},
-    {from:'BlackRock',to:'Boeing',w:2,color:'#8844cc',dash:'4,3'},
-    {from:'DOE',to:'Bechtel',w:3,color:'#006600'},
-    {from:'Icahn',to:'Musk',w:1,color:'#8844cc',dash:'4,3'},
-  ];
+  // Add agencies
+  const agencies = {};
+  contracts.forEach(c => {
+    const agency = (c.agency || '').slice(0, 20);
+    if (agency && !agencies[agency]) {
+      agencies[agency] = true;
+      nodeMap[agency] = {
+        id: agency,
+        label: agency.slice(0, 12),
+        sub: 'Agency',
+        color: '#006600',
+        type: 'agency',
+        score: 0
+      };
+    }
+  });
 
+  // Add companies from contracts
+  contracts.slice(0, 6).forEach(c => {
+    const name = (c.recipient || '').slice(0, 25);
+    const shortName = name.split(' ')[0] + (name.split(' ')[1] ? ' ' + name.split(' ')[1].slice(0,4) : '');
+    if (name && !nodeMap[name]) {
+      nodeMap[name] = {
+        id: name,
+        label: shortName.slice(0, 14),
+        sub: formatAmt(c.amount),
+        color: '#cc6600',
+        type: 'company',
+        score: 0
+      };
+      const agency = (c.agency || '').slice(0, 20);
+      if (nodeMap[agency]) {
+        edgeList.push({from: agency, to: name, w: Math.max(1, Math.min(6, c.amount / 5e9)), color: '#cc6600'});
+      }
+    }
+  });
+
+  // Add people from signals
+  signals.forEach(s => {
+    const person = s.politician_or_entity || '';
+    if (!person || nodeMap[person]) return;
+    const isCompany = ['THE BOEING', 'BECHTEL', 'SPACE EXPLORATION', 'AEROJET', 'GEO GROUP', 'CORECIVIC'].some(c => person.toUpperCase().includes(c));
+    if (!isCompany) {
+      nodeMap[person] = {
+        id: person,
+        label: person.split(' ').slice(-1)[0].slice(0, 12),
+        sub: s.source || '',
+        color: '#cc0000',
+        type: 'politician',
+        score: s.score || 0
+      };
+    }
+  });
+
+  // Add offshore matches
+  offshore.forEach(o => {
+    const person = o.person;
+    if (!nodeMap[person]) {
+      nodeMap[person] = {
+        id: person,
+        label: person.split(' ').slice(-1)[0].slice(0, 12),
+        sub: 'Papers ' + Math.round(o.match_score),
+        color: '#8844cc',
+        type: 'billionaire',
+        score: 0
+      };
+    } else {
+      nodeMap[person].color = '#8844cc';
+      nodeMap[person].sub = 'Papers ' + Math.round(o.match_score);
+    }
+  });
+
+  // Add social signal people
+  social.slice(0, 8).forEach(s => {
+    const person = s.person || '';
+    if (!person || nodeMap[person]) return;
+    nodeMap[person] = {
+      id: person,
+      label: person.split(' ').slice(-1)[0].slice(0, 12),
+      sub: s.suggested_ticker || '',
+      color: '#cc0000',
+      type: 'politician',
+      score: 0
+    };
+  });
+
+  // Connect signals to companies
+  signals.forEach(s => {
+    const person = s.politician_or_entity || '';
+    contracts.forEach(c => {
+      if (c.recipient && person && (c.recipient.includes(person.split(' ')[0]) || person.includes(c.recipient.split(' ')[0]))) {
+        edgeList.push({from: person, to: c.recipient, w: 2, color: '#cc0000', dash: '4,3'});
+      }
+    });
+  });
+
+  // Connect offshore people to companies they're associated with
+  const offshoreConnections = {
+    'Rex Tillerson': 'THE BOEING COMPANY',
+    'Howard Lutnick': 'THE BOEING COMPANY',
+    'Jared Kushner': 'Saudi Arabia',
+    'Elon Musk': 'SPACE EXPLORATION TECHNOLOGIES CORP.',
+  };
+
+  Object.entries(offshoreConnections).forEach(([person, company]) => {
+    if (nodeMap[person] && nodeMap[company]) {
+      edgeList.push({from: person, to: company, w: 1, color: '#8844cc', dash: '4,3'});
+    }
+  });
+
+  // Layout nodes in a force-directed style circle
+  const nodes = Object.values(nodeMap);
+  const total = nodes.length;
+  const cx = 500, cy = 260, rx = 380, ry = 200;
+
+  // Sort by type for better layout
+  const typeOrder = {agency: 0, company: 1, politician: 2, billionaire: 3};
+  nodes.sort((a, b) => (typeOrder[a.type] || 0) - (typeOrder[b.type] || 0));
+
+  nodes.forEach((n, i) => {
+    const angle = (i / total) * Math.PI * 2 - Math.PI / 2;
+    n.x = Math.round(cx + Math.cos(angle) * rx);
+    n.y = Math.round(cy + Math.sin(angle) * ry);
+    n.r = n.type === 'agency' ? 20 : n.type === 'company' ? 22 : n.score >= 80 ? 20 : 16;
+  });
+
+  // Draw
   const nMap = {};
-  nodes.forEach(n=>nMap[n.id]=n);
+  nodes.forEach(n => nMap[n.id] = n);
 
-  const defs = document.createElementNS('http://www.w3.org/2000/svg','defs');
-  nodes.forEach(n=>{
-    const grad = document.createElementNS('http://www.w3.org/2000/svg','radialGradient');
-    grad.setAttribute('id','g'+n.id);
-    const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop');
-    s1.setAttribute('offset','0%');s1.setAttribute('stop-color',n.color);s1.setAttribute('stop-opacity','0.3');
-    const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop');
-    s2.setAttribute('offset','100%');s2.setAttribute('stop-color',n.color);s2.setAttribute('stop-opacity','0.05');
-    grad.appendChild(s1);grad.appendChild(s2);defs.appendChild(grad);
+  const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+  nodes.forEach(n => {
+    const grad = document.createElementNS('http://www.w3.org/2000/svg', 'radialGradient');
+    grad.setAttribute('id', 'gn' + n.id.replace(/[^a-zA-Z0-9]/g, ''));
+    const s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', n.color); s1.setAttribute('stop-opacity', '0.3');
+    const s2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', n.color); s2.setAttribute('stop-opacity', '0.05');
+    grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad);
   });
   svg.appendChild(defs);
 
-  edges.forEach(e=>{
-    const a=nMap[e.from],b=nMap[e.to];
-    if(!a||!b)return;
-    const line=document.createElementNS('http://www.w3.org/2000/svg','line');
-    line.setAttribute('x1',a.x);line.setAttribute('y1',a.y);
-    line.setAttribute('x2',b.x);line.setAttribute('y2',b.y);
-    line.setAttribute('stroke',e.color);line.setAttribute('stroke-width',e.w);
-    line.setAttribute('stroke-opacity','0.3');
-    if(e.dash)line.setAttribute('stroke-dasharray',e.dash);
+  edgeList.forEach(e => {
+    const a = nMap[e.from], b = nMap[e.to];
+    if (!a || !b) return;
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
+    line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
+    line.setAttribute('stroke', e.color); line.setAttribute('stroke-width', e.w || 1);
+    line.setAttribute('stroke-opacity', '0.35');
+    if (e.dash) line.setAttribute('stroke-dasharray', e.dash);
     svg.appendChild(line);
   });
 
-  nodes.forEach(n=>{
-    const g=document.createElementNS('http://www.w3.org/2000/svg','g');
-    g.style.cursor='pointer';
-    g.addEventListener('click',()=>openPersonDossier(n.id));
+  nodes.forEach(n => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.style.cursor = 'pointer';
+    g.addEventListener('click', () => openPersonDossier(n.id));
 
-    const glow=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    glow.setAttribute('cx',n.x);glow.setAttribute('cy',n.y);glow.setAttribute('r',n.r+10);
-    glow.setAttribute('fill','none');glow.setAttribute('stroke',n.color);
-    glow.setAttribute('stroke-width','1');glow.setAttribute('stroke-opacity','0.1');
+    const glow = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    glow.setAttribute('cx', n.x); glow.setAttribute('cy', n.y); glow.setAttribute('r', n.r + 8);
+    glow.setAttribute('fill', 'none'); glow.setAttribute('stroke', n.color);
+    glow.setAttribute('stroke-width', '1'); glow.setAttribute('stroke-opacity', '0.1');
     g.appendChild(glow);
 
-    const fill=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    fill.setAttribute('cx',n.x);fill.setAttribute('cy',n.y);fill.setAttribute('r',n.r);
-    fill.setAttribute('fill','url(#g'+n.id+')');fill.setAttribute('stroke',n.color);
-    fill.setAttribute('stroke-width','1.5');
+    const fill = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    fill.setAttribute('cx', n.x); fill.setAttribute('cy', n.y); fill.setAttribute('r', n.r);
+    fill.setAttribute('fill', 'url(#gn' + n.id.replace(/[^a-zA-Z0-9]/g, '') + ')');
+    fill.setAttribute('stroke', n.color); fill.setAttribute('stroke-width', '1.5');
     g.appendChild(fill);
 
-    const label=document.createElementNS('http://www.w3.org/2000/svg','text');
-    label.setAttribute('x',n.x);label.setAttribute('y',n.y+1);
-    label.setAttribute('text-anchor','middle');label.setAttribute('dominant-baseline','middle');
-    label.setAttribute('fill',n.color);label.setAttribute('font-size','11');
-    label.setAttribute('font-family','Share Tech Mono,monospace');
-    label.textContent=n.label;g.appendChild(label);
+    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    label.setAttribute('x', n.x); label.setAttribute('y', n.y + 1);
+    label.setAttribute('text-anchor', 'middle'); label.setAttribute('dominant-baseline', 'middle');
+    label.setAttribute('fill', n.color); label.setAttribute('font-size', '10');
+    label.setAttribute('font-family', 'Share Tech Mono,monospace');
+    label.textContent = n.label; g.appendChild(label);
 
-    const sub=document.createElementNS('http://www.w3.org/2000/svg','text');
-    sub.setAttribute('x',n.x);sub.setAttribute('y',n.y+n.r+13);
-    sub.setAttribute('text-anchor','middle');sub.setAttribute('fill','#333');
-    sub.setAttribute('font-size','9');sub.setAttribute('font-family','Share Tech Mono,monospace');
-    sub.textContent=n.sub;g.appendChild(sub);
+    const sub = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    sub.setAttribute('x', n.x); sub.setAttribute('y', n.y + n.r + 12);
+    sub.setAttribute('text-anchor', 'middle'); sub.setAttribute('fill', '#333');
+    sub.setAttribute('font-size', '9'); sub.setAttribute('font-family', 'Share Tech Mono,monospace');
+    sub.textContent = n.sub.slice(0, 16); g.appendChild(sub);
 
     svg.appendChild(g);
   });
+}
+
+function formatAmt(n) {
+  if (!n) return '';
+  n = parseFloat(n);
+  if (n >= 1e9) return '$' + (n / 1e9).toFixed(1) + 'B';
+  if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+  return '$' + n;
 }
 
 function getSample() {
