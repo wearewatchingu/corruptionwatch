@@ -1,22 +1,23 @@
 {
-  "timestamp": "2026-05-27 19:05",
-  "timestamp_iso": "2026-05-27T19:05:12.300660",
-  "cycle_seconds": 94.988327,
+  "timestamp": "2026-05-27 19:04",
+  "timestamp_iso": "2026-05-27T19:04:06.794747",
+  "cycle_seconds": 169.87975,
   "summary": {
-    "long_candidates": 2,
-    "short_candidates": 0,
-    "decisions": 6,
-    "entries_placed": 0,
-    "exits_placed": 0,
-    "open_positions": 11,
-    "consensus_buys": 7,
-    "consensus_sells": 1
+    "total_signals": 2,
+    "high_conviction": 1,
+    "layers_active": 28,
+    "social_monitored": 55,
+    "watchdog_accounts": 10,
+    "offshore_matches": 3,
+    "consensus_trades": 6,
+    "positions_tracked": 146,
+    "people_profiled": 55
   },
-  "long_candidates": [
+  "top_signals": [
     {
       "ticker": "MSFT",
-      "actor_count": 4,
-      "actors": [
+      "buyer_count": 4,
+      "buyers": [
         {
           "politician": "Mark Warner",
           "date": "2026-05-01",
@@ -42,19 +43,19 @@
           "chamber": "House"
         }
       ],
-      "direction": "buy",
       "score": 100,
       "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "4 politicians buying",
-      "reason": "4 politicians buying MSFT: Warner, Boozman, Fetterman, Mcguire",
+      "source": "InsiderConsensus",
+      "politician_or_entity": "4 politicians",
+      "reason": "4 politicians bought MSFT: Warner, Boozman, Fetterman, Mcguire",
       "sentiment_score": 0.0,
-      "article_count": 0
+      "article_count": 0,
+      "velocity": "NORMAL"
     },
     {
       "ticker": "JPM",
-      "actor_count": 3,
-      "actors": [
+      "buyer_count": 3,
+      "buyers": [
         {
           "politician": "John Fetterman",
           "date": "2026-05-15",
@@ -74,180 +75,59 @@
           "chamber": "House"
         }
       ],
-      "direction": "buy",
       "score": 75,
       "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "3 politicians buying",
-      "reason": "3 politicians buying JPM: Fetterman, Keating, Khanna",
+      "source": "InsiderConsensus",
+      "politician_or_entity": "3 politicians",
+      "reason": "3 politicians bought JPM: Fetterman, Keating, Khanna",
       "sentiment_score": 0.0,
-      "article_count": 0
+      "article_count": 0,
+      "velocity": "NORMAL"
     }
   ],
-  "short_candidates": [],
   "decisions": [
     {
       "ticker": "MSFT",
       "action": "BUY",
-      "confidence": 0.82,
-      "reasoning": "Strongest long signal in the batch. 4 politicians across both chambers (Warner, Boozman, Fetterman, McGuire) bought within a ~6-week window — a meaningful cluster. Warner sits on Senate Intelligence/Finance, giving him tech sector visibility. Cross-chamber, cross-party buying reduces the chance this is purely a reaction to public news. Trade sizes are small but the breadth of actors is the real signal. No offsetting sellers. Score of 100 in the model.",
-      "key_risk": "Small dollar amounts ($1K–$15K) suggest these could be routine portfolio buys or ETF rebalances rather than conviction insider plays. Cluster may reflect broad market recovery buying rather than MSFT-specific insight."
+      "confidence": 72,
+      "reasoning": "Strongest signal in the dataset: 4 independent politicians across both chambers (Warner, Boozman, Fetterman, McGuire) buying within a ~6-week window. Buys span April–May 2026 with no single clustering event, suggesting genuine independent conviction rather than a shared news reaction. No watchdog alerts. MSFT has real AI/cloud tailwinds (Azure, Copilot). Committee overlap is not obvious — buyers span Senate Intel/Banking and House, reducing the 'coordinated leak' risk but also the insider-info edge. Trade sizes are small ($1K–$15K), suggesting personal portfolio adds rather than high-conviction plays. Score 100 reflects consensus strength. Proceeding with BUY at moderate confidence given broad, multi-chamber consensus and sector fundamentals.",
+      "key_risk": "Small trade sizes suggest low personal conviction. Consensus may reflect broad tech optimism rather than specific MSFT insight. No watchdog flags means less corroboration."
     },
     {
       "ticker": "JPM",
       "action": "BUY",
-      "confidence": 0.68,
-      "reasoning": "3-politician cluster buying JPM across both chambers (Fetterman, Keating, Khanna) over roughly one week in mid-May. Ro Khanna's larger tranche ($15K–$50K) adds modest weight. Financial sector exposure aligns with politicians who may have visibility into regulatory or macro-financial developments. No sellers. Score of 75 in the model.",
-      "key_risk": "Keating and Khanna do not sit on primary banking oversight committees, diluting the 'committee oversight' signal. JPM is a mega-cap default holding — cluster could simply reflect broad risk-on sentiment. Conviction is moderate, not high."
+      "confidence": 60,
+      "reasoning": "3 politicians (Fetterman, Keating, Khanna) bought within a tight 7-day window (May 13–19), which is more clustered than MSFT. Khanna's larger size ($15K–$50K) adds weight. JPM is a bellwether financials name — cluster could reflect shared macro optimism (rate environment, deregulation sentiment) rather than specific insider knowledge. Ro Khanna on House Armed Services/Commerce adds some committee color but no direct banking committee conflict flagged. No watchdog alerts. The tight clustering slightly raises the 'shared news event' concern, but Khanna's larger position size is a distinguishing signal. BUY at lower confidence than MSFT.",
+      "key_risk": "Tight 7-day clustering strongly suggests a shared macro catalyst (e.g., Fed commentary, deregulation news) rather than independent insider conviction. No committee conflict confirmed."
     },
     {
       "ticker": "GOOGL",
-      "action": "HOLD",
-      "confidence": 0.52,
-      "reasoning": "Only 2 politicians buying (Boozman, Fetterman), which is below the threshold for a genuine conviction long. Both also bought MSFT, suggesting a broad tech basket move rather than GOOGL-specific insight. Score of 50 and no committee-specific amplifier identified. Not enough differentiated signal to open a new long position.",
-      "key_risk": "Ongoing DOJ antitrust proceedings and AI competitive pressure. A 2-actor cluster with no committee specificity is too thin to justify entry over the noise."
+      "action": "SKIP",
+      "confidence": 55,
+      "reasoning": "Only 2 buyers (Boozman and Fetterman), with a 38-day gap between trades (Apr 3 vs May 11). This spread weakens the consensus signal — Fetterman bought in early April and Boozman followed in May, likely reacting to independent market conditions. Score of 50 is the minimum threshold for consensus trades. No watchdog alerts, no committee conflict identified, no sentiment data. Broad tech tailwinds exist but 2 buyers with divergent dates does not constitute meaningful political insider consensus. SKIP until stronger corroboration.",
+      "key_risk": "Minimum buyer threshold (2), wide date gap undermines consensus thesis, likely reacting to general tech sector moves rather than specific GOOGL insight."
     },
     {
       "ticker": "CEG",
-      "action": "BUY",
-      "confidence": 0.65,
-      "reasoning": "2 Senate-level politicians (Boozman, Warner) buying Constellation Energy. Both are senators with energy/infrastructure committee exposure. CEG is a nuclear/clean energy play with direct policy sensitivity — AI data center power demand and nuclear permitting legislation are active Senate issues. The senatorial profile here is more meaningful than the raw actor count suggests.",
-      "key_risk": "Only 2 actors — cluster is thin. CEG is highly volatile and policy-driven; any regulatory setback or PPA cancellation could reverse the thesis quickly. Warner buying both CEG and MSFT in the same batch may reflect portfolio diversification rather than specific CEG intelligence."
+      "action": "HOLD",
+      "confidence": 50,
+      "reasoning": "2 Senate buyers — Boozman (May 8) and Warner (May 1) — within a tight 7-day window. The tight clustering is notable, and CEG (Constellation Energy) is a nuclear/clean energy play with genuine policy tailwinds (AI data center power demand, nuclear permitting legislation). Warner sits on Senate Intel and Finance; Boozman on Agriculture/Appropriations — no direct energy committee conflict confirmed, but energy policy is broadly Senate-relevant. The combination of a niche energy stock (not a default blue-chip add) and tight Senate clustering raises interest. However, only 2 buyers and minimum score of 50 limits conviction. HOLD — worth watching for additional buyers before committing.",
+      "key_risk": "Only 2 buyers at minimum score. Nuclear/energy tailwinds are widely known (not insider-specific). Tight clustering could reflect shared news on nuclear energy legislation rather than privileged information."
     },
     {
       "ticker": "AAPL",
-      "action": "HOLD",
-      "confidence": 0.48,
-      "reasoning": "2 politicians buying (Warner, McGuire), both of whom also bought other big-tech names in the same period. This looks like a broad tech basket trade, not an AAPL-specific signal. No committee-specific amplifier, no differentiated thesis. AAPL faces ongoing tariff/supply chain risk from China policy. Insufficient conviction to open a dedicated long.",
-      "key_risk": "Tariff exposure on China manufacturing, ongoing DOJ/EU regulatory pressure, and the basket-trade nature of this cluster all reduce signal quality."
-    },
-    {
-      "ticker": "T",
       "action": "SKIP",
-      "confidence": 0.38,
-      "reasoning": "Only 2 politicians selling T (Fetterman, Gottheimer) — well below the 3+ threshold for a conviction short. Fetterman's sell was in early April, nearly 7 weeks before Gottheimer's in late May, which weakens the 'cluster' interpretation. T is a mature, dividend-heavy telecom that many politicians may exit simply for yield reallocation. Telecom is not in a strong downtrend that would amplify a short. Per guidelines, shorts require real conviction — this signal is too weak.",
-      "key_risk": "Shorting a high-dividend telecom carries carry costs. With only 2 sellers spread across 7 weeks and no confirmed committee-oversight amplifier for telecom, the risk/reward of a short is unfavorable."
+      "confidence": 40,
+      "reasoning": "2 buyers (Warner and McGuire) with a 13-day gap (May 1 vs May 14), minimum consensus score of 50, and both at the lowest trade size bracket ($1K–$15K). AAPL is the most widely held and default blue-chip stock — politicians buying AAPL in small amounts is the least surprising signal possible and is almost certainly portfolio maintenance or a reaction to a public earnings/macro event. No committee conflict, no watchdog alerts, no sentiment data. This is noise, not signal. SKIP with high confidence.",
+      "key_risk": "AAPL is a default portfolio holding for virtually every retail and institutional investor. Zero differentiated insider signal. Minimum trade sizes confirm low personal conviction."
     }
   ],
-  "entries_placed": [],
-  "exits_placed": [],
-  "open_positions": [
-    {
-      "symbol": "AAPL",
-      "qty": 4.0,
-      "side": "long",
-      "avg_entry_price": 310.8775,
-      "current_price": 310.8,
-      "market_value": 1243.2,
-      "unrealized_pl": -0.31,
-      "unrealized_plpc": -0.00025
-    },
-    {
-      "symbol": "AMZN",
-      "qty": 4.0,
-      "side": "long",
-      "avg_entry_price": 271.11,
-      "current_price": 272.9,
-      "market_value": 1091.6,
-      "unrealized_pl": 7.16,
-      "unrealized_plpc": 0.0066
-    },
-    {
-      "symbol": "BA",
-      "qty": 52.0,
-      "side": "long",
-      "avg_entry_price": 221.340577,
-      "current_price": 224.3,
-      "market_value": 11663.6,
-      "unrealized_pl": 153.889996,
-      "unrealized_plpc": 0.01337
-    },
-    {
-      "symbol": "GS",
-      "qty": 2.0,
-      "side": "long",
-      "avg_entry_price": 994.65,
-      "current_price": 996.47,
-      "market_value": 1992.94,
-      "unrealized_pl": 3.64,
-      "unrealized_plpc": 0.00183
-    },
-    {
-      "symbol": "JPM",
-      "qty": 2.0,
-      "side": "long",
-      "avg_entry_price": 298.1,
-      "current_price": 299.075,
-      "market_value": 598.15,
-      "unrealized_pl": 1.95,
-      "unrealized_plpc": 0.00327
-    },
-    {
-      "symbol": "LMT",
-      "qty": 2.0,
-      "side": "long",
-      "avg_entry_price": 532.56,
-      "current_price": 531.14,
-      "market_value": 1062.28,
-      "unrealized_pl": -2.84,
-      "unrealized_plpc": -0.00267
-    },
-    {
-      "symbol": "META",
-      "qty": 2.0,
-      "side": "long",
-      "avg_entry_price": 619.34,
-      "current_price": 632.9,
-      "market_value": 1265.8,
-      "unrealized_pl": 27.12,
-      "unrealized_plpc": 0.02189
-    },
-    {
-      "symbol": "MSFT",
-      "qty": 9.1719,
-      "side": "long",
-      "avg_entry_price": 412.401651,
-      "current_price": 414.5457,
-      "market_value": 3802.171706,
-      "unrealized_pl": 19.665003,
-      "unrealized_plpc": 0.0052
-    },
-    {
-      "symbol": "NVDA",
-      "qty": 3.0,
-      "side": "long",
-      "avg_entry_price": 211.086667,
-      "current_price": 212.11,
-      "market_value": 636.33,
-      "unrealized_pl": 3.069999,
-      "unrealized_plpc": 0.00485
-    },
-    {
-      "symbol": "QCOM",
-      "qty": -8.0,
-      "side": "short",
-      "avg_entry_price": 241.789286,
-      "current_price": 232.35,
-      "market_value": -1858.8,
-      "unrealized_pl": 75.514288,
-      "unrealized_plpc": 0.03904
-    },
-    {
-      "symbol": "TSLA",
-      "qty": 3.0,
-      "side": "long",
-      "avg_entry_price": 439.41,
-      "current_price": 438.95,
-      "market_value": 1316.85,
-      "unrealized_pl": -1.38,
-      "unrealized_plpc": -0.00105
-    }
-  ],
-  "consensus_buys": [
+  "orders_placed": [],
+  "consensus_trades": [
     {
       "ticker": "MSFT",
-      "actor_count": 4,
-      "actors": [
+      "buyer_count": 4,
+      "buyers": [
         {
           "politician": "Mark Warner",
           "date": "2026-05-01",
@@ -273,19 +153,19 @@
           "chamber": "House"
         }
       ],
-      "direction": "buy",
       "score": 100,
       "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "4 politicians buying",
-      "reason": "4 politicians buying MSFT: Warner, Boozman, Fetterman, Mcguire",
+      "source": "InsiderConsensus",
+      "politician_or_entity": "4 politicians",
+      "reason": "4 politicians bought MSFT: Warner, Boozman, Fetterman, Mcguire",
       "sentiment_score": 0.0,
-      "article_count": 0
+      "article_count": 0,
+      "velocity": "NORMAL"
     },
     {
       "ticker": "JPM",
-      "actor_count": 3,
-      "actors": [
+      "buyer_count": 3,
+      "buyers": [
         {
           "politician": "John Fetterman",
           "date": "2026-05-15",
@@ -305,19 +185,19 @@
           "chamber": "House"
         }
       ],
-      "direction": "buy",
       "score": 75,
       "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "3 politicians buying",
-      "reason": "3 politicians buying JPM: Fetterman, Keating, Khanna",
+      "source": "InsiderConsensus",
+      "politician_or_entity": "3 politicians",
+      "reason": "3 politicians bought JPM: Fetterman, Keating, Khanna",
       "sentiment_score": 0.0,
-      "article_count": 0
+      "article_count": 0,
+      "velocity": "NORMAL"
     },
     {
       "ticker": "GOOGL",
-      "actor_count": 2,
-      "actors": [
+      "buyer_count": 2,
+      "buyers": [
         {
           "politician": "John Boozman",
           "date": "2026-05-11",
@@ -331,17 +211,16 @@
           "chamber": "Senate"
         }
       ],
-      "direction": "buy",
       "score": 50,
       "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "2 politicians buying",
-      "reason": "2 politicians buying GOOGL: Boozman, Fetterman"
+      "source": "InsiderConsensus",
+      "politician_or_entity": "2 politicians",
+      "reason": "2 politicians bought GOOGL: Boozman, Fetterman"
     },
     {
       "ticker": "CEG",
-      "actor_count": 2,
-      "actors": [
+      "buyer_count": 2,
+      "buyers": [
         {
           "politician": "John Boozman",
           "date": "2026-05-08",
@@ -355,17 +234,16 @@
           "chamber": "Senate"
         }
       ],
-      "direction": "buy",
       "score": 50,
       "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "2 politicians buying",
-      "reason": "2 politicians buying CEG: Boozman, Warner"
+      "source": "InsiderConsensus",
+      "politician_or_entity": "2 politicians",
+      "reason": "2 politicians bought CEG: Boozman, Warner"
     },
     {
       "ticker": "AAPL",
-      "actor_count": 2,
-      "actors": [
+      "buyer_count": 2,
+      "buyers": [
         {
           "politician": "Mark Warner",
           "date": "2026-05-01",
@@ -379,17 +257,16 @@
           "chamber": "House"
         }
       ],
-      "direction": "buy",
       "score": 50,
       "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "2 politicians buying",
-      "reason": "2 politicians buying AAPL: Warner, Mcguire"
+      "source": "InsiderConsensus",
+      "politician_or_entity": "2 politicians",
+      "reason": "2 politicians bought AAPL: Warner, Mcguire"
     },
     {
       "ticker": "NVDA",
-      "actor_count": 2,
-      "actors": [
+      "buyer_count": 2,
+      "buyers": [
         {
           "politician": "John Boozman",
           "date": "2026-04-14",
@@ -403,62 +280,11 @@
           "chamber": "House"
         }
       ],
-      "direction": "buy",
       "score": 50,
       "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "2 politicians buying",
-      "reason": "2 politicians buying NVDA: Boozman, Mcguire"
-    },
-    {
-      "ticker": "ARES",
-      "actor_count": 2,
-      "actors": [
-        {
-          "politician": "John Boozman",
-          "date": "2026-04-14",
-          "amount": "$1,001 - $15,000",
-          "chamber": "Senate"
-        },
-        {
-          "politician": "Ro Khanna",
-          "date": "2026-05-13",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        }
-      ],
-      "direction": "buy",
-      "score": 50,
-      "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "2 politicians buying",
-      "reason": "2 politicians buying ARES: Boozman, Khanna"
-    }
-  ],
-  "consensus_sells": [
-    {
-      "ticker": "T",
-      "actor_count": 2,
-      "actors": [
-        {
-          "politician": "John Fetterman",
-          "date": "2026-04-03",
-          "amount": "$1,001 - $15,000",
-          "chamber": "Senate"
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "date": "2026-05-20",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        }
-      ],
-      "direction": "sell",
-      "score": 50,
-      "action": "SELL_SHORT",
-      "source": "Consensus_SELL",
-      "politician_or_entity": "2 politicians selling",
-      "reason": "2 politicians selling T: Fetterman, Gottheimer"
+      "source": "InsiderConsensus",
+      "politician_or_entity": "2 politicians",
+      "reason": "2 politicians bought NVDA: Boozman, Mcguire"
     }
   ],
   "corruption_index": [
@@ -540,6 +366,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Jared Kushner": {
@@ -553,6 +380,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Ivanka Trump": {
@@ -566,6 +394,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Donald Trump Jr": {
@@ -579,6 +408,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Pam Bondi": {
@@ -595,6 +425,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Scott Bessent": {
@@ -611,6 +442,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Pete Hegseth": {
@@ -626,6 +458,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Howard Lutnick": {
@@ -652,6 +485,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "HIGH"
     },
     "Marco Rubio": {
@@ -668,6 +502,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Secretary Rubio": {
@@ -681,6 +516,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Tulsi Gabbard": {
@@ -697,6 +533,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Doug Burgum": {
@@ -713,6 +550,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Chris Wright": {
@@ -728,6 +566,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "RFK Jr": {
@@ -745,6 +584,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Mitch McConnell": {
@@ -762,6 +602,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Ted Cruz": {
@@ -779,6 +620,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Josh Hawley": {
@@ -796,6 +638,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Mitt Romney": {
@@ -813,6 +656,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Bernie Sanders": {
@@ -830,6 +674,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Rand Paul": {
@@ -847,6 +692,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Tommy Tuberville": {
@@ -864,6 +710,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Maria Cantwell": {
@@ -881,6 +728,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "John Boozman": {
@@ -1031,6 +879,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 15,
       "data_quality": "HIGH"
     },
     "Gary Peters": {
@@ -1090,6 +939,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 2,
       "data_quality": "HIGH"
     },
     "John Fetterman": {
@@ -1241,6 +1091,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 7,
       "data_quality": "HIGH"
     },
     "Nancy Pelosi": {
@@ -1257,6 +1108,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Alexandria Ocasio-Cortez": {
@@ -1273,6 +1125,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Dan Crenshaw": {
@@ -1289,6 +1142,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Markwayne Mullin": {
@@ -1306,6 +1160,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Michael McCaul": {
@@ -1322,6 +1177,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Josh Gottheimer": {
@@ -1341,52 +1197,13 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "AMD",
+          "ticker": "GS",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-04-27",
+          "transaction_date": "2026-04-16",
           "disclosure_date": "2026-05-20",
-          "asset_description": "Advanced Micro Devices Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "DLTR",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Dollar Tree Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "ALLY",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Ally Financial Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "FWRG",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-06",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "FIRST WATCH RESTAURA GRO INC"
+          "asset_description": "The Goldman Sachs Group Inc"
         },
         {
           "chamber": "House",
@@ -1406,45 +1223,6 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "AMD",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-23",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Advanced Micro Devices Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "FCX",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-15",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Freeport-McMoRan Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "F",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Ford Motor Co"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
           "ticker": "PFGC",
           "trade_type": "sale",
           "amount_raw": "$15,001 - $50,000",
@@ -1458,13 +1236,91 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "DRI",
+          "ticker": "MKTX",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "MarketAxess Holdings Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "MLM",
           "trade_type": "sale",
           "amount_raw": "$15,001 - $50,000",
           "amount_midpoint": 32500,
           "transaction_date": "2026-04-09",
           "disclosure_date": "2026-05-20",
-          "asset_description": "Darden Restaurants Inc"
+          "asset_description": "Martin Marietta Materials Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "IBM",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-24",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "International Business Machines Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "HDB",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-13",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "H D F C Bank Ltd"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "AMD",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-23",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Advanced Micro Devices Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "GS",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "The Goldman Sachs Group Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "ALLY",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Ally Financial Inc"
         }
       ],
       "offshore_matches": [],
@@ -1472,6 +1328,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 6,
       "data_quality": "HIGH"
     },
     "Dan Meuser": {
@@ -1488,6 +1345,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Elon Musk": {
@@ -1501,6 +1359,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Sam Altman": {
@@ -1514,6 +1373,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Sundar Pichai": {
@@ -1527,6 +1387,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Mark Zuckerberg": {
@@ -1540,6 +1401,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Bill Gates": {
@@ -1553,6 +1415,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Jensen Huang": {
@@ -1566,6 +1429,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Satya Nadella": {
@@ -1579,6 +1443,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Larry Ellison": {
@@ -1592,6 +1457,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Brian Armstrong": {
@@ -1605,6 +1471,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Michael Saylor": {
@@ -1618,6 +1485,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Jeff Bezos": {
@@ -1631,6 +1499,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "George Soros": {
@@ -1644,6 +1513,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Bill Ackman": {
@@ -1657,6 +1527,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Carl Icahn": {
@@ -1670,6 +1541,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Jamie Dimon": {
@@ -1683,6 +1555,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Larry Fink": {
@@ -1696,6 +1569,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Ray Dalio": {
@@ -1709,6 +1583,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Jim Cramer": {
@@ -1722,6 +1597,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Rupert Murdoch": {
@@ -1735,6 +1611,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Gavin Newsom": {
@@ -1748,6 +1625,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Greg Abbott": {
@@ -1761,6 +1639,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "Gretchen Whitmer": {
@@ -1774,6 +1653,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     },
     "JB Pritzker": {
@@ -1787,6 +1667,7 @@
       "win_rate": 0,
       "total_tracked_trades": 0,
       "avg_return": 0,
+      "open_positions": 0,
       "data_quality": "LOW"
     }
   },
@@ -2506,7 +2387,64 @@
     }
   ],
   "scorecard": [],
-  "political_holdings": [],
+  "political_holdings": [
+    {
+      "person": "Brian Armstrong",
+      "ticker": "ETH",
+      "price": 2023.09,
+      "type": "crypto",
+      "change_pct": "-2.26%"
+    },
+    {
+      "person": "Donald Trump",
+      "ticker": "BTC",
+      "price": 74327,
+      "type": "crypto",
+      "change_pct": "-1.90%"
+    },
+    {
+      "person": "Elon Musk",
+      "ticker": "BTC",
+      "price": 74327,
+      "type": "crypto",
+      "change_pct": "-1.90%"
+    },
+    {
+      "person": "Howard Lutnick",
+      "ticker": "BTC",
+      "price": 74327,
+      "type": "crypto",
+      "change_pct": "-1.90%"
+    },
+    {
+      "person": "Larry Fink",
+      "ticker": "BTC",
+      "price": 74352,
+      "type": "crypto",
+      "change_pct": "-1.86%"
+    },
+    {
+      "person": "Michael Saylor",
+      "ticker": "BTC",
+      "price": 74352,
+      "type": "crypto",
+      "change_pct": "-1.86%"
+    },
+    {
+      "person": "Brian Armstrong",
+      "ticker": "BTC",
+      "price": 74355,
+      "type": "crypto",
+      "change_pct": "-1.86%"
+    },
+    {
+      "person": "Elon Musk",
+      "ticker": "DOGE",
+      "price": 0.100295,
+      "type": "crypto",
+      "change_pct": "-0.64%"
+    }
+  ],
   "economic_indicators": [],
   "dark_pool": [
     {
@@ -2639,7 +2577,7 @@
   ],
   "fara": [],
   "raw_counts": {
-    "trades": 198,
+    "trades": 199,
     "insiders": 0,
     "contracts": 32,
     "bills": 30,
@@ -2652,7 +2590,7 @@
     "dark_pool": 14,
     "ngo": 9,
     "agencies": 111,
-    "holdings": 0,
+    "holdings": 8,
     "worldbank": 2,
     "fara": 0
   }
