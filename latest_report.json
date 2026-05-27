@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-27 15:04",
-  "timestamp_iso": "2026-05-27T15:04:11.480974",
-  "cycle_seconds": 97.080848,
+  "timestamp": "2026-05-27 15:09",
+  "timestamp_iso": "2026-05-27T15:09:17.998617",
+  "cycle_seconds": 108.764413,
   "summary": {
     "total_signals": 2,
     "high_conviction": 1,
@@ -9,7 +9,7 @@
     "social_monitored": 55,
     "watchdog_accounts": 10,
     "offshore_matches": 3,
-    "consensus_trades": 8,
+    "consensus_trades": 6,
     "positions_tracked": 140,
     "people_profiled": 55
   },
@@ -90,39 +90,52 @@
       "ticker": "MSFT",
       "action": "BUY",
       "confidence": 0.72,
-      "reasoning": "Strongest signal in the batch: 4 independent politicians across both chambers (Senate: Warner, Boozman, Fetterman; House: McGuire) bought within a ~6-week window. Cross-party, cross-chamber consensus reduces the 'shared news reaction' hypothesis. MSFT is a mega-cap AI/cloud name with genuine sector tailwinds (Azure, Copilot), and Warner sits on the Senate Intelligence Committee — a real conflict-of-interest overlap for a defense/cloud contractor. Trade sizes are small ($1K–$15K), which limits edge but also suggests personal accounts rather than institutional noise. No watchdog flags and neutral sentiment keeps score honest. Conviction is genuine but tempered by small position sizes and the possibility this is simply broad tech sentiment.",
-      "key_risk": "Small trade sizes ($1K–$15K) suggest this may be routine portfolio rebalancing rather than informed conviction. MSFT is widely held; cluster could reflect shared macro/AI optimism rather than non-public information. Warner's Intel Committee overlap is the only hard conflict-of-interest flag."
+      "reasoning": "Strongest signal in the dataset: 4 politicians across both chambers (Warner, Boozman, Fetterman, McGuire) bought independently over a ~6-week window (Apr 3 – May 14). Span across chambers and party lines reduces the 'shared news event' clustering risk — this looks like genuine independent consensus rather than a single catalyst. Warner sits on Senate Intelligence/Finance, giving him meaningful tech-sector visibility. No watchdog alerts, but the multi-buyer breadth is compelling. Trade sizes are small ($1k–$15k), which limits the 'size shock' signal but is consistent with standard politician disclosure thresholds. MSFT also has strong sector tailwinds (AI, cloud, government contracts). Confidence tempered by small trade sizes and the possibility that broad market recovery post-April volatility drove simultaneous buying.",
+      "key_risk": "Small trade sizes suggest routine portfolio rebalancing rather than informed positioning. April 2026 market volatility may have triggered simultaneous opportunistic buying across all four, making this a shared-macro-event cluster rather than insider-informed consensus."
     },
     {
       "ticker": "JPM",
       "action": "BUY",
       "confidence": 0.62,
-      "reasoning": "3 politicians (Fetterman, Keating, Khanna) buying within a tight ~6-day window (May 13–19) is the most temporally compressed cluster in this dataset — that's a meaningful signal. Khanna's position is larger ($15K–$50K), adding weight. Cross-party (progressive Khanna vs. moderate Fetterman) reduces coordinated-narrative risk. JPM is a direct beneficiary of deregulation and rate environment; any Congressional banking committee activity by these members would be a hard red flag. Score of 75 is solid. Tempered confidence because no committee conflict is cited and no watchdog alerts exist.",
-      "key_risk": "The tight buying window (May 13–19) could reflect a shared public catalyst (e.g., Fed commentary, deregulation news) rather than privileged information. No committee conflict-of-interest identified, weakening the insider-edge thesis. JPM is a liquid mega-cap widely owned by retail investors."
+      "reasoning": "3 buyers across both chambers in a tight 7-day window (May 13–19), with Ro Khanna's position reaching the $15k–$50k tier — a meaningfully larger size signal than the others. Bipartisan and bicameral spread (Fetterman/Khanna House-Senate, Keating House) adds some consensus weight. JPM is the flagship large-cap bank and benefits from financials-sector tailwinds (rate environment, deregulation expectations). However, the tight clustering in a single week raises the shared-catalyst concern — this may simply reflect a macro banking-sector rally or a specific news event. No committee conflict flagged and no watchdog alerts.",
+      "key_risk": "Tight 7-day purchase window strongly suggests a shared macro trigger (e.g., Fed commentary, deregulation news) rather than privileged information. JPM is a widely held blue-chip; politician buying here is less differentiated and more likely to reflect general market sentiment."
     },
     {
       "ticker": "GOOGL",
       "action": "SKIP",
       "confidence": 0.55,
-      "reasoning": "Only 2 buyers (Boozman and Fetterman), with Fetterman's purchase dating back to April 3 — over 5 weeks before Boozman's May 11 buy. The temporal gap weakens the consensus thesis significantly. Score of 50 is at the lower threshold and does not clear the bar for genuine conviction given: (1) no watchdog alert, (2) no identified committee conflict, (3) GOOGL faces ongoing antitrust/DOJ headwinds that are a real downside risk, and (4) the cluster likely reflects broad Big Tech sector sentiment rather than specific informational edge. SKIP until a stronger signal emerges.",
-      "key_risk": "Active DOJ antitrust proceedings against Google (search monopoly, ad tech) represent a material regulatory overhang. Two-buyer consensus with a 5-week gap is too thin to distinguish from ordinary retail-style portfolio moves."
+      "reasoning": "Only 2 buyers (Boozman and Fetterman), and the purchases are 38 days apart (Apr 3 vs May 11), which weakens the consensus signal considerably. Fetterman's April 3 purchase overlaps with his MSFT buy on the same date, suggesting a broad tech basket purchase rather than GOOGL-specific conviction. Boozman's May 11 buy could be independent, but with only 2 data points and no watchdog alerts, the edge here is thin. GOOGL faces ongoing antitrust headwinds that cut against the sector-tailwind argument.",
+      "key_risk": "Two-buyer consensus is minimal; Fetterman's same-date multi-ticker buying pattern suggests portfolio rebalancing rather than GOOGL-specific insight. Antitrust and regulatory overhang add downside risk not offset by this weak signal."
     },
     {
       "ticker": "CEG",
-      "action": "HOLD",
-      "confidence": 0.6,
-      "reasoning": "Constellation Energy (CEG) is the most interesting committee-conflict candidate in this set. Both buyers are Senate members — Boozman (Appropriations, Agriculture) and Warner (Intelligence, Finance, Banking) — and CEG is a nuclear/clean energy operator with significant federal regulatory and policy exposure. AI data center power demand is a real tailwind for nuclear, making the 'sector news' explanation plausible but not disqualifying. The 2-buyer consensus is thin, but the policy sensitivity of nuclear energy elevates the conflict-of-interest plausibility. HOLD rather than BUY because: (1) only 2 buyers, (2) trade sizes are minimal, (3) no watchdog flag. Watch for additional buyers or a third signal before committing.",
-      "key_risk": "CEG's nuclear fleet faces regulatory renewal risks and is highly sensitive to federal energy policy. The buy could simply reflect the well-publicized AI power narrative rather than any non-public contract or licensing information. Thin consensus (2 senators only) is insufficient for high conviction."
+      "action": "BUY",
+      "confidence": 0.65,
+      "reasoning": "Constellation Energy (CEG) is the most interesting name in the set from a committee-conflict standpoint. Both buyers — Boozman (Senate Appropriations, Agriculture) and Warner (Senate Finance, Intelligence) — are senior senators with visibility into energy policy, nuclear licensing, and federal power-purchase agreements. CEG is a pure-play nuclear operator with massive tailwinds from AI data center power demand and the administration's pro-nuclear posture. The 7-day spread (May 1 vs May 8) is tight but plausible as independent. Small trade sizes are a negative, but the sector-specific nature of CEG (vs. a mega-cap like MSFT) makes senator buying more anomalous and potentially more informed. No watchdog alerts, but the committee-energy-policy overlap is a genuine flag worth acting on.",
+      "key_risk": "Only 2 buyers and small trade sizes. CEG has already had a significant run on AI/nuclear narratives — politicians may simply be riding a widely publicized theme rather than acting on non-public information. Position sizing should be conservative."
     },
     {
       "ticker": "AAPL",
       "action": "SKIP",
       "confidence": 0.5,
-      "reasoning": "Two buyers — Warner (Senate) and McGuire (House) — from different chambers but with no identified committee overlap relevant to Apple's business. AAPL is the most widely held stock in the world; any politician buying it could trivially reflect ordinary diversification rather than informed trading. No watchdog alert, no committee conflict, neutral sentiment, and a score of only 50. The signal is too generic to justify action. AAPL also faces near-term headwinds from tariff exposure on China manufacturing and ongoing App Store regulatory pressure in the EU and US.",
-      "key_risk": "AAPL's ubiquity as a retail holding makes it nearly impossible to distinguish informed political buying from ordinary portfolio construction. Active tariff/trade war risks on China supply chain represent a meaningful near-term earnings headwind. No committee conflict identified."
+      "reasoning": "Only 2 buyers (Warner and McGuire) with purchases on May 1 and May 14 respectively. Warner's May 1 date overlaps with his MSFT and CEG buys on the same day, which strongly suggests a broad portfolio sweep rather than AAPL-specific conviction. McGuire's buy on May 14 overlaps with his MSFT purchase — again pointing to basket rebalancing. AAPL faces real headwinds from tariff exposure on China manufacturing. No committee conflict, no watchdog alerts, and the buying pattern is easily explained by routine portfolio activity.",
+      "key_risk": "Both buyers purchased AAPL on the same dates they purchased other tickers, indicating broad rebalancing rather than stock-specific insight. Apple's China tariff exposure is a genuine fundamental risk that the signal does not offset."
     }
   ],
-  "orders_placed": [],
+  "orders_placed": [
+    {
+      "symbol": "MSFT",
+      "qty": "6.1719",
+      "order_type": "market",
+      "limit_price": null,
+      "order_id": "fb668857-7790-42d3-ae89-df5fe6e0a6f6",
+      "status": "pending_new",
+      "submitted_at": "2026-05-27T19:11:06.925961468Z",
+      "confidence": 0.72,
+      "alloc_dollars": 2541.46,
+      "reasoning": "Strongest signal in the dataset: 4 politicians across both chambers (Warner, Boozman, Fetterman, McGuire) bought independently over a ~6-week window (Apr 3 – May 14). Span across chambers and party lines reduces the 'shared news event' clustering risk — this looks like genuine independent consensus rather than a single catalyst. Warner sits on Senate Intelligence/Finance, giving him meaningful tech-sector visibility. No watchdog alerts, but the multi-buyer breadth is compelling. Trade sizes are small ($1k–$15k), which limits the 'size shock' signal but is consistent with standard politician disclosure thresholds. MSFT also has strong sector tailwinds (AI, cloud, government contracts). Confidence tempered by small trade sizes and the possibility that broad market recovery post-April volatility drove simultaneous buying."
+    }
+  ],
   "consensus_trades": [
     {
       "ticker": "MSFT",
@@ -264,29 +277,6 @@
       "reason": "2 politicians bought AAPL: Warner, Mcguire"
     },
     {
-      "ticker": "WFC",
-      "buyer_count": 2,
-      "buyers": [
-        {
-          "politician": "Mark Warner",
-          "date": "2026-05-01",
-          "amount": "$1,001 - $15,000",
-          "chamber": "Senate"
-        },
-        {
-          "politician": "Ro Khanna",
-          "date": "2026-05-13",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        }
-      ],
-      "score": 50,
-      "action": "BUY",
-      "source": "InsiderConsensus",
-      "politician_or_entity": "2 politicians",
-      "reason": "2 politicians bought WFC: Warner, Khanna"
-    },
-    {
       "ticker": "NVDA",
       "buyer_count": 2,
       "buyers": [
@@ -308,29 +298,6 @@
       "source": "InsiderConsensus",
       "politician_or_entity": "2 politicians",
       "reason": "2 politicians bought NVDA: Boozman, Mcguire"
-    },
-    {
-      "ticker": "MA",
-      "buyer_count": 2,
-      "buyers": [
-        {
-          "politician": "Shelley Moore Capito",
-          "date": "2026-04-12",
-          "amount": "$1,001 - $15,000",
-          "chamber": "Senate"
-        },
-        {
-          "politician": "Ro Khanna",
-          "date": "2026-05-13",
-          "amount": "$15,001 - $50,000",
-          "chamber": "House"
-        }
-      ],
-      "score": 50,
-      "action": "BUY",
-      "source": "InsiderConsensus",
-      "politician_or_entity": "2 politicians",
-      "reason": "2 politicians bought MA: Capito, Khanna"
     }
   ],
   "corruption_index": [
@@ -1243,13 +1210,39 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "AMD",
-          "trade_type": "purchase",
+          "ticker": "MLM",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Martin Marietta Materials Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "MMM",
+          "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-04-27",
+          "transaction_date": "2026-04-28",
           "disclosure_date": "2026-05-20",
-          "asset_description": "Advanced Micro Devices Inc"
+          "asset_description": "3M Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "GS",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "The Goldman Sachs Group Inc"
         },
         {
           "chamber": "House",
@@ -1282,19 +1275,6 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "GS",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "The Goldman Sachs Group Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
           "ticker": "ALLY",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
@@ -1308,13 +1288,13 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "AMD",
+          "ticker": "IFNNY",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-04-23",
+          "transaction_date": "2026-04-13",
           "disclosure_date": "2026-05-20",
-          "asset_description": "Advanced Micro Devices Inc"
+          "asset_description": "Infineon Technologies AG"
         },
         {
           "chamber": "House",
@@ -1334,39 +1314,26 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "PFGC",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
+          "ticker": "AMD",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-23",
           "disclosure_date": "2026-05-20",
-          "asset_description": "PERFORMANCE FOOD GROUP COMPANY"
+          "asset_description": "Advanced Micro Devices Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "MLM",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Martin Marietta Materials Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "MMM",
+          "ticker": "MKTX",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-04-28",
+          "transaction_date": "2026-04-09",
           "disclosure_date": "2026-05-20",
-          "asset_description": "3M Co"
+          "asset_description": "MarketAxess Holdings Inc"
         }
       ],
       "offshore_matches": [],
@@ -1996,8 +1963,8 @@
       "entry_price": 298.025,
       "entry_date": "2026-05-27T16:25:28.307113+00:00",
       "amount_midpoint": 8000,
-      "current_price": 299.21,
-      "return_pct": 0.4,
+      "current_price": 299.485,
+      "return_pct": 0.49,
       "days_tracked": 0
     },
     {
@@ -2007,8 +1974,8 @@
       "entry_price": 148.42,
       "entry_date": "2026-05-27T16:25:28.739761+00:00",
       "amount_midpoint": 32500,
-      "current_price": 147.97,
-      "return_pct": -0.3,
+      "current_price": 148.02,
+      "return_pct": -0.27,
       "days_tracked": 0
     },
     {
@@ -2040,8 +2007,8 @@
       "entry_price": 403.78,
       "entry_date": "2026-05-27T16:25:29.712277+00:00",
       "amount_midpoint": 8000,
-      "current_price": 406.28,
-      "return_pct": 0.62,
+      "current_price": 405.47,
+      "return_pct": 0.42,
       "days_tracked": 0
     },
     {
@@ -2051,8 +2018,8 @@
       "entry_price": 391.325,
       "entry_date": "2026-05-27T16:25:30.081417+00:00",
       "amount_midpoint": 8000,
-      "current_price": 391.475,
-      "return_pct": 0.04,
+      "current_price": 391.24,
+      "return_pct": -0.02,
       "days_tracked": 0
     },
     {
@@ -2062,8 +2029,8 @@
       "entry_price": 26.74,
       "entry_date": "2026-05-27T16:25:30.621269+00:00",
       "amount_midpoint": 8000,
-      "current_price": 26.75,
-      "return_pct": 0.04,
+      "current_price": 26.755,
+      "return_pct": 0.06,
       "days_tracked": 0
     },
     {
@@ -2084,8 +2051,8 @@
       "entry_price": 103.9,
       "entry_date": "2026-05-27T16:25:31.747734+00:00",
       "amount_midpoint": 8000,
-      "current_price": 103.47,
-      "return_pct": -0.41,
+      "current_price": 103.65,
+      "return_pct": -0.24,
       "days_tracked": 0
     },
     {
@@ -2095,8 +2062,8 @@
       "entry_price": 239.12,
       "entry_date": "2026-05-27T16:25:32.003147+00:00",
       "amount_midpoint": 8000,
-      "current_price": 239.16,
-      "return_pct": 0.02,
+      "current_price": 239.105,
+      "return_pct": -0.01,
       "days_tracked": 0
     },
     {
@@ -2106,8 +2073,8 @@
       "entry_price": 289.0,
       "entry_date": "2026-05-27T16:25:32.297375+00:00",
       "amount_midpoint": 8000,
-      "current_price": 287.25,
-      "return_pct": -0.61,
+      "current_price": 286.96,
+      "return_pct": -0.71,
       "days_tracked": 0
     },
     {
@@ -2117,8 +2084,8 @@
       "entry_price": 44.8,
       "entry_date": "2026-05-27T16:25:32.764925+00:00",
       "amount_midpoint": 8000,
-      "current_price": 44.52,
-      "return_pct": -0.62,
+      "current_price": 44.565,
+      "return_pct": -0.52,
       "days_tracked": 0
     },
     {
@@ -2150,8 +2117,8 @@
       "entry_price": 178.1,
       "entry_date": "2026-05-27T16:25:34.115459+00:00",
       "amount_midpoint": 8000,
-      "current_price": 177.18,
-      "return_pct": -0.52,
+      "current_price": 177.57,
+      "return_pct": -0.3,
       "days_tracked": 0
     },
     {
@@ -2183,8 +2150,8 @@
       "entry_price": 50.005,
       "entry_date": "2026-05-27T16:25:35.644642+00:00",
       "amount_midpoint": 8000,
-      "current_price": 49.92,
-      "return_pct": -0.17,
+      "current_price": 49.905,
+      "return_pct": -0.2,
       "days_tracked": 0
     },
     {
@@ -2205,8 +2172,8 @@
       "entry_price": 88.705,
       "entry_date": "2026-05-27T16:25:36.552487+00:00",
       "amount_midpoint": 8000,
-      "current_price": 89.115,
-      "return_pct": 0.46,
+      "current_price": 89.04,
+      "return_pct": 0.38,
       "days_tracked": 0
     },
     {
@@ -2216,8 +2183,8 @@
       "entry_price": 24.73,
       "entry_date": "2026-05-27T16:25:36.693102+00:00",
       "amount_midpoint": 8000,
-      "current_price": 24.585,
-      "return_pct": -0.59,
+      "current_price": 24.605,
+      "return_pct": -0.51,
       "days_tracked": 0
     },
     {
@@ -2227,8 +2194,8 @@
       "entry_price": 311.39,
       "entry_date": "2026-05-27T16:25:36.836929+00:00",
       "amount_midpoint": 8000,
-      "current_price": 310.245,
-      "return_pct": -0.37,
+      "current_price": 310.37,
+      "return_pct": -0.33,
       "days_tracked": 0
     },
     {
@@ -2238,8 +2205,8 @@
       "entry_price": 199.14,
       "entry_date": "2026-05-27T16:25:37.286908+00:00",
       "amount_midpoint": 8000,
-      "current_price": 199.33,
-      "return_pct": 0.1,
+      "current_price": 198.785,
+      "return_pct": -0.18,
       "days_tracked": 0
     },
     {
@@ -2249,7 +2216,7 @@
       "entry_price": 412.57,
       "entry_date": "2026-05-27T16:25:37.703976+00:00",
       "amount_midpoint": 8000,
-      "current_price": 411.795,
+      "current_price": 411.79,
       "return_pct": -0.19,
       "days_tracked": 0
     },
@@ -2282,8 +2249,8 @@
       "entry_price": 118.285,
       "entry_date": "2026-05-27T16:25:38.380065+00:00",
       "amount_midpoint": 8000,
-      "current_price": 118.295,
-      "return_pct": 0.01,
+      "current_price": 118.28,
+      "return_pct": -0.0,
       "days_tracked": 0
     },
     {
@@ -2293,8 +2260,8 @@
       "entry_price": 289.0,
       "entry_date": "2026-05-27T16:25:38.698960+00:00",
       "amount_midpoint": 8000,
-      "current_price": 287.25,
-      "return_pct": -0.61,
+      "current_price": 286.96,
+      "return_pct": -0.71,
       "days_tracked": 0
     },
     {
@@ -2328,8 +2295,8 @@
       "entry_price": 611.785,
       "entry_date": "2026-05-27T16:25:55.112271+00:00",
       "amount_midpoint": 8000,
-      "current_price": 635.14,
-      "return_pct": 3.82,
+      "current_price": 637.855,
+      "return_pct": 4.26,
       "days_tracked": 0
     },
     {
@@ -2339,8 +2306,8 @@
       "entry_price": 210.65,
       "entry_date": "2026-05-27T16:25:54.676424+00:00",
       "amount_midpoint": 8000,
-      "current_price": 213.075,
-      "return_pct": 1.15,
+      "current_price": 212.925,
+      "return_pct": 1.08,
       "days_tracked": 0
     },
     {
@@ -2350,8 +2317,8 @@
       "entry_price": 93.575,
       "entry_date": "2026-05-27T16:48:08.361314+00:00",
       "amount_midpoint": 8000,
-      "current_price": 94.62,
-      "return_pct": 1.12,
+      "current_price": 94.59,
+      "return_pct": 1.08,
       "days_tracked": 0
     },
     {
@@ -2361,8 +2328,8 @@
       "entry_price": 210.825,
       "entry_date": "2026-05-27T16:25:40.656021+00:00",
       "amount_midpoint": 8000,
-      "current_price": 213.05,
-      "return_pct": 1.06,
+      "current_price": 212.925,
+      "return_pct": 1.0,
       "days_tracked": 0
     },
     {
@@ -2372,30 +2339,8 @@
       "entry_price": 75.71,
       "entry_date": "2026-05-27T18:15:16.520214+00:00",
       "amount_midpoint": 8000,
-      "current_price": 76.46,
-      "return_pct": 0.99,
-      "days_tracked": 0
-    },
-    {
-      "politician": "ro khanna",
-      "politician_display": "Ro Khanna",
-      "ticker": "LULU",
-      "entry_price": 131.39,
-      "entry_date": "2026-05-27T18:15:18.352274+00:00",
-      "amount_midpoint": 8000,
-      "current_price": 132.555,
-      "return_pct": 0.89,
-      "days_tracked": 0
-    },
-    {
-      "politician": "josh gottheimer",
-      "politician_display": "Josh Gottheimer",
-      "ticker": "CBZ",
-      "entry_price": 31.445,
-      "entry_date": "2026-05-27T16:25:49.256256+00:00",
-      "amount_midpoint": 8000,
-      "current_price": 31.71,
-      "return_pct": 0.84,
+      "current_price": 76.39,
+      "return_pct": 0.9,
       "days_tracked": 0
     },
     {
@@ -2405,19 +2350,41 @@
       "entry_price": 340.21,
       "entry_date": "2026-05-27T16:31:18.786024+00:00",
       "amount_midpoint": 8000,
-      "current_price": 343.02,
-      "return_pct": 0.83,
+      "current_price": 343.155,
+      "return_pct": 0.87,
       "days_tracked": 0
     },
     {
-      "politician": "john fetterman",
-      "politician_display": "John Fetterman",
-      "ticker": "AMZN",
-      "entry_price": 269.38,
-      "entry_date": "2026-05-27T16:25:44.973909+00:00",
+      "politician": "josh gottheimer",
+      "politician_display": "Josh Gottheimer",
+      "ticker": "CBZ",
+      "entry_price": 31.445,
+      "entry_date": "2026-05-27T16:25:49.256256+00:00",
       "amount_midpoint": 8000,
-      "current_price": 271.575,
-      "return_pct": 0.81,
+      "current_price": 31.695,
+      "return_pct": 0.8,
+      "days_tracked": 0
+    },
+    {
+      "politician": "ro khanna",
+      "politician_display": "Ro Khanna",
+      "ticker": "GM",
+      "entry_price": 83.68,
+      "entry_date": "2026-05-27T16:26:01.293877+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 84.33,
+      "return_pct": 0.78,
+      "days_tracked": 0
+    },
+    {
+      "politician": "ro khanna",
+      "politician_display": "Ro Khanna",
+      "ticker": "LULU",
+      "entry_price": 131.39,
+      "entry_date": "2026-05-27T18:15:18.352274+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 132.375,
+      "return_pct": 0.75,
       "days_tracked": 0
     },
     {
@@ -2427,8 +2394,8 @@
       "entry_price": 63.35,
       "entry_date": "2026-05-27T16:25:59.751052+00:00",
       "amount_midpoint": 8000,
-      "current_price": 63.86,
-      "return_pct": 0.81,
+      "current_price": 63.82,
+      "return_pct": 0.74,
       "days_tracked": 0
     }
   ],
