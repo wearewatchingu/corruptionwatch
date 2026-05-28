@@ -12,12 +12,11 @@
   --bg:#000;--bg2:#050000;--bg3:#080000;
   --border:#1a0000;--border2:#2a0000;
   --text:#d0d0d0;--text2:#888;--text3:#444;--text4:#222;
-  --green:#00cc44;--orange:#cc6600;--purple:#8844cc;--blue:#2266cc;
+  --green:#00cc44;--orange:#cc6600;--purple:#8844cc;--blue:#2266cc;--yellow:#cc9900;
 }
 body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monospace;min-height:100vh;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,0,0,0.008) 3px,rgba(255,0,0,0.008) 4px);pointer-events:none;z-index:9999;}
 
-/* HEADER */
 .hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--border);background:rgba(4,0,0,0.97);position:sticky;top:0;z-index:100;}
 .hdr-left{display:flex;align-items:center;gap:14px;}
 .eye{font-size:32px;animation:blink 5s infinite;}
@@ -28,10 +27,8 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .clock{font-family:'Orbitron',monospace;font-size:32px;color:var(--red);letter-spacing:.08em;text-shadow:0 0 12px rgba(204,0,0,.4);}
 .datestamp{font-size:11px;color:var(--text3);margin-top:3px;}
 
-/* TRADINGVIEW */
 .tv-wrap{height:46px;background:var(--bg2);border-bottom:1px solid var(--border);}
 
-/* LIVE BAR */
 .livebar{background:#030000;border-bottom:1px solid var(--border);padding:9px 28px;display:flex;align-items:center;gap:20px;font-size:12px;flex-wrap:wrap;}
 .live-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.3s infinite;display:inline-block;}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 6px var(--red)}50%{opacity:.3;box-shadow:none}}
@@ -39,34 +36,32 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .lstat{color:var(--text3);}
 .lstat span{color:var(--red);}
 
-/* TABS */
 .tabs{display:flex;border-bottom:1px solid var(--border);background:#020000;padding:0 28px;overflow-x:auto;}
 .tab{padding:13px 18px;font-size:11px;letter-spacing:.1em;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;font-family:'Orbitron',monospace;}
 .tab:hover{color:var(--text2);}
 .tab.active{color:var(--red);border-bottom-color:var(--red);}
 
-/* CONTENT */
 .content{padding:22px 28px;max-width:1600px;margin:0 auto;}
 .panel{display:none;}
 .panel.active{display:block;}
 
-/* GRID */
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px;}
 .g2l{display:grid;grid-template-columns:2fr 1fr;gap:16px;}
 
-/* METRIC */
 .metric{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:16px;}
 .metric-label{font-size:10px;color:#440000;letter-spacing:.12em;margin-bottom:8px;text-transform:uppercase;}
 .metric-value{font-family:'Orbitron',monospace;font-size:30px;color:var(--red);line-height:1;}
+.metric-value.green{color:var(--green);}
+.metric-value.orange{color:var(--orange);}
 .metric-sub{font-size:11px;color:var(--text3);margin-top:5px;}
 
-/* CARD */
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:16px;margin-bottom:16px;}
 .card-title{font-size:10px;color:#550000;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.card-title.long{color:#005500;}
+.card-title.short{color:#550000;}
 
-/* SIGNAL ROW */
 .sig-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #0a0000;cursor:pointer;transition:all .15s;}
 .sig-row:last-child{border-bottom:none;}
 .sig-row:hover{background:var(--red-glow);padding-left:6px;}
@@ -80,8 +75,55 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .sig-reason{font-size:11px;color:#333;margin-top:3px;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
 .action-badge{font-size:11px;font-weight:700;padding:5px 12px;border-radius:3px;letter-spacing:.08em;flex-shrink:0;align-self:center;}
 .ab-buy{background:rgba(0,150,0,.12);color:var(--green);border:1px solid #00aa33;}
-.ab-sell{background:var(--red-glow);color:var(--red);border:1px solid var(--red);}
+.ab-short{background:var(--red-glow);color:var(--red);border:1px solid var(--red);}
 .ab-hold{background:rgba(80,80,80,.1);color:var(--text3);border:1px solid #2a2a2a;}
+.ab-skip{background:rgba(80,80,80,.05);color:var(--text4);border:1px solid #1a1a1a;}
+
+/* TRADING TAB */
+.position-row{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid #0a0000;font-size:12px;}
+.position-row:last-child{border-bottom:none;}
+.pos-ticker{font-weight:700;color:#eee;min-width:60px;font-family:'Orbitron',monospace;font-size:13px;}
+.pos-side{font-size:10px;padding:3px 8px;border-radius:2px;min-width:54px;text-align:center;letter-spacing:.05em;font-weight:700;}
+.pos-side.long{color:var(--green);background:rgba(0,150,0,.08);border:1px solid #00aa33;}
+.pos-side.short{color:var(--red);background:var(--red-glow);border:1px solid var(--red);}
+.pos-qty{font-family:'Orbitron',monospace;color:var(--text2);min-width:70px;text-align:right;font-size:11px;}
+.pos-price{font-family:'Orbitron',monospace;color:var(--text2);min-width:80px;text-align:right;font-size:11px;}
+.pos-plpc{font-family:'Orbitron',monospace;font-weight:700;min-width:80px;text-align:right;font-size:12px;}
+
+.order-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #0a0000;font-size:12px;}
+.order-row:last-child{border-bottom:none;}
+.order-action{font-family:'Orbitron',monospace;font-weight:700;font-size:10px;padding:5px 10px;border-radius:3px;letter-spacing:.06em;min-width:100px;text-align:center;flex-shrink:0;}
+.oa-buy{color:var(--green);background:rgba(0,150,0,.1);border:1px solid #00aa33;}
+.oa-short{color:var(--red);background:var(--red-glow);border:1px solid var(--red);}
+.oa-close{color:var(--yellow);background:rgba(204,153,0,.1);border:1px solid var(--yellow);}
+.oa-cover{color:var(--purple);background:rgba(136,68,204,.1);border:1px solid var(--purple);}
+.oa-hold{color:var(--text3);background:rgba(80,80,80,.05);border:1px solid #2a2a2a;}
+.order-detail{flex:1;min-width:0;}
+.order-title-line{font-weight:700;color:#eee;font-size:13px;}
+.order-meta{font-size:11px;color:var(--text3);margin-top:3px;}
+.order-reasoning{font-size:11px;color:var(--text2);margin-top:4px;line-height:1.5;}
+.exit-reason{font-size:11px;color:var(--orange);margin-top:3px;font-style:italic;}
+
+.position-header{display:flex;gap:14px;padding:8px 0;border-bottom:1px solid var(--border);font-size:10px;color:#440000;letter-spacing:.1em;text-transform:uppercase;font-family:'Orbitron',monospace;}
+.position-header div{min-width:60px;}
+.position-header .h-qty,.position-header .h-px{min-width:70px;text-align:right;}
+.position-header .h-plpc{min-width:80px;text-align:right;}
+
+/* HOLDINGS MATRIX */
+.matrix-controls{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;font-size:11px;}
+.matrix-legend{display:flex;gap:14px;font-size:11px;color:var(--text3);margin-left:auto;}
+.mleg{display:flex;align-items:center;gap:6px;}
+.mldot{width:14px;height:14px;border-radius:2px;}
+.matrix-wrap{overflow-x:auto;background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:6px;}
+.matrix{border-collapse:collapse;font-size:11px;width:100%;}
+.matrix th{background:var(--bg3);color:var(--text3);padding:8px 6px;border:1px solid var(--border);font-family:'Orbitron',monospace;letter-spacing:.05em;font-weight:400;font-size:10px;white-space:nowrap;}
+.matrix th.row-header{position:sticky;left:0;background:var(--bg2);text-align:left;min-width:200px;z-index:2;}
+.matrix td{border:1px solid #0a0000;padding:6px;text-align:center;min-width:55px;color:var(--text3);}
+.matrix td.row-header{position:sticky;left:0;background:var(--bg2);text-align:left;font-weight:700;color:var(--text);padding:6px 10px;cursor:pointer;}
+.matrix td.row-header:hover{color:var(--red);background:var(--bg3);}
+.matrix .cell-buy{background:rgba(0,150,0,.18);color:var(--green);font-weight:700;}
+.matrix .cell-sell{background:rgba(204,0,0,.18);color:var(--red);font-weight:700;}
+.matrix .cell-both{background:rgba(204,153,0,.18);color:var(--yellow);font-weight:700;}
 
 /* OFFSHORE */
 .off-row{padding:13px 0;border-bottom:1px solid #0a0000;}
@@ -142,6 +184,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .pc-role{font-size:11px;color:var(--text3);margin-bottom:8px;line-height:1.4;}
 .pc-score{font-family:'Orbitron',monospace;font-size:12px;margin-bottom:4px;}
 .pc-signal{font-size:11px;color:var(--red);}
+.pc-trades{font-size:10px;color:var(--green);margin-top:4px;}
 .pc-offshore{font-size:10px;color:var(--orange);margin-top:4px;}
 
 /* MONEY FLOWS */
@@ -168,14 +211,15 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .econ-value{font-family:'Orbitron',monospace;font-size:22px;color:var(--red);margin-bottom:5px;}
 .econ-change{font-size:12px;}
 
-/* STORIES */
-.story-block{border-left:3px solid var(--red);padding-left:16px;margin-bottom:20px;}
-.story-header{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
-.story-ticker{font-family:'Orbitron',monospace;font-size:16px;color:var(--red);}
-.story-score{font-size:12px;color:var(--text3);}
-.story-entity{font-size:13px;color:var(--text2);margin-bottom:8px;}
-.story-text{font-size:13px;color:var(--text2);line-height:1.8;}
-.story-label{font-size:10px;color:#440000;margin-top:8px;font-style:italic;}
+/* CONSENSUS BLOCK */
+.consensus-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #0a0000;font-size:12px;}
+.consensus-row:last-child{border-bottom:none;}
+.con-direction{font-family:'Orbitron',monospace;font-size:10px;font-weight:700;padding:4px 8px;border-radius:3px;letter-spacing:.06em;min-width:60px;text-align:center;flex-shrink:0;}
+.cd-buy{color:var(--green);background:rgba(0,150,0,.1);border:1px solid #00aa33;}
+.cd-sell{color:var(--red);background:var(--red-glow);border:1px solid var(--red);}
+.con-ticker{font-family:'Orbitron',monospace;font-weight:700;color:#eee;min-width:54px;font-size:13px;}
+.con-count{font-family:'Orbitron',monospace;color:var(--red);min-width:30px;text-align:center;font-size:14px;}
+.con-actors{font-size:11px;color:var(--text2);flex:1;line-height:1.4;}
 
 /* BAR ROW */
 .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
@@ -184,14 +228,12 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .bar-fill-red{height:100%;border-radius:2px;background:var(--red);}
 .bar-val{font-family:'Orbitron',monospace;font-size:12px;color:var(--red);min-width:28px;text-align:right;}
 
-/* ALERT */
 .alert-row{display:flex;align-items:flex-start;gap:12px;padding:11px 12px;background:rgba(204,0,0,.03);border:1px solid #150000;border-radius:4px;margin-bottom:8px;}
 .alert-icon{color:var(--red);font-size:15px;flex-shrink:0;margin-top:1px;}
 .alert-text{flex:1;font-size:12px;color:var(--text2);line-height:1.5;}
 .alert-time{font-size:10px;color:var(--text3);flex-shrink:0;}
 
-/* SCROLLBAR */
-::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-track{background:#000;}
 ::-webkit-scrollbar-thumb{background:#1a0000;border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover{background:var(--red);}
@@ -258,44 +300,99 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 <div class="livebar">
   <span class="live-dot"></span>
   <span class="live-label">LIVE</span>
-  <span class="lstat" id="layersStat">26 layers active</span>
-  <span class="lstat">Monitored: <span id="monitoredCount">--</span></span>
+  <span class="lstat">Open pos: <span id="openCount">--</span></span>
+  <span class="lstat">Entries today: <span id="entriesCount">--</span></span>
+  <span class="lstat">Exits today: <span id="exitsCount">--</span></span>
   <span class="lstat">Last run: <span id="lastRun">loading...</span></span>
   <span class="lstat">Offshore: <span id="offshoreCount">--</span></span>
-  <span class="lstat">High conviction: <span id="highConv">--</span></span>
-  <span class="lstat">Profiled: <span id="profiledCount">--</span></span>
+  <span class="lstat">Consensus: <span id="consensusCount">--</span></span>
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="switchTab('signals')">LIVE SIGNALS</div>
+  <div class="tab active" onclick="switchTab('trading')">TRADING</div>
+  <div class="tab" onclick="switchTab('signals')">LIVE SIGNALS</div>
+  <div class="tab" onclick="switchTab('matrix')">HOLDINGS MATRIX</div>
   <div class="tab" onclick="switchTab('index')">CORRUPTION INDEX</div>
   <div class="tab" onclick="switchTab('offshore')">OFFSHORE PAPERS</div>
   <div class="tab" onclick="switchTab('network')">CORRUPTION WEB</div>
   <div class="tab" onclick="switchTab('watchlist')">WATCH LIST</div>
   <div class="tab" onclick="switchTab('money')">MONEY FLOWS</div>
   <div class="tab" onclick="switchTab('agencies')">AGENCIES</div>
-  <div class="tab" onclick="switchTab('stories')">INTELLIGENCE</div>
 </div>
 
 <div class="content">
 
-  <!-- SIGNALS TAB -->
-  <div id="tab-signals" class="panel active">
-    <div class="g4" id="metricsRow">
-      <div class="metric"><div class="metric-label">Top Signal</div><div class="metric-value" id="topScore">--</div><div class="metric-sub" id="topTicker">loading...</div></div>
-      <div class="metric"><div class="metric-label">High Conviction</div><div class="metric-value" id="convCount">--</div><div class="metric-sub">signals above 80</div></div>
-      <div class="metric"><div class="metric-label">Offshore Confirmed</div><div class="metric-value" id="offMetric">--</div><div class="metric-sub">exact name matches</div></div>
-      <div class="metric"><div class="metric-label">Contracts Flagged</div><div class="metric-value" id="contractMetric">--</div><div class="metric-sub">this week</div></div>
+  <!-- TRADING TAB -->
+  <div id="tab-trading" class="panel active">
+    <div class="g4">
+      <div class="metric"><div class="metric-label">Open Positions</div><div class="metric-value" id="mOpen">--</div><div class="metric-sub" id="mOpenSub">long + short</div></div>
+      <div class="metric"><div class="metric-label">Today's Entries</div><div class="metric-value green" id="mEntries">--</div><div class="metric-sub">new positions opened</div></div>
+      <div class="metric"><div class="metric-label">Today's Exits</div><div class="metric-value orange" id="mExits">--</div><div class="metric-sub">positions closed</div></div>
+      <div class="metric"><div class="metric-label">Decisions Pending</div><div class="metric-value" id="mDecisions">--</div><div class="metric-sub" id="mDecisionsSub">from Claude</div></div>
     </div>
+
+    <div class="card">
+      <div class="card-title">Open Positions — Live P&amp;L</div>
+      <div class="position-header">
+        <div>TICKER</div><div>SIDE</div><div class="h-qty">QTY</div><div class="h-px">ENTRY</div><div class="h-px">CURRENT</div><div class="h-plpc">P&amp;L %</div><div class="h-plpc">P&amp;L $</div>
+      </div>
+      <div id="positionsList"><div class="loading">LOADING POSITIONS...</div></div>
+    </div>
+
     <div class="g2">
-      <div>
-        <div class="card"><div class="card-title">Top Scored Signals</div><div id="signalsList"><div class="loading">LOADING SIGNALS...</div></div></div>
+      <div class="card">
+        <div class="card-title long">Entries Placed This Cycle</div>
+        <div id="entriesList"></div>
       </div>
-      <div>
-        <div class="card"><div class="card-title">Signal Source Breakdown</div><div id="sourceBreak"></div></div>
-        <div class="card"><div class="card-title">Live Alerts</div><div id="alertsList"></div></div>
+      <div class="card">
+        <div class="card-title short">Exits Placed This Cycle</div>
+        <div id="exitsList"></div>
       </div>
     </div>
+
+    <div class="card">
+      <div class="card-title">Claude Decisions This Cycle</div>
+      <div id="decisionsList"></div>
+    </div>
+  </div>
+
+  <!-- LIVE SIGNALS TAB -->
+  <div id="tab-signals" class="panel">
+    <div class="g4">
+      <div class="metric"><div class="metric-label">Top Long Signal</div><div class="metric-value green" id="topLongScore">--</div><div class="metric-sub" id="topLongTicker">loading...</div></div>
+      <div class="metric"><div class="metric-label">Top Short Signal</div><div class="metric-value" id="topShortScore">--</div><div class="metric-sub" id="topShortTicker">loading...</div></div>
+      <div class="metric"><div class="metric-label">Consensus Clusters</div><div class="metric-value orange" id="consensusMetric">--</div><div class="metric-sub">multi-politician trades</div></div>
+      <div class="metric"><div class="metric-label">Offshore Confirmed</div><div class="metric-value" id="offMetric">--</div><div class="metric-sub">exact matches</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Consensus Signals — Multiple Politicians Same Direction</div>
+      <div id="consensusList"></div>
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <div class="card-title long">LONG Candidates — Politicians Buying</div>
+        <div id="longSignals"><div class="loading">LOADING...</div></div>
+      </div>
+      <div class="card">
+        <div class="card-title short">SHORT Candidates — Politicians Selling</div>
+        <div id="shortSignals"><div class="loading">LOADING...</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOLDINGS MATRIX TAB -->
+  <div id="tab-matrix" class="panel">
+    <div class="matrix-controls">
+      <div style="font-size:11px;color:var(--text3);">Politicians × tickers. Each cell shows trade activity in the lookback window. Click a name to open dossier.</div>
+      <div class="matrix-legend">
+        <div class="mleg"><div class="mldot" style="background:rgba(0,150,0,.4)"></div>BUY</div>
+        <div class="mleg"><div class="mldot" style="background:rgba(204,0,0,.4)"></div>SELL</div>
+        <div class="mleg"><div class="mldot" style="background:rgba(204,153,0,.4)"></div>BOTH</div>
+      </div>
+    </div>
+    <div class="matrix-wrap" id="matrixWrap"><div class="loading">BUILDING HOLDINGS MATRIX...</div></div>
   </div>
 
   <!-- CORRUPTION INDEX TAB -->
@@ -311,7 +408,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
     <div class="card">
       <div class="card-title">ICIJ Offshore Papers — Confirmed Exact Matches Only</div>
       <div style="font-size:11px;color:#440000;margin-bottom:14px;padding:8px;background:#080000;border-radius:3px;">
-        ⚠ Only matches with score 90+ are shown. Lower scores are excluded as unconfirmed. Inclusion in offshore papers does not indicate illegal activity — it indicates documented offshore financial structures.
+        ⚠ Only matches with score 90+ are shown. Inclusion in offshore papers does not indicate illegal activity — it indicates documented offshore financial structures.
       </div>
       <div id="offshoreList"><div class="loading">CROSS-REFERENCING PAPERS...</div></div>
     </div>
@@ -324,9 +421,8 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       <div class="legend-item"><div class="ldot" style="background:var(--red)"></div>Politicians</div>
       <div class="legend-item"><div class="ldot" style="background:var(--orange)"></div>Companies</div>
       <div class="legend-item"><div class="ldot" style="background:#006600"></div>Agencies</div>
-      <div class="legend-item"><div class="ldot" style="background:var(--purple)"></div>Billionaires</div>
-      <div class="legend-item"><div class="ldot" style="background:var(--blue)"></div>Foreign</div>
-      <div style="margin-left:auto;font-size:11px;color:var(--text3)">Line weight = $ amount — Click nodes for dossier</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--purple)"></div>Offshore</div>
+      <div style="margin-left:auto;font-size:11px;color:var(--text3)">Click nodes for dossier</div>
     </div>
   </div>
 
@@ -341,6 +437,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       <button class="filter-btn" onclick="filterByType('tech',this)">Tech/AI</button>
       <button class="filter-btn" onclick="filterByType('finance',this)">Finance</button>
       <button class="filter-btn" onclick="filterByType('offshore',this)">Offshore ⚠</button>
+      <button class="filter-btn" onclick="filterByType('active',this)">Active Traders</button>
     </div>
     <div class="person-grid" id="watchGrid"></div>
   </div>
@@ -370,20 +467,8 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
           <div class="card-title">Key Agency Watch</div>
           <div id="agencyWatch"></div>
         </div>
-        <div class="card">
-          <div class="card-title">Cross-Reference Findings</div>
-          <div id="crossRefList"></div>
-        </div>
       </div>
     </div>
-  </div>
-
-  <!-- STORIES TAB -->
-  <div id="tab-stories" class="panel">
-    <div style="font-size:11px;color:#440000;margin-bottom:16px;padding:10px;background:#080000;border-radius:3px;">
-      ⚠ The following are AI-generated analysis briefs based on publicly available data. They represent pattern analysis, not established legal findings. All claims are sourced from public records.
-    </div>
-    <div id="storiesList"><div class="loading">GENERATING INTELLIGENCE NARRATIVES...</div></div>
   </div>
 
 </div>
@@ -401,7 +486,7 @@ let reportData = null;
 let currentFilter = 'all';
 let allPeople = [];
 
-// Clock
+// ===== CLOCK =====
 function updateClock() {
   const n = new Date();
   document.getElementById('clock').textContent = n.toLocaleTimeString('en-US',{hour12:false});
@@ -410,85 +495,320 @@ function updateClock() {
 setInterval(updateClock,1000);
 updateClock();
 
-// Tab switching
+// ===== TABS =====
 function switchTab(name) {
-  const names = ['signals','index','offshore','network','watchlist','money','agencies','stories'];
+  const names = ['trading','signals','matrix','index','offshore','network','watchlist','money','agencies'];
   document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', names[i]===name));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   if (name==='network') setTimeout(drawNetwork,150);
 }
 
-// Utilities
+// ===== UTILS =====
 function fmt(n) {
   if (!n) return '$0';
   n = parseFloat(n);
   if (n>=1e9) return '$'+(n/1e9).toFixed(1)+'B';
   if (n>=1e6) return '$'+(n/1e6).toFixed(1)+'M';
   if (n>=1e3) return '$'+(n/1e3).toFixed(0)+'K';
-  return '$'+n;
+  return '$'+n.toFixed(0);
 }
 function scoreClass(s){return s>=80?'sh':s>=60?'sm':'sl';}
-function actionClass(a){return a==='BUY'?'ab-buy':a==='SELL'?'ab-sell':'ab-hold';}
 function scoreColor(s){return s>=80?'var(--red)':s>=60?'var(--orange)':s>=40?'#cc9900':'var(--green)';}
+function actionBadgeClass(a) {
+  if (a==='BUY') return 'ab-buy';
+  if (a==='SELL_SHORT' || a==='SELL') return 'ab-short';
+  if (a==='HOLD') return 'ab-hold';
+  return 'ab-skip';
+}
+function isBuy(t){const x=(t.trade_type||'').toLowerCase();return x.includes('purchase')||x.includes('buy');}
+function isSell(t){const x=(t.trade_type||'').toLowerCase();return x.includes('sale')||x.includes('sell');}
 
-// Load data
+// ===== LOAD =====
 function loadData() {
   fetch('latest_report.json?t='+Date.now())
     .then(r=>r.json())
     .then(data=>{reportData=data;renderAll(data);})
-    .catch(()=>{renderAll(getSample());});
+    .catch(err=>{console.warn('No report data, using sample',err);renderAll(getSample());});
 }
 
 function renderAll(data) {
-  const signals = data.top_signals||[];
-  const offshore = data.offshore_matches||[];
-  const contracts = data.contracts||[];
-  const profiles = data.person_profiles||{};
-  const index = data.corruption_index||[];
-  const agencies = data.agency_spending||[];
+  const longs = data.long_candidates || [];
+  const shorts = data.short_candidates || [];
+  const consensusBuys = data.consensus_buys || [];
+  const consensusSells = data.consensus_sells || [];
+  const decisions = data.decisions || [];
+  const positions = data.open_positions || [];
+  const entries = data.entries_placed || [];
+  const exits = data.exits_placed || [];
+  const offshore = data.offshore_matches || [];
+  const contracts = data.contracts || [];
+  const profiles = data.person_profiles || {};
+  const index = data.corruption_index || [];
 
   // Live bar
   document.getElementById('lastRun').textContent = data.timestamp||'Unknown';
+  document.getElementById('openCount').textContent = positions.length;
+  document.getElementById('entriesCount').textContent = entries.length;
+  document.getElementById('exitsCount').textContent = exits.length;
   document.getElementById('offshoreCount').textContent = offshore.length;
-  document.getElementById('highConv').textContent = signals.filter(s=>s.score>=80).length;
-  document.getElementById('monitoredCount').textContent = data.summary?.social_monitored||'--';
-  document.getElementById('profiledCount').textContent = data.summary?.people_profiled||Object.keys(profiles).length;
+  document.getElementById('consensusCount').textContent = consensusBuys.length + consensusSells.length;
 
-  // Metrics
-  const top = signals[0]||{};
-  document.getElementById('topScore').textContent = top.score||'--';
-  document.getElementById('topTicker').textContent = (top.ticker||'--')+' — '+(top.action||'');
-  document.getElementById('convCount').textContent = signals.filter(s=>s.score>=80).length;
-  document.getElementById('offMetric').textContent = offshore.length;
-  document.getElementById('contractMetric').textContent = contracts.length;
-
-  renderSignals(signals);
-  renderOffshore(offshore);
+  renderTrading(positions, entries, exits, decisions);
+  renderSignals(longs, shorts, consensusBuys, consensusSells, offshore);
+  renderMatrix(profiles);
   renderIndex(index, profiles);
+  renderOffshore(offshore);
   renderWatchList(profiles, offshore);
   renderContracts(contracts, data.fec_donors||[], data.lobbying||[]);
   renderEconomic(data.economic_indicators||[]);
-  renderAgencies(agencies, data.cross_references||[]);
-  renderStories(data.stories||[]);
-  renderAlerts(signals, offshore, data.social_signals||[]);
-  renderSources(signals);
+  renderAgencies(data.agency_spending||[]);
 }
 
-function renderSignals(signals) {
-  const el = document.getElementById('signalsList');
-  if (!signals.length){el.innerHTML='<div class="empty">No signals yet</div>';return;}
-  el.innerHTML = signals.slice(0,12).map(s=>`
-    <div class="sig-row" onclick="openSignalDossier(${JSON.stringify(s).replace(/"/g,'&quot;')})">
-      <div class="score-box ${scoreClass(s.score)}">${s.score}</div>
+// ===== TRADING TAB =====
+function renderTrading(positions, entries, exits, decisions) {
+  const longs = positions.filter(p=>p.side==='long').length;
+  const shorts = positions.filter(p=>p.side==='short').length;
+  document.getElementById('mOpen').textContent = positions.length;
+  document.getElementById('mOpenSub').textContent = `${longs} long · ${shorts} short`;
+  document.getElementById('mEntries').textContent = entries.length;
+  document.getElementById('mExits').textContent = exits.length;
+  document.getElementById('mDecisions').textContent = decisions.length;
+  const buys = decisions.filter(d=>d.action==='BUY').length;
+  const sshorts = decisions.filter(d=>d.action==='SELL_SHORT').length;
+  document.getElementById('mDecisionsSub').textContent = `${buys} BUY · ${sshorts} SHORT`;
+
+  // Positions
+  const posEl = document.getElementById('positionsList');
+  if (!positions.length) {
+    posEl.innerHTML = '<div class="empty">No open positions</div>';
+  } else {
+    // sort by absolute P&L $ desc
+    positions.sort((a,b)=>Math.abs(b.unrealized_pl||0)-Math.abs(a.unrealized_pl||0));
+    posEl.innerHTML = positions.map(p => {
+      const plpc = (p.unrealized_plpc || 0) * 100;
+      const pl = p.unrealized_pl || 0;
+      const color = plpc >= 0 ? 'var(--green)' : 'var(--red)';
+      const sign = plpc >= 0 ? '+' : '';
+      return `
+        <div class="position-row" onclick="openPositionDetail('${p.symbol}')">
+          <div class="pos-ticker">${p.symbol}</div>
+          <div class="pos-side ${p.side}">${p.side.toUpperCase()}</div>
+          <div class="pos-qty">${p.qty}</div>
+          <div class="pos-price">$${(p.avg_entry_price||0).toFixed(2)}</div>
+          <div class="pos-price">$${(p.current_price||0).toFixed(2)}</div>
+          <div class="pos-plpc" style="color:${color}">${sign}${plpc.toFixed(2)}%</div>
+          <div class="pos-plpc" style="color:${color}">${sign}$${Math.abs(pl).toFixed(2)}</div>
+        </div>`;
+    }).join('');
+  }
+
+  // Entries
+  const entryEl = document.getElementById('entriesList');
+  if (!entries.length) {
+    entryEl.innerHTML = '<div class="empty">No new entries this cycle</div>';
+  } else {
+    entryEl.innerHTML = entries.map(e => {
+      const cls = e.action === 'BUY' ? 'oa-buy' : 'oa-short';
+      const label = e.action === 'BUY' ? 'BUY LONG' : 'SELL SHORT';
+      return `
+        <div class="order-row">
+          <div class="order-action ${cls}">${label}</div>
+          <div class="order-detail">
+            <div class="order-title-line">${e.symbol} — qty ${e.qty}</div>
+            <div class="order-meta">$${(e.alloc_dollars||0).toFixed(2)} alloc · conf ${(e.confidence||0).toFixed(2)} · ${e.status||'submitted'}</div>
+            <div class="order-reasoning">${e.reasoning || ''}</div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // Exits
+  const exitEl = document.getElementById('exitsList');
+  if (!exits.length) {
+    exitEl.innerHTML = '<div class="empty">No exits this cycle</div>';
+  } else {
+    exitEl.innerHTML = exits.map(e => {
+      const cls = e.side === 'sell' ? 'oa-close' : 'oa-cover';
+      const label = e.side === 'sell' ? 'CLOSE LONG' : 'COVER SHORT';
+      return `
+        <div class="order-row">
+          <div class="order-action ${cls}">${label}</div>
+          <div class="order-detail">
+            <div class="order-title-line">${e.symbol} — qty ${e.qty}</div>
+            <div class="exit-reason">${e.reason || ''}</div>
+            <div class="order-meta">${e.status || 'submitted'}</div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // Decisions
+  const decEl = document.getElementById('decisionsList');
+  if (!decisions.length) {
+    decEl.innerHTML = '<div class="empty">No decisions this cycle</div>';
+  } else {
+    decEl.innerHTML = decisions.map(d => {
+      const cls = d.action === 'BUY' ? 'oa-buy'
+                : d.action === 'SELL_SHORT' ? 'oa-short'
+                : 'oa-hold';
+      return `
+        <div class="order-row">
+          <div class="order-action ${cls}">${d.action}</div>
+          <div class="order-detail">
+            <div class="order-title-line">${d.ticker} — conf ${(d.confidence || 0).toFixed(2)}</div>
+            <div class="order-reasoning">${d.reasoning || ''}</div>
+            <div class="order-meta"><strong style="color:var(--orange)">Risk:</strong> ${d.key_risk || '—'}</div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+}
+
+// ===== SIGNALS TAB =====
+function renderSignals(longs, shorts, conBuys, conSells, offshore) {
+  const topL = longs[0] || {};
+  const topS = shorts[0] || {};
+  document.getElementById('topLongScore').textContent = topL.score || '--';
+  document.getElementById('topLongTicker').textContent = topL.ticker || 'no candidates';
+  document.getElementById('topShortScore').textContent = topS.score || '--';
+  document.getElementById('topShortTicker').textContent = topS.ticker || 'no candidates';
+  document.getElementById('consensusMetric').textContent = conBuys.length + conSells.length;
+  document.getElementById('offMetric').textContent = offshore.length;
+
+  // Long signals
+  const longEl = document.getElementById('longSignals');
+  longEl.innerHTML = longs.length
+    ? longs.slice(0,10).map(renderSignalRow).join('')
+    : '<div class="empty">No long signals above threshold</div>';
+
+  // Short signals
+  const shortEl = document.getElementById('shortSignals');
+  shortEl.innerHTML = shorts.length
+    ? shorts.slice(0,10).map(renderSignalRow).join('')
+    : '<div class="empty">No short signals above threshold</div>';
+
+  // Consensus
+  const conEl = document.getElementById('consensusList');
+  const allCon = [
+    ...conBuys.map(c=>({...c,_dir:'BUY'})),
+    ...conSells.map(c=>({...c,_dir:'SELL'}))
+  ].sort((a,b)=>(b.actor_count||0)-(a.actor_count||0));
+  if (!allCon.length) {
+    conEl.innerHTML = '<div class="empty">No consensus clusters this cycle</div>';
+  } else {
+    conEl.innerHTML = allCon.slice(0,12).map(c=>{
+      const cls = c._dir === 'BUY' ? 'cd-buy' : 'cd-sell';
+      const names = (c.actors||c.buyers||[]).map(a=>(a.politician||'').split(' ').slice(-1)[0]).join(', ');
+      return `
+        <div class="consensus-row">
+          <div class="con-direction ${cls}">${c._dir}</div>
+          <div class="con-ticker">${c.ticker}</div>
+          <div class="con-count">×${c.actor_count||c.buyer_count||0}</div>
+          <div class="con-actors">${names}</div>
+        </div>`;
+    }).join('');
+  }
+}
+
+function renderSignalRow(s) {
+  const action = s.action || 'BUY';
+  const badgeClass = action === 'BUY' ? 'ab-buy' : 'ab-short';
+  return `
+    <div class="sig-row" onclick='openSignalDossier(${JSON.stringify(s).replace(/'/g,"\\'")})'>
+      <div class="score-box ${scoreClass(s.score)}">${s.score||0}</div>
       <div class="sig-info">
-        <div class="sig-ticker">${s.ticker}</div>
-        <div class="sig-entity">${s.politician_or_entity||''} — ${s.source||''}</div>
-        <div class="sig-reason">${s.reason||''}</div>
+        <div class="sig-ticker">${s.ticker||'—'}</div>
+        <div class="sig-entity">${s.politician||s.politician_or_entity||''} — ${s.source||''}</div>
+        <div class="sig-reason">${s.reason||(s.factors||[]).slice(0,3).join(' | ')}</div>
       </div>
-      <div class="action-badge ${actionClass(s.action)}">${s.action}</div>
-    </div>
-  `).join('');
+      <div class="action-badge ${badgeClass}">${action}</div>
+    </div>`;
+}
+
+// ===== HOLDINGS MATRIX TAB =====
+function renderMatrix(profiles) {
+  const matrix = {};
+  const tickerCounts = {};
+  Object.values(profiles || {}).forEach(p => {
+    if (!p.trades || !p.trades.length) return;
+    const name = p.name;
+    matrix[name] = {};
+    p.trades.forEach(t => {
+      const ticker = t.ticker;
+      if (!ticker || ticker.length > 6) return;
+      if (!matrix[name][ticker]) matrix[name][ticker] = {buys:0, sells:0};
+      if (isBuy(t)) matrix[name][ticker].buys++;
+      else if (isSell(t)) matrix[name][ticker].sells++;
+      tickerCounts[ticker] = (tickerCounts[ticker]||0) + 1;
+    });
+  });
+
+  const politicians = Object.keys(matrix).filter(n => Object.keys(matrix[n]).length > 0);
+  if (!politicians.length) {
+    document.getElementById('matrixWrap').innerHTML =
+      '<div class="empty">No trade activity in current data window. Run python agent.py to populate.</div>';
+    return;
+  }
+
+  // Top 25 most-traded tickers
+  const tickers = Object.keys(tickerCounts)
+    .sort((a,b) => tickerCounts[b] - tickerCounts[a])
+    .slice(0,25);
+
+  // Sort politicians by total trade count desc
+  politicians.sort((a,b) => {
+    const ta = Object.values(matrix[a]).reduce((s,v)=>s+v.buys+v.sells, 0);
+    const tb = Object.values(matrix[b]).reduce((s,v)=>s+v.buys+v.sells, 0);
+    return tb - ta;
+  });
+
+  let html = '<table class="matrix"><thead><tr><th class="row-header">Politician</th>';
+  tickers.forEach(t => { html += `<th>${t}</th>`; });
+  html += '<th>Total</th></tr></thead><tbody>';
+
+  politicians.forEach(p => {
+    const total = Object.values(matrix[p]).reduce((s,v)=>s+v.buys+v.sells, 0);
+    html += `<tr><td class="row-header" onclick="openPersonDossier('${p.replace(/'/g,"\\'")}')">${p}</td>`;
+    tickers.forEach(t => {
+      const cell = matrix[p][t];
+      if (!cell) { html += '<td></td>'; return; }
+      const cls = cell.buys && cell.sells ? 'cell-both'
+                : cell.buys ? 'cell-buy'
+                : 'cell-sell';
+      const label = cell.buys && cell.sells
+        ? `B${cell.buys}/S${cell.sells}`
+        : cell.buys ? `B${cell.buys}` : `S${cell.sells}`;
+      html += `<td class="${cls}">${label}</td>`;
+    });
+    html += `<td style="color:var(--text2);font-weight:700">${total}</td></tr>`;
+  });
+
+  html += '</tbody></table>';
+  document.getElementById('matrixWrap').innerHTML = html;
+}
+
+// ===== INDEX, OFFSHORE, MONEY, AGENCIES, ECON =====
+function renderIndex(index, profiles) {
+  const el = document.getElementById('indexList');
+  const data = index.length ? index : Object.values(profiles)
+    .filter(p=>p.corruption_score>0)
+    .sort((a,b)=>b.corruption_score-a.corruption_score);
+  if (!data.length){el.innerHTML='<div class="empty">Building index — check back after next run</div>';return;}
+  el.innerHTML = data.map((p,i)=>{
+    const score = p.score || p.corruption_score || 0;
+    const name = p.name;
+    const quality = p.data_quality || p.quality || 'LOW';
+    const color = scoreColor(score);
+    return `
+      <div class="ci-row" onclick="openPersonDossier('${name.replace(/'/g,"\\'")}')">
+        <div class="ci-rank">#${i+1}</div>
+        <div class="ci-name">${name}</div>
+        <div class="ci-bar-wrap"><div class="ci-bar"><div class="ci-fill" style="width:${score}%;background:${color}"></div></div></div>
+        <div class="ci-score" style="color:${color}">${score}/100</div>
+        <div class="ci-quality">${quality==='HIGH'?'★':'○'}</div>
+      </div>`;
+  }).join('');
 }
 
 function renderOffshore(offshore) {
@@ -496,132 +816,172 @@ function renderOffshore(offshore) {
   if (!offshore.length){el.innerHTML='<div class="empty">No confirmed matches above threshold</div>';return;}
   el.innerHTML = offshore.map(o=>`
     <div class="off-row">
-      <div class="off-person">
-        <span class="confirmed-badge">${o.confidence||'CONFIRMED'}</span>${o.person}
-      </div>
-      <div class="off-entity">${o.offshore_entity}</div>
-      <div class="off-score">Match Score: ${Math.round(o.match_score)}/100</div>
-      <div class="off-source">${o.description}</div>
-    </div>
-  `).join('');
+      <div class="off-person"><span class="confirmed-badge">${o.confidence||'CONFIRMED'}</span>${o.person}</div>
+      <div class="off-entity">${o.offshore_entity||''}</div>
+      <div class="off-score">Match Score: ${Math.round(o.match_score||0)}/100</div>
+      <div class="off-source">${o.description||''}</div>
+    </div>`).join('');
 }
 
-function renderIndex(index, profiles) {
-  const el = document.getElementById('indexList');
-  const data = index.length ? index : Object.values(profiles)
-    .filter(p=>p.corruption_score>0)
-    .sort((a,b)=>b.corruption_score-a.corruption_score);
+function renderContracts(contracts, donors, lobbying) {
+  document.getElementById('contractsList').innerHTML = contracts.slice(0,8).map(c=>`
+    <div class="flow-row">
+      <div class="flow-from" style="min-width:120px">${(c.recipient||'').slice(0,22)}</div>
+      <div class="flow-arrow">←</div>
+      <div class="flow-to">${(c.agency||'').slice(0,25)}</div>
+      <div class="flow-amount">${fmt(c.amount)}</div>
+    </div>`).join('')||'<div class="empty">No contracts</div>';
 
-  if (!data.length){el.innerHTML='<div class="empty">Building index — check back after next run</div>';return;}
+  document.getElementById('donorsList').innerHTML = donors.slice(0,8).map(d=>`
+    <div class="flow-row">
+      <div class="flow-from">${(d.donor||'').slice(0,22)}</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-to">${(d.recipient||'').slice(0,22)}</div>
+      <div class="flow-amount">${fmt(d.amount||0)}</div>
+    </div>`).join('')||'<div class="empty">No donations</div>';
 
-  el.innerHTML = data.map((p,i)=>{
-    const score = p.score||p.corruption_score||0;
-    const name = p.name;
-    const quality = p.data_quality||p.quality||'LOW';
-    const color = scoreColor(score);
-    return `
-      <div class="ci-row" onclick="openPersonDossier('${name.replace(/'/g,"\\'")}')">
-        <div class="ci-rank">#${i+1}</div>
-        <div class="ci-name">${name}</div>
-        <div class="ci-bar-wrap">
-          <div class="ci-bar"><div class="ci-fill" style="width:${score}%;background:${color}"></div></div>
-        </div>
-        <div class="ci-score" style="color:${color}">${score}/100</div>
-        <div class="ci-quality">${quality==='HIGH'?'★':'○'}</div>
-      </div>
-    `;
-  }).join('');
+  document.getElementById('lobbyList').innerHTML = lobbying.slice(0,8).map(l=>`
+    <div class="flow-row">
+      <div class="flow-from">${(l.client||'').slice(0,22)}</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-to">${(l.firm||l.lobbying_firm||'').slice(0,22)}</div>
+      <div class="flow-amount" style="font-size:10px;font-family:inherit">${l.period||''}</div>
+    </div>`).join('')||'<div class="empty">No lobbying data</div>';
 }
 
-// Watch list people data
+function renderEconomic(indicators) {
+  document.getElementById('econData').innerHTML = indicators.map(i=>`
+    <div class="econ-item">
+      <div class="econ-label">${i.indicator}</div>
+      <div class="econ-value">${typeof i.current_value==='number'?i.current_value.toLocaleString():(i.current_value||'N/A')}</div>
+      <div class="econ-change" style="color:${(i.change_pct||0)>=0?'var(--green)':'var(--red)'}">${(i.change_pct||0)>=0?'+':''}${i.change_pct||0}%</div>
+    </div>`).join('') || '<div class="empty">No economic data this cycle</div>';
+}
+
+function renderAgencies(agencies) {
+  const el = document.getElementById('agencyList');
+  if (!agencies.length){el.innerHTML='<div class="empty">Agency data loading...</div>';return;}
+  const maxBudget = Math.max(...agencies.map(a=>a.budget||0),1);
+  el.innerHTML = agencies.slice(0,20).map(a=>`
+    <div class="agency-row">
+      <div class="agency-name">${(a.agency||'Unknown').slice(0,35)}</div>
+      <div class="agency-bar-wrap"><div class="agency-bar"><div class="agency-bar-fill" style="width:${Math.round((a.budget||0)/maxBudget*100)}%"></div></div></div>
+      <div class="agency-amount">${fmt(a.budget||a.obligated||0)}</div>
+    </div>`).join('');
+
+  const keyAgencies = [
+    {name:'NASA',note:'Boeing $32.9B sole source — SpaceX/Musk conflict'},
+    {name:'DHS/ICE',note:'GEO Group $2.1B — CoreCivic detention contracts'},
+    {name:'DOD',note:'$35T unaccounted — 7 failed audits'},
+    {name:'DOE',note:'Bechtel $17.2B — nuclear infrastructure'},
+    {name:'USAID',note:'Dissolved by DOGE — contractor fraud documented'},
+  ];
+  document.getElementById('agencyWatch').innerHTML = keyAgencies.map(a=>`
+    <div class="flow-row">
+      <div class="flow-from" style="min-width:80px;color:var(--red)">${a.name}</div>
+      <div class="flow-to" style="font-size:11px">${a.note}</div>
+    </div>`).join('');
+}
+
+// ===== WATCH LIST =====
 const PEOPLE_DATA = [
   {name:"Donald Trump",role:"President / DJT / Crypto empire",type:"cabinet",signal:"WATCH DJT MSTR"},
   {name:"Jared Kushner",role:"Envoy / $2B Saudi PIF investor",type:"cabinet",signal:"WATCH SPY"},
-  {name:"Pam Bondi",role:"Attorney General — sold DJT on tariff day",type:"cabinet",signal:"WATCH DJT"},
-  {name:"Scott Bessent",role:"Treasury Secretary — knows tariffs before markets",type:"cabinet",signal:"WATCH SPY BONDS"},
-  {name:"Pete Hegseth",role:"Defense Secretary — controls $1T budget",type:"cabinet",signal:"WATCH LMT RTX NOC"},
-  {name:"Howard Lutnick",role:"Commerce Secretary — PARADISE PAPERS CONFIRMED",type:"cabinet",signal:"WATCH BGC",offshore:true},
-  {name:"Marco Rubio",role:"Secretary of State — foreign policy = market moves",type:"cabinet",signal:"WATCH USO FXI"},
+  {name:"Pam Bondi",role:"Attorney General",type:"cabinet",signal:"WATCH DJT"},
+  {name:"Scott Bessent",role:"Treasury Secretary",type:"cabinet",signal:"WATCH SPY BONDS"},
+  {name:"Pete Hegseth",role:"Defense Secretary",type:"cabinet",signal:"WATCH LMT RTX NOC"},
+  {name:"Howard Lutnick",role:"Commerce Secretary — PARADISE PAPERS",type:"cabinet",signal:"WATCH BGC",offshore:true},
+  {name:"Marco Rubio",role:"Secretary of State",type:"cabinet",signal:"WATCH USO FXI"},
   {name:"Chris Wright",role:"Energy Secretary — former Liberty Energy CEO",type:"cabinet",signal:"WATCH XLE CVX"},
-  {name:"Doug Burgum",role:"Interior Secretary — controls public land energy",type:"cabinet",signal:"WATCH XOM COP"},
-  {name:"RFK Jr",role:"HHS Secretary — every statement moves pharma",type:"cabinet",signal:"WATCH PFE MRNA"},
-  {name:"Tulsi Gabbard",role:"Dir. National Intelligence — security clearances",type:"cabinet",signal:"WATCH PLTR"},
-  {name:"Nancy Pelosi",role:"House — 16,930% portfolio returns documented",type:"congress",signal:"FOLLOW ALL TRADES"},
-  {name:"Alexandria Ocasio-Cortez",role:"House Financial Services Committee",type:"congress",signal:"FOLLOW TRADES"},
-  {name:"Bernie Sanders",role:"Senate HELP Committee — healthcare policy",type:"congress",signal:"WATCH PFE MRK"},
-  {name:"Rand Paul",role:"Senate — foreign aid critic, defense votes",type:"congress",signal:"WATCH LMT"},
-  {name:"Ted Cruz",role:"Senate Commerce — NASA oversight, Boeing",type:"congress",signal:"WATCH BA"},
-  {name:"Josh Hawley",role:"Senate — tech antitrust, China hawk",type:"congress",signal:"WATCH META GOOGL FXI"},
+  {name:"Doug Burgum",role:"Interior Secretary",type:"cabinet",signal:"WATCH XOM COP"},
+  {name:"RFK Jr",role:"HHS Secretary",type:"cabinet",signal:"WATCH PFE MRNA"},
+  {name:"Tulsi Gabbard",role:"Dir. National Intelligence",type:"cabinet",signal:"WATCH PLTR"},
+  {name:"Nancy Pelosi",role:"House — 16,930% returns documented",type:"congress",signal:"FOLLOW ALL TRADES"},
+  {name:"Alexandria Ocasio-Cortez",role:"House Financial Services",type:"congress",signal:"FOLLOW TRADES"},
+  {name:"Bernie Sanders",role:"Senate HELP",type:"congress",signal:"WATCH PFE MRK"},
+  {name:"Rand Paul",role:"Senate",type:"congress",signal:"WATCH LMT"},
+  {name:"Ted Cruz",role:"Senate Commerce",type:"congress",signal:"WATCH BA"},
+  {name:"Josh Hawley",role:"Senate — China hawk",type:"congress",signal:"WATCH META GOOGL FXI"},
   {name:"Tommy Tuberville",role:"Armed Services — documented defense trades",type:"congress",signal:"WATCH LMT RTX"},
-  {name:"Maria Cantwell",role:"Commerce — energy and tech contracts",type:"congress",signal:"WATCH XLE MSFT"},
-  {name:"Mitch McConnell",role:"Senate — decades of influence on contracts",type:"congress",signal:"FOLLOW TRADES"},
-  {name:"Mitt Romney",role:"Senate Finance — investment connections",type:"congress",signal:"FOLLOW TRADES"},
-  {name:"John Boozman",role:"Agriculture/Appropriations — active trader",type:"congress",signal:"WATCH DTE IEF"},
-  {name:"Gary Peters",role:"Homeland Security Committee — DHS contracts",type:"congress",signal:"WATCH GEO CXW"},
-  {name:"John Fetterman",role:"Banking Committee — financial sector votes",type:"congress",signal:"WATCH JPM GS"},
-  {name:"Josh Gottheimer",role:"Intelligence & Financial Services — active trader",type:"congress",signal:"WATCH SPY"},
-  {name:"Dan Crenshaw",role:"Intelligence Committee — defense contracts",type:"congress",signal:"WATCH LMT PLTR"},
-  {name:"Dan Meuser",role:"House Financial Services — banking votes",type:"congress",signal:"WATCH JPM"},
-  {name:"Gavin Newsom",role:"California Governor — tech regulation",type:"governor",signal:"WATCH META GOOGL AAPL"},
-  {name:"Ron DeSantis",role:"Florida Governor — financial deregulation",type:"governor",signal:"WATCH GS JPM"},
-  {name:"Greg Abbott",role:"Texas Governor — energy and border policy",type:"governor",signal:"WATCH XLE GEO"},
-  {name:"Gretchen Whitmer",role:"Michigan Governor — EV and auto policy",type:"governor",signal:"WATCH TSLA GM F"},
-  {name:"JB Pritzker",role:"Illinois Governor — financial sector ties",type:"governor",signal:"WATCH CME"},
-  {name:"Abigail Spanberger",role:"Virginia Governor — data center corridor",type:"governor",signal:"WATCH EQIX DLR"},
-  {name:"Elon Musk",role:"DOGE / SpaceX $38B contracts / Tesla / X",type:"tech",signal:"WATCH TSLA LUNR DOGE"},
-  {name:"Sam Altman",role:"OpenAI CEO — Stargate $500B AI infrastructure",type:"tech",signal:"WATCH MSFT ORCL NVDA"},
-  {name:"Jensen Huang",role:"Nvidia CEO — every AI data center needs GPUs",type:"tech",signal:"WATCH NVDA AMD"},
-  {name:"Satya Nadella",role:"Microsoft CEO — Stargate partner, govt cloud",type:"tech",signal:"WATCH MSFT"},
-  {name:"Larry Ellison",role:"Oracle CEO — Stargate partner, govt contracts",type:"tech",signal:"WATCH ORCL"},
-  {name:"Mark Zuckerberg",role:"Meta CEO — $65B data center investment",type:"tech",signal:"WATCH META"},
-  {name:"Sundar Pichai",role:"Google CEO — AI infrastructure, cloud contracts",type:"tech",signal:"WATCH GOOGL"},
-  {name:"Bill Gates",role:"Gates Foundation $70B — vaccine policy influence",type:"finance",signal:"FOLLOW 990s"},
-  {name:"Jeff Bezos",role:"Amazon / AWS dominates govt cloud contracts",type:"finance",signal:"WATCH AMZN"},
-  {name:"George Soros",role:"Open Society — SOROS INC in Bahamas Leaks",type:"finance",signal:"FOLLOW 990s"},
-  {name:"Larry Fink",role:"BlackRock $10T — pension fund redirection",type:"finance",signal:"WATCH BLK"},
-  {name:"Jamie Dimon",role:"JPMorgan CEO — most connected banker",type:"finance",signal:"WATCH JPM"},
-  {name:"Carl Icahn",role:"PARADISE PAPERS CONFIRMED score 83",type:"finance",signal:"WATCH IEP",offshore:true},
-  {name:"Rex Tillerson",role:"PARADISE PAPERS CONFIRMED score 100 — Appleby",type:"finance",signal:"WATCH XOM",offshore:true},
-  {name:"Bill Ackman",role:"Pershing Square — activist investor",type:"finance",signal:"FOLLOW 13F"},
-  {name:"Ray Dalio",role:"Bridgewater — largest hedge fund",type:"finance",signal:"FOLLOW 13F"},
-  {name:"Jim Cramer",role:"CNBC — documented Palantir conflict",type:"finance",signal:"WATCH PLTR"},
-  {name:"Brian Armstrong",role:"Coinbase CEO — crypto regulation directly affects",type:"tech",signal:"WATCH COIN"},
-  {name:"Michael Saylor",role:"MicroStrategy — Bitcoin proxy for political crypto",type:"tech",signal:"WATCH MSTR BTC"},
+  {name:"Maria Cantwell",role:"Commerce — energy and tech",type:"congress",signal:"WATCH XLE MSFT"},
+  {name:"Mitch McConnell",role:"Senate",type:"congress",signal:"FOLLOW TRADES"},
+  {name:"Mitt Romney",role:"Senate Finance",type:"congress",signal:"FOLLOW TRADES"},
+  {name:"John Boozman",role:"Agriculture/Appropriations — active trader",type:"congress",signal:"WATCH BONDS TECH"},
+  {name:"Gary Peters",role:"Homeland Security",type:"congress",signal:"WATCH GEO CXW"},
+  {name:"John Fetterman",role:"Banking Committee",type:"congress",signal:"WATCH JPM GS"},
+  {name:"Josh Gottheimer",role:"Intelligence & Financial Services",type:"congress",signal:"WATCH SPY"},
+  {name:"Dan Crenshaw",role:"Intelligence Committee",type:"congress",signal:"WATCH LMT PLTR"},
+  {name:"Dan Meuser",role:"House Financial Services",type:"congress",signal:"WATCH JPM"},
+  {name:"Mark Warner",role:"Senate Intelligence/Banking",type:"congress",signal:"WATCH TECH FINANCE"},
+  {name:"Shelley Moore Capito",role:"Senate Environment/Appropriations",type:"congress",signal:"WATCH MA"},
+  {name:"Ro Khanna",role:"House Armed Services/Science",type:"congress",signal:"WATCH JPM AMZN"},
+  {name:"John McGuire",role:"House Armed Services/Agriculture",type:"congress",signal:"WATCH AAPL MSFT NVDA"},
+  {name:"Byron Donalds",role:"House Financial Services",type:"congress",signal:"WATCH MRVL"},
+  {name:"William R. Keating",role:"House Foreign Affairs/Armed Services",type:"congress",signal:"WATCH JPM"},
+  {name:"Gavin Newsom",role:"California Governor",type:"governor",signal:"WATCH META GOOGL"},
+  {name:"Ron DeSantis",role:"Florida Governor",type:"governor",signal:"WATCH GS JPM"},
+  {name:"Greg Abbott",role:"Texas Governor",type:"governor",signal:"WATCH XLE GEO"},
+  {name:"Gretchen Whitmer",role:"Michigan Governor",type:"governor",signal:"WATCH TSLA GM F"},
+  {name:"JB Pritzker",role:"Illinois Governor",type:"governor",signal:"WATCH CME"},
+  {name:"Elon Musk",role:"DOGE / SpaceX / Tesla / X",type:"tech",signal:"WATCH TSLA LUNR"},
+  {name:"Sam Altman",role:"OpenAI CEO — Stargate $500B",type:"tech",signal:"WATCH MSFT ORCL NVDA"},
+  {name:"Jensen Huang",role:"Nvidia CEO",type:"tech",signal:"WATCH NVDA AMD"},
+  {name:"Satya Nadella",role:"Microsoft CEO",type:"tech",signal:"WATCH MSFT"},
+  {name:"Larry Ellison",role:"Oracle CEO — Stargate partner",type:"tech",signal:"WATCH ORCL"},
+  {name:"Mark Zuckerberg",role:"Meta CEO",type:"tech",signal:"WATCH META"},
+  {name:"Sundar Pichai",role:"Google CEO",type:"tech",signal:"WATCH GOOGL"},
+  {name:"Bill Gates",role:"Gates Foundation $70B",type:"finance",signal:"FOLLOW 990s"},
+  {name:"Jeff Bezos",role:"Amazon / AWS",type:"finance",signal:"WATCH AMZN"},
+  {name:"George Soros",role:"Open Society",type:"finance",signal:"FOLLOW 990s"},
+  {name:"Larry Fink",role:"BlackRock $10T",type:"finance",signal:"WATCH BLK"},
+  {name:"Jamie Dimon",role:"JPMorgan CEO",type:"finance",signal:"WATCH JPM"},
+  {name:"Carl Icahn",role:"PARADISE PAPERS",type:"finance",signal:"WATCH IEP",offshore:true},
+  {name:"Rex Tillerson",role:"PARADISE PAPERS — Appleby",type:"finance",signal:"WATCH XOM",offshore:true},
+  {name:"Bill Ackman",role:"Pershing Square",type:"finance",signal:"FOLLOW 13F"},
+  {name:"Ray Dalio",role:"Bridgewater",type:"finance",signal:"FOLLOW 13F"},
+  {name:"Brian Armstrong",role:"Coinbase CEO",type:"tech",signal:"WATCH COIN"},
+  {name:"Michael Saylor",role:"MicroStrategy — Bitcoin proxy",type:"tech",signal:"WATCH MSTR BTC"},
 ];
-
-window.ALL_PEOPLE = PEOPLE_DATA;
 
 function renderWatchList(profiles, offshore) {
   const offshoreNames = offshore.map(o=>o.person);
-  allPeople = PEOPLE_DATA.map(p => ({
-    ...p,
-    score: profiles[p.name]?.corruption_score||0,
-    trades: profiles[p.name]?.trades||[],
-    posts: profiles[p.name]?.recent_posts||[],
-    offshore_confirmed: offshoreNames.includes(p.name)||p.offshore
-  }));
+  allPeople = PEOPLE_DATA.map(p => {
+    const prof = profiles[p.name] || {};
+    const trades = prof.trades || [];
+    const buys = trades.filter(isBuy).length;
+    const sells = trades.filter(isSell).length;
+    return {
+      ...p,
+      score: prof.corruption_score || 0,
+      trades, buys, sells,
+      offshore_confirmed: offshoreNames.includes(p.name) || p.offshore
+    };
+  });
   renderPeopleGrid(allPeople);
 }
 
 function renderPeopleGrid(people) {
   document.getElementById('watchGrid').innerHTML = people.map(p => {
     const color = scoreColor(p.score||0);
+    const tradeBlurb = p.trades && p.trades.length
+      ? `${p.trades.length} trades · ${p.buys||0}B/${p.sells||0}S`
+      : '';
     return `
       <div class="person-card" onclick="openPersonDossier('${p.name.replace(/'/g,"\\'")}')">
         <div class="pc-name">${p.name}</div>
         <div class="pc-role">${p.role}</div>
         <div class="pc-score" style="color:${color}">Score: ${p.score||0}/100</div>
         <div class="pc-signal">${p.signal}</div>
+        ${tradeBlurb?`<div class="pc-trades">▲ ${tradeBlurb}</div>`:''}
         ${p.offshore_confirmed?'<div class="pc-offshore">⚠ OFFSHORE PAPERS MATCH</div>':''}
-      </div>
-    `;
+      </div>`;
   }).join('');
 }
 
 function filterWatch(val) {
   const v = val.toLowerCase();
-  const filtered = allPeople.filter(p=>
-    p.name.toLowerCase().includes(v)||p.role.toLowerCase().includes(v)
+  const filtered = allPeople.filter(p =>
+    p.name.toLowerCase().includes(v) || p.role.toLowerCase().includes(v)
   );
   renderPeopleGrid(filtered);
 }
@@ -632,138 +992,18 @@ function filterByType(type, btn) {
   currentFilter = type;
   let filtered = allPeople;
   if (type==='offshore') filtered = allPeople.filter(p=>p.offshore_confirmed);
+  else if (type==='active') filtered = allPeople.filter(p=>p.trades && p.trades.length>0);
   else if (type!=='all') filtered = allPeople.filter(p=>p.type===type);
   renderPeopleGrid(filtered);
 }
 
-function renderContracts(contracts, donors, lobbying) {
-  document.getElementById('contractsList').innerHTML = contracts.slice(0,8).map(c=>`
-    <div class="flow-row">
-      <div class="flow-from" style="min-width:120px">${(c.recipient||'').slice(0,22)}</div>
-      <div class="flow-arrow">←</div>
-      <div class="flow-to">${(c.agency||'').slice(0,25)}</div>
-      <div class="flow-amount">${fmt(c.amount)}</div>
-    </div>
-  `).join('')||'<div class="empty">No contracts</div>';
-
-  document.getElementById('donorsList').innerHTML = donors.slice(0,8).map(d=>`
-    <div class="flow-row">
-      <div class="flow-from">${(d.donor||'').slice(0,22)}</div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-to">${(d.recipient||'').slice(0,22)}</div>
-      <div class="flow-amount">${fmt(d.amount||0)}</div>
-    </div>
-  `).join('')||'<div class="empty">No donations</div>';
-
-  document.getElementById('lobbyList').innerHTML = lobbying.slice(0,8).map(l=>`
-    <div class="flow-row">
-      <div class="flow-from">${(l.client||'').slice(0,22)}</div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-to">${(l.lobbying_firm||'').slice(0,22)}</div>
-      <div class="flow-amount" style="font-size:10px;font-family:inherit">${l.period||''}</div>
-    </div>
-  `).join('')||'<div class="empty">No lobbying data</div>';
-}
-
-function renderEconomic(indicators) {
-  document.getElementById('econData').innerHTML = indicators.map(i=>`
-    <div class="econ-item">
-      <div class="econ-label">${i.indicator}</div>
-      <div class="econ-value">${typeof i.current_value==='number'?i.current_value.toLocaleString():i.current_value||'N/A'}</div>
-      <div class="econ-change" style="color:${(i.change_pct||0)>=0?'var(--green)':'var(--red)'}">${(i.change_pct||0)>=0?'+':''}${i.change_pct||0}%</div>
-    </div>
-  `).join('');
-}
-
-function renderAgencies(agencies, crossRefs) {
-  const el = document.getElementById('agencyList');
-  if (!agencies.length){el.innerHTML='<div class="empty">Agency data loading...</div>';return;}
-  const maxBudget = Math.max(...agencies.map(a=>a.budget||0),1);
-  el.innerHTML = agencies.slice(0,20).map(a=>`
-    <div class="agency-row">
-      <div class="agency-name">${(a.agency||'Unknown').slice(0,35)}</div>
-      <div class="agency-bar-wrap">
-        <div class="agency-bar">
-          <div class="agency-bar-fill" style="width:${Math.round((a.budget||0)/maxBudget*100)}%"></div>
-        </div>
-      </div>
-      <div class="agency-amount">${fmt(a.budget||a.obligated||0)}</div>
-    </div>
-  `).join('');
-
-  const keyAgencies = [
-    {name:'NASA',note:'Boeing $32.9B sole source — SpaceX Musk conflict'},
-    {name:'DHS/ICE',note:'GEO Group $2.1B — CoreCivic detention contracts'},
-    {name:'DOD',note:'$35T unaccounted — 7 consecutive failed audits'},
-    {name:'DOE',note:'Bechtel $17.2B — nuclear infrastructure contracts'},
-    {name:'USAID',note:'Dissolved by DOGE — contractor fraud documented'},
-  ];
-  document.getElementById('agencyWatch').innerHTML = keyAgencies.map(a=>`
-    <div class="flow-row">
-      <div class="flow-from" style="min-width:80px;color:var(--red)">${a.name}</div>
-      <div class="flow-to" style="font-size:11px">${a.note}</div>
-    </div>
-  `).join('');
-
-  document.getElementById('crossRefList').innerHTML = crossRefs.slice(0,5).map(c=>`
-    <div class="flow-row">
-      <div class="flow-from">${(c.contract_recipient||'').slice(0,20)}</div>
-      <div class="flow-to" style="font-size:11px">${c.corruption_indicators||0} indicators · ${c.social_mentions||0} social</div>
-      <div class="flow-amount">${fmt(c.contract_amount||0)}</div>
-    </div>
-  `).join('')||'<div class="empty">No cross-references</div>';
-}
-
-function renderStories(stories) {
-  const el = document.getElementById('storiesList');
-  if (!stories.length){el.innerHTML='<div class="empty">No high conviction signals for narrative generation this run</div>';return;}
-  el.innerHTML = stories.map(s=>`
-    <div class="story-block">
-      <div class="story-header">
-        <div class="story-ticker">${s.ticker}</div>
-        <div class="story-score">${s.score}/100 — ${s.action}</div>
-      </div>
-      <div class="story-entity">${s.entity}</div>
-      <div class="story-text">${s.narrative}</div>
-      <div class="story-label">AI Analysis — based on public records — not legal findings</div>
-    </div>
-  `).join('');
-}
-
-function renderAlerts(signals, offshore, social) {
-  const alerts = [];
-  offshore.forEach(o=>alerts.push({icon:'⚠',text:`${o.person} confirmed in Paradise Papers — match score ${Math.round(o.match_score)}/100`,time:'today'}));
-  signals.filter(s=>s.score>=80).forEach(s=>alerts.push({icon:'▲',text:`${s.ticker} scored ${s.score}/100 — ${s.action} — ${s.source}`,time:'today'}));
-  social.slice(0,3).forEach(s=>alerts.push({icon:'●',text:`${s.person}: ${(s.content||'').slice(0,80)}`,time:'today'}));
-  document.getElementById('alertsList').innerHTML = alerts.slice(0,6).map(a=>`
-    <div class="alert-row">
-      <div class="alert-icon">${a.icon}</div>
-      <div class="alert-text">${a.text}</div>
-      <div class="alert-time">${a.time}</div>
-    </div>
-  `).join('');
-}
-
-function renderSources(signals) {
-  const sources = {};
-  signals.forEach(s=>{const src=(s.source||'unknown').split('+')[0].trim().slice(0,18);sources[src]=(sources[src]||0)+1;});
-  const max = Math.max(...Object.values(sources),1);
-  document.getElementById('sourceBreak').innerHTML = Object.entries(sources).map(([src,count])=>`
-    <div class="bar-row">
-      <div class="bar-label">${src}</div>
-      <div class="bar-track"><div class="bar-fill-red" style="width:${count/max*100}%"></div></div>
-      <div class="bar-val">${count}</div>
-    </div>
-  `).join('');
-}
-
-// DOSSIER MODAL
+// ===== DOSSIER MODAL =====
 function openPersonDossier(name) {
-  const person = allPeople.find(p=>p.name===name);
+  const person = allPeople.find(p=>p.name===name) || PEOPLE_DATA.find(p=>p.name===name);
   const profiles = reportData?.person_profiles||{};
   const profile = profiles[name]||{};
   const offshore = (reportData?.offshore_matches||[]).filter(o=>o.person===name);
-  const score = profile.corruption_score||person?.score||0;
+  const score = profile.corruption_score || person?.score || 0;
   const color = scoreColor(score);
 
   let html = `
@@ -779,44 +1019,43 @@ function openPersonDossier(name) {
     html += `</div>`;
   }
 
+  if (profile.committees?.length) {
+    html += `<div class="modal-section"><div class="modal-section-title">Committee Assignments</div>`;
+    html += `<div class="modal-item">${profile.committees.join(' · ')}</div></div>`;
+  }
+
   if (offshore.length) {
     html += `<div class="modal-section"><div class="modal-section-title">⚠ Offshore Paper Matches</div>`;
     offshore.forEach(o=>{
-      html += `<div class="modal-item"><strong>${o.offshore_entity}</strong><br>${o.description}<br>Match Score: ${Math.round(o.match_score)}/100 — ${o.confidence||'CONFIRMED'}</div>`;
+      html += `<div class="modal-item"><strong>${o.offshore_entity}</strong><br>${o.description||''}<br>Match Score: ${Math.round(o.match_score)}/100 — ${o.confidence||'CONFIRMED'}</div>`;
     });
     html += `</div>`;
   }
 
-  const trades = profile.trades||[];
+  const trades = profile.trades || [];
   if (trades.length) {
-    html += `<div class="modal-section"><div class="modal-section-title">Congressional Trades (${trades.length})</div>`;
-    trades.slice(0,5).forEach(t=>{
-      html += `<div class="modal-item"><strong>${t.ticker}</strong> — ${t.trade_type} — ${t.amount} — ${t.date}</div>`;
+    html += `<div class="modal-section"><div class="modal-section-title">Trades in Lookback Window (${trades.length})</div>`;
+    trades.slice(0,8).forEach(t=>{
+      const dirColor = isBuy(t) ? 'var(--green)' : isSell(t) ? 'var(--red)' : 'var(--text2)';
+      const dirLabel = isBuy(t) ? 'BUY' : isSell(t) ? 'SELL' : (t.trade_type||'?');
+      html += `<div class="modal-item">
+        <strong>${t.ticker}</strong>
+        <span style="color:${dirColor};font-weight:700;margin:0 8px">${dirLabel}</span>
+        ${t.amount||''}
+        <span style="color:var(--text3);font-size:11px;margin-left:8px">${t.transaction_date||t.disclosure_date||''}</span>
+      </div>`;
     });
     html += `</div>`;
   } else {
-    html += `<div class="modal-section"><div class="modal-section-title">Congressional Trades</div><div class="no-data">No trades found in current data window</div></div>`;
+    html += `<div class="modal-section"><div class="modal-section-title">Trades</div><div class="no-data">No trades in current data window</div></div>`;
   }
 
-  const posts = profile.recent_posts||[];
-  if (posts.length) {
-    html += `<div class="modal-section"><div class="modal-section-title">Recent Posts Flagged (${posts.length})</div>`;
-    posts.slice(0,3).forEach(p=>{
-      html += `<div class="modal-item">${(p.content||'').slice(0,120)}<br><span style="color:var(--text3);font-size:10px">Keywords: ${(p.keywords||[]).join(', ')} → ${p.suggested_ticker}</span></div>`;
-    });
-    html += `</div>`;
+  if (profile.win_rate && profile.total_tracked_trades >= 1) {
+    html += `<div class="modal-section"><div class="modal-section-title">Politician Track Record</div>`;
+    html += `<div class="modal-item"><strong>Win rate:</strong> ${profile.win_rate}% across ${profile.total_tracked_trades} tracked trades · avg return ${profile.avg_return || 0}%</div></div>`;
   }
 
-  const sigs = profile.market_signals||[];
-  if (sigs.length) {
-    html += `<div class="modal-section"><div class="modal-section-title">Market Signals</div>`;
-    sigs.slice(0,3).forEach(s=>{
-      html += `<div class="modal-item"><strong>${s.ticker}</strong> — ${s.score}/100 — ${s.action}<br><span style="font-size:11px;color:var(--text3)">${(s.reason||'').slice(0,100)}</span></div>`;
-    });
-    html += `</div>`;
-  }
-
-  html += `<div class="modal-section"><div class="modal-section-title">Data Quality</div><div class="modal-item">${profile.data_quality==='HIGH'?'★ HIGH — documented trades or confirmed offshore matches present':'○ LOW — currently monitoring, limited data collected. Scores will build over time.'}</div></div>`;
+  html += `<div class="modal-section"><div class="modal-section-title">Data Quality</div><div class="modal-item">${profile.data_quality==='HIGH'?'★ HIGH — documented trades or offshore matches':'○ LOW — limited data, scores build over time'}</div></div>`;
 
   document.getElementById('modalBody').innerHTML = html;
   document.getElementById('modalOverlay').classList.add('open');
@@ -824,24 +1063,55 @@ function openPersonDossier(name) {
 
 function openSignalDossier(signal) {
   const color = scoreColor(signal.score||0);
-  let html = `
-    <div class="modal-name">${signal.ticker}</div>
-    <div class="modal-role">${signal.politician_or_entity||''} — ${signal.source||''}</div>
-    <div class="modal-score" style="color:${color}">${signal.score}</div>
-    <div class="modal-score-label">/ 100 Signal Score — ${signal.action}</div>
+  const action = signal.action || 'BUY';
+  const html = `
+    <div class="modal-name">${signal.ticker||'—'}</div>
+    <div class="modal-role">${signal.politician||signal.politician_or_entity||''} — ${signal.source||''}</div>
+    <div class="modal-score" style="color:${color}">${signal.score||0}</div>
+    <div class="modal-score-label">/ 100 Signal Score — ${action}</div>
     <div class="modal-section">
-      <div class="modal-section-title">Analysis</div>
-      <div class="modal-item">${signal.reason||''}</div>
+      <div class="modal-section-title">Scoring Factors</div>
+      ${(signal.factors||[]).map(f=>`<div class="breakdown-item">+ ${f}</div>`).join('') || '<div class="no-data">No factor breakdown</div>'}
     </div>
     <div class="modal-section">
       <div class="modal-section-title">Signal Details</div>
       <div class="modal-item"><strong>Source:</strong> ${signal.source||'Unknown'}</div>
       <div class="modal-item"><strong>Trade Type:</strong> ${signal.trade_type||'Unknown'}</div>
-      <div class="modal-item"><strong>Amount:</strong> ${signal.amount||'Unknown'}</div>
-      <div class="modal-item"><strong>Date:</strong> ${signal.date||'Unknown'}</div>
+      <div class="modal-item"><strong>Amount:</strong> ${signal.amount||signal.amount_raw||'Unknown'}</div>
+      <div class="modal-item"><strong>Transaction Date:</strong> ${signal.transaction_date||'Unknown'}</div>
+      <div class="modal-item"><strong>Disclosure Date:</strong> ${signal.disclosure_date||'Unknown'}</div>
     </div>
-    <div class="modal-item" style="margin-top:12px;font-size:10px;color:#440000">AI-generated analysis based on public records. Not a trading recommendation.</div>
-  `;
+    <div class="modal-item" style="margin-top:12px;font-size:10px;color:#440000">Public records analysis. Not a trading recommendation.</div>`;
+  document.getElementById('modalBody').innerHTML = html;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function openPositionDetail(symbol) {
+  const positions = reportData?.open_positions || [];
+  const p = positions.find(x => x.symbol === symbol);
+  if (!p) return;
+  const plpc = (p.unrealized_plpc || 0) * 100;
+  const color = plpc >= 0 ? 'var(--green)' : 'var(--red)';
+  const sign = plpc >= 0 ? '+' : '';
+  const html = `
+    <div class="modal-name">${p.symbol}</div>
+    <div class="modal-role">${p.side.toUpperCase()} POSITION — qty ${p.qty}</div>
+    <div class="modal-score" style="color:${color}">${sign}${plpc.toFixed(2)}%</div>
+    <div class="modal-score-label">Unrealized P&amp;L</div>
+    <div class="modal-section">
+      <div class="modal-section-title">Position Details</div>
+      <div class="modal-item"><strong>Entry Price:</strong> $${(p.avg_entry_price||0).toFixed(2)}</div>
+      <div class="modal-item"><strong>Current Price:</strong> $${(p.current_price||0).toFixed(2)}</div>
+      <div class="modal-item"><strong>Market Value:</strong> ${fmt(Math.abs(p.market_value||0))}</div>
+      <div class="modal-item"><strong>Unrealized P&amp;L $:</strong> <span style="color:${color}">${sign}$${Math.abs(p.unrealized_pl||0).toFixed(2)}</span></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Exit Triggers</div>
+      <div class="modal-item">Take profit: +20% — currently ${plpc.toFixed(2)}%</div>
+      <div class="modal-item">Stop loss: ${p.side==='long'?'-15%':'-10%'} — currently ${plpc.toFixed(2)}%</div>
+      <div class="modal-item">Kill switch: -25% — hard backstop</div>
+      <div class="modal-item">Signal reversal: 2+ politicians flip direction</div>
+    </div>`;
   document.getElementById('modalBody').innerHTML = html;
   document.getElementById('modalOverlay').classList.add('open');
 }
@@ -852,206 +1122,142 @@ function closeModal(e) {
   }
 }
 
-// CORRUPTION WEB NETWORK
+// ===== NETWORK =====
 function drawNetwork() {
   const svg = document.getElementById('netSvg');
   svg.innerHTML = '';
   if (!reportData) return;
 
-  const signals = reportData.top_signals || [];
+  const longs = reportData.long_candidates || [];
+  const shorts = reportData.short_candidates || [];
+  const allSignals = [...longs, ...shorts];
   const offshore = reportData.offshore_matches || [];
   const contracts = reportData.contracts || [];
-  const social = reportData.social_signals || [];
-  const profiles = reportData.person_profiles || {};
 
-  // Build node list dynamically from data
   const nodeMap = {};
   const edgeList = [];
 
-  // Add agencies
-  const agencies = {};
+  // Agencies
   contracts.forEach(c => {
     const agency = (c.agency || '').slice(0, 20);
-    if (agency && !agencies[agency]) {
-      agencies[agency] = true;
-      nodeMap[agency] = {
-        id: agency,
-        label: agency.slice(0, 12),
-        sub: 'Agency',
-        color: '#006600',
-        type: 'agency',
-        score: 0
-      };
+    if (agency && !nodeMap[agency]) {
+      nodeMap[agency] = {id:agency,label:agency.slice(0,12),sub:'Agency',color:'#006600',type:'agency',score:0};
     }
   });
 
-  // Add companies from contracts
+  // Companies from contracts
   contracts.slice(0, 6).forEach(c => {
     const name = (c.recipient || '').slice(0, 25);
-    const shortName = name.split(' ')[0] + (name.split(' ')[1] ? ' ' + name.split(' ')[1].slice(0,4) : '');
-    if (name && !nodeMap[name]) {
-      nodeMap[name] = {
-        id: name,
-        label: shortName.slice(0, 14),
-        sub: formatAmt(c.amount),
-        color: '#cc6600',
-        type: 'company',
-        score: 0
-      };
-      const agency = (c.agency || '').slice(0, 20);
-      if (nodeMap[agency]) {
-        edgeList.push({from: agency, to: name, w: Math.max(1, Math.min(6, c.amount / 5e9)), color: '#cc6600'});
-      }
+    if (!name || nodeMap[name]) return;
+    const shortName = name.split(' ').slice(0,2).join(' ');
+    nodeMap[name] = {id:name,label:shortName.slice(0,14),sub:formatAmt(c.amount),color:'#cc6600',type:'company',score:0};
+    const agency = (c.agency||'').slice(0,20);
+    if (nodeMap[agency]) {
+      edgeList.push({from:agency,to:name,w:Math.max(1,Math.min(6,(c.amount||0)/5e9)),color:'#cc6600'});
     }
   });
 
-  // Add people from signals
-  signals.forEach(s => {
-    const person = s.politician_or_entity || '';
-    if (!person || nodeMap[person]) return;
-    const isCompany = ['THE BOEING', 'BECHTEL', 'SPACE EXPLORATION', 'AEROJET', 'GEO GROUP', 'CORECIVIC'].some(c => person.toUpperCase().includes(c));
-    if (!isCompany) {
-      nodeMap[person] = {
-        id: person,
-        label: person.split(' ').slice(-1)[0].slice(0, 12),
-        sub: s.source || '',
-        color: '#cc0000',
-        type: 'politician',
-        score: s.score || 0
-      };
-    }
-  });
-
-  // Add offshore matches
-  offshore.forEach(o => {
-    const person = o.person;
-    if (!nodeMap[person]) {
-      nodeMap[person] = {
-        id: person,
-        label: person.split(' ').slice(-1)[0].slice(0, 12),
-        sub: 'Papers ' + Math.round(o.match_score),
-        color: '#8844cc',
-        type: 'billionaire',
-        score: 0
-      };
-    } else {
-      nodeMap[person].color = '#8844cc';
-      nodeMap[person].sub = 'Papers ' + Math.round(o.match_score);
-    }
-  });
-
-  // Add social signal people
-  social.slice(0, 8).forEach(s => {
-    const person = s.person || '';
+  // Politicians from signals
+  allSignals.forEach(s => {
+    const person = s.politician || s.politician_or_entity || '';
     if (!person || nodeMap[person]) return;
     nodeMap[person] = {
-      id: person,
-      label: person.split(' ').slice(-1)[0].slice(0, 12),
-      sub: s.suggested_ticker || '',
-      color: '#cc0000',
-      type: 'politician',
-      score: 0
+      id:person,
+      label:person.split(' ').slice(-1)[0].slice(0,12),
+      sub:(s.action==='SELL_SHORT'?'SHORT':'LONG')+' '+s.ticker,
+      color:'#cc0000',type:'politician',score:s.score||0,
     };
   });
 
-  // Connect signals to companies
-  signals.forEach(s => {
-    const person = s.politician_or_entity || '';
+  // Offshore
+  offshore.forEach(o => {
+    const person = o.person;
+    if (!nodeMap[person]) {
+      nodeMap[person] = {id:person,label:person.split(' ').slice(-1)[0].slice(0,12),sub:'Papers '+Math.round(o.match_score),color:'#8844cc',type:'offshore',score:0};
+    } else {
+      nodeMap[person].color = '#8844cc';
+      nodeMap[person].sub = 'Papers '+Math.round(o.match_score);
+    }
+  });
+
+  // Edges: politicians to tickers (if matching company exists)
+  allSignals.forEach(s => {
+    const person = s.politician || s.politician_or_entity || '';
+    if (!person || !nodeMap[person]) return;
     contracts.forEach(c => {
-      if (c.recipient && person && (c.recipient.includes(person.split(' ')[0]) || person.includes(c.recipient.split(' ')[0]))) {
-        edgeList.push({from: person, to: c.recipient, w: 2, color: '#cc0000', dash: '4,3'});
+      const cn = c.recipient || '';
+      if (cn.toLowerCase().includes(person.split(' ')[0].toLowerCase()) ||
+          person.toLowerCase().includes((cn.split(' ')[0]||'').toLowerCase())) {
+        edgeList.push({from:person,to:cn,w:2,color:'#cc0000',dash:'4,3'});
       }
     });
   });
 
-  // Connect offshore people to companies they're associated with
-  const offshoreConnections = {
-    'Rex Tillerson': 'THE BOEING COMPANY',
-    'Howard Lutnick': 'THE BOEING COMPANY',
-    'Jared Kushner': 'Saudi Arabia',
-    'Elon Musk': 'SPACE EXPLORATION TECHNOLOGIES CORP.',
-  };
-
-  Object.entries(offshoreConnections).forEach(([person, company]) => {
-    if (nodeMap[person] && nodeMap[company]) {
-      edgeList.push({from: person, to: company, w: 1, color: '#8844cc', dash: '4,3'});
-    }
-  });
-
-  // Layout nodes in a force-directed style circle
   const nodes = Object.values(nodeMap);
+  if (!nodes.length) return;
   const total = nodes.length;
   const cx = 500, cy = 260, rx = 380, ry = 200;
-
-  // Sort by type for better layout
-  const typeOrder = {agency: 0, company: 1, politician: 2, billionaire: 3};
-  nodes.sort((a, b) => (typeOrder[a.type] || 0) - (typeOrder[b.type] || 0));
-
-  nodes.forEach((n, i) => {
-    const angle = (i / total) * Math.PI * 2 - Math.PI / 2;
-    n.x = Math.round(cx + Math.cos(angle) * rx);
-    n.y = Math.round(cy + Math.sin(angle) * ry);
-    n.r = n.type === 'agency' ? 20 : n.type === 'company' ? 22 : n.score >= 80 ? 20 : 16;
+  const typeOrder = {agency:0,company:1,politician:2,offshore:3};
+  nodes.sort((a,b)=>(typeOrder[a.type]||0)-(typeOrder[b.type]||0));
+  nodes.forEach((n,i) => {
+    const angle = (i/total)*Math.PI*2 - Math.PI/2;
+    n.x = Math.round(cx + Math.cos(angle)*rx);
+    n.y = Math.round(cy + Math.sin(angle)*ry);
+    n.r = n.type==='agency'?20:n.type==='company'?22:n.score>=80?20:16;
   });
 
-  // Draw
   const nMap = {};
   nodes.forEach(n => nMap[n.id] = n);
 
-  const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+  const defs = document.createElementNS('http://www.w3.org/2000/svg','defs');
   nodes.forEach(n => {
-    const grad = document.createElementNS('http://www.w3.org/2000/svg', 'radialGradient');
-    grad.setAttribute('id', 'gn' + n.id.replace(/[^a-zA-Z0-9]/g, ''));
-    const s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-    s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', n.color); s1.setAttribute('stop-opacity', '0.3');
-    const s2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-    s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', n.color); s2.setAttribute('stop-opacity', '0.05');
-    grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad);
+    const grad = document.createElementNS('http://www.w3.org/2000/svg','radialGradient');
+    grad.setAttribute('id','gn'+n.id.replace(/[^a-zA-Z0-9]/g,''));
+    const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop');
+    s1.setAttribute('offset','0%');s1.setAttribute('stop-color',n.color);s1.setAttribute('stop-opacity','0.3');
+    const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop');
+    s2.setAttribute('offset','100%');s2.setAttribute('stop-color',n.color);s2.setAttribute('stop-opacity','0.05');
+    grad.appendChild(s1);grad.appendChild(s2);defs.appendChild(grad);
   });
   svg.appendChild(defs);
 
   edgeList.forEach(e => {
     const a = nMap[e.from], b = nMap[e.to];
-    if (!a || !b) return;
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
-    line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
-    line.setAttribute('stroke', e.color); line.setAttribute('stroke-width', e.w || 1);
-    line.setAttribute('stroke-opacity', '0.35');
-    if (e.dash) line.setAttribute('stroke-dasharray', e.dash);
+    if (!a||!b) return;
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1',a.x);line.setAttribute('y1',a.y);
+    line.setAttribute('x2',b.x);line.setAttribute('y2',b.y);
+    line.setAttribute('stroke',e.color);line.setAttribute('stroke-width',e.w||1);
+    line.setAttribute('stroke-opacity','0.35');
+    if (e.dash) line.setAttribute('stroke-dasharray',e.dash);
     svg.appendChild(line);
   });
 
   nodes.forEach(n => {
-    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
     g.style.cursor = 'pointer';
     g.addEventListener('click', () => openPersonDossier(n.id));
-
-    const glow = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    glow.setAttribute('cx', n.x); glow.setAttribute('cy', n.y); glow.setAttribute('r', n.r + 8);
-    glow.setAttribute('fill', 'none'); glow.setAttribute('stroke', n.color);
-    glow.setAttribute('stroke-width', '1'); glow.setAttribute('stroke-opacity', '0.1');
+    const glow = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    glow.setAttribute('cx',n.x);glow.setAttribute('cy',n.y);glow.setAttribute('r',n.r+8);
+    glow.setAttribute('fill','none');glow.setAttribute('stroke',n.color);
+    glow.setAttribute('stroke-width','1');glow.setAttribute('stroke-opacity','0.1');
     g.appendChild(glow);
-
-    const fill = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    fill.setAttribute('cx', n.x); fill.setAttribute('cy', n.y); fill.setAttribute('r', n.r);
-    fill.setAttribute('fill', 'url(#gn' + n.id.replace(/[^a-zA-Z0-9]/g, '') + ')');
-    fill.setAttribute('stroke', n.color); fill.setAttribute('stroke-width', '1.5');
+    const fill = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    fill.setAttribute('cx',n.x);fill.setAttribute('cy',n.y);fill.setAttribute('r',n.r);
+    fill.setAttribute('fill','url(#gn'+n.id.replace(/[^a-zA-Z0-9]/g,'')+')');
+    fill.setAttribute('stroke',n.color);fill.setAttribute('stroke-width','1.5');
     g.appendChild(fill);
-
-    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    label.setAttribute('x', n.x); label.setAttribute('y', n.y + 1);
-    label.setAttribute('text-anchor', 'middle'); label.setAttribute('dominant-baseline', 'middle');
-    label.setAttribute('fill', n.color); label.setAttribute('font-size', '10');
-    label.setAttribute('font-family', 'Share Tech Mono,monospace');
-    label.textContent = n.label; g.appendChild(label);
-
-    const sub = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    sub.setAttribute('x', n.x); sub.setAttribute('y', n.y + n.r + 12);
-    sub.setAttribute('text-anchor', 'middle'); sub.setAttribute('fill', '#333');
-    sub.setAttribute('font-size', '9'); sub.setAttribute('font-family', 'Share Tech Mono,monospace');
-    sub.textContent = n.sub.slice(0, 16); g.appendChild(sub);
-
+    const label = document.createElementNS('http://www.w3.org/2000/svg','text');
+    label.setAttribute('x',n.x);label.setAttribute('y',n.y+1);
+    label.setAttribute('text-anchor','middle');label.setAttribute('dominant-baseline','middle');
+    label.setAttribute('fill',n.color);label.setAttribute('font-size','10');
+    label.setAttribute('font-family','Share Tech Mono,monospace');
+    label.textContent = n.label;g.appendChild(label);
+    const sub = document.createElementNS('http://www.w3.org/2000/svg','text');
+    sub.setAttribute('x',n.x);sub.setAttribute('y',n.y+n.r+12);
+    sub.setAttribute('text-anchor','middle');sub.setAttribute('fill','#333');
+    sub.setAttribute('font-size','9');sub.setAttribute('font-family','Share Tech Mono,monospace');
+    sub.textContent = (n.sub||'').slice(0,16);g.appendChild(sub);
     svg.appendChild(g);
   });
 }
@@ -1059,65 +1265,61 @@ function drawNetwork() {
 function formatAmt(n) {
   if (!n) return '';
   n = parseFloat(n);
-  if (n >= 1e9) return '$' + (n / 1e9).toFixed(1) + 'B';
-  if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
-  return '$' + n;
+  if (n>=1e9) return '$'+(n/1e9).toFixed(1)+'B';
+  if (n>=1e6) return '$'+(n/1e6).toFixed(1)+'M';
+  return '$'+n.toFixed(0);
 }
 
+// ===== SAMPLE FALLBACK =====
 function getSample() {
   return {
     timestamp: new Date().toLocaleString(),
-    summary:{total_signals:15,high_conviction:1,layers_active:26,social_monitored:61,offshore_matches:3,people_profiled:51},
-    top_signals:[
-      {ticker:'BA',score:95,action:'BUY',politician_or_entity:'THE BOEING COMPANY',source:'Contract+CrossRef',reason:'Boeing holds two NASA contracts totaling $32.9B combined. Sole source since 1993 — zero competitive bids in 33 years. USASpending confirms number_of_offers_received: 1.',trade_type:'contract',amount:'$32.9B',date:'2026-05-06'},
-      {ticker:'BGC',score:55,action:'HOLD',politician_or_entity:'Howard Lutnick',source:'ICIJ_OffshorePapers',reason:'Commerce Secretary confirmed in Paradise Papers Malta registry. Score 100 exact match. BGC is Cantor Fitzgerald.',trade_type:'offshore',amount:'unknown',date:'2026'},
-      {ticker:'XOM',score:50,action:'HOLD',politician_or_entity:'Rex Tillerson',source:'ICIJ_OffshorePapers',reason:'Former Secretary of State confirmed in Paradise Papers Appleby data. Score 100 exact match.',trade_type:'offshore',amount:'unknown',date:'2026'},
+    summary:{long_candidates:2,short_candidates:0,decisions:5,entries_placed:0,exits_placed:0,open_positions:11,consensus_buys:8,consensus_sells:2},
+    long_candidates:[
+      {ticker:'MSFT',score:100,action:'BUY',politician:'Mark Warner',source:'Consensus_BUY',factors:['4 politicians buying: +25','disclosed 5d ago: +15','oversees Tech via Intelligence: +25'],reason:'4 politicians (Warner, Boozman, Fetterman, McGuire) bought MSFT in the last 30 days'},
+      {ticker:'JPM',score:75,action:'BUY',politician:'John Fetterman',source:'LongSignal',factors:['3 politicians buying: +20','oversees Finance via Banking: +25','large buy ~$250,000: +12'],reason:'Banking committee chair buying financial sector heavyweight'},
+    ],
+    short_candidates:[],
+    consensus_buys:[
+      {ticker:'MSFT',actor_count:4,actors:[{politician:'Mark Warner'},{politician:'John Boozman'},{politician:'John Fetterman'},{politician:'John McGuire'}]},
+      {ticker:'JPM',actor_count:3,actors:[{politician:'John Fetterman'},{politician:'William Keating'},{politician:'Ro Khanna'}]},
+    ],
+    consensus_sells:[
+      {ticker:'T',actor_count:2,actors:[{politician:'John Fetterman'},{politician:'Josh Gottheimer'}]},
+    ],
+    decisions:[
+      {ticker:'MSFT',action:'BUY',confidence:0.82,reasoning:'Strong consensus signal — 4 senators on different committees independently bought MSFT in a 30-day window',key_risk:'Sector concentration if you already hold tech'},
+      {ticker:'JPM',action:'BUY',confidence:0.68,reasoning:'Banking committee chair conviction trade',key_risk:'Below 0.7 threshold — will not execute'},
+    ],
+    open_positions:[
+      {symbol:'MSFT',qty:9.17,side:'long',avg_entry_price:413.0,current_price:415.5,market_value:3810.20,unrealized_pl:22.9,unrealized_plpc:0.006},
+      {symbol:'BA',qty:52,side:'long',avg_entry_price:222.0,current_price:224.81,market_value:11690,unrealized_pl:146,unrealized_plpc:0.013},
+      {symbol:'QCOM',qty:-8,side:'short',avg_entry_price:238.0,current_price:228.62,market_value:-1828.96,unrealized_pl:75.04,unrealized_plpc:0.039},
+    ],
+    entries_placed:[],
+    exits_placed:[],
+    offshore_matches:[
+      {person:'Rex Tillerson',offshore_entity:'Tillerson - Rex',description:'Officer node — Paradise Papers Appleby data',match_score:100,confidence:'CONFIRMED'},
+      {person:'Howard Lutnick',offshore_entity:'HOWARD LUTNICK',description:'Officer node — Paradise Papers Malta',match_score:100,confidence:'CONFIRMED'},
     ],
     corruption_index:[
       {name:'John Boozman',score:39,data_quality:'HIGH',breakdown:['Trading activity: +30','Market signals: +9']},
-      {name:'Gary Peters',score:31,data_quality:'HIGH',breakdown:['Trading activity: +25','Market signals: +6']},
-      {name:'Josh Gottheimer',score:30,data_quality:'HIGH',breakdown:['Trading activity: +24','Market signals: +6']},
-      {name:'John Fetterman',score:23,data_quality:'HIGH',breakdown:['Trading activity: +20','Market signals: +3']},
-    ],
-    offshore_matches:[
-      {person:'Rex Tillerson',offshore_entity:'Tillerson - Rex',description:'Officer node — Paradise Papers Appleby data',match_score:100,confidence:'CONFIRMED'},
-      {person:'Michael Cohen',offshore_entity:'MICHAEL COHEN',description:'Officer node — Paradise Papers Malta registry',match_score:100,confidence:'CONFIRMED'},
-      {person:'Howard Lutnick',offshore_entity:'HOWARD LUTNICK',description:'Officer node — Paradise Papers Malta registry',match_score:100,confidence:'CONFIRMED'},
+      {name:'Mark Warner',score:35,data_quality:'HIGH',breakdown:['Trading activity (4): +20','Committee conflicts (2): +15']},
     ],
     contracts:[
       {recipient:'THE BOEING COMPANY',amount:22428256009,agency:'NASA'},
       {recipient:'BECHTEL NATIONAL INC',amount:17244586106,agency:'Department of Energy'},
-      {recipient:'THE BOEING COMPANY',amount:10494204426,agency:'NASA'},
-      {recipient:'SPACE EXPLORATION TECHNOLOGIES',amount:3031624777,agency:'NASA'},
     ],
     agency_spending:[
-      {agency:'Department of Defense',budget:850000000000,obligated:750000000000},
-      {agency:'Health and Human Services',budget:180000000000,obligated:160000000000},
-      {agency:'Department of Energy',budget:50000000000,obligated:45000000000},
-      {agency:'NASA',budget:25000000000,obligated:22000000000},
-      {agency:'Dept of Homeland Security',budget:70000000000,obligated:65000000000},
-    ],
-    social_signals:[
-      {person:'Jared Kushner',content:'The President should be lowering costs, not trading stocks.',keywords:['stock']},
-      {person:'Howard Lutnick',content:'Commerce Department announces new trade policy framework.',keywords:['trade']},
+      {agency:'Department of Defense',budget:850000000000},
+      {agency:'Health and Human Services',budget:180000000000},
     ],
     fec_donors:[{donor:'AMERICAN VALUES PROJECT PAC',amount:200000,recipient:'PROGRESSIVE VET PAC'}],
-    lobbying:[{client:'DIGITALEUROPE',lobbying_firm:'VIVID STRATEGIES LLC',period:'Q2 2026'}],
-    economic_indicators:[
-      {indicator:'CPI Inflation',current_value:333.02,change_pct:0.85},
-      {indicator:'Unemployment Rate',current_value:4.3,change_pct:0.0},
-      {indicator:'Nonfarm Payrolls',current_value:158736,change_pct:0.07}
-    ],
-    cross_references:[
-      {contract_recipient:'THE BOEING COMPANY',contract_amount:22428256009,corruption_indicators:31,social_mentions:31}
-    ],
-    stories:[
-      {ticker:'BA',score:95,entity:'THE BOEING COMPANY',narrative:'NASA awarded The Boeing Company contracts totaling over $32.9 billion. The primary contract has operated as a sole-source arrangement since November 1993 — meaning no competitive bids have been solicited in 33 years. USASpending.gov records confirm number_of_offers_received: 1 for this contract. This analysis is based on public USASpending.gov data and represents a documented pattern, not a legal finding.'}
-    ],
+    lobbying:[{client:'DIGITALEUROPE',firm:'VIVID STRATEGIES LLC',period:'Q2 2026'}],
+    economic_indicators:[],
     person_profiles:{
-      'Howard Lutnick':{corruption_score:55,score_breakdown:['Offshore papers confirmed: +35','Market signals: +20'],trades:[],recent_posts:[],offshore_matches:[{offshore_entity:'HOWARD LUTNICK',match_score:100,description:'Paradise Papers Malta',confidence:'CONFIRMED'}],market_signals:[{ticker:'BGC',score:55,action:'HOLD',reason:'Commerce Secretary confirmed in offshore papers'}],data_quality:'HIGH'},
+      'John Boozman':{name:'John Boozman',committees:['Agriculture','Appropriations','Veterans'],corruption_score:39,score_breakdown:['Trading activity: +10','Committee conflicts: +25'],trades:[{ticker:'MSFT',trade_type:'purchase',amount:'$15,001 - $50,000',transaction_date:'2026-05-15'},{ticker:'NVDA',trade_type:'purchase',amount:'$15,001 - $50,000',transaction_date:'2026-05-10'},{ticker:'GOOGL',trade_type:'purchase',amount:'$15,001 - $50,000',transaction_date:'2026-05-08'}],data_quality:'HIGH'},
     },
-    watch_list:PEOPLE_DATA.map(p=>p.name)
   };
 }
 
