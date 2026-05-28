@@ -416,13 +416,14 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 
   <!-- NETWORK TAB -->
   <div id="tab-network" class="panel">
-    <div class="net-wrap"><svg class="net-svg" id="netSvg" viewBox="0 0 1000 520"></svg></div>
+    <div class="net-wrap"><svg class="net-svg" id="netSvg" viewBox="0 0 1000 540"></svg></div>
     <div class="legend">
       <div class="legend-item"><div class="ldot" style="background:var(--red)"></div>Politicians</div>
       <div class="legend-item"><div class="ldot" style="background:var(--orange)"></div>Companies</div>
       <div class="legend-item"><div class="ldot" style="background:#006600"></div>Agencies</div>
-      <div class="legend-item"><div class="ldot" style="background:var(--purple)"></div>Offshore</div>
-      <div style="margin-left:auto;font-size:11px;color:var(--text3)">Click nodes for dossier</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--purple)"></div>Offshore-linked</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--yellow)"></div>Conflict (committee oversees + traded)</div>
+      <div style="margin-left:auto;font-size:11px;color:var(--text3)">Green edge = buy · Red edge = sell · Yellow = traded + has fed contract</div>
     </div>
   </div>
 
@@ -1128,138 +1129,306 @@ function drawNetwork() {
   svg.innerHTML = '';
   if (!reportData) return;
 
-  const longs = reportData.long_candidates || [];
-  const shorts = reportData.short_candidates || [];
-  const allSignals = [...longs, ...shorts];
-  const offshore = reportData.offshore_matches || [];
-  const contracts = reportData.contracts || [];
+  const profiles    = reportData.person_profiles  || {};
+  const contracts   = reportData.contracts        || [];
+  const offshore    = reportData.offshore_matches || [];
+  const ref         = reportData.reference_data   || {};
+  const tickerInd   = ref.ticker_industry         || {};
+  const indCommMap  = ref.industry_committee_map  || {};
+  const hints       = ref.ticker_company_hints    || {};
 
-  const nodeMap = {};
-  const edgeList = [];
+  // ─── 1. Build the company universe ──────────────────────────────────────
+  // A company can be seeded by a ticker (politician traded it) or by a
+  // contract recipient (federal agency paid it). We try to merge these
+  // when the same firm shows up on both sides — that's the smoking gun.
 
-  // Agencies
-  contracts.forEach(c => {
-    const agency = (c.agency || '').slice(0, 20);
-    if (agency && !nodeMap[agency]) {
-      nodeMap[agency] = {id:agency,label:agency.slice(0,12),sub:'Agency',color:'#006600',type:'agency',score:0};
-    }
-  });
-
-  // Companies from contracts
-  contracts.slice(0, 6).forEach(c => {
-    const name = (c.recipient || '').slice(0, 25);
-    if (!name || nodeMap[name]) return;
-    const shortName = name.split(' ').slice(0,2).join(' ');
-    nodeMap[name] = {id:name,label:shortName.slice(0,14),sub:formatAmt(c.amount),color:'#cc6600',type:'company',score:0};
-    const agency = (c.agency||'').slice(0,20);
-    if (nodeMap[agency]) {
-      edgeList.push({from:agency,to:name,w:Math.max(1,Math.min(6,(c.amount||0)/5e9)),color:'#cc6600'});
-    }
-  });
-
-  // Politicians from signals
-  allSignals.forEach(s => {
-    const person = s.politician || s.politician_or_entity || '';
-    if (!person || nodeMap[person]) return;
-    nodeMap[person] = {
-      id:person,
-      label:person.split(' ').slice(-1)[0].slice(0,12),
-      sub:(s.action==='SELL_SHORT'?'SHORT':'LONG')+' '+s.ticker,
-      color:'#cc0000',type:'politician',score:s.score||0,
+  // node map: companyKey -> {id, label, sub, tickers:Set, trades:[], contracts:[], politicians:Set, agencies:Set}
+  const company = {};
+  function _newCo(key, label) {
+    company[key] = {
+      id: 'co:' + key, label, sub: '',
+      tickers: new Set(), politicians: new Set(), agencies: new Set(),
+      tradeCount: 0, contractAmt: 0,
     };
-  });
+    return company[key];
+  }
 
-  // Offshore
-  offshore.forEach(o => {
-    const person = o.person;
-    if (!nodeMap[person]) {
-      nodeMap[person] = {id:person,label:person.split(' ').slice(-1)[0].slice(0,12),sub:'Papers '+Math.round(o.match_score),color:'#8844cc',type:'offshore',score:0};
-    } else {
-      nodeMap[person].color = '#8844cc';
-      nodeMap[person].sub = 'Papers '+Math.round(o.match_score);
-    }
-  });
-
-  // Edges: politicians to tickers (if matching company exists)
-  allSignals.forEach(s => {
-    const person = s.politician || s.politician_or_entity || '';
-    if (!person || !nodeMap[person]) return;
-    contracts.forEach(c => {
-      const cn = c.recipient || '';
-      if (cn.toLowerCase().includes(person.split(' ')[0].toLowerCase()) ||
-          person.toLowerCase().includes((cn.split(' ')[0]||'').toLowerCase())) {
-        edgeList.push({from:person,to:cn,w:2,color:'#cc0000',dash:'4,3'});
-      }
+  // Seed from politician trades
+  Object.values(profiles).forEach(p => {
+    (p.trades || []).forEach(t => {
+      const tk = (t.ticker || '').toUpperCase();
+      if (!tk || tk.length > 6) return;
+      const c = company[tk] || _newCo(tk, tk);
+      c.tickers.add(tk);
+      c.tradeCount++;
+      c.politicians.add(p.name);
     });
   });
 
-  const nodes = Object.values(nodeMap);
-  if (!nodes.length) return;
-  const total = nodes.length;
-  const cx = 500, cy = 260, rx = 380, ry = 200;
-  const typeOrder = {agency:0,company:1,politician:2,offshore:3};
-  nodes.sort((a,b)=>(typeOrder[a.type]||0)-(typeOrder[b.type]||0));
-  nodes.forEach((n,i) => {
-    const angle = (i/total)*Math.PI*2 - Math.PI/2;
-    n.x = Math.round(cx + Math.cos(angle)*rx);
-    n.y = Math.round(cy + Math.sin(angle)*ry);
-    n.r = n.type==='agency'?20:n.type==='company'?22:n.score>=80?20:16;
+  // Seed from federal contracts; merge into existing ticker node if name matches a hint
+  contracts.forEach(ct => {
+    const recipient = (ct.recipient || '').trim();
+    if (!recipient) return;
+    const recLow = recipient.toLowerCase();
+    // Try to fold into an existing ticker node
+    let merged = null;
+    for (const tk of Object.keys(company)) {
+      const h = hints[tk] || [];
+      if (h.some(s => recLow.includes(s))) { merged = company[tk]; break; }
+    }
+    if (merged) {
+      merged.contractAmt += Number(ct.amount || 0);
+      if (ct.agency) merged.agencies.add(ct.agency);
+    } else {
+      // Standalone contract recipient (no politician trades match)
+      const key = recipient.slice(0, 28);
+      const co = company[key] || _newCo(key, recipient.split(/\s+/).slice(0, 2).join(' '));
+      co.contractAmt += Number(ct.amount || 0);
+      if (ct.agency) co.agencies.add(ct.agency);
+    }
   });
 
-  const nMap = {};
-  nodes.forEach(n => nMap[n.id] = n);
+  // Drop standalone contract nodes if we have too many — keep only those
+  // that are top-dollar OR overlap with trade activity
+  const companyArr = Object.values(company);
+  companyArr.forEach(c => {
+    // "Hot" if traded by 2+ politicians OR has both trades and contracts
+    c.hot = (c.politicians.size >= 2) || (c.tradeCount > 0 && c.contractAmt > 0);
+  });
+  // Trim: keep all hot + top 8 by contract amount + top 8 by trade count
+  const keep = new Set(companyArr.filter(c => c.hot).map(c => c.id));
+  companyArr.slice().sort((a, b) => b.contractAmt - a.contractAmt).slice(0, 8).forEach(c => keep.add(c.id));
+  companyArr.slice().sort((a, b) => b.tradeCount  - a.tradeCount ).slice(0, 8).forEach(c => keep.add(c.id));
+  const companies = companyArr.filter(c => keep.has(c.id));
 
-  const defs = document.createElementNS('http://www.w3.org/2000/svg','defs');
-  nodes.forEach(n => {
-    const grad = document.createElementNS('http://www.w3.org/2000/svg','radialGradient');
-    grad.setAttribute('id','gn'+n.id.replace(/[^a-zA-Z0-9]/g,''));
-    const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop');
-    s1.setAttribute('offset','0%');s1.setAttribute('stop-color',n.color);s1.setAttribute('stop-opacity','0.3');
-    const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop');
-    s2.setAttribute('offset','100%');s2.setAttribute('stop-color',n.color);s2.setAttribute('stop-opacity','0.05');
-    grad.appendChild(s1);grad.appendChild(s2);defs.appendChild(grad);
+  // ─── 2. Build politician + agency node sets ────────────────────────────
+  const polSet = new Set();
+  const agencySet = new Set();
+  companies.forEach(c => {
+    c.politicians.forEach(p => polSet.add(p));
+    c.agencies.forEach(a => agencySet.add(a));
+  });
+
+  const offshoreNames = new Set(offshore.map(o => o.person));
+
+  const politicians = [...polSet].map(name => {
+    const p = profiles[name] || {};
+    return {
+      id: 'pol:' + name,
+      name,
+      label: name.split(' ').slice(-1)[0].slice(0, 12),
+      committees: p.committees || [],
+      score: p.corruption_score || 0,
+      offshore: offshoreNames.has(name),
+      tradeCount: (p.trades || []).length,
+    };
+  }).sort((a, b) => b.score - a.score);
+
+  const agencies = [...agencySet].map(name => ({
+    id: 'ag:' + name,
+    name,
+    label: name.replace(/Department of /i, 'Dept ').slice(0, 14),
+  }));
+
+  // ─── 3. Build edges ────────────────────────────────────────────────────
+  //   politician → company (one edge per direction, with conflict flag)
+  //   agency     → company (from contracts, width by dollars)
+  const edges = [];
+
+  politicians.forEach(pol => {
+    const profile = profiles[pol.name];
+    if (!profile) return;
+    // Aggregate per ticker: count buys & sells, detect committee conflict
+    const perCo = {};
+    (profile.trades || []).forEach(t => {
+      const tk = (t.ticker || '').toUpperCase();
+      if (!tk) return;
+      const co = companies.find(c => c.tickers.has(tk));
+      if (!co) return;
+      const row = perCo[co.id] || (perCo[co.id] = { buys: 0, sells: 0, conflict: false });
+      const ttype = (t.trade_type || '').toLowerCase();
+      const isSell = ttype.includes('sale') || ttype.includes('sell');
+      if (isSell) row.sells++; else row.buys++;
+      // Conflict: politician's committees overlap industries that committees of the ticker oversee
+      const ind = tickerInd[tk];
+      if (ind) {
+        const overseers = indCommMap[ind] || [];
+        if (pol.committees.some(c => overseers.includes(c))) row.conflict = true;
+      }
+    });
+    Object.entries(perCo).forEach(([coId, row]) => {
+      const net = row.buys - row.sells;
+      const color = row.conflict ? '#ffaa00' : (net >= 0 ? '#00aa44' : '#cc0000');
+      edges.push({
+        from: pol.id, to: coId,
+        color,
+        width: Math.min(4, 1 + Math.log2(1 + row.buys + row.sells)),
+        opacity: row.conflict ? 0.65 : 0.4,
+        dash: row.conflict ? '' : '',
+      });
+    });
+  });
+
+  contracts.forEach(ct => {
+    const ag = ct.agency;
+    const recLow = (ct.recipient || '').toLowerCase();
+    if (!ag || !recLow) return;
+    const co = companies.find(c => {
+      if (c.label.toLowerCase().startsWith(recLow.split(/\s+/)[0])) return true;
+      const tk = [...c.tickers][0];
+      const h = hints[tk] || [];
+      return h.some(s => recLow.includes(s));
+    });
+    if (!co) return;
+    edges.push({
+      from: 'ag:' + ag, to: co.id,
+      color: '#888800',
+      width: Math.max(1, Math.min(5, (ct.amount || 0) / 5e9)),
+      opacity: 0.3,
+    });
+  });
+
+  // ─── 4. Layout ─────────────────────────────────────────────────────────
+  //   Companies in the center column
+  //   Politicians on the left arc, ordered by score (most "suspicious" up top)
+  //   Agencies on the right arc
+  const W = 1000, H = 540;
+  const cxCo = 500, cyTop = 60, dyCo = (H - 100) / Math.max(1, companies.length - 1 || 1);
+  companies.forEach((c, i) => {
+    c.x = cxCo;
+    c.y = companies.length === 1 ? H / 2 : (cyTop + i * dyCo);
+    c.r = 14 + Math.min(10, Math.log2(1 + c.tradeCount + c.contractAmt / 1e9) * 2);
+    // Yellow when company is BOTH traded by a politician AND has a fed contract
+    const dual = c.tradeCount > 0 && c.contractAmt > 0;
+    c.color = dual ? '#ffaa00' : '#cc6600';
+    c.sub = (c.tradeCount ? c.tradeCount + ' trades' : '') +
+            (c.tradeCount && c.contractAmt ? ' · ' : '') +
+            (c.contractAmt ? formatAmt(c.contractAmt) : '');
+  });
+
+  // Politicians on left side
+  const polX = 150;
+  const polCount = politicians.length;
+  politicians.forEach((p, i) => {
+    p.x = polX;
+    p.y = polCount === 1 ? H / 2 : 50 + i * ((H - 100) / Math.max(1, polCount - 1));
+    p.r = 9 + Math.min(7, p.score / 12);
+    p.color = p.offshore ? '#8844cc' : '#cc0000';
+    p.sub = p.committees.slice(0, 1).join('') || '';
+  });
+
+  // Agencies on right
+  const agX = 850;
+  const agCount = agencies.length;
+  agencies.forEach((a, i) => {
+    a.x = agX;
+    a.y = agCount === 1 ? H / 2 : 80 + i * ((H - 160) / Math.max(1, agCount - 1));
+    a.r = 14;
+    a.color = '#006600';
+    a.sub = 'Agency';
+  });
+
+  const allNodes = [...politicians, ...companies, ...agencies];
+  const nMap = {}; allNodes.forEach(n => nMap[n.id] = n);
+
+  if (!allNodes.length) {
+    svg.innerHTML = '<text x="500" y="270" text-anchor="middle" fill="#666" font-family="Share Tech Mono">Awaiting trade + contract data — run python agent.py</text>';
+    return;
+  }
+
+  // ─── 5. Render: gradients, then edges (under), then nodes (over) ───────
+  const NS = 'http://www.w3.org/2000/svg';
+  const defs = document.createElementNS(NS, 'defs');
+  allNodes.forEach(n => {
+    const grad = document.createElementNS(NS, 'radialGradient');
+    grad.setAttribute('id', 'gn' + n.id.replace(/[^a-zA-Z0-9]/g, ''));
+    const s1 = document.createElementNS(NS, 'stop');
+    s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', n.color); s1.setAttribute('stop-opacity', '0.45');
+    const s2 = document.createElementNS(NS, 'stop');
+    s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', n.color); s2.setAttribute('stop-opacity', '0.08');
+    grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad);
   });
   svg.appendChild(defs);
 
-  edgeList.forEach(e => {
+  // Edges
+  edges.forEach(e => {
     const a = nMap[e.from], b = nMap[e.to];
-    if (!a||!b) return;
-    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
-    line.setAttribute('x1',a.x);line.setAttribute('y1',a.y);
-    line.setAttribute('x2',b.x);line.setAttribute('y2',b.y);
-    line.setAttribute('stroke',e.color);line.setAttribute('stroke-width',e.w||1);
-    line.setAttribute('stroke-opacity','0.35');
-    if (e.dash) line.setAttribute('stroke-dasharray',e.dash);
+    if (!a || !b) return;
+    const line = document.createElementNS(NS, 'line');
+    line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
+    line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
+    line.setAttribute('stroke', e.color);
+    line.setAttribute('stroke-width', e.width || 1);
+    line.setAttribute('stroke-opacity', e.opacity || 0.35);
+    if (e.dash) line.setAttribute('stroke-dasharray', e.dash);
     svg.appendChild(line);
   });
 
-  nodes.forEach(n => {
-    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+  // Nodes
+  allNodes.forEach(n => {
+    const g = document.createElementNS(NS, 'g');
     g.style.cursor = 'pointer';
-    g.addEventListener('click', () => openPersonDossier(n.id));
-    const glow = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    glow.setAttribute('cx',n.x);glow.setAttribute('cy',n.y);glow.setAttribute('r',n.r+8);
-    glow.setAttribute('fill','none');glow.setAttribute('stroke',n.color);
-    glow.setAttribute('stroke-width','1');glow.setAttribute('stroke-opacity','0.1');
+    const clickKey = n.name || n.label;
+    g.addEventListener('click', () => openPersonDossier(clickKey));
+
+    // Outer glow ring
+    const glow = document.createElementNS(NS, 'circle');
+    glow.setAttribute('cx', n.x); glow.setAttribute('cy', n.y); glow.setAttribute('r', n.r + 6);
+    glow.setAttribute('fill', 'none'); glow.setAttribute('stroke', n.color);
+    glow.setAttribute('stroke-width', '1'); glow.setAttribute('stroke-opacity', '0.18');
     g.appendChild(glow);
-    const fill = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    fill.setAttribute('cx',n.x);fill.setAttribute('cy',n.y);fill.setAttribute('r',n.r);
-    fill.setAttribute('fill','url(#gn'+n.id.replace(/[^a-zA-Z0-9]/g,'')+')');
-    fill.setAttribute('stroke',n.color);fill.setAttribute('stroke-width','1.5');
+
+    // Main fill
+    const fill = document.createElementNS(NS, 'circle');
+    fill.setAttribute('cx', n.x); fill.setAttribute('cy', n.y); fill.setAttribute('r', n.r);
+    fill.setAttribute('fill', 'url(#gn' + n.id.replace(/[^a-zA-Z0-9]/g, '') + ')');
+    fill.setAttribute('stroke', n.color); fill.setAttribute('stroke-width', '1.5');
     g.appendChild(fill);
-    const label = document.createElementNS('http://www.w3.org/2000/svg','text');
-    label.setAttribute('x',n.x);label.setAttribute('y',n.y+1);
-    label.setAttribute('text-anchor','middle');label.setAttribute('dominant-baseline','middle');
-    label.setAttribute('fill',n.color);label.setAttribute('font-size','10');
-    label.setAttribute('font-family','Share Tech Mono,monospace');
-    label.textContent = n.label;g.appendChild(label);
-    const sub = document.createElementNS('http://www.w3.org/2000/svg','text');
-    sub.setAttribute('x',n.x);sub.setAttribute('y',n.y+n.r+12);
-    sub.setAttribute('text-anchor','middle');sub.setAttribute('fill','#333');
-    sub.setAttribute('font-size','9');sub.setAttribute('font-family','Share Tech Mono,monospace');
-    sub.textContent = (n.sub||'').slice(0,16);g.appendChild(sub);
+
+    // Offshore halo for politicians (purple ring)
+    if (n.offshore) {
+      const halo = document.createElementNS(NS, 'circle');
+      halo.setAttribute('cx', n.x); halo.setAttribute('cy', n.y); halo.setAttribute('r', n.r + 3);
+      halo.setAttribute('fill', 'none'); halo.setAttribute('stroke', '#8844cc');
+      halo.setAttribute('stroke-width', '1.5'); halo.setAttribute('stroke-dasharray', '2,2');
+      g.appendChild(halo);
+    }
+
+    // Primary label
+    const label = document.createElementNS(NS, 'text');
+    label.setAttribute('x', n.x); label.setAttribute('y', n.y + 1);
+    label.setAttribute('text-anchor', 'middle'); label.setAttribute('dominant-baseline', 'middle');
+    label.setAttribute('fill', n.color); label.setAttribute('font-size', '10');
+    label.setAttribute('font-family', 'Share Tech Mono,monospace');
+    label.textContent = n.label;
+    g.appendChild(label);
+
+    // Subtext below
+    if (n.sub) {
+      const sub = document.createElementNS(NS, 'text');
+      sub.setAttribute('x', n.x); sub.setAttribute('y', n.y + n.r + 12);
+      sub.setAttribute('text-anchor', 'middle'); sub.setAttribute('fill', '#666');
+      sub.setAttribute('font-size', '9'); sub.setAttribute('font-family', 'Share Tech Mono,monospace');
+      sub.textContent = n.sub.slice(0, 22);
+      g.appendChild(sub);
+    }
     svg.appendChild(g);
   });
+
+  // Column headers
+  const addHeader = (x, y, text, color) => {
+    const t = document.createElementNS(NS, 'text');
+    t.setAttribute('x', x); t.setAttribute('y', y);
+    t.setAttribute('text-anchor', 'middle');
+    t.setAttribute('fill', color); t.setAttribute('font-size', '11');
+    t.setAttribute('font-family', 'Orbitron,monospace');
+    t.setAttribute('letter-spacing', '0.1em');
+    t.textContent = text;
+    svg.appendChild(t);
+  };
+  addHeader(150, 25, 'POLITICIANS',   '#cc0000');
+  addHeader(500, 25, 'COMPANIES',     '#cc6600');
+  addHeader(850, 25, 'FED AGENCIES',  '#006600');
 }
 
 function formatAmt(n) {
