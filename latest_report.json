@@ -1,18 +1,17 @@
 {
-  "timestamp": "2026-05-27 22:23",
-  "timestamp_iso": "2026-05-27T22:23:00.450860",
+  "timestamp": "2026-05-27 22:34",
+  "timestamp_iso": "2026-05-27T22:34:37.099528",
   "summary": {
-    "total_signals": 14,
+    "total_signals": 16,
     "high_conviction": 0,
-    "layers_active": 28,
-    "social_monitored": 59,
+    "layers_active": 26,
+    "social_monitored": 61,
     "offshore_matches": 3,
-    "people_profiled": 59,
-    "insider_positions_tracked": 164
+    "people_profiled": 61
   },
   "top_signals": [
     {
-      "source": "major_contract + cross_reference",
+      "source": "major_contract+cross_reference",
       "politician_or_entity": "THE BOEING COMPANY",
       "ticker": "BA",
       "trade_type": "buy",
@@ -20,7 +19,51 @@
       "date": null,
       "score": 75,
       "action": "BUY",
-      "reason": "Boeing holds two NASA contracts totaling over $32.9B both flagged with 29 corruption indicators and high social mention velocity triggering contract-over-$1B (+15), cross-reference 2+ indicators (+25), and dual contract x1.3 multiplier. Strongest fundamental signal in this dataset despite no congressional trade confirmation."
+      "reason": "Boeing holds two NASA contracts totaling $32.9B both exceeding $1B threshold (+15pts each) with 29 corruption indicators flagged in cross-reference and social mention activity confirming 2+ indicator overlap (+25pts). Massive government contract flow provides fundamental support despite reputational headwinds."
+    },
+    {
+      "source": "major_contract+cross_reference",
+      "politician_or_entity": "BECHTEL NATIONAL, INC.",
+      "ticker": "BECHTEL",
+      "trade_type": "buy",
+      "amount": "$17,244,586,105",
+      "date": null,
+      "score": 35,
+      "action": "HOLD",
+      "reason": "Bechtel holds a $17.2B DOE contract exceeding $1B threshold but is privately held with zero social mentions or corruption indicators in cross-reference data. No actionable public equity trade available."
+    },
+    {
+      "source": "ICIJ_OffshorePapers",
+      "politician_or_entity": "Howard Lutnick",
+      "ticker": "BGC",
+      "trade_type": "buy",
+      "amount": "unknown",
+      "date": "2026-05-27",
+      "score": 30,
+      "action": "HOLD",
+      "reason": "Offshore confirmed match at 100% adds +30pts but no corroborating trade signals, legislation, or market-moving catalysts cross-reference available. Insufficient actionable signal without additional indicators."
+    },
+    {
+      "source": "ICIJ_OffshorePapers",
+      "politician_or_entity": "Rex Tillerson",
+      "ticker": "XOM",
+      "trade_type": "buy",
+      "amount": "unknown",
+      "date": "2026-05-27",
+      "score": 30,
+      "action": "HOLD",
+      "reason": "Paradise Papers confirmed match at 100% score but no accompanying congressional trade, contract, or legislative signal to cross-reference. Score too low for actionable position."
+    },
+    {
+      "source": "ICIJ_OffshorePapers",
+      "politician_or_entity": "Michael Cohen",
+      "ticker": "SPY",
+      "trade_type": "buy",
+      "amount": "unknown",
+      "date": "2026-05-27",
+      "score": 30,
+      "action": "HOLD",
+      "reason": "Confirmed offshore entity match at 100% from Paradise Papers Malta registry but Cohen holds no current government position generating tradeable catalyst. No cross-reference signals present."
     },
     {
       "source": "congressional_trade",
@@ -29,42 +72,9 @@
       "trade_type": "buy",
       "amount": "$15,001 - $50,000",
       "date": "2025-09-16",
-      "score": 46,
+      "score": 26,
       "action": "BUY",
-      "reason": "Boozman purchased two Treasury bond ETFs (IEF and IEI) on the same date suggesting a deliberate flight-to-safety rotation; multiple same-direction trades apply x1.3 multiplier. Coordinated bond positioning by a Senate Appropriations member carries elevated signal weight."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Boozman",
-      "ticker": "IEI",
-      "trade_type": "buy",
-      "amount": "$15,001 - $50,000",
-      "date": "2025-09-16",
-      "score": 46,
-      "action": "BUY",
-      "reason": "Paired same-day Treasury bond purchase alongside IEF by Senate Appropriations member signals coordinated defensive repositioning. Multiple signals on same senator apply x1.3 multiplier boosting conviction."
-    },
-    {
-      "source": "Offshore Papers",
-      "politician_or_entity": "Howard Lutnick",
-      "ticker": "BGC",
-      "trade_type": "buy",
-      "amount": "unknown",
-      "date": "2026-05-27",
-      "score": 30,
-      "action": "HOLD",
-      "reason": "Howard Lutnick confirmed in Paradise Papers at 100% match score, earning +30pts, but no corroborating trade, contract, or market-moving signal exists to justify action. Insufficient cross-reference data to generate a high-confidence trade signal."
-    },
-    {
-      "source": "Offshore Papers",
-      "politician_or_entity": "Rex Tillerson",
-      "ticker": "XOM",
-      "trade_type": "buy",
-      "amount": "unknown",
-      "date": "2026-05-27",
-      "score": 30,
-      "action": "HOLD",
-      "reason": "Rex Tillerson confirmed in Paradise Papers at 100% match score earning +30pts, but no active legislative, contract, or congressional trade signal cross-references this entry. Signal is isolated with no actionable catalyst."
+      "reason": "Boozman purchased two Treasury bond ETFs on the same date suggesting a deliberate rate-outlook positioning; multiple same-senator signals apply 1.3x multiplier. Rotation out of equities into bonds may signal insider rate expectations."
     },
     {
       "source": "congressional_trade",
@@ -75,7 +85,18 @@
       "date": "2025-03-19",
       "score": 26,
       "action": "SELL",
-      "reason": "Growth ETF sale by Boozman is consistent with a broader risk-off theme but small size and no corroborating signals limit the score. Congressional baseline applies."
+      "reason": "Sale of S&P 500 Growth ETF pairs with subsequent Treasury bond purchases suggesting deliberate risk-off rotation by Boozman. Multiple Boozman signals trigger 1.3x multiplier."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Boozman",
+      "ticker": "IEI",
+      "trade_type": "buy",
+      "amount": "$15,001 - $50,000",
+      "date": "2025-09-16",
+      "score": 26,
+      "action": "BUY",
+      "reason": "Coordinated same-day Treasury bond ETF purchases (IEF + IEI) by Boozman indicate deliberate duration play; 1.3x multiplier applied for multiple signals same senator. Consistent with informed rate-cut positioning."
     },
     {
       "source": "congressional_trade",
@@ -85,8 +106,8 @@
       "amount": "$1,001 - $15,000",
       "date": "2025-09-12",
       "score": 26,
-      "action": "HOLD",
-      "reason": "Small Eaton Corp purchase near the Treasury bond buys but no contract or cross-reference corroboration found. Congressional baseline score only."
+      "action": "BUY",
+      "reason": "Eaton Corp purchase days before Treasury bond buys adds to Boozman's cluster of September trades; 1.3x multiplier applied across all Boozman signals. Infrastructure/energy exposure alongside rate plays is notable."
     },
     {
       "source": "congressional_trade",
@@ -97,7 +118,18 @@
       "date": "2026-05-06",
       "score": 20,
       "action": "SELL",
-      "reason": "Senate sale of eToro at significant size warrants attention but no corroborating signals or contract cross-reference found. Score reflects congressional trade baseline only."
+      "reason": "Senate sale of eToro near IPO period warrants attention but no cross-reference signals or contract data amplify this. Base congressional trade score only."
+    },
+    {
+      "source": "congressional_trade",
+      "politician_or_entity": "John Fetterman",
+      "ticker": "FCBN",
+      "trade_type": "buy",
+      "amount": "$1,001 - $15,000",
+      "date": "2025-04-24",
+      "score": 20,
+      "action": "HOLD",
+      "reason": "Small congressional purchase of regional bank with no amplifying signals or cross-references. Low conviction trade, minimal score."
     },
     {
       "source": "congressional_trade",
@@ -108,7 +140,7 @@
       "date": "2025-06-17",
       "score": 20,
       "action": "HOLD",
-      "reason": "Small congressional purchase of JPMorgan with no corroborating signals or contract data. Low conviction signal at minimum scoring threshold."
+      "reason": "Routine small JPMorgan purchase with no cross-reference or contract signals to elevate conviction. Base congressional trade score only."
     },
     {
       "source": "congressional_trade",
@@ -119,140 +151,62 @@
       "date": "2026-04-23",
       "score": 20,
       "action": "HOLD",
-      "reason": "Standard congressional purchase of PepsiCo with no supplementary signals or cross-reference indicators. Baseline score only."
+      "reason": "Moderate PepsiCo purchase with no amplifying contract, dark pool, or cross-reference signals present. Base congressional score only."
     },
     {
       "source": "dark_pool",
-      "politician_or_entity": "FINRA_DarkPool",
+      "politician_or_entity": "Hyatt Hotels Corp",
       "ticker": "H",
       "trade_type": "buy",
-      "amount": "173,349 shares / 6,450 trades",
+      "amount": "173,349 shares dark pool",
       "date": null,
       "score": 20,
       "action": "HOLD",
-      "reason": "Hyatt Hotels shows the highest dark pool volume and trade count in the dataset but no congressional trade, contract, or cross-reference corroboration is present. Monitor for emerging catalyst before acting."
+      "reason": "Significant dark pool volume of 173,349 shares with 6,450 trades in Hyatt warrants monitoring but lacks political or contract cross-reference to elevate conviction. Watch for follow-on signals."
     },
     {
-      "source": "Social Media",
-      "politician_or_entity": "Donald Trump Jr",
-      "ticker": "SPY",
-      "trade_type": "sell",
-      "amount": "unknown",
-      "date": "2026-05-28",
-      "score": 20,
-      "action": "HOLD",
-      "reason": "Donald Trump Jr posted about GM, Ford, and Toyota flagging stagnating U.S. car sales, a bearish macro signal for consumer discretionary and broad market. Score is low due to no cross-referencing contract, trade filing, or offshore confirmation."
-    },
-    {
-      "source": "major_contract + cross_reference",
-      "politician_or_entity": "BECHTEL NATIONAL, INC.",
-      "ticker": "BCHT",
+      "source": "dark_pool",
+      "politician_or_entity": "Bruker Corporation",
+      "ticker": "BRKR",
       "trade_type": "buy",
-      "amount": "$17,244,586,105",
+      "amount": "21,779 shares dark pool",
       "date": null,
       "score": 15,
       "action": "HOLD",
-      "reason": "Bechtel is privately held so no actionable ticker exists; $17B DOE contract qualifies for contract-over-$1B bonus but zero social mentions and zero corruption indicators yield no cross-reference lift. Signal noted but not tradeable."
-    },
-    {
-      "source": "dark_pool",
-      "politician_or_entity": "FINRA_DarkPool",
-      "ticker": "BRKR",
-      "trade_type": "buy",
-      "amount": "21,779 shares / 241 trades",
-      "date": null,
-      "score": 10,
-      "action": "HOLD",
-      "reason": "Bruker dark pool activity is modest with no supporting signals from any other data category. Insufficient evidence to generate a directional call."
+      "reason": "Moderate dark pool activity in Bruker with no political trade or contract signals to amplify. Insufficient data for high-conviction action."
     }
   ],
   "corruption_index": [
     {
-      "name": "Josh Gottheimer",
-      "score": 38,
-      "breakdown": [
-        "Trading activity (24 trades): +10",
-        "Committee conflict trades (2): +20",
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "HIGH",
-      "committees": [
-        "Intelligence",
-        "Financial Services"
-      ],
-      "known_holdings": [
-        "GS",
-        "AMD",
-        "IFNNY"
-      ],
-      "known_crypto": []
-    },
-    {
       "name": "John Fetterman",
       "score": 31,
       "breakdown": [
-        "Trading activity (14 trades): +10",
+        "Trading activity (2 trades): +10",
         "Committee conflict trades (1): +10",
         "Intelligence signal score (20/100): +3",
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "HIGH",
-      "committees": [
-        "Banking",
-        "Agriculture",
-        "Armed Services"
-      ],
-      "known_holdings": [
-        "JPM",
-        "FCBN"
-      ],
-      "known_crypto": []
+      "data_quality": "HIGH"
     },
     {
-      "name": "Howard Lutnick",
-      "score": 24,
+      "name": "Josh Gottheimer",
+      "score": 28,
       "breakdown": [
-        "Offshore papers confirmed (score 100): +20",
-        "Intelligence signal score (30/100): +4"
+        "Trading activity (10 trades): +10",
+        "Committee conflict trades (1): +10",
+        "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "HIGH",
-      "committees": [
-        "Commerce",
-        "Trade"
-      ],
-      "known_holdings": [
-        "BGC"
-      ],
-      "known_crypto": [
-        "BTC"
-      ]
+      "data_quality": "HIGH"
     },
     {
       "name": "John Boozman",
-      "score": 24,
+      "score": 21,
       "breakdown": [
-        "Trading activity (21 trades): +10",
-        "Intelligence signal score (46/100): +6",
+        "Trading activity (12 trades): +10",
+        "Intelligence signal score (26/100): +3",
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "HIGH",
-      "committees": [
-        "Agriculture",
-        "Appropriations",
-        "Veterans"
-      ],
-      "known_holdings": [
-        "IEF",
-        "IEI",
-        "ETN",
-        "GOOGL",
-        "SCHP",
-        "SHY",
-        "ADBE",
-        "CEG",
-        "DVN"
-      ],
-      "known_crypto": []
+      "data_quality": "HIGH"
     },
     {
       "name": "Gary Peters",
@@ -262,17 +216,7 @@
         "Intelligence signal score (20/100): +3",
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "HIGH",
-      "committees": [
-        "Homeland Security",
-        "Commerce",
-        "Armed Services"
-      ],
-      "known_holdings": [
-        "PEP",
-        "SJM"
-      ],
-      "known_crypto": []
+      "data_quality": "HIGH"
     },
     {
       "name": "Nancy Pelosi",
@@ -281,19 +225,7 @@
         "Oversees Defense sector with active BA signal: +8",
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "LOW",
-      "committees": [
-        "Intelligence",
-        "Appropriations"
-      ],
-      "known_holdings": [
-        "NVDA",
-        "AAPL",
-        "MSFT",
-        "GOOGL",
-        "AVGO"
-      ],
-      "known_crypto": []
+      "data_quality": "LOW"
     },
     {
       "name": "Marco Rubio",
@@ -301,13 +233,7 @@
       "breakdown": [
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "LOW",
-      "committees": [
-        "Foreign Relations",
-        "Intelligence"
-      ],
-      "known_holdings": [],
-      "known_crypto": []
+      "data_quality": "LOW"
     },
     {
       "name": "Tulsi Gabbard",
@@ -315,13 +241,7 @@
       "breakdown": [
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "LOW",
-      "committees": [
-        "Intelligence",
-        "National Security"
-      ],
-      "known_holdings": [],
-      "known_crypto": []
+      "data_quality": "LOW"
     },
     {
       "name": "Mitch McConnell",
@@ -329,14 +249,7 @@
       "breakdown": [
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "LOW",
-      "committees": [
-        "Appropriations",
-        "Agriculture",
-        "Rules"
-      ],
-      "known_holdings": [],
-      "known_crypto": []
+      "data_quality": "LOW"
     },
     {
       "name": "Josh Hawley",
@@ -344,14 +257,7 @@
       "breakdown": [
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "LOW",
-      "committees": [
-        "Judiciary",
-        "Commerce",
-        "Armed Services"
-      ],
-      "known_holdings": [],
-      "known_crypto": []
+      "data_quality": "LOW"
     },
     {
       "name": "Tommy Tuberville",
@@ -359,18 +265,7 @@
       "breakdown": [
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "LOW",
-      "committees": [
-        "Armed Services",
-        "Agriculture",
-        "Veterans"
-      ],
-      "known_holdings": [
-        "LMT",
-        "RTX",
-        "NOC"
-      ],
-      "known_crypto": []
+      "data_quality": "LOW"
     },
     {
       "name": "Dan Crenshaw",
@@ -378,13 +273,7 @@
       "breakdown": [
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "LOW",
-      "committees": [
-        "Intelligence",
-        "Homeland Security"
-      ],
-      "known_holdings": [],
-      "known_crypto": []
+      "data_quality": "LOW"
     },
     {
       "name": "Markwayne Mullin",
@@ -392,92 +281,25 @@
       "breakdown": [
         "Oversees Defense sector with active BA signal: +8"
       ],
-      "data_quality": "LOW",
-      "committees": [
-        "Armed Services",
-        "Health",
-        "Commerce"
-      ],
-      "known_holdings": [],
-      "known_crypto": []
-    },
-    {
-      "name": "Donald Trump",
-      "score": 3,
-      "breakdown": [
-        "Intelligence signal score (20/100): +3"
-      ],
-      "data_quality": "HIGH",
-      "committees": [],
-      "known_holdings": [
-        "DJT",
-        "MSTR"
-      ],
-      "known_crypto": [
-        "TRUMP",
-        "BTC"
-      ]
-    },
-    {
-      "name": "Donald Trump Jr",
-      "score": 3,
-      "breakdown": [
-        "Intelligence signal score (20/100): +3"
-      ],
-      "data_quality": "HIGH",
-      "committees": [],
-      "known_holdings": [
-        "DJT"
-      ],
-      "known_crypto": [
-        "TRUMP"
-      ]
+      "data_quality": "LOW"
     }
   ],
   "person_profiles": {
     "Donald Trump": {
       "name": "Donald Trump",
       "committees": [],
-      "known_holdings": [
-        "DJT",
-        "MSTR"
-      ],
-      "known_crypto": [
-        "TRUMP",
-        "BTC"
-      ],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
-      "market_signals": [
-        {
-          "source": "Social Media",
-          "politician_or_entity": "Donald Trump Jr",
-          "ticker": "SPY",
-          "trade_type": "sell",
-          "amount": "unknown",
-          "date": "2026-05-28",
-          "score": 20,
-          "action": "HOLD",
-          "reason": "Donald Trump Jr posted about GM, Ford, and Toyota flagging stagnating U.S. car sales, a bearish macro signal for consumer discretionary and broad market. Score is low due to no cross-referencing contract, trade filing, or offshore confirmation."
-        }
-      ],
+      "market_signals": [],
       "donations": [],
-      "corruption_score": 3,
-      "score_breakdown": [
-        "Intelligence signal score (20/100): +3"
-      ],
-      "data_quality": "HIGH"
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "data_quality": "LOW"
     },
     "Jared Kushner": {
       "name": "Jared Kushner",
       "committees": [],
-      "known_holdings": [
-        "CBRE",
-        "JLL",
-        "PLD"
-      ],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -488,7 +310,7 @@
           "keywords": [
             "cut"
           ],
-          "suggested_ticker": "DJT"
+          "suggested_ticker": "SPY"
         },
         {
           "source": "Social Media",
@@ -511,8 +333,6 @@
     "Ivanka Trump": {
       "name": "Ivanka Trump",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -533,7 +353,7 @@
           "keywords": [
             "great"
           ],
-          "suggested_ticker": "DJT"
+          "suggested_ticker": "SPY"
         }
       ],
       "offshore_matches": [],
@@ -546,14 +366,18 @@
     "Donald Trump Jr": {
       "name": "Donald Trump Jr",
       "committees": [],
-      "known_holdings": [
-        "DJT"
-      ],
-      "known_crypto": [
-        "TRUMP"
-      ],
       "trades": [],
       "recent_posts": [
+        {
+          "source": "Social Media",
+          "person": "Donald Trump Jr",
+          "content": "The Trade Desk carved out a niche as a fast-growing underdog that could take on Google in the digital-ad space. Now the challenger faces challenges of its own. https://t.co/EmDlNqeNNT",
+          "created_at": "2026-05-28T02:26:17.000Z",
+          "keywords": [
+            "trade"
+          ],
+          "suggested_ticker": "SPY"
+        },
         {
           "source": "Social Media",
           "person": "Donald Trump Jr",
@@ -566,25 +390,11 @@
         }
       ],
       "offshore_matches": [],
-      "market_signals": [
-        {
-          "source": "Social Media",
-          "politician_or_entity": "Donald Trump Jr",
-          "ticker": "SPY",
-          "trade_type": "sell",
-          "amount": "unknown",
-          "date": "2026-05-28",
-          "score": 20,
-          "action": "HOLD",
-          "reason": "Donald Trump Jr posted about GM, Ford, and Toyota flagging stagnating U.S. car sales, a bearish macro signal for consumer discretionary and broad market. Score is low due to no cross-referencing contract, trade filing, or offshore confirmation."
-        }
-      ],
+      "market_signals": [],
       "donations": [],
-      "corruption_score": 3,
-      "score_breakdown": [
-        "Intelligence signal score (20/100): +3"
-      ],
-      "data_quality": "HIGH"
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "data_quality": "LOW"
     },
     "Pam Bondi": {
       "name": "Pam Bondi",
@@ -592,8 +402,6 @@
         "Justice",
         "Law Enforcement"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -620,11 +428,6 @@
         "Treasury",
         "Finance"
       ],
-      "known_holdings": [
-        "GS",
-        "BX"
-      ],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -639,8 +442,6 @@
       "committees": [
         "Defense"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -650,50 +451,17 @@
       "score_breakdown": [],
       "data_quality": "LOW"
     },
-    "Howard Lutnick": {
-      "name": "Howard Lutnick",
-      "committees": [
-        "Commerce",
-        "Trade"
-      ],
-      "known_holdings": [
-        "BGC"
-      ],
-      "known_crypto": [
-        "BTC"
-      ],
+    "Harold Hamm": {
+      "name": "Harold Hamm",
+      "committees": [],
       "trades": [],
       "recent_posts": [],
-      "offshore_matches": [
-        {
-          "person": "Howard Lutnick",
-          "offshore_entity": "HOWARD LUTNICK",
-          "description": "Officer node extracted from the Paradise Papers - Malta corporate registry data.",
-          "match_score": 100.0,
-          "confidence": "CONFIRMED",
-          "source": "ICIJ_OffshorePapers"
-        }
-      ],
-      "market_signals": [
-        {
-          "source": "Offshore Papers",
-          "politician_or_entity": "Howard Lutnick",
-          "ticker": "BGC",
-          "trade_type": "buy",
-          "amount": "unknown",
-          "date": "2026-05-27",
-          "score": 30,
-          "action": "HOLD",
-          "reason": "Howard Lutnick confirmed in Paradise Papers at 100% match score, earning +30pts, but no corroborating trade, contract, or market-moving signal exists to justify action. Insufficient cross-reference data to generate a high-confidence trade signal."
-        }
-      ],
+      "offshore_matches": [],
+      "market_signals": [],
       "donations": [],
-      "corruption_score": 24,
-      "score_breakdown": [
-        "Offshore papers confirmed (score 100): +20",
-        "Intelligence signal score (30/100): +4"
-      ],
-      "data_quality": "HIGH"
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "data_quality": "LOW"
     },
     "Marco Rubio": {
       "name": "Marco Rubio",
@@ -701,8 +469,6 @@
         "Foreign Relations",
         "Intelligence"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -730,8 +496,6 @@
     "Secretary Rubio": {
       "name": "Secretary Rubio",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -742,7 +506,7 @@
           "keywords": [
             "rate"
           ],
-          "suggested_ticker": "DJT"
+          "suggested_ticker": "SPY"
         },
         {
           "source": "Social Media",
@@ -769,8 +533,6 @@
         "Intelligence",
         "National Security"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -799,8 +561,6 @@
         "Interior",
         "Energy"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -851,11 +611,6 @@
       "committees": [
         "Energy"
       ],
-      "known_holdings": [
-        "XLE",
-        "CVX"
-      ],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -872,8 +627,6 @@
         "FDA",
         "CDC"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -890,8 +643,6 @@
         "Agriculture",
         "Rules"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -921,8 +672,6 @@
         "NASA",
         "Science"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -939,8 +688,6 @@
         "Commerce",
         "Armed Services"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -959,8 +706,6 @@
         "Foreign Relations",
         "Health"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -988,8 +733,6 @@
         "Veterans",
         "Budget"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -1019,8 +762,6 @@
         "Health",
         "Small Business"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -1037,12 +778,6 @@
         "Agriculture",
         "Veterans"
       ],
-      "known_holdings": [
-        "LMT",
-        "RTX",
-        "NOC"
-      ],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -1061,8 +796,6 @@
         "Energy",
         "Science"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -1113,18 +846,6 @@
         "Appropriations",
         "Veterans"
       ],
-      "known_holdings": [
-        "IEF",
-        "IEI",
-        "ETN",
-        "GOOGL",
-        "SCHP",
-        "SHY",
-        "ADBE",
-        "CEG",
-        "DVN"
-      ],
-      "known_crypto": [],
       "trades": [
         {
           "politician": "John Boozman",
@@ -1269,111 +990,6 @@
           "sentiment_score": 0,
           "news_velocity": "NORMAL",
           "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "SPYM",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-20",
-          "asset": "TRADR 2X LONG SPY MNTHLY ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "NVDA",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-19",
-          "asset": "NVIDIA Corporation",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "MSFT",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-05",
-          "asset": "Microsoft Corp"
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "VEA",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-19",
-          "asset": "Vanguard FTSE Developed Markets ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "JNJ",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-19",
-          "asset": "Johnson & Johnson",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "TPYP",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-20",
-          "asset": "Managed Portfolio Series Tortoise North American Pipeline Fund",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "FTGC",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-19",
-          "asset": "FIRST TR GLOBAL TACTICAL CMD",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "ARES",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-13",
-          "asset": "Ares Management Corp",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "BBEU",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-03-19",
-          "asset": "JPMORGAN BETABULDR EUROP ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
         }
       ],
       "recent_posts": [
@@ -1425,7 +1041,7 @@
           "keywords": [
             "war"
           ],
-          "suggested_ticker": "DJT"
+          "suggested_ticker": "SPY"
         }
       ],
       "offshore_matches": [],
@@ -1437,20 +1053,9 @@
           "trade_type": "buy",
           "amount": "$15,001 - $50,000",
           "date": "2025-09-16",
-          "score": 46,
+          "score": 26,
           "action": "BUY",
-          "reason": "Boozman purchased two Treasury bond ETFs (IEF and IEI) on the same date suggesting a deliberate flight-to-safety rotation; multiple same-direction trades apply x1.3 multiplier. Coordinated bond positioning by a Senate Appropriations member carries elevated signal weight."
-        },
-        {
-          "source": "congressional_trade",
-          "politician_or_entity": "John Boozman",
-          "ticker": "IEI",
-          "trade_type": "buy",
-          "amount": "$15,001 - $50,000",
-          "date": "2025-09-16",
-          "score": 46,
-          "action": "BUY",
-          "reason": "Paired same-day Treasury bond purchase alongside IEF by Senate Appropriations member signals coordinated defensive repositioning. Multiple signals on same senator apply x1.3 multiplier boosting conviction."
+          "reason": "Boozman purchased two Treasury bond ETFs on the same date suggesting a deliberate rate-outlook positioning; multiple same-senator signals apply 1.3x multiplier. Rotation out of equities into bonds may signal insider rate expectations."
         },
         {
           "source": "congressional_trade",
@@ -1461,7 +1066,18 @@
           "date": "2025-03-19",
           "score": 26,
           "action": "SELL",
-          "reason": "Growth ETF sale by Boozman is consistent with a broader risk-off theme but small size and no corroborating signals limit the score. Congressional baseline applies."
+          "reason": "Sale of S&P 500 Growth ETF pairs with subsequent Treasury bond purchases suggesting deliberate risk-off rotation by Boozman. Multiple Boozman signals trigger 1.3x multiplier."
+        },
+        {
+          "source": "congressional_trade",
+          "politician_or_entity": "John Boozman",
+          "ticker": "IEI",
+          "trade_type": "buy",
+          "amount": "$15,001 - $50,000",
+          "date": "2025-09-16",
+          "score": 26,
+          "action": "BUY",
+          "reason": "Coordinated same-day Treasury bond ETF purchases (IEF + IEI) by Boozman indicate deliberate duration play; 1.3x multiplier applied for multiple signals same senator. Consistent with informed rate-cut positioning."
         },
         {
           "source": "congressional_trade",
@@ -1471,15 +1087,15 @@
           "amount": "$1,001 - $15,000",
           "date": "2025-09-12",
           "score": 26,
-          "action": "HOLD",
-          "reason": "Small Eaton Corp purchase near the Treasury bond buys but no contract or cross-reference corroboration found. Congressional baseline score only."
+          "action": "BUY",
+          "reason": "Eaton Corp purchase days before Treasury bond buys adds to Boozman's cluster of September trades; 1.3x multiplier applied across all Boozman signals. Infrastructure/energy exposure alongside rate plays is notable."
         }
       ],
       "donations": [],
-      "corruption_score": 24,
+      "corruption_score": 21,
       "score_breakdown": [
-        "Trading activity (21 trades): +10",
-        "Intelligence signal score (46/100): +6",
+        "Trading activity (12 trades): +10",
+        "Intelligence signal score (26/100): +3",
         "Oversees Defense sector with active BA signal: +8"
       ],
       "data_quality": "HIGH"
@@ -1491,11 +1107,6 @@
         "Commerce",
         "Armed Services"
       ],
-      "known_holdings": [
-        "PEP",
-        "SJM"
-      ],
-      "known_crypto": [],
       "trades": [
         {
           "politician": "Gary Peters",
@@ -1598,7 +1209,7 @@
           "date": "2026-04-23",
           "score": 20,
           "action": "HOLD",
-          "reason": "Standard congressional purchase of PepsiCo with no supplementary signals or cross-reference indicators. Baseline score only."
+          "reason": "Moderate PepsiCo purchase with no amplifying contract, dark pool, or cross-reference signals present. Base congressional score only."
         }
       ],
       "donations": [],
@@ -1617,11 +1228,6 @@
         "Agriculture",
         "Armed Services"
       ],
-      "known_holdings": [
-        "JPM",
-        "FCBN"
-      ],
-      "known_crypto": [],
       "trades": [
         {
           "politician": "John Fetterman",
@@ -1646,138 +1252,6 @@
           "sentiment_score": 0,
           "news_velocity": "NORMAL",
           "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "ATH",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-10",
-          "asset": "Athene Holding Ltd",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "BXSL",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-13",
-          "asset": "BLACKSTONE SECURED LENDING F",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "NFS",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-10",
-          "asset": "Nationwide Financial Services Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "GOOGL",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-30",
-          "asset": "Alphabet Inc"
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "ERIE",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-27",
-          "asset": "Erie Indemnity Co",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "MSFT",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-30",
-          "asset": "Microsoft Corp"
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "T",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-27",
-          "asset": "AT&T Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "MU",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-30",
-          "asset": "Micron Technology Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "MSFT",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-27",
-          "asset": "Microsoft Corp"
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "AMZN",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-30",
-          "asset": "Amazon.com Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "CNXC",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-11",
-          "asset": "Concentrix Corp",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Fetterman",
-          "chamber": "Senate",
-          "ticker": "ERIE",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-03-30",
-          "asset": "Erie Indemnity Co"
         }
       ],
       "recent_posts": [
@@ -1797,19 +1271,30 @@
         {
           "source": "congressional_trade",
           "politician_or_entity": "John Fetterman",
+          "ticker": "FCBN",
+          "trade_type": "buy",
+          "amount": "$1,001 - $15,000",
+          "date": "2025-04-24",
+          "score": 20,
+          "action": "HOLD",
+          "reason": "Small congressional purchase of regional bank with no amplifying signals or cross-references. Low conviction trade, minimal score."
+        },
+        {
+          "source": "congressional_trade",
+          "politician_or_entity": "John Fetterman",
           "ticker": "JPM",
           "trade_type": "buy",
           "amount": "$1,001 - $15,000",
           "date": "2025-06-17",
           "score": 20,
           "action": "HOLD",
-          "reason": "Small congressional purchase of JPMorgan with no corroborating signals or contract data. Low conviction signal at minimum scoring threshold."
+          "reason": "Routine small JPMorgan purchase with no cross-reference or contract signals to elevate conviction. Base congressional trade score only."
         }
       ],
       "donations": [],
       "corruption_score": 31,
       "score_breakdown": [
-        "Trading activity (14 trades): +10",
+        "Trading activity (2 trades): +10",
         "Committee conflict trades (1): +10",
         "Intelligence signal score (20/100): +3",
         "Oversees Defense sector with active BA signal: +8"
@@ -1822,14 +1307,6 @@
         "Intelligence",
         "Appropriations"
       ],
-      "known_holdings": [
-        "NVDA",
-        "AAPL",
-        "MSFT",
-        "GOOGL",
-        "AVGO"
-      ],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -1848,8 +1325,6 @@
         "Financial Services",
         "Oversight"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -1865,8 +1340,6 @@
         "Intelligence",
         "Homeland Security"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -1885,8 +1358,6 @@
         "Health",
         "Commerce"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -1904,8 +1375,6 @@
         "Foreign Affairs",
         "Homeland Security"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -1921,171 +1390,15 @@
         "Intelligence",
         "Financial Services"
       ],
-      "known_holdings": [
-        "GS",
-        "AMD",
-        "IFNNY"
-      ],
-      "known_crypto": [],
       "trades": [
         {
           "politician": "Josh Gottheimer",
           "chamber": "House",
-          "ticker": "MLM",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-09",
-          "asset": "Martin Marietta Materials Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "NTES",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-06",
-          "asset": "Netease Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "ALLY",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-09",
-          "asset": "Ally Financial Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "GS",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-09",
-          "asset": "The Goldman Sachs Group Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "MMM",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-28",
-          "asset": "3M Co",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "MKTX",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-09",
-          "asset": "MarketAxess Holdings Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "PFGC",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-09",
-          "asset": "PERFORMANCE FOOD GROUP COMPANY",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "HD",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-09",
-          "asset": "The Home Depot Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "AMD",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-23",
-          "asset": "Advanced Micro Devices Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "HDB",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-13",
-          "asset": "H D F C Bank Ltd",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "AMD",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-27",
-          "asset": "Advanced Micro Devices Inc"
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "IFNNY",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-13",
-          "asset": "Infineon Technologies AG",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "GS",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-16",
-          "asset": "The Goldman Sachs Group Inc"
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "IBM",
+          "ticker": "NOW",
           "trade_type": "Sale",
           "amount": "$1,001 - $15,000",
           "date": "2026-04-24",
-          "asset": "International Business Machines Corp",
+          "asset": "ServiceNow Inc",
           "sentiment_score": 0,
           "news_velocity": "NORMAL",
           "articles_24h": 0
@@ -2117,32 +1430,11 @@
         {
           "politician": "Josh Gottheimer",
           "chamber": "House",
-          "ticker": "NOW",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-24",
-          "asset": "ServiceNow Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "T",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-09",
-          "asset": "AT&T Inc"
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "F",
+          "ticker": "PFGC",
           "trade_type": "Sale",
           "amount": "$15,001 - $50,000",
           "date": "2026-04-09",
-          "asset": "Ford Motor Co",
+          "asset": "PERFORMANCE FOOD GROUP COMPANY",
           "sentiment_score": 0,
           "news_velocity": "NORMAL",
           "articles_24h": 0
@@ -2150,11 +1442,56 @@
         {
           "politician": "Josh Gottheimer",
           "chamber": "House",
-          "ticker": "DRI",
+          "ticker": "GS",
+          "trade_type": "Purchase",
+          "amount": "$1,001 - $15,000",
+          "date": "2026-04-16",
+          "asset": "The Goldman Sachs Group Inc",
+          "sentiment_score": 0,
+          "news_velocity": "NORMAL",
+          "articles_24h": 0
+        },
+        {
+          "politician": "Josh Gottheimer",
+          "chamber": "House",
+          "ticker": "AMD",
+          "trade_type": "Purchase",
+          "amount": "$1,001 - $15,000",
+          "date": "2026-04-23",
+          "asset": "Advanced Micro Devices Inc",
+          "sentiment_score": 0,
+          "news_velocity": "NORMAL",
+          "articles_24h": 0
+        },
+        {
+          "politician": "Josh Gottheimer",
+          "chamber": "House",
+          "ticker": "AMD",
+          "trade_type": "Purchase",
+          "amount": "$1,001 - $15,000",
+          "date": "2026-04-27",
+          "asset": "Advanced Micro Devices Inc"
+        },
+        {
+          "politician": "Josh Gottheimer",
+          "chamber": "House",
+          "ticker": "HDB",
+          "trade_type": "Sale",
+          "amount": "$1,001 - $15,000",
+          "date": "2026-04-13",
+          "asset": "H D F C Bank Ltd",
+          "sentiment_score": 0,
+          "news_velocity": "NORMAL",
+          "articles_24h": 0
+        },
+        {
+          "politician": "Josh Gottheimer",
+          "chamber": "House",
+          "ticker": "MLM",
           "trade_type": "Sale",
           "amount": "$15,001 - $50,000",
           "date": "2026-04-09",
-          "asset": "Darden Restaurants Inc",
+          "asset": "Martin Marietta Materials Inc",
           "sentiment_score": 0,
           "news_velocity": "NORMAL",
           "articles_24h": 0
@@ -2162,47 +1499,11 @@
         {
           "politician": "Josh Gottheimer",
           "chamber": "House",
-          "ticker": "CBZ",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-06",
-          "asset": "CBIZ Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "FWRG",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-06",
-          "asset": "FIRST WATCH RESTAURA GRO INC",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "DLTR",
+          "ticker": "HD",
           "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
+          "amount": "$15,001 - $50,000",
           "date": "2026-04-09",
-          "asset": "Dollar Tree Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "FCX",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-15",
-          "asset": "Freeport-McMoRan Inc",
+          "asset": "The Home Depot Inc",
           "sentiment_score": 0,
           "news_velocity": "NORMAL",
           "articles_24h": 0
@@ -2223,10 +1524,10 @@
       "offshore_matches": [],
       "market_signals": [],
       "donations": [],
-      "corruption_score": 38,
+      "corruption_score": 28,
       "score_breakdown": [
-        "Trading activity (24 trades): +10",
-        "Committee conflict trades (2): +20",
+        "Trading activity (10 trades): +10",
+        "Committee conflict trades (1): +10",
         "Oversees Defense sector with active BA signal: +8"
       ],
       "data_quality": "HIGH"
@@ -2237,8 +1538,6 @@
         "Financial Services",
         "Transportation"
       ],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -2250,7 +1549,7 @@
             "economy",
             "market"
           ],
-          "suggested_ticker": "DJT"
+          "suggested_ticker": "SPY"
         },
         {
           "source": "Social Media",
@@ -2273,8 +1572,6 @@
     "Gavin Newsom": {
       "name": "Gavin Newsom",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2287,8 +1584,6 @@
     "Ron DeSantis": {
       "name": "Ron DeSantis",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2301,8 +1596,6 @@
     "Greg Abbott": {
       "name": "Greg Abbott",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2315,8 +1608,6 @@
     "Gretchen Whitmer": {
       "name": "Gretchen Whitmer",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2329,8 +1620,30 @@
     "JB Pritzker": {
       "name": "JB Pritzker",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
+      "trades": [],
+      "recent_posts": [],
+      "offshore_matches": [],
+      "market_signals": [],
+      "donations": [],
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "data_quality": "LOW"
+    },
+    "Abigail Spanberger": {
+      "name": "Abigail Spanberger",
+      "committees": [],
+      "trades": [],
+      "recent_posts": [],
+      "offshore_matches": [],
+      "market_signals": [],
+      "donations": [],
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "data_quality": "LOW"
+    },
+    "SarahHuckSanders": {
+      "name": "SarahHuckSanders",
+      "committees": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2343,16 +1656,28 @@
     "Elon Musk": {
       "name": "Elon Musk",
       "committees": [],
-      "known_holdings": [
-        "TSLA",
-        "LUNR"
-      ],
-      "known_crypto": [
-        "DOGE",
-        "BTC"
-      ],
       "trades": [],
       "recent_posts": [
+        {
+          "source": "Social Media",
+          "person": "Elon Musk",
+          "content": "@Polymarket @jeffreytucker https://t.co/uPxsgWKrcd",
+          "created_at": "2026-05-28T02:32:22.000Z",
+          "keywords": [
+            "market"
+          ],
+          "suggested_ticker": "SPY"
+        },
+        {
+          "source": "Social Media",
+          "person": "Elon Musk",
+          "content": "@JohnLeFevre Train looks great",
+          "created_at": "2026-05-28T02:28:27.000Z",
+          "keywords": [
+            "great"
+          ],
+          "suggested_ticker": "SPY"
+        },
         {
           "source": "Social Media",
           "person": "Elon Musk",
@@ -2362,16 +1687,6 @@
             "tesla"
           ],
           "suggested_ticker": "TSLA"
-        },
-        {
-          "source": "Social Media",
-          "person": "Elon Musk",
-          "content": "RT @XFreeze: I just found something interesting hidden on the SpaceX website\n\nGo to:\nhttps://t.co/9S7htc2TXp → Human Spaceflight → Space St…",
-          "created_at": "2026-05-27T22:23:24.000Z",
-          "keywords": [
-            "spacex"
-          ],
-          "suggested_ticker": "LUNR"
         }
       ],
       "offshore_matches": [],
@@ -2384,8 +1699,6 @@
     "Sam Altman": {
       "name": "Sam Altman",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2398,8 +1711,6 @@
     "Sundar Pichai": {
       "name": "Sundar Pichai",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2412,8 +1723,6 @@
     "Mark Zuckerberg": {
       "name": "Mark Zuckerberg",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2426,8 +1735,6 @@
     "Bill Gates": {
       "name": "Bill Gates",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2440,8 +1747,6 @@
     "Jensen Huang": {
       "name": "Jensen Huang",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -2465,8 +1770,6 @@
     "Satya Nadella": {
       "name": "Satya Nadella",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2479,8 +1782,6 @@
     "Larry Ellison": {
       "name": "Larry Ellison",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2493,13 +1794,6 @@
     "Brian Armstrong": {
       "name": "Brian Armstrong",
       "committees": [],
-      "known_holdings": [
-        "COIN"
-      ],
-      "known_crypto": [
-        "BTC",
-        "ETH"
-      ],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2512,12 +1806,6 @@
     "Michael Saylor": {
       "name": "Michael Saylor",
       "committees": [],
-      "known_holdings": [
-        "MSTR"
-      ],
-      "known_crypto": [
-        "BTC"
-      ],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2530,8 +1818,6 @@
     "Tyler Winklevoss": {
       "name": "Tyler Winklevoss",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2544,8 +1830,6 @@
     "Cameron Winklevoss": {
       "name": "Cameron Winklevoss",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2558,8 +1842,6 @@
     "Jeff Bezos": {
       "name": "Jeff Bezos",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2572,8 +1854,6 @@
     "George Soros": {
       "name": "George Soros",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -2607,8 +1887,6 @@
     "Bill Ackman": {
       "name": "Bill Ackman",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2621,10 +1899,6 @@
     "Carl Icahn": {
       "name": "Carl Icahn",
       "committees": [],
-      "known_holdings": [
-        "IEP"
-      ],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2637,8 +1911,6 @@
     "Jamie Dimon": {
       "name": "Jamie Dimon",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2651,12 +1923,6 @@
     "Larry Fink": {
       "name": "Larry Fink",
       "committees": [],
-      "known_holdings": [
-        "BLK"
-      ],
-      "known_crypto": [
-        "BTC"
-      ],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2669,8 +1935,6 @@
     "Ray Dalio": {
       "name": "Ray Dalio",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2683,8 +1947,6 @@
     "Jim Cramer": {
       "name": "Jim Cramer",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [
         {
@@ -2708,8 +1970,6 @@
     "Nouriel Roubini": {
       "name": "Nouriel Roubini",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2722,8 +1982,6 @@
     "Rupert Murdoch": {
       "name": "Rupert Murdoch",
       "committees": [],
-      "known_holdings": [],
-      "known_crypto": [],
       "trades": [],
       "recent_posts": [],
       "offshore_matches": [],
@@ -2765,61 +2023,71 @@
       "recipient": "THE BOEING COMPANY",
       "amount": 22428256008.84,
       "agency": "National Aeronautics and Space Administration",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "BECHTEL NATIONAL, INC.",
       "amount": 17244586105.74,
       "agency": "Department of Energy",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "THE BOEING COMPANY",
       "amount": 10494204426.0,
       "agency": "National Aeronautics and Space Administration",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "AEROJET ROCKETDYNE OF DE, INC",
       "amount": 3272481574.49,
       "agency": "National Aeronautics and Space Administration",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "SPACE EXPLORATION TECHNOLOGIES CORP.",
       "amount": 3031624776.73,
       "agency": "National Aeronautics and Space Administration",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "SAVANNAH RIVER MISSION COMPLETION, LLC",
       "amount": 2374047167.02,
       "agency": "Department of Energy",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "LOCKHEED MARTIN CORP",
       "amount": 2032336134.57,
       "agency": "National Aeronautics and Space Administration",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "AMENTUM TECHNOLOGY, INC.",
       "amount": 1930675316.56,
       "agency": "National Aeronautics and Space Administration",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
       "amount": 1594955955.3,
       "agency": "National Aeronautics and Space Administration",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     },
     {
       "recipient": "HARRIS CORPORATION",
       "amount": 1558742368.63,
       "agency": "Department of Transportation",
-      "date": null
+      "date": null,
+      "source": "USASpending"
     }
   ],
   "agency_spending": [
@@ -2892,76 +2160,6 @@
       "obligated": 63925652133.17,
       "num_contracts": 0,
       "source": "AgencySpending"
-    },
-    {
-      "agency": "Federal Deposit Insurance Corporation",
-      "budget": 140711044703.77,
-      "obligated": 2362734910.96,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "Department of Energy",
-      "budget": 136221703606.55,
-      "obligated": 39942740030.98,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "Department of Education",
-      "budget": 135841348934.08,
-      "obligated": 56953447959.7,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "Department of State",
-      "budget": 92856225612.15,
-      "obligated": 15283083855.75,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "Pension Benefit Guaranty Corporation",
-      "budget": 91059527535.14,
-      "obligated": 7356317282.61,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "Department of the Interior",
-      "budget": 87437899308.28,
-      "obligated": 15958650354.99,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "Department of Justice",
-      "budget": 87091072628.42,
-      "obligated": 28293816708.16,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "Corps of Engineers - Civil Works",
-      "budget": 77726217201.53,
-      "obligated": 20285405916.79,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "Environmental Protection Agency",
-      "budget": 55598176070.91,
-      "obligated": 7142471881.39,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    },
-    {
-      "agency": "General Services Administration",
-      "budget": 52278025724.25,
-      "obligated": 18447126347.02,
-      "num_contracts": 0,
-      "source": "AgencySpending"
     }
   ],
   "social_signals": [
@@ -2973,7 +2171,7 @@
       "keywords": [
         "cut"
       ],
-      "suggested_ticker": "DJT"
+      "suggested_ticker": "SPY"
     },
     {
       "source": "Social Media",
@@ -3003,7 +2201,17 @@
       "keywords": [
         "great"
       ],
-      "suggested_ticker": "DJT"
+      "suggested_ticker": "SPY"
+    },
+    {
+      "source": "Social Media",
+      "person": "Donald Trump Jr",
+      "content": "The Trade Desk carved out a niche as a fast-growing underdog that could take on Google in the digital-ad space. Now the challenger faces challenges of its own. https://t.co/EmDlNqeNNT",
+      "created_at": "2026-05-28T02:26:17.000Z",
+      "keywords": [
+        "trade"
+      ],
+      "suggested_ticker": "SPY"
     },
     {
       "source": "Social Media",
@@ -3045,7 +2253,7 @@
       "keywords": [
         "rate"
       ],
-      "suggested_ticker": "DJT"
+      "suggested_ticker": "SPY"
     },
     {
       "source": "Social Media",
@@ -3167,16 +2375,6 @@
         "contract"
       ],
       "suggested_ticker": "XLE"
-    },
-    {
-      "source": "Social Media",
-      "person": "John Boozman",
-      "content": "@SarahHuckabee Great news. We worked hard to modernize the summer meal programs and authorize Summer EBT, so I’m proud that Arkansas continues to lead the way for kids to have access to nutritious foo",
-      "created_at": "2026-05-27T19:44:08.000Z",
-      "keywords": [
-        "great"
-      ],
-      "suggested_ticker": "SPY"
     }
   ],
   "truth_social": [],
@@ -3422,341 +2620,129 @@
       "articles_24h": 0
     },
     {
-      "politician": "Shelley Moore Capito",
-      "chamber": "Senate",
-      "ticker": "CEG",
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "NVT",
       "trade_type": "Sale",
       "amount": "$1,001 - $15,000",
-      "date": "2026-04-17",
-      "asset": "CONSTELLATION ENE CORP"
+      "date": "2026-04-15",
+      "asset": "nVent Electric PLC",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
     },
     {
-      "politician": "John Fetterman",
-      "chamber": "Senate",
-      "ticker": "ATH",
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "FCNCA",
+      "trade_type": "Sale",
+      "amount": "$1,001 - $15,000",
+      "date": "2026-04-14",
+      "asset": "First Citizens BancShares Inc",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
+    },
+    {
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "TXN",
       "trade_type": "Purchase",
       "amount": "$1,001 - $15,000",
-      "date": "2026-04-10",
-      "asset": "Athene Holding Ltd",
+      "date": "2026-04-14",
+      "asset": "Texas Instruments Inc",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
       "articles_24h": 0
     },
     {
-      "politician": "John Fetterman",
-      "chamber": "Senate",
-      "ticker": "BXSL",
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "ADI",
       "trade_type": "Sale",
       "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
-      "asset": "BLACKSTONE SECURED LENDING F",
+      "date": "2026-04-29",
+      "asset": "Analog Devices Inc",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
       "articles_24h": 0
     },
     {
-      "politician": "John Fetterman",
-      "chamber": "Senate",
-      "ticker": "NFS",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-10",
-      "asset": "Nationwide Financial Services Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John W. Hickenlooper",
-      "chamber": "Senate",
-      "ticker": "LBRDA",
-      "trade_type": "Sale",
-      "amount": "$500,001 - $1,000,000",
-      "date": "2025-05-19",
-      "asset": "Liberty Broadband Corp",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John W. Hickenlooper",
-      "chamber": "Senate",
-      "ticker": "PLTR",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-04-16",
-      "asset": "Palantir Technologies Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John W. Hickenlooper",
-      "chamber": "Senate",
-      "ticker": "PLTR",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-06-03",
-      "asset": "Palantir Technologies Inc"
-    },
-    {
-      "politician": "Sheldon Whitehouse",
-      "chamber": "Senate",
-      "ticker": "JPM",
+      "politician": "Jake Auchincloss",
+      "chamber": "House",
+      "ticker": "STT",
       "trade_type": "Sale",
       "amount": "$15,001 - $50,000",
-      "date": "2026-04-13",
-      "asset": "JPMorgan Chase & Co"
+      "date": "2026-05-18",
+      "asset": "State Street Corporation (1)",
+      "sentiment_score": 0,
+      "news_velocity": "NORMAL",
+      "articles_24h": 0
     },
     {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "AMGN",
+      "politician": "Thomas H. Kean",
+      "chamber": "House",
+      "ticker": "TTWO",
       "trade_type": "Sale",
       "amount": "$1,001 - $15,000",
-      "date": "2026-04-06",
-      "asset": "Amgen Inc",
+      "date": "2026-04-21",
+      "asset": "Take-Two Interactive Software Inc",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
       "articles_24h": 0
     },
     {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "DBEU",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-01",
-      "asset": "XTRACKERS MSCI EU HGD EQ ETF",
+      "politician": "Jake Auchincloss",
+      "chamber": "House",
+      "ticker": "STT",
+      "trade_type": "Sale",
+      "amount": "$15,001 - $50,000",
+      "date": "2026-05-18",
+      "asset": "State Street Corporation (2)"
+    },
+    {
+      "politician": "Sara Jacobs",
+      "chamber": "House",
+      "ticker": "QCOM",
+      "trade_type": "Sale",
+      "amount": "$500,001 - $1,000,000",
+      "date": "2026-05-07",
+      "asset": "QUALCOMM Inc",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
       "articles_24h": 0
     },
     {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "IWF",
+      "politician": "Sara Jacobs",
+      "chamber": "House",
+      "ticker": "QCOM",
+      "trade_type": "Sale",
+      "amount": "$500,001 - $1,000,000",
+      "date": "2026-05-06",
+      "asset": "QUALCOMM Inc"
+    },
+    {
+      "politician": "Daniel Meuser",
+      "chamber": "House",
+      "ticker": "NVDA",
       "trade_type": "Sale",
       "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
-      "asset": "iShares Russell 1000 Growth ETF",
+      "date": "2026-04-24",
+      "asset": "NVIDIA Corporation",
       "sentiment_score": 0,
       "news_velocity": "NORMAL",
       "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "ACN",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
-      "asset": "Accenture PLC (2)",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "VGK",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-01",
-      "asset": "Vanguard FTSE Europe ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "FTSL",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-30",
-      "asset": "First Trust Exchange-Traded Fund IV Senior Loan Fund",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "LNG",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-20",
-      "asset": "Cheniere Energy Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "SCIO",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-30",
-      "asset": "FIRST TRUST STRUCTURE INCOME",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "FITB",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-20",
-      "asset": "Fifth Third Bancorp",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "FTSL",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-30",
-      "asset": "First Trust Exchange-Traded Fund IV Senior Loan Fund"
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "LGOV",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-30",
-      "asset": "FIRST TRUST LNG DTN OPPO ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "ACN",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
-      "asset": "Accenture PLC (1)"
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "IWD",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
-      "asset": "iShares Russell 1000 Value ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "TEAM",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
-      "asset": "Atlassian Corp PLC",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "HYLS",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-30",
-      "asset": "FIRST TR TACTICAL HI YLD ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "LNG",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-20",
-      "asset": "Cheniere Energy Inc"
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "FIXD",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-30",
-      "asset": "FIRST TRUST SMITH OPPRTNY FI",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "TOST",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
-      "asset": "TOAST INC",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "AAPL",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-20",
-      "asset": "Apple Inc"
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "HSY",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-08",
-      "asset": "The Hershey Co",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "FITB",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-20",
-      "asset": "Fifth Third Bancorp"
-    },
-    {
-      "politician": "Mark Warner",
-      "chamber": "Senate",
-      "ticker": "SCIO",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-03-30",
-      "asset": "FIRST TRUST STRUCTURE INCOME"
     }
   ],
   "fec_donors": [],
   "lobbying": [
+    {
+      "lobbying_firm": "THOMAS CAPITOL PARTNERS INC.",
+      "client": "KOREA INTERNATIONAL TRADE ASSOCIATION",
+      "amount": "30000.00",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "source": "LDA"
+    },
     {
       "lobbying_firm": "MR. CHARLES DOLAN, JR",
       "client": "ALI AZEMI F/B/O UNION ASSOCIATION OF IMK EX-STEEL PIPE FACTORY WORKERS",
@@ -3817,13 +2803,6 @@
       "lobbying_firm": "WASHINGTON STRATEGIC CONSULTING",
       "client": "VISITING NURSE ASSOCIATION HEALTH GROUP",
       "amount": "5000.00",
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
-    },
-    {
-      "lobbying_firm": "THINK POLICY CONSULTING, LLC",
-      "client": "WELLHEAD ELECTRIC COMPANY",
-      "amount": null,
       "period": "1st Quarter (Jan 1 - Mar 31)",
       "source": "LDA"
     }
@@ -3907,8 +2886,8 @@
       "contract_amount": 1594955955.3,
       "awarding_agency": "National Aeronautics and Space Administration",
       "social_mentions": 0,
-      "congressional_trades": 1,
-      "corruption_indicators": 1,
+      "congressional_trades": 0,
+      "corruption_indicators": 0,
       "source": "CrossRef"
     },
     {
@@ -3916,8 +2895,8 @@
       "contract_amount": 1558742368.63,
       "awarding_agency": "Department of Transportation",
       "social_mentions": 0,
-      "congressional_trades": 6,
-      "corruption_indicators": 6,
+      "congressional_trades": 4,
+      "corruption_indicators": 4,
       "source": "CrossRef"
     },
     {
@@ -4163,130 +3142,9 @@
       "change_pct_today": "0%",
       "gain_pct": 0,
       "days_tracked": 0
-    },
-    {
-      "ticker": "DBEU",
-      "politician": "Mark Warner",
-      "date_bought": "2026-04-01",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "ACN",
-      "politician": "Mark Warner",
-      "date_bought": "2026-04-13",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "FTSL",
-      "politician": "Mark Warner",
-      "date_bought": "2026-03-30",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "SCIO",
-      "politician": "Mark Warner",
-      "date_bought": "2026-03-30",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "FITB",
-      "politician": "Mark Warner",
-      "date_bought": "2026-03-20",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "LGOV",
-      "politician": "Mark Warner",
-      "date_bought": "2026-03-30",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "TEAM",
-      "politician": "Mark Warner",
-      "date_bought": "2026-04-13",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "TOST",
-      "politician": "Mark Warner",
-      "date_bought": "2026-04-13",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "AAPL",
-      "politician": "Mark Warner",
-      "date_bought": "2026-03-20",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "HSY",
-      "politician": "Mark Warner",
-      "date_bought": "2026-04-08",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
-      "days_tracked": 0
     }
   ],
   "top_gainers": [],
-  "top_losers": [],
   "politician_scorecard": [
     {
       "name": "John Fetterman",
@@ -4296,59 +3154,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "FCBN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "JPM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ATH",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "GOOGL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ERIE",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MSFT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MU",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MSFT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "AMZN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ERIE",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "Gary Peters",
@@ -4358,19 +3164,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "PEP",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SJM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "John Boozman",
@@ -4380,84 +3174,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "IEF",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "IEI",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ETN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "GOOGL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SCHP",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SHY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ADBE",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CEG",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "DVN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SPYM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "NVDA",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MSFT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "VEA",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FTGC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ARES",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "Thomas H. Kean",
@@ -4467,14 +3184,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "TXN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "Josh Gottheimer",
@@ -4484,49 +3194,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "GS",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "AMD",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "IFNNY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "AMD",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "NTES",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FCX",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FWRG",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CBZ",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "Tim Moore",
@@ -4536,24 +3204,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "T",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "RYCEY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "IHG",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "Mark Warner",
@@ -4563,99 +3214,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "DBEU",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ACN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FTSL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SCIO",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FITB",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "LGOV",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "TEAM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "TOST",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "AAPL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "HSY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MSFT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "IWD",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FTCB",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "BX",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CEG",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "WFC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "IWF",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "RKT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "Shelley Moore Capito",
@@ -4665,24 +3224,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "MA",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "AXP",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "PNC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "William R. Keating",
@@ -4692,39 +3234,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "VMW",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SPG",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "TMUS",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "OTIS",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "NOC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "JPM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
+      "win_rate": 0.0
     },
     {
       "name": "Steve Cohen",
@@ -4734,576 +3244,7 @@
       "avg_gain_pct": 0.0,
       "best_ticker": "",
       "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "SFGYY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
-    },
-    {
-      "name": "Byron Donalds",
-      "total_trades": 2,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "LLY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MRVL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
-    },
-    {
-      "name": "John McGuire",
-      "total_trades": 3,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "AAPL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MSFT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "NVDA",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
-    },
-    {
-      "name": "Ro Khanna",
-      "total_trades": 88,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "META",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "XYL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "INTU",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MCHP",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "KKR",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "AMT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ACI",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ROST",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "APP",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "UNP",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "GEHC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "YUM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "GM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "STX",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "JNJ",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "LEN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "RMD",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "JPM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "VST",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "NCR",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "POOL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "WAT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "BR",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "HOOD",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "HON",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "USB",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CDNS",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SNPS",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CMG",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SYK",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "PFE",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "REGN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "PNC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "URI",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "WFC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "AVGO",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "AMZN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "VRTX",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MA",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ADSK",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FDS",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ECL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "PAYX",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MRSH",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ORCL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "TMO",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "DIS",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FDX",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "LULU",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "TYL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "IBKR",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "VMC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "DELL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ORLY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "F",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "PGR",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "HBAN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "IBM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ADBE",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CSCO",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "VRSK",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ACN",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "HD",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CRM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ADP",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CVS",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "MSCI",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ARES",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "NOW",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "TJX",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CPRT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "DXCM",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "NEE",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SCHW",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "IDXX",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "PANW",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "EMR",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "BALL",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ADI",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "CVNA",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "WDAY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "WDC",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "BK",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "ICE",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "APD",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "FLT",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "NDAQ",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "COF",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
-    },
-    {
-      "name": "Charles J. \"Chuck\" Fleischmann",
-      "total_trades": 4,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0,
-      "positions": [
-        {
-          "ticker": "SPY",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SPYV",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "XLE",
-          "gain_pct": 0,
-          "days_tracked": 0
-        },
-        {
-          "ticker": "SPYG",
-          "gain_pct": 0,
-          "days_tracked": 0
-        }
-      ]
-    }
-  ],
-  "political_holdings": [
-    {
-      "person": "Donald Trump",
-      "ticker": "BTC",
-      "price": 74147,
-      "change_pct": "-1.98%",
-      "market_cap": 1486507605624.3386,
-      "type": "crypto",
-      "notes": "Trump Media owner, Bitcoin advocate, WLFI founder"
-    },
-    {
-      "person": "Elon Musk",
-      "ticker": "BTC",
-      "price": 74147,
-      "change_pct": "-1.98%",
-      "market_cap": 1486507605624.3386,
-      "type": "crypto",
-      "notes": "Tesla CEO, SpaceX $38B contracts, DOGE crypto advocate"
-    },
-    {
-      "person": "Elon Musk",
-      "ticker": "DOGE",
-      "price": 0.100266,
-      "change_pct": "-0.90%",
-      "market_cap": 15491119393.916265,
-      "type": "crypto",
-      "notes": "Tesla CEO, SpaceX $38B contracts, DOGE crypto advocate"
+      "win_rate": 0.0
     }
   ],
   "watch_list": [
@@ -5314,7 +3255,7 @@
     "Pam Bondi",
     "Scott Bessent",
     "Pete Hegseth",
-    "Howard Lutnick",
+    "Harold Hamm",
     "Marco Rubio",
     "Secretary Rubio",
     "Tulsi Gabbard",
@@ -5344,6 +3285,8 @@
     "Greg Abbott",
     "Gretchen Whitmer",
     "JB Pritzker",
+    "Abigail Spanberger",
+    "SarahHuckSanders",
     "Elon Musk",
     "Sam Altman",
     "Sundar Pichai",
