@@ -1,466 +1,549 @@
 {
-  "timestamp": "2026-05-27 22:01",
-  "timestamp_iso": "2026-05-27T22:01:46.865807",
+  "timestamp": "2026-05-27 22:02",
+  "timestamp_iso": "2026-05-27T22:02:48.644726",
+  "cycle_seconds": 95.322453,
   "summary": {
-    "total_signals": 15,
-    "high_conviction": 0,
-    "layers_active": 26,
-    "social_monitored": 61,
-    "offshore_matches": 3,
-    "people_profiled": 61
+    "long_candidates": 2,
+    "short_candidates": 0,
+    "decisions": 6,
+    "entries_placed": 0,
+    "exits_placed": 0,
+    "open_positions": 11,
+    "consensus_buys": 6,
+    "consensus_sells": 1
   },
-  "top_signals": [
+  "long_candidates": [
     {
-      "source": "major_contract+cross_reference",
-      "politician_or_entity": "THE BOEING COMPANY",
-      "ticker": "BA",
-      "trade_type": "buy",
-      "amount": "$22,428,256,008.84",
-      "date": null,
+      "ticker": "MSFT",
+      "actor_count": 4,
+      "actors": [
+        {
+          "politician": "Mark Warner",
+          "date": "2026-05-01",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Boozman",
+          "date": "2026-04-14",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Fetterman",
+          "date": "2026-04-03",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Mcguire",
+          "date": "2026-05-14",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "buy",
+      "score": 100,
+      "action": "BUY",
+      "source": "Consensus_BUY",
+      "politician_or_entity": "4 politicians buying",
+      "reason": "4 politicians buying MSFT: Warner, Boozman, Fetterman, Mcguire",
+      "sentiment_score": 0.0,
+      "article_count": 0
+    },
+    {
+      "ticker": "JPM",
+      "actor_count": 3,
+      "actors": [
+        {
+          "politician": "John Fetterman",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "William R Keating",
+          "date": "2026-05-19",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        },
+        {
+          "politician": "Ro Khanna",
+          "date": "2026-05-13",
+          "amount": "$15,001 - $50,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "buy",
       "score": 75,
       "action": "BUY",
-      "reason": "Boeing holds two NASA contracts totaling over $32.9B triggering +15pts each for >$1B threshold plus +25pts for cross-reference confirmation with 29 corruption indicators and social mentions flagged. Dual contract cross-reference with corruption signals warrants elevated conviction."
-    },
+      "source": "Consensus_BUY",
+      "politician_or_entity": "3 politicians buying",
+      "reason": "3 politicians buying JPM: Fetterman, Keating, Khanna",
+      "sentiment_score": 0.0,
+      "article_count": 0
+    }
+  ],
+  "short_candidates": [],
+  "decisions": [
     {
-      "source": "major_contract+cross_reference",
-      "politician_or_entity": "BECHTEL NATIONAL, INC.",
-      "ticker": "BCHTY",
-      "trade_type": "buy",
-      "amount": "$17,244,586,105.74",
-      "date": null,
-      "score": 35,
-      "action": "HOLD",
-      "reason": "Bechtel National secured a $17.2B Department of Energy contract clearing the >$1B threshold for +15pts but zero social mentions and no corruption indicators limit cross-reference amplification. Privately held status reduces actionable tradeable signal."
-    },
-    {
-      "source": "Legislation",
-      "politician_or_entity": "Congress",
-      "ticker": "VCS",
-      "trade_type": "buy",
-      "amount": "unknown",
-      "date": "2026-05-20",
-      "score": 35,
+      "ticker": "MSFT",
       "action": "BUY",
-      "reason": "Military construction appropriations bill HR8469 passed House and received in Senate, signaling continued defense infrastructure spending. Cross-reference with ongoing defense budget cycle adds moderate conviction for military construction and VA-related contractors."
+      "confidence": 0.82,
+      "reasoning": "Strong cluster of 4 politicians buying across both chambers (Warner, Boozman, Fetterman, McGuire), spread across a ~6-week window (Apr 3 – May 14). Warner sits on Senate Intelligence/Finance committees with meaningful tech oversight. Cross-partisan buying (both parties represented) reduces the chance this is coordinated reaction to one piece of public news. Cluster size of 4 is the strongest signal in this batch. Dollar amounts are small individually, but the breadth is what matters.",
+      "key_risk": "Small individual trade sizes ($1K–$15K) suggest these could be routine diversified purchases rather than conviction bets on non-public information. Trades may also be reacting to publicly known AI/cloud tailwinds rather than privileged insight."
     },
     {
-      "source": "Offshore Papers",
-      "politician_or_entity": "Rex Tillerson",
-      "ticker": "XOM",
-      "trade_type": "buy",
-      "amount": "unknown",
-      "date": "2026-05-27",
-      "score": 30,
-      "action": "HOLD",
-      "reason": "Confirmed Paradise Papers match scores +30pts but no corroborating trade signal, legislation, or market keyword present. Insufficient signal confluence to act."
-    },
-    {
-      "source": "Offshore Papers",
-      "politician_or_entity": "Howard Lutnick",
-      "ticker": "BGC",
-      "trade_type": "buy",
-      "amount": "unknown",
-      "date": "2026-05-27",
-      "score": 30,
-      "action": "HOLD",
-      "reason": "Confirmed Paradise Papers match scores +30pts for Cantor Fitzgerald CEO but no supporting Congressional trade or contract signal found. Hold pending additional confirmation."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Boozman",
-      "ticker": "IEF",
-      "trade_type": "buy",
-      "amount": "$15,001 - $50,000",
-      "date": "2025-09-16",
-      "score": 26,
-      "action": "BUY",
-      "reason": "Boozman purchased both IEF and IEI on the same date suggesting a deliberate rotation into Treasury bonds; multiple same-date signals apply 1.3x multiplier. Possible macro rate-view positioning by a Senate insider."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Boozman",
-      "ticker": "IEI",
-      "trade_type": "buy",
-      "amount": "$15,001 - $50,000",
-      "date": "2025-09-16",
-      "score": 26,
-      "action": "BUY",
-      "reason": "Paired same-day Treasury ETF purchase alongside IEF by the same senator triggers multiple-signal multiplier of 1.3x. Coordinated bond positioning suggests possible insider macro awareness."
-    },
-    {
-      "source": "Social Media",
-      "politician_or_entity": "Donald Trump Jr",
-      "ticker": "USO",
-      "trade_type": "buy",
-      "amount": "unknown",
-      "date": "2026-05-28",
-      "score": 25,
-      "action": "BUY",
-      "reason": "Trump Jr post references U.S. strikes on Iran after drone attacks on commercial ships in Hormuz, a direct oil supply disruption signal. Iran escalation plus energy infrastructure risk supports a short-term USO long position."
-    },
-    {
-      "source": "Social Media",
-      "politician_or_entity": "Donald Trump Jr",
-      "ticker": "F",
-      "trade_type": "sell",
-      "amount": "unknown",
-      "date": "2026-05-28",
-      "score": 25,
-      "action": "SELL",
-      "reason": "Trump Jr amplifies reporting that GM, Ford, and Toyota are forecasting stagnant or shrinking U.S. new-car sales with one million buyers sidelined. Bearish demand signal for legacy automakers supports a cautious sell on Ford."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "Bernie Moreno",
-      "ticker": "ETOR",
-      "trade_type": "sell",
-      "amount": "$100,001 - $250,000",
-      "date": "2026-05-06",
-      "score": 20,
-      "action": "SELL",
-      "reason": "Senate sale of eToro at significant size warrants attention as a congressional signal. No cross-reference indicators or additional signals to amplify score."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Fetterman",
-      "ticker": "FCBN",
-      "trade_type": "buy",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-04-24",
-      "score": 20,
-      "action": "BUY",
-      "reason": "Congressional purchase of First Citizens Bancorporation scores base congressional signal points. Small amount and no cross-reference data limits conviction."
-    },
-    {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Fetterman",
       "ticker": "JPM",
-      "trade_type": "buy",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-06-17",
-      "score": 20,
       "action": "BUY",
-      "reason": "Congressional purchase of JPMorgan Chase scores base signal but small dollar amount reduces conviction. No cross-reference or additional indicators present."
+      "confidence": 0.68,
+      "reasoning": "3-politician cluster buying JPM within a tight 6-day window (May 13–19), including Ro Khanna at a higher $15K–$50K tranche — the largest single amount in this dataset. Recency and tight clustering are positive signals. Financials/banking sector is directly overseen by Senate Banking and House Financial Services committees, adding some weight if any of these members sit on relevant committees.",
+      "key_risk": "None of the three buyers are confirmed to sit on banking oversight committees. Fetterman, Keating, and Khanna are not primarily known as banking committee members. Without committee overlap, this is a weaker insider signal and may simply reflect macro optimism (e.g., rate environment, deregulation narrative)."
     },
     {
-      "source": "congressional_trade",
-      "politician_or_entity": "Gary Peters",
-      "ticker": "PEP",
-      "trade_type": "buy",
-      "amount": "$15,001 - $50,000",
-      "date": "2026-04-23",
-      "score": 20,
-      "action": "BUY",
-      "reason": "Senate purchase of PepsiCo earns base congressional signal score. No amplifying indicators or cross-references detected to elevate conviction."
+      "ticker": "GOOGL",
+      "action": "HOLD",
+      "confidence": 0.5,
+      "reasoning": "Only 2 politicians buying (Boozman and Fetterman), and Fetterman's buy is dated back to April 3 — over 5 weeks before Boozman's May 11 purchase, which dilutes the 'cluster' effect. Two buyers from the same chamber (both Senate) is a mildly positive signal, but below the threshold for a high-conviction entry. Big Tech is also under ongoing regulatory scrutiny which adds headline risk.",
+      "key_risk": "Cluster is weak (only 2 actors, wide date spread). Regulatory/antitrust overhang on GOOGL remains a persistent risk. Insufficient signal to justify opening a new long position at this time."
     },
     {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Boozman",
-      "ticker": "IVW",
-      "trade_type": "sell",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-03-19",
-      "score": 20,
-      "action": "SELL",
-      "reason": "Congressional sale of S&P 500 Growth ETF scores base signal; small amount limits significance. No cross-reference or amplifying indicators present."
+      "ticker": "CEG",
+      "action": "BUY",
+      "confidence": 0.65,
+      "reasoning": "Two Senate-level politicians (Boozman and Warner) buying Constellation Energy within 7 days of each other (May 1–8). Warner sits on committees with energy/utility relevance. CEG is a nuclear energy play heavily tied to AI data center power demand and federal energy policy — exactly the kind of sector where Senate committee members could have informational edge. Cross-party buying (R+D) is a mild positive differentiator.",
+      "key_risk": "Only 2 actors, small dollar amounts. Nuclear/energy policy can shift rapidly with regulatory decisions. CEG has already had a strong run on AI power demand narrative — much of the thesis may already be priced in publicly."
     },
     {
-      "source": "congressional_trade",
-      "politician_or_entity": "John Boozman",
-      "ticker": "ETN",
-      "trade_type": "buy",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-09-12",
-      "score": 20,
+      "ticker": "AAPL",
+      "action": "HOLD",
+      "confidence": 0.45,
+      "reasoning": "Only 2 politicians buying (Warner and McGuire), one Senate and one House. AAPL is the most commonly held stock by politicians and retail investors alike, making it the hardest to distinguish insider-informed buying from routine portfolio allocation. No strong committee overlap signal identified. The cluster is minimal and the stock is universally covered — informational edge is lowest here.",
+      "key_risk": "AAPL buys by politicians are extremely common and rarely signal anything beyond normal diversification. Signal-to-noise ratio is too low for a conviction entry. Tariff/supply chain risks (China manufacturing dependence) add further uncertainty."
+    },
+    {
+      "ticker": "T",
+      "action": "SKIP",
+      "confidence": 0.38,
+      "reasoning": "Only 2 politicians selling T (Fetterman and Gottheimer), and crucially Fetterman's sale was on April 3 — 47 days before Gottheimer's May 20 sale. This is NOT a tight cluster; the wide date gap significantly weakens the coordinated-selling thesis. Additionally, AT&T is a high-dividend telecom often sold for portfolio rebalancing or tax-loss purposes, not necessarily on negative non-public information. Short signals require higher conviction given unlimited downside risk.",
+      "key_risk": "Shorting a high-dividend telecom with only 2 sellers, a 47-day gap between trades, and no confirmed committee oversight connection is insufficient conviction for a short. The trade date dispersion alone disqualifies this as a meaningful cluster. Risk of a short squeeze or dividend-driven support limits downside for the thesis."
+    }
+  ],
+  "entries_placed": [],
+  "exits_placed": [],
+  "open_positions": [
+    {
+      "symbol": "AAPL",
+      "qty": 4.0,
+      "side": "long",
+      "avg_entry_price": 310.8775,
+      "current_price": 311.59,
+      "market_value": 1246.36,
+      "unrealized_pl": 2.85,
+      "unrealized_plpc": 0.00229
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 4.0,
+      "side": "long",
+      "avg_entry_price": 271.11,
+      "current_price": 273.5,
+      "market_value": 1094.0,
+      "unrealized_pl": 9.56,
+      "unrealized_plpc": 0.00882
+    },
+    {
+      "symbol": "BA",
+      "qty": 52.0,
+      "side": "long",
+      "avg_entry_price": 221.340577,
+      "current_price": 224.51,
+      "market_value": 11674.52,
+      "unrealized_pl": 164.809996,
+      "unrealized_plpc": 0.01432
+    },
+    {
+      "symbol": "GS",
+      "qty": 2.0,
+      "side": "long",
+      "avg_entry_price": 994.65,
+      "current_price": 995.31,
+      "market_value": 1990.62,
+      "unrealized_pl": 1.32,
+      "unrealized_plpc": 0.00066
+    },
+    {
+      "symbol": "JPM",
+      "qty": 2.0,
+      "side": "long",
+      "avg_entry_price": 298.1,
+      "current_price": 299.49,
+      "market_value": 598.98,
+      "unrealized_pl": 2.78,
+      "unrealized_plpc": 0.00466
+    },
+    {
+      "symbol": "LMT",
+      "qty": 2.0,
+      "side": "long",
+      "avg_entry_price": 532.56,
+      "current_price": 532.31,
+      "market_value": 1064.62,
+      "unrealized_pl": -0.5,
+      "unrealized_plpc": -0.00047
+    },
+    {
+      "symbol": "META",
+      "qty": 2.0,
+      "side": "long",
+      "avg_entry_price": 619.34,
+      "current_price": 633.8,
+      "market_value": 1267.6,
+      "unrealized_pl": 28.92,
+      "unrealized_plpc": 0.02335
+    },
+    {
+      "symbol": "MSFT",
+      "qty": 9.1719,
+      "side": "long",
+      "avg_entry_price": 412.401651,
+      "current_price": 414.3,
+      "market_value": 3799.91817,
+      "unrealized_pl": 17.411467,
+      "unrealized_plpc": 0.0046
+    },
+    {
+      "symbol": "NVDA",
+      "qty": 3.0,
+      "side": "long",
+      "avg_entry_price": 211.086667,
+      "current_price": 212.2,
+      "market_value": 636.6,
+      "unrealized_pl": 3.339999,
+      "unrealized_plpc": 0.00527
+    },
+    {
+      "symbol": "QCOM",
+      "qty": -8.0,
+      "side": "short",
+      "avg_entry_price": 241.789286,
+      "current_price": 233.0,
+      "market_value": -1864.0,
+      "unrealized_pl": 70.314288,
+      "unrealized_plpc": 0.03635
+    },
+    {
+      "symbol": "TSLA",
+      "qty": 3.0,
+      "side": "long",
+      "avg_entry_price": 439.41,
+      "current_price": 437.9,
+      "market_value": 1313.7,
+      "unrealized_pl": -4.53,
+      "unrealized_plpc": -0.00344
+    }
+  ],
+  "consensus_buys": [
+    {
+      "ticker": "MSFT",
+      "actor_count": 4,
+      "actors": [
+        {
+          "politician": "Mark Warner",
+          "date": "2026-05-01",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Boozman",
+          "date": "2026-04-14",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Fetterman",
+          "date": "2026-04-03",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Mcguire",
+          "date": "2026-05-14",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "buy",
+      "score": 100,
       "action": "BUY",
-      "reason": "Congressional purchase of Eaton Corp scores base signal; Eaton is an industrials/power management play with infrastructure relevance. Small amount and no cross-reference data limits score elevation."
+      "source": "Consensus_BUY",
+      "politician_or_entity": "4 politicians buying",
+      "reason": "4 politicians buying MSFT: Warner, Boozman, Fetterman, Mcguire",
+      "sentiment_score": 0.0,
+      "article_count": 0
+    },
+    {
+      "ticker": "JPM",
+      "actor_count": 3,
+      "actors": [
+        {
+          "politician": "John Fetterman",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "William R Keating",
+          "date": "2026-05-19",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        },
+        {
+          "politician": "Ro Khanna",
+          "date": "2026-05-13",
+          "amount": "$15,001 - $50,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "buy",
+      "score": 75,
+      "action": "BUY",
+      "source": "Consensus_BUY",
+      "politician_or_entity": "3 politicians buying",
+      "reason": "3 politicians buying JPM: Fetterman, Keating, Khanna",
+      "sentiment_score": 0.0,
+      "article_count": 0
+    },
+    {
+      "ticker": "GOOGL",
+      "actor_count": 2,
+      "actors": [
+        {
+          "politician": "John Boozman",
+          "date": "2026-05-11",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Fetterman",
+          "date": "2026-04-03",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        }
+      ],
+      "direction": "buy",
+      "score": 50,
+      "action": "BUY",
+      "source": "Consensus_BUY",
+      "politician_or_entity": "2 politicians buying",
+      "reason": "2 politicians buying GOOGL: Boozman, Fetterman"
+    },
+    {
+      "ticker": "CEG",
+      "actor_count": 2,
+      "actors": [
+        {
+          "politician": "John Boozman",
+          "date": "2026-05-08",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "Mark Warner",
+          "date": "2026-05-01",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        }
+      ],
+      "direction": "buy",
+      "score": 50,
+      "action": "BUY",
+      "source": "Consensus_BUY",
+      "politician_or_entity": "2 politicians buying",
+      "reason": "2 politicians buying CEG: Boozman, Warner"
+    },
+    {
+      "ticker": "AAPL",
+      "actor_count": 2,
+      "actors": [
+        {
+          "politician": "Mark Warner",
+          "date": "2026-05-01",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Mcguire",
+          "date": "2026-05-14",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "buy",
+      "score": 50,
+      "action": "BUY",
+      "source": "Consensus_BUY",
+      "politician_or_entity": "2 politicians buying",
+      "reason": "2 politicians buying AAPL: Warner, Mcguire"
+    },
+    {
+      "ticker": "NVDA",
+      "actor_count": 2,
+      "actors": [
+        {
+          "politician": "John Boozman",
+          "date": "2026-04-14",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "John Mcguire",
+          "date": "2026-05-14",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "buy",
+      "score": 50,
+      "action": "BUY",
+      "source": "Consensus_BUY",
+      "politician_or_entity": "2 politicians buying",
+      "reason": "2 politicians buying NVDA: Boozman, Mcguire"
+    }
+  ],
+  "consensus_sells": [
+    {
+      "ticker": "T",
+      "actor_count": 2,
+      "actors": [
+        {
+          "politician": "John Fetterman",
+          "date": "2026-04-03",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "Josh Gottheimer",
+          "date": "2026-05-20",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "sell",
+      "score": 50,
+      "action": "SELL_SHORT",
+      "source": "Consensus_SELL",
+      "politician_or_entity": "2 politicians selling",
+      "reason": "2 politicians selling T: Fetterman, Gottheimer"
     }
   ],
   "corruption_index": [
     {
-      "name": "John Fetterman",
-      "score": 31,
+      "name": "Josh Gottheimer",
+      "score": 35,
       "breakdown": [
-        "Trading activity (2 trades): +10",
-        "Committee conflict trades (1): +10",
-        "Intelligence signal score (20/100): +3",
-        "Oversees Defense sector with active BA signal: +8"
+        "Trading activity (24): +10",
+        "Committee conflicts (4): +25"
       ],
-      "data_quality": "HIGH"
+      "data_quality": "HIGH",
+      "committees": [
+        "Intelligence",
+        "Financial Services"
+      ]
     },
     {
-      "name": "Josh Gottheimer",
-      "score": 28,
+      "name": "John Fetterman",
+      "score": 20,
       "breakdown": [
-        "Trading activity (10 trades): +10",
-        "Committee conflict trades (1): +10",
-        "Oversees Defense sector with active BA signal: +8"
+        "Trading activity (14): +10",
+        "Committee conflicts (1): +10"
       ],
-      "data_quality": "HIGH"
+      "data_quality": "HIGH",
+      "committees": [
+        "Banking",
+        "Agriculture",
+        "Armed Services"
+      ]
     },
     {
       "name": "John Boozman",
-      "score": 21,
+      "score": 10,
       "breakdown": [
-        "Trading activity (12 trades): +10",
-        "Intelligence signal score (26/100): +3",
-        "Oversees Defense sector with active BA signal: +8"
+        "Trading activity (21): +10"
       ],
-      "data_quality": "HIGH"
+      "data_quality": "HIGH",
+      "committees": [
+        "Agriculture",
+        "Appropriations",
+        "Veterans"
+      ]
     },
     {
       "name": "Gary Peters",
-      "score": 21,
+      "score": 10,
       "breakdown": [
-        "Trading activity (3 trades): +10",
-        "Intelligence signal score (20/100): +3",
-        "Oversees Defense sector with active BA signal: +8"
+        "Trading activity (3): +10"
       ],
-      "data_quality": "HIGH"
-    },
-    {
-      "name": "Nancy Pelosi",
-      "score": 16,
-      "breakdown": [
-        "Oversees Defense sector with active BA signal: +8",
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "LOW"
-    },
-    {
-      "name": "Marco Rubio",
-      "score": 8,
-      "breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "LOW"
-    },
-    {
-      "name": "Tulsi Gabbard",
-      "score": 8,
-      "breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "LOW"
-    },
-    {
-      "name": "Mitch McConnell",
-      "score": 8,
-      "breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "LOW"
-    },
-    {
-      "name": "Josh Hawley",
-      "score": 8,
-      "breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "LOW"
-    },
-    {
-      "name": "Tommy Tuberville",
-      "score": 8,
-      "breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "LOW"
-    },
-    {
-      "name": "Dan Crenshaw",
-      "score": 8,
-      "breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "LOW"
-    },
-    {
-      "name": "Markwayne Mullin",
-      "score": 8,
-      "breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
-      "data_quality": "LOW"
-    },
-    {
-      "name": "Donald Trump",
-      "score": 3,
-      "breakdown": [
-        "Intelligence signal score (25/100): +3"
-      ],
-      "data_quality": "HIGH"
-    },
-    {
-      "name": "Donald Trump Jr",
-      "score": 3,
-      "breakdown": [
-        "Intelligence signal score (25/100): +3"
-      ],
-      "data_quality": "HIGH"
+      "data_quality": "HIGH",
+      "committees": [
+        "Homeland Security",
+        "Commerce",
+        "Armed Services"
+      ]
     }
   ],
   "person_profiles": {
     "Donald Trump": {
       "name": "Donald Trump",
       "committees": [],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [],
       "offshore_matches": [],
-      "market_signals": [
-        {
-          "source": "Social Media",
-          "politician_or_entity": "Donald Trump Jr",
-          "ticker": "USO",
-          "trade_type": "buy",
-          "amount": "unknown",
-          "date": "2026-05-28",
-          "score": 25,
-          "action": "BUY",
-          "reason": "Trump Jr post references U.S. strikes on Iran after drone attacks on commercial ships in Hormuz, a direct oil supply disruption signal. Iran escalation plus energy infrastructure risk supports a short-term USO long position."
-        },
-        {
-          "source": "Social Media",
-          "politician_or_entity": "Donald Trump Jr",
-          "ticker": "F",
-          "trade_type": "sell",
-          "amount": "unknown",
-          "date": "2026-05-28",
-          "score": 25,
-          "action": "SELL",
-          "reason": "Trump Jr amplifies reporting that GM, Ford, and Toyota are forecasting stagnant or shrinking U.S. new-car sales with one million buyers sidelined. Bearish demand signal for legacy automakers supports a cautious sell on Ford."
-        }
-      ],
-      "donations": [],
-      "corruption_score": 3,
-      "score_breakdown": [
-        "Intelligence signal score (25/100): +3"
-      ],
-      "data_quality": "HIGH"
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "LOW"
     },
     "Jared Kushner": {
       "name": "Jared Kushner",
       "committees": [],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Jared Kushner",
-          "content": "Trump’s government just gave him and his family immunity from tax prosecution. For life.\n\nWhich begs the question: What is Trump hiding in his taxes? https://t.co/lJJxxsRcSY",
-          "created_at": "2026-05-27T21:49:16.000Z",
-          "keywords": [
-            "cut"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Jared Kushner",
-          "content": "RT @TIME: \"Americans are hanging on by their fingernails in an economy that funnels wealth to the ultra-rich and leaves crumbs for working…",
-          "created_at": "2026-05-27T15:13:22.000Z",
-          "keywords": [
-            "economy"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Ivanka Trump": {
       "name": "Ivanka Trump",
       "committees": [],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Ivanka Trump",
-          "content": "RT @SecondLady: Thank you, America! It has been a great honor and privilege to serve as the Second Lady of the United States. Let’s keep in…",
-          "created_at": "2021-01-20T12:37:00.000Z",
-          "keywords": [
-            "great"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Ivanka Trump",
-          "content": "\"Four years ago, we launched a great national effort to rebuild our country, to renew its spirit, and to restore the allegiance of this government to its citizens.\n\nWe did what we came here to do—and ",
-          "created_at": "2021-01-19T21:04:19.000Z",
-          "keywords": [
-            "great"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Donald Trump Jr": {
       "name": "Donald Trump Jr",
       "committees": [],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Donald Trump Jr",
-          "content": "GM, Ford and Toyota have said they are planning for U.S. new-car sales to stagnate or shrink this year, as a million potential customers sit on the sidelines of the new-car market https://t.co/MbxkgMu",
-          "created_at": "2026-05-28T01:13:15.000Z",
-          "keywords": [
-            "market"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Donald Trump Jr",
-          "content": "Breaking: American forces conducted new strikes against Iran after it launched drones at commercial ships in Hormuz, U.S. officials said https://t.co/KnIZyjtYK8",
-          "created_at": "2026-05-28T00:37:51.000Z",
-          "keywords": [
-            "iran"
-          ],
-          "suggested_ticker": "USO"
-        }
-      ],
       "offshore_matches": [],
-      "market_signals": [
-        {
-          "source": "Social Media",
-          "politician_or_entity": "Donald Trump Jr",
-          "ticker": "USO",
-          "trade_type": "buy",
-          "amount": "unknown",
-          "date": "2026-05-28",
-          "score": 25,
-          "action": "BUY",
-          "reason": "Trump Jr post references U.S. strikes on Iran after drone attacks on commercial ships in Hormuz, a direct oil supply disruption signal. Iran escalation plus energy infrastructure risk supports a short-term USO long position."
-        },
-        {
-          "source": "Social Media",
-          "politician_or_entity": "Donald Trump Jr",
-          "ticker": "F",
-          "trade_type": "sell",
-          "amount": "unknown",
-          "date": "2026-05-28",
-          "score": 25,
-          "action": "SELL",
-          "reason": "Trump Jr amplifies reporting that GM, Ford, and Toyota are forecasting stagnant or shrinking U.S. new-car sales with one million buyers sidelined. Bearish demand signal for legacy automakers supports a cautious sell on Ford."
-        }
-      ],
-      "donations": [],
-      "corruption_score": 3,
-      "score_breakdown": [
-        "Intelligence signal score (25/100): +3"
-      ],
-      "data_quality": "HIGH"
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "LOW"
     },
     "Pam Bondi": {
       "name": "Pam Bondi",
@@ -468,24 +551,14 @@
         "Justice",
         "Law Enforcement"
       ],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Pam Bondi",
-          "content": "Today, on Martin Luther King Jr. Day, we reflect on the fact that the journey of our democracy is difficult and ongoing – and the distance is short between peril and possibility.\n\nBut we must keep it ",
-          "created_at": "2025-01-20T12:00:02.000Z",
-          "keywords": [
-            "war"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Scott Bessent": {
@@ -494,13 +567,14 @@
         "Treasury",
         "Finance"
       ],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Pete Hegseth": {
@@ -508,25 +582,30 @@
       "committees": [
         "Defense"
       ],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
-    "Harold Hamm": {
-      "name": "Harold Hamm",
-      "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
+    "Howard Lutnick": {
+      "name": "Howard Lutnick",
+      "committees": [
+        "Commerce",
+        "Trade"
+      ],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Marco Rubio": {
@@ -535,62 +614,27 @@
         "Foreign Relations",
         "Intelligence"
       ],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Marco Rubio",
-          "content": "RT @SecRubio: Adys Lastres Morera is the sister of the Executive President of GAESA, the Cuban military-controlled financial conglomerate t…",
-          "created_at": "2026-05-21T23:03:32.000Z",
-          "keywords": [
-            "rate",
-            "military",
-            "cut"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 8,
-      "score_breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Secretary Rubio": {
       "name": "Secretary Rubio",
       "committees": [],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Secretary Rubio",
-          "content": "Today in Yerevan, Armenian Foreign Minister @AraratMirzoyan and I announced a bilateral framework agreement on the Trump Route for International Peace and Prosperity (TRIPP) and signed a Strategic Par",
-          "created_at": "2026-05-26T15:02:49.000Z",
-          "keywords": [
-            "rate"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Secretary Rubio",
-          "content": "Today, @DrSJaishankar and I signed a bilateral Critical Minerals Framework, marking a milestone in the strategic partnership between the U.S. and India. \n\nThis sets us on a path toward reliable &amp; ",
-          "created_at": "2026-05-26T13:22:37.000Z",
-          "keywords": [
-            "rate",
-            "war"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Tulsi Gabbard": {
@@ -599,26 +643,14 @@
         "Intelligence",
         "National Security"
       ],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Tulsi Gabbard",
-          "content": "But my eyes are toward you, O God, my Lord; in you I seek refuge  - Psalm 141:8",
-          "created_at": "2026-05-25T13:37:14.000Z",
-          "keywords": [
-            "war"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 8,
-      "score_breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Doug Burgum": {
@@ -627,49 +659,14 @@
         "Interior",
         "Energy"
       ],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Doug Burgum",
-          "content": "Grateful to @POTUS for the honor to serve as Secretary of the Interior. We look forward to delivering on President Trump’s vision for Energy Dominance — which is the foundation of American prosperity,",
-          "created_at": "2025-02-01T20:48:40.000Z",
-          "keywords": [
-            "energy",
-            "rate",
-            "war"
-          ],
-          "suggested_ticker": "XLE"
-        },
-        {
-          "source": "Social Media",
-          "person": "Doug Burgum",
-          "content": "RT @SenJohnHoeven: Great strategy meeting with @DougBurgum to Make America Energy Dominant. As a member of @EnergyGOP, I’m working to get h…",
-          "created_at": "2024-11-27T03:12:52.000Z",
-          "keywords": [
-            "great",
-            "energy",
-            "rate"
-          ],
-          "suggested_ticker": "XLE"
-        },
-        {
-          "source": "Social Media",
-          "person": "Doug Burgum",
-          "content": "I’m deeply grateful to President @RealDonaldTrump for this amazing opportunity to serve the American people and achieve ENERGY DOMINANCE! 🇺🇸 https://t.co/iR8x54IZpK",
-          "created_at": "2024-11-15T20:41:41.000Z",
-          "keywords": [
-            "energy",
-            "rate"
-          ],
-          "suggested_ticker": "XLE"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Chris Wright": {
@@ -677,13 +674,14 @@
       "committees": [
         "Energy"
       ],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "RFK Jr": {
@@ -693,13 +691,14 @@
         "FDA",
         "CDC"
       ],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Mitch McConnell": {
@@ -709,42 +708,31 @@
         "Agriculture",
         "Rules"
       ],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Mitch McConnell",
-          "content": "Whether at a South China seaside resort or a stunning stay in the Greek islands, these resorts make the most of surrounding natural vistas. https://t.co/pyyuZVqoMb",
-          "created_at": "2022-11-18T14:04:00.000Z",
-          "keywords": [
-            "china"
-          ],
-          "suggested_ticker": "FXI"
-        }
-      ],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 8,
-      "score_breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Ted Cruz": {
       "name": "Ted Cruz",
       "committees": [
         "Commerce",
-        "NASA",
-        "Science"
+        "Science",
+        "NASA"
       ],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Josh Hawley": {
@@ -754,15 +742,14 @@
         "Commerce",
         "Armed Services"
       ],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 8,
-      "score_breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Mitt Romney": {
@@ -772,24 +759,14 @@
         "Foreign Relations",
         "Health"
       ],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Mitt Romney",
-          "content": "Rafe Pomerance was one of the earliest advocates in the fight against climate change. He rang the alarm and helped the United States government take the threat of a warming world seriously. Though the",
-          "created_at": "2026-05-22T19:56:22.000Z",
-          "keywords": [
-            "war"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Bernie Sanders": {
@@ -799,26 +776,14 @@
         "Veterans",
         "Budget"
       ],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Bernie Sanders",
-          "content": "Great Day at the @DetroitChamber 2026 Mackinac Policy Conference: the “Quest for Common Ground.”@KarenPence and I are grateful for the warm welcome and we loved being back on Mackinac Island! #MPC26! ",
-          "created_at": "2026-05-27T22:51:38.000Z",
-          "keywords": [
-            "great",
-            "rate",
-            "war"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Rand Paul": {
@@ -828,13 +793,14 @@
         "Health",
         "Small Business"
       ],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Tommy Tuberville": {
@@ -844,15 +810,14 @@
         "Agriculture",
         "Veterans"
       ],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 8,
-      "score_breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Maria Cantwell": {
@@ -862,47 +827,14 @@
         "Energy",
         "Science"
       ],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Maria Cantwell",
-          "content": "We are now offering a lease option on our Commercial Energy Monitoring Systems.\nMaking them easier to budget for !! form a queue please !!",
-          "created_at": "2012-09-27T12:32:36.000Z",
-          "keywords": [
-            "energy",
-            "budget"
-          ],
-          "suggested_ticker": "XLE"
-        },
-        {
-          "source": "Social Media",
-          "person": "Maria Cantwell",
-          "content": "RT @Solarbuzzja: Why monitoring energy in your home or business is important http://t.co/nYRqJQXA",
-          "created_at": "2012-09-27T11:05:02.000Z",
-          "keywords": [
-            "energy"
-          ],
-          "suggested_ticker": "XLE"
-        },
-        {
-          "source": "Social Media",
-          "person": "Maria Cantwell",
-          "content": "Exciting Times ahead, EMS has recently secured a 100k Contract, We are looking forward to saving our new client a heap of Energy & Money!",
-          "created_at": "2010-03-14T23:06:34.000Z",
-          "keywords": [
-            "energy",
-            "war",
-            "contract"
-          ],
-          "suggested_ticker": "XLE"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "John Boozman": {
@@ -912,258 +844,147 @@
         "Appropriations",
         "Veterans"
       ],
+      "corruption_score": 10,
+      "score_breakdown": [
+        "Trading activity (21): +10"
+      ],
       "trades": [
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "IEF",
-          "trade_type": "Purchase",
-          "amount": "$15,001 - $50,000",
-          "date": "2025-09-16",
-          "asset": "iShares 7-10 Year Treasury Bond ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2025-09-16",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "iShares 7-10 Year Treasury Bond ETF"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "IVW",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-03-19",
-          "asset": "iShares S&P 500 Growth ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-03-19",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "iShares S&P 500 Growth ETF"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "IEI",
-          "trade_type": "Purchase",
-          "amount": "$15,001 - $50,000",
-          "date": "2025-09-16",
-          "asset": "iShares 3-7 Year Treasury Bond ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2025-09-16",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "iShares 3-7 Year Treasury Bond ETF"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "ETN",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-09-12",
-          "asset": "Eaton Corp PLC",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-09-12",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "Eaton Corp PLC"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "DTE",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-03-19",
-          "asset": "DTE Energy Co",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-03-19",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "DTE Energy Co"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "GOOGL",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-09-17",
-          "asset": "Alphabet Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-09-17",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "Alphabet Inc"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "SCHP",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-09-16",
-          "asset": "Schwab US TIPS ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-09-16",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "Schwab US TIPS ETF"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "SHY",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-09-16",
-          "asset": "iShares 1-3 Year Treasury Bond ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-09-16",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "iShares 1-3 Year Treasury Bond ETF"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "ADBE",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-09-04",
-          "asset": "Adobe Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-09-04",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "Adobe Inc"
         },
         {
-          "politician": "John Boozman",
           "chamber": "Senate",
+          "politician_raw": "John Boozman",
+          "politician": "john boozman",
+          "politician_display": "John Boozman",
           "ticker": "CEG",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-02",
-          "asset": "CONSTELLATION ENE CORP",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "DVN",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-09",
-          "asset": "Devon Energy Corp",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "John Boozman",
-          "chamber": "Senate",
-          "ticker": "TBLL",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-02",
-          "asset": "INVESCO SHORT TERM TREAS ETF",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        }
-      ],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "John Boozman",
-          "content": "@SarahHuckabee Great news. We worked hard to modernize the summer meal programs and authorize Summer EBT, so I’m proud that Arkansas continues to lead the way for kids to have access to nutritious foo",
-          "created_at": "2026-05-27T19:44:08.000Z",
-          "keywords": [
-            "great"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "John Boozman",
-          "content": "Appreciate @AGTimGriffin’s efforts to fight fraud and protect government services for the Arkansans who rely on them. https://t.co/JgQLNaf2nZ",
-          "created_at": "2026-05-27T16:18:04.000Z",
-          "keywords": [
-            "fraud"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "John Boozman",
-          "content": "Our veterans deserve quality care and treatment from the VA facilities they rely on.\n\nWe continue working to ensure they receive excellent support in Arkansas and I’m pleased to celebrate @VAFayettevi",
-          "created_at": "2026-05-26T18:49:39.000Z",
-          "keywords": [
-            "rate"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "John Boozman",
-          "content": "RT @SenateGOP: Senate Republicans are fighting to level the playing field for American workers. \n \nThe Working Families Tax Cut lowered tax…",
-          "created_at": "2026-05-26T18:41:03.000Z",
-          "keywords": [
-            "cut"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "John Boozman",
-          "content": "RT @SenTomCotton: The best tools for our brave men and women in uniform are made in South Arkansas.\n\nThank you President Trump and @SecWar…",
-          "created_at": "2026-05-26T17:03:38.000Z",
-          "keywords": [
-            "war"
-          ],
-          "suggested_ticker": "SPY"
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-02",
+          "disclosure_date": "2026-05-08",
+          "asset_description": "CONSTELLATION ENE CORP"
         }
       ],
       "offshore_matches": [],
-      "market_signals": [
-        {
-          "source": "congressional_trade",
-          "politician_or_entity": "John Boozman",
-          "ticker": "IEF",
-          "trade_type": "buy",
-          "amount": "$15,001 - $50,000",
-          "date": "2025-09-16",
-          "score": 26,
-          "action": "BUY",
-          "reason": "Boozman purchased both IEF and IEI on the same date suggesting a deliberate rotation into Treasury bonds; multiple same-date signals apply 1.3x multiplier. Possible macro rate-view positioning by a Senate insider."
-        },
-        {
-          "source": "congressional_trade",
-          "politician_or_entity": "John Boozman",
-          "ticker": "IVW",
-          "trade_type": "sell",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-03-19",
-          "score": 20,
-          "action": "SELL",
-          "reason": "Congressional sale of S&P 500 Growth ETF scores base signal; small amount limits significance. No cross-reference or amplifying indicators present."
-        },
-        {
-          "source": "congressional_trade",
-          "politician_or_entity": "John Boozman",
-          "ticker": "IEI",
-          "trade_type": "buy",
-          "amount": "$15,001 - $50,000",
-          "date": "2025-09-16",
-          "score": 26,
-          "action": "BUY",
-          "reason": "Paired same-day Treasury ETF purchase alongside IEF by the same senator triggers multiple-signal multiplier of 1.3x. Coordinated bond positioning suggests possible insider macro awareness."
-        },
-        {
-          "source": "congressional_trade",
-          "politician_or_entity": "John Boozman",
-          "ticker": "ETN",
-          "trade_type": "buy",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-09-12",
-          "score": 20,
-          "action": "BUY",
-          "reason": "Congressional purchase of Eaton Corp scores base signal; Eaton is an industrials/power management play with infrastructure relevance. Small amount and no cross-reference data limits score elevation."
-        }
-      ],
-      "donations": [],
-      "corruption_score": 21,
-      "score_breakdown": [
-        "Trading activity (12 trades): +10",
-        "Intelligence signal score (26/100): +3",
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "HIGH"
     },
     "Gary Peters": {
@@ -1173,118 +994,56 @@
         "Commerce",
         "Armed Services"
       ],
+      "corruption_score": 10,
+      "score_breakdown": [
+        "Trading activity (3): +10"
+      ],
       "trades": [
         {
-          "politician": "Gary Peters",
           "chamber": "Senate",
+          "politician_raw": "Gary Peters",
+          "politician": "gary peters",
+          "politician_display": "Gary Peters",
           "ticker": "PEP",
-          "trade_type": "Purchase",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-23",
-          "asset": "PepsiCo Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-23",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "PepsiCo Inc"
         },
         {
-          "politician": "Gary Peters",
           "chamber": "Senate",
+          "politician_raw": "Gary Peters",
+          "politician": "gary peters",
+          "politician_display": "Gary Peters",
           "ticker": "CTVA",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-23",
-          "asset": "Corteva Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-23",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "Corteva Inc"
         },
         {
-          "politician": "Gary Peters",
           "chamber": "Senate",
+          "politician_raw": "Gary Peters",
+          "politician": "gary peters",
+          "politician_display": "Gary Peters",
           "ticker": "SJM",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-23",
-          "asset": "The J M Smucker Company",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        }
-      ],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Gary Peters",
-          "content": "This hateful attack is disturbing and unacceptable. Political violence and Islamophobia have no place in our state and we must all condemn it when we see it. I’m relieved no one was hurt during the in",
-          "created_at": "2026-05-16T20:16:39.000Z",
-          "keywords": [
-            "attack"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Gary Peters",
-          "content": "Congratulations to Chedrick Greene! Senate District 35 will have a strong and steady leader working for them and their families, and I look forward to seeing him deliver for Saginaw, Midland, and Bay ",
-          "created_at": "2026-05-06T15:48:49.000Z",
-          "keywords": [
-            "war"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Gary Peters",
-          "content": "Sterling Heights has a great leader and public servant in @MayorMikeTaylor. Congratulations on last night’s reelection. I look forward to working with you to deliver for folks in our state.",
-          "created_at": "2025-11-06T02:42:49.000Z",
-          "keywords": [
-            "great",
-            "war"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Gary Peters",
-          "content": "Congratulations to Lansing Mayor @andyschor on his successful reelection! I’ve always appreciated his partnership over the years, and I know his great leadership will continue to serve the Lansing com",
-          "created_at": "2025-11-06T00:06:42.000Z",
-          "keywords": [
-            "great"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Gary Peters",
-          "content": "Detroiters have chosen the right person to lead their city, and that is my friend @MsMarySheffield!\n\nLooking forward to her work on behalf of working Michiganders! Congrats!",
-          "created_at": "2025-11-05T22:18:21.000Z",
-          "keywords": [
-            "war"
-          ],
-          "suggested_ticker": "SPY"
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-23",
+          "disclosure_date": "2026-05-11",
+          "asset_description": "The J M Smucker Company"
         }
       ],
       "offshore_matches": [],
-      "market_signals": [
-        {
-          "source": "congressional_trade",
-          "politician_or_entity": "Gary Peters",
-          "ticker": "PEP",
-          "trade_type": "buy",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-23",
-          "score": 20,
-          "action": "BUY",
-          "reason": "Senate purchase of PepsiCo earns base congressional signal score. No amplifying indicators or cross-references detected to elevate conviction."
-        }
-      ],
-      "donations": [],
-      "corruption_score": 21,
-      "score_breakdown": [
-        "Trading activity (3 trades): +10",
-        "Intelligence signal score (20/100): +3",
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "HIGH"
     },
     "John Fetterman": {
@@ -1294,77 +1053,148 @@
         "Agriculture",
         "Armed Services"
       ],
+      "corruption_score": 20,
+      "score_breakdown": [
+        "Trading activity (14): +10",
+        "Committee conflicts (1): +10"
+      ],
       "trades": [
         {
-          "politician": "John Fetterman",
           "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
           "ticker": "FCBN",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-04-24",
-          "asset": "First Citizens Bancorporation Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-04-24",
+          "disclosure_date": "2026-05-15",
+          "asset_description": "First Citizens Bancorporation Inc"
         },
         {
-          "politician": "John Fetterman",
           "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
           "ticker": "JPM",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-06-17",
-          "asset": "JPMorgan Chase & Co",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        }
-      ],
-      "recent_posts": [
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-06-17",
+          "disclosure_date": "2026-05-15",
+          "asset_description": "JPMorgan Chase & Co"
+        },
         {
-          "source": "Social Media",
-          "person": "John Fetterman",
-          "content": "Just became aware the awful news of this explosion in Western PA.\n\nAs a proud Ag Committee member, I know how devastating this is for the community. My team has been in contact and is ready to help in",
-          "created_at": "2026-05-27T17:33:56.000Z",
-          "keywords": [
-            "war"
-          ],
-          "suggested_ticker": "SPY"
+          "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
+          "ticker": "ATH",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-10",
+          "disclosure_date": "2026-05-06",
+          "asset_description": "Athene Holding Ltd"
+        },
+        {
+          "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
+          "ticker": "BXSL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-13",
+          "disclosure_date": "2026-05-06",
+          "asset_description": "BLACKSTONE SECURED LENDING F"
+        },
+        {
+          "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
+          "ticker": "NFS",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-10",
+          "disclosure_date": "2026-05-06",
+          "asset_description": "Nationwide Financial Services Inc"
+        },
+        {
+          "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
+          "ticker": "GOOGL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-03-30",
+          "disclosure_date": "2026-04-03",
+          "asset_description": "Alphabet Inc"
+        },
+        {
+          "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
+          "ticker": "ERIE",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-03-27",
+          "disclosure_date": "2026-04-03",
+          "asset_description": "Erie Indemnity Co"
+        },
+        {
+          "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
+          "ticker": "MSFT",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-03-30",
+          "disclosure_date": "2026-04-03",
+          "asset_description": "Microsoft Corp"
+        },
+        {
+          "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
+          "ticker": "T",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-03-27",
+          "disclosure_date": "2026-04-03",
+          "asset_description": "AT&T Inc"
+        },
+        {
+          "chamber": "Senate",
+          "politician_raw": "John Fetterman",
+          "politician": "john fetterman",
+          "politician_display": "John Fetterman",
+          "ticker": "MU",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-03-30",
+          "disclosure_date": "2026-04-03",
+          "asset_description": "Micron Technology Inc"
         }
       ],
       "offshore_matches": [],
-      "market_signals": [
-        {
-          "source": "congressional_trade",
-          "politician_or_entity": "John Fetterman",
-          "ticker": "FCBN",
-          "trade_type": "buy",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-04-24",
-          "score": 20,
-          "action": "BUY",
-          "reason": "Congressional purchase of First Citizens Bancorporation scores base congressional signal points. Small amount and no cross-reference data limits conviction."
-        },
-        {
-          "source": "congressional_trade",
-          "politician_or_entity": "John Fetterman",
-          "ticker": "JPM",
-          "trade_type": "buy",
-          "amount": "$1,001 - $15,000",
-          "date": "2025-06-17",
-          "score": 20,
-          "action": "BUY",
-          "reason": "Congressional purchase of JPMorgan Chase scores base signal but small dollar amount reduces conviction. No cross-reference or additional indicators present."
-        }
-      ],
-      "donations": [],
-      "corruption_score": 31,
-      "score_breakdown": [
-        "Trading activity (2 trades): +10",
-        "Committee conflict trades (1): +10",
-        "Intelligence signal score (20/100): +3",
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "HIGH"
     },
     "Nancy Pelosi": {
@@ -1373,16 +1203,14 @@
         "Intelligence",
         "Appropriations"
       ],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 16,
-      "score_breakdown": [
-        "Oversees Defense sector with active BA signal: +8",
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Alexandria Ocasio-Cortez": {
@@ -1391,13 +1219,14 @@
         "Financial Services",
         "Oversight"
       ],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Dan Crenshaw": {
@@ -1406,15 +1235,14 @@
         "Intelligence",
         "Homeland Security"
       ],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 8,
-      "score_breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Markwayne Mullin": {
@@ -1424,15 +1252,14 @@
         "Health",
         "Commerce"
       ],
+      "corruption_score": 0,
+      "score_breakdown": [],
       "trades": [],
-      "recent_posts": [],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 8,
-      "score_breakdown": [
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Michael McCaul": {
@@ -1441,13 +1268,14 @@
         "Foreign Affairs",
         "Homeland Security"
       ],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Josh Gottheimer": {
@@ -1456,149 +1284,148 @@
         "Intelligence",
         "Financial Services"
       ],
+      "corruption_score": 35,
+      "score_breakdown": [
+        "Trading activity (24): +10",
+        "Committee conflicts (4): +25"
+      ],
       "trades": [
         {
-          "politician": "Josh Gottheimer",
           "chamber": "House",
-          "ticker": "IBM",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-24",
-          "asset": "International Business Machines Corp",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "HD",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-09",
-          "asset": "The Home Depot Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
-          "ticker": "MLM",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-09",
-          "asset": "Martin Marietta Materials Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        },
-        {
-          "politician": "Josh Gottheimer",
-          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
           "ticker": "IFNNY",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-13",
-          "asset": "Infineon Technologies AG",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-13",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Infineon Technologies AG"
         },
         {
-          "politician": "Josh Gottheimer",
           "chamber": "House",
-          "ticker": "DRI",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-09",
-          "asset": "Darden Restaurants Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "ALLY",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Ally Financial Inc"
         },
         {
-          "politician": "Josh Gottheimer",
           "chamber": "House",
-          "ticker": "CBZ",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-06",
-          "asset": "CBIZ Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "MLM",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Martin Marietta Materials Inc"
         },
         {
-          "politician": "Josh Gottheimer",
           "chamber": "House",
-          "ticker": "PFGC",
-          "trade_type": "Sale",
-          "amount": "$15,001 - $50,000",
-          "date": "2026-04-09",
-          "asset": "PERFORMANCE FOOD GROUP COMPANY",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "AMD",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-23",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Advanced Micro Devices Inc"
         },
         {
-          "politician": "Josh Gottheimer",
           "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
           "ticker": "GS",
-          "trade_type": "Purchase",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-16",
-          "asset": "The Goldman Sachs Group Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "The Goldman Sachs Group Inc"
         },
         {
-          "politician": "Josh Gottheimer",
           "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "PFGC",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "PERFORMANCE FOOD GROUP COMPANY"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
           "ticker": "HDB",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-13",
-          "asset": "H D F C Bank Ltd",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-13",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "H D F C Bank Ltd"
         },
         {
-          "politician": "Josh Gottheimer",
           "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
           "ticker": "MKTX",
-          "trade_type": "Sale",
-          "amount": "$1,001 - $15,000",
-          "date": "2026-04-09",
-          "asset": "MarketAxess Holdings Inc",
-          "sentiment_score": 0,
-          "news_velocity": "NORMAL",
-          "articles_24h": 0
-        }
-      ],
-      "recent_posts": [
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "MarketAxess Holdings Inc"
+        },
         {
-          "source": "Social Media",
-          "person": "Josh Gottheimer",
-          "content": "Antisemitism has no place in our country.\n\nHatred should never be tolerated, it must be condemned. We have seen where silence leads and must never be silent. https://t.co/5e3rbhmkSO",
-          "created_at": "2026-05-27T19:00:30.000Z",
-          "keywords": [
-            "rate"
-          ],
-          "suggested_ticker": "SPY"
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "IBM",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-24",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "International Business Machines Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "MMM",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-28",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "3M Co"
         }
       ],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 28,
-      "score_breakdown": [
-        "Trading activity (10 trades): +10",
-        "Committee conflict trades (1): +10",
-        "Oversees Defense sector with active BA signal: +8"
-      ],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "HIGH"
     },
     "Dan Meuser": {
@@ -1607,1766 +1434,1032 @@
         "Financial Services",
         "Transportation"
       ],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Dan Meuser",
-          "content": "America’s capital markets create wealth on a scale no other nation can match. Trump Accounts will allow more Americans to participate in the growth and success of our economy.\n\nCheck out my op-ed on h",
-          "created_at": "2026-05-27T19:31:52.000Z",
-          "keywords": [
-            "economy",
-            "market"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "Dan Meuser",
-          "content": "A great turnout at the Wyoming County Memorial Day Parade today.\n\nAfter joining the parade, I had the opportunity to address the community, urging everyone to pause and reflect on the sacrifices made ",
-          "created_at": "2026-05-25T17:22:28.000Z",
-          "keywords": [
-            "great"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "Gavin Newsom": {
-      "name": "Gavin Newsom",
-      "committees": [],
       "trades": [],
+      "offshore_matches": [],
       "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "Ron DeSantis": {
-      "name": "Ron DeSantis",
-      "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "Greg Abbott": {
-      "name": "Greg Abbott",
-      "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "Gretchen Whitmer": {
-      "name": "Gretchen Whitmer",
-      "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "JB Pritzker": {
-      "name": "JB Pritzker",
-      "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "Abigail Spanberger": {
-      "name": "Abigail Spanberger",
-      "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "SarahHuckSanders": {
-      "name": "SarahHuckSanders",
-      "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Elon Musk": {
       "name": "Elon Musk",
       "committees": [],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Elon Musk",
-          "content": "RT @wholemars: You haven't experienced real self-driving until you've tried Tesla Self-Driving 14.3.3 in Mad Max mode https://t.co/xBNV2OnA…",
-          "created_at": "2026-05-28T01:02:24.000Z",
-          "keywords": [
-            "tesla"
-          ],
-          "suggested_ticker": "TSLA"
-        },
-        {
-          "source": "Social Media",
-          "person": "Elon Musk",
-          "content": "RT @XFreeze: I just found something interesting hidden on the SpaceX website\n\nGo to:\nhttps://t.co/9S7htc2TXp → Human Spaceflight → Space St…",
-          "created_at": "2026-05-27T22:23:24.000Z",
-          "keywords": [
-            "spacex"
-          ],
-          "suggested_ticker": "LUNR"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Sam Altman": {
       "name": "Sam Altman",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Sundar Pichai": {
       "name": "Sundar Pichai",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Mark Zuckerberg": {
       "name": "Mark Zuckerberg",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Bill Gates": {
       "name": "Bill Gates",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Jensen Huang": {
       "name": "Jensen Huang",
       "committees": [],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Jensen Huang",
-          "content": "‘Very clearly gendered’: furious NSW nurses and midwives reject pay rise deal amid 24-hour strike https://t.co/4Qgy9UgNE7",
-          "created_at": "2024-11-13T06:33:20.000Z",
-          "keywords": [
-            "deal"
-          ],
-          "suggested_ticker": "SPY"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Satya Nadella": {
       "name": "Satya Nadella",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Larry Ellison": {
       "name": "Larry Ellison",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Brian Armstrong": {
       "name": "Brian Armstrong",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Michael Saylor": {
       "name": "Michael Saylor",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "Tyler Winklevoss": {
-      "name": "Tyler Winklevoss",
-      "committees": [],
       "trades": [],
-      "recent_posts": [],
       "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "Cameron Winklevoss": {
-      "name": "Cameron Winklevoss",
-      "committees": [],
-      "trades": [],
       "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Jeff Bezos": {
       "name": "Jeff Bezos",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "George Soros": {
       "name": "George Soros",
       "committees": [],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "George Soros",
-          "content": "RT @bocxtop: tsa agent held up my bin and said to everyone else in line “THIS IS WHAT ALL OF YOURS SHOULD LOOK LIKE” greatest moment of my…",
-          "created_at": "2024-12-24T19:32:29.000Z",
-          "keywords": [
-            "great"
-          ],
-          "suggested_ticker": "SPY"
-        },
-        {
-          "source": "Social Media",
-          "person": "George Soros",
-          "content": "Unless your clothes are soiled, you might not even need detergent for your load of laundry. \n\nThe water and agitation in the washer is doing most of the work.",
-          "created_at": "2024-12-23T18:53:02.000Z",
-          "keywords": [
-            "oil"
-          ],
-          "suggested_ticker": "USO"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Bill Ackman": {
       "name": "Bill Ackman",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Carl Icahn": {
       "name": "Carl Icahn",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Jamie Dimon": {
       "name": "Jamie Dimon",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Larry Fink": {
       "name": "Larry Fink",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Ray Dalio": {
       "name": "Ray Dalio",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Jim Cramer": {
       "name": "Jim Cramer",
       "committees": [],
-      "trades": [],
-      "recent_posts": [
-        {
-          "source": "Social Media",
-          "person": "Jim Cramer",
-          "content": "getting carbombed after a palantir thinktank pays me $125 to pretend to be a Gay Looking Ethical Non Monogamist who is glad alcatraz closed",
-          "created_at": "2026-05-14T01:36:58.000Z",
-          "keywords": [
-            "palantir"
-          ],
-          "suggested_ticker": "PLTR"
-        }
-      ],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
-      "data_quality": "LOW"
-    },
-    "Nouriel Roubini": {
-      "name": "Nouriel Roubini",
-      "committees": [],
       "trades": [],
+      "offshore_matches": [],
       "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
-      "corruption_score": 0,
-      "score_breakdown": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     },
     "Rupert Murdoch": {
       "name": "Rupert Murdoch",
       "committees": [],
-      "trades": [],
-      "recent_posts": [],
-      "offshore_matches": [],
-      "market_signals": [],
-      "donations": [],
       "corruption_score": 0,
       "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "LOW"
+    },
+    "Gavin Newsom": {
+      "name": "Gavin Newsom",
+      "committees": [],
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "LOW"
+    },
+    "Greg Abbott": {
+      "name": "Greg Abbott",
+      "committees": [],
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "LOW"
+    },
+    "Gretchen Whitmer": {
+      "name": "Gretchen Whitmer",
+      "committees": [],
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "LOW"
+    },
+    "JB Pritzker": {
+      "name": "JB Pritzker",
+      "committees": [],
+      "corruption_score": 0,
+      "score_breakdown": [],
+      "trades": [],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "LOW"
     }
   },
-  "offshore_matches": [
-    {
-      "person": "Rex Tillerson",
-      "offshore_entity": "Tillerson - Rex",
-      "description": "Officer node extracted from the Paradise Papers - Appleby data.",
-      "match_score": 100.0,
-      "confidence": "CONFIRMED",
-      "source": "ICIJ_OffshorePapers"
-    },
-    {
-      "person": "Michael Cohen",
-      "offshore_entity": "MICHAEL COHEN",
-      "description": "Officer node extracted from the Paradise Papers - Malta corporate registry data.",
-      "match_score": 100.0,
-      "confidence": "CONFIRMED",
-      "source": "ICIJ_OffshorePapers"
-    },
-    {
-      "person": "Howard Lutnick",
-      "offshore_entity": "HOWARD LUTNICK",
-      "description": "Officer node extracted from the Paradise Papers - Malta corporate registry data.",
-      "match_score": 100.0,
-      "confidence": "CONFIRMED",
-      "source": "ICIJ_OffshorePapers"
-    }
-  ],
+  "offshore_matches": [],
+  "social_signals": [],
   "contracts": [
     {
       "recipient": "THE BOEING COMPANY",
       "amount": 22428256008.84,
       "agency": "National Aeronautics and Space Administration",
       "date": null,
-      "source": "USASpending"
+      "description": "INTERNATIONAL SPACE STATION"
     },
     {
       "recipient": "BECHTEL NATIONAL, INC.",
       "amount": 17244586105.74,
       "agency": "Department of Energy",
       "date": null,
-      "source": "USASpending"
+      "description": ""
     },
     {
       "recipient": "THE BOEING COMPANY",
       "amount": 10494204426.0,
       "agency": "National Aeronautics and Space Administration",
       "date": null,
-      "source": "USASpending"
+      "description": "PROVIDE DEVELOPMENTAL HARDWARE AND TEST ARTICLES, AND MANUFACTURE AND ASSEMBLE ARES I UPPER STAGES. THE UPPER STAGE (US) ELEMENT IS AN INTEGRAL PART OF THE ARES I LAUNCH VEHICLE AND PROVIDES THE SECON"
     },
     {
       "recipient": "AEROJET ROCKETDYNE OF DE, INC",
       "amount": 3272481574.49,
       "agency": "National Aeronautics and Space Administration",
       "date": null,
-      "source": "USASpending"
+      "description": "IGF::CT::IGF  RS-25 PRODUCTION RESTART TO BE UNDERTAKEN BY THE CONTRACTOR IN SUPPORT OF PROVIDING SIX RS-25 ENGINES MODIFIED AS NECESSARY FOR THE TECHNICAL REQUIREMENTS UNDER THE SPACE LAUNCH SYSTEM, "
     },
     {
       "recipient": "SPACE EXPLORATION TECHNOLOGIES CORP.",
       "amount": 3031624776.73,
       "agency": "National Aeronautics and Space Administration",
       "date": null,
-      "source": "USASpending"
+      "description": "WORK REQUIRED FOR THE DESIGN, DEVELOPMENT, MANUFACTURE, TEST, LAUNCH, DEMONSTRATION, AND ENGINEERING SUPPORT OF THE HUMAN LANDING SYSTEM (HLS) INTEGRATED LANDER."
     },
     {
       "recipient": "SAVANNAH RIVER MISSION COMPLETION, LLC",
       "amount": 2374047167.02,
       "agency": "Department of Energy",
       "date": null,
-      "source": "USASpending"
+      "description": "THIS AWARD IS FOR THE SAVANNAH RIVER INTEGRATED MISSION COMPLETION CONTRACT - TASK ORDER 6 (LIQUID WASTE OPERATIONS)."
     },
     {
       "recipient": "LOCKHEED MARTIN CORP",
       "amount": 2032336134.57,
       "agency": "National Aeronautics and Space Administration",
       "date": null,
-      "source": "USASpending"
+      "description": "THE GOVERNMENT IS PROCURING THE NEXT-GENERATION GEOSTATIONARY OPERATIONAL ENVIRONMENTAL SATELLITES (GOES) SERIES TO CONTINUE ITS MISSION THROUGH NEW REQUIREMENTS SPECIFIED IN THE GOES-R LEVEL I REQUIR"
     },
     {
       "recipient": "AMENTUM TECHNOLOGY, INC.",
       "amount": 1930675316.56,
       "agency": "National Aeronautics and Space Administration",
       "date": null,
-      "source": "USASpending"
+      "description": "ENGINEERING SERVICES AND SCIENCE CAPABILITY AUGMENTATION (ESSCA)"
     },
     {
       "recipient": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
       "amount": 1594955955.3,
       "agency": "National Aeronautics and Space Administration",
       "date": null,
-      "source": "USASpending"
+      "description": "IGF::OT::IGF NEXTSTEP NRA AWARD.  THIS NEXTSTEP CONTRACT BUILDS UPON THE SUCCESS OF COMMERCIAL ORBITAL TRANSPORTATION SERVICES SPACE ACT AGREEMENT DEVELOPMENT PROGRAM AND AN EXISTING INTERNATIONAL SPA"
     },
     {
       "recipient": "HARRIS CORPORATION",
       "amount": 1558742368.63,
       "agency": "Department of Transportation",
       "date": null,
-      "source": "USASpending"
+      "description": "DAFIS UDO RECONSTRUCT W/O ADVANCE"
     }
   ],
   "agency_spending": [
     {
       "agency": "Department of the Treasury",
       "budget": 5571762503572.39,
-      "obligated": 1037806876973.94,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 1037806876973.94
     },
     {
       "agency": "Department of Health and Human Services",
       "budget": 3325509510196.07,
-      "obligated": 1472109840992.39,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 1472109840992.39
     },
     {
       "agency": "Department of Defense",
       "budget": 2076986320393.14,
-      "obligated": 839296765164.65,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 839296765164.65
     },
     {
       "agency": "Social Security Administration",
       "budget": 963629207266.56,
-      "obligated": 900943548327.42,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 900943548327.42
     },
     {
       "agency": "Department of Veterans Affairs",
       "budget": 522770919708.25,
-      "obligated": 224984891833.39,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 224984891833.39
     },
     {
       "agency": "Department of Homeland Security",
       "budget": 515957225173.95,
-      "obligated": 99523045531.74,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 99523045531.74
     },
     {
       "agency": "Department of Agriculture",
       "budget": 467350257039.38,
-      "obligated": 124034779433.21,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 124034779433.21
     },
     {
       "agency": "Office of Personnel Management",
       "budget": 373544733709.09,
-      "obligated": 108805199433.45,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 108805199433.45
     },
     {
       "agency": "Department of Housing and Urban Development",
       "budget": 331561250258.21,
-      "obligated": 43719726316.68,
-      "num_contracts": 0,
-      "source": "AgencySpending"
+      "obligated": 43719726316.68
     },
     {
       "agency": "Department of Transportation",
       "budget": 301998337246.7,
-      "obligated": 63925652133.17,
-      "num_contracts": 0,
-      "source": "AgencySpending"
-    }
-  ],
-  "social_signals": [
-    {
-      "source": "Social Media",
-      "person": "Jared Kushner",
-      "content": "Trump’s government just gave him and his family immunity from tax prosecution. For life.\n\nWhich begs the question: What is Trump hiding in his taxes? https://t.co/lJJxxsRcSY",
-      "created_at": "2026-05-27T21:49:16.000Z",
-      "keywords": [
-        "cut"
-      ],
-      "suggested_ticker": "SPY"
+      "obligated": 63925652133.17
     },
     {
-      "source": "Social Media",
-      "person": "Jared Kushner",
-      "content": "RT @TIME: \"Americans are hanging on by their fingernails in an economy that funnels wealth to the ultra-rich and leaves crumbs for working…",
-      "created_at": "2026-05-27T15:13:22.000Z",
-      "keywords": [
-        "economy"
-      ],
-      "suggested_ticker": "SPY"
+      "agency": "Federal Deposit Insurance Corporation",
+      "budget": 140711044703.77,
+      "obligated": 2362734910.96
     },
     {
-      "source": "Social Media",
-      "person": "Ivanka Trump",
-      "content": "RT @SecondLady: Thank you, America! It has been a great honor and privilege to serve as the Second Lady of the United States. Let’s keep in…",
-      "created_at": "2021-01-20T12:37:00.000Z",
-      "keywords": [
-        "great"
-      ],
-      "suggested_ticker": "SPY"
+      "agency": "Department of Energy",
+      "budget": 136221703606.55,
+      "obligated": 39942740030.98
     },
     {
-      "source": "Social Media",
-      "person": "Ivanka Trump",
-      "content": "\"Four years ago, we launched a great national effort to rebuild our country, to renew its spirit, and to restore the allegiance of this government to its citizens.\n\nWe did what we came here to do—and ",
-      "created_at": "2021-01-19T21:04:19.000Z",
-      "keywords": [
-        "great"
-      ],
-      "suggested_ticker": "SPY"
+      "agency": "Department of Education",
+      "budget": 135841348934.08,
+      "obligated": 56953447959.7
     },
     {
-      "source": "Social Media",
-      "person": "Donald Trump Jr",
-      "content": "GM, Ford and Toyota have said they are planning for U.S. new-car sales to stagnate or shrink this year, as a million potential customers sit on the sidelines of the new-car market https://t.co/MbxkgMu",
-      "created_at": "2026-05-28T01:13:15.000Z",
-      "keywords": [
-        "market"
-      ],
-      "suggested_ticker": "SPY"
+      "agency": "Department of State",
+      "budget": 92856225612.15,
+      "obligated": 15283083855.75
     },
     {
-      "source": "Social Media",
-      "person": "Donald Trump Jr",
-      "content": "Breaking: American forces conducted new strikes against Iran after it launched drones at commercial ships in Hormuz, U.S. officials said https://t.co/KnIZyjtYK8",
-      "created_at": "2026-05-28T00:37:51.000Z",
-      "keywords": [
-        "iran"
-      ],
-      "suggested_ticker": "USO"
+      "agency": "Pension Benefit Guaranty Corporation",
+      "budget": 91059527535.14,
+      "obligated": 7356317282.61
     },
     {
-      "source": "Social Media",
-      "person": "Pam Bondi",
-      "content": "Today, on Martin Luther King Jr. Day, we reflect on the fact that the journey of our democracy is difficult and ongoing – and the distance is short between peril and possibility.\n\nBut we must keep it ",
-      "created_at": "2025-01-20T12:00:02.000Z",
-      "keywords": [
-        "war"
-      ],
-      "suggested_ticker": "SPY"
+      "agency": "Department of the Interior",
+      "budget": 87437899308.28,
+      "obligated": 15958650354.99
     },
     {
-      "source": "Social Media",
-      "person": "Marco Rubio",
-      "content": "RT @SecRubio: Adys Lastres Morera is the sister of the Executive President of GAESA, the Cuban military-controlled financial conglomerate t…",
-      "created_at": "2026-05-21T23:03:32.000Z",
-      "keywords": [
-        "rate",
-        "military",
-        "cut"
-      ],
-      "suggested_ticker": "SPY"
+      "agency": "Department of Justice",
+      "budget": 87091072628.42,
+      "obligated": 28293816708.16
     },
     {
-      "source": "Social Media",
-      "person": "Secretary Rubio",
-      "content": "Today in Yerevan, Armenian Foreign Minister @AraratMirzoyan and I announced a bilateral framework agreement on the Trump Route for International Peace and Prosperity (TRIPP) and signed a Strategic Par",
-      "created_at": "2026-05-26T15:02:49.000Z",
-      "keywords": [
-        "rate"
-      ],
-      "suggested_ticker": "SPY"
+      "agency": "Corps of Engineers - Civil Works",
+      "budget": 77726217201.53,
+      "obligated": 20285405916.79
     },
     {
-      "source": "Social Media",
-      "person": "Secretary Rubio",
-      "content": "Today, @DrSJaishankar and I signed a bilateral Critical Minerals Framework, marking a milestone in the strategic partnership between the U.S. and India. \n\nThis sets us on a path toward reliable &amp; ",
-      "created_at": "2026-05-26T13:22:37.000Z",
-      "keywords": [
-        "rate",
-        "war"
-      ],
-      "suggested_ticker": "SPY"
+      "agency": "Environmental Protection Agency",
+      "budget": 55598176070.91,
+      "obligated": 7142471881.39
     },
     {
-      "source": "Social Media",
-      "person": "Tulsi Gabbard",
-      "content": "But my eyes are toward you, O God, my Lord; in you I seek refuge  - Psalm 141:8",
-      "created_at": "2026-05-25T13:37:14.000Z",
-      "keywords": [
-        "war"
-      ],
-      "suggested_ticker": "SPY"
-    },
-    {
-      "source": "Social Media",
-      "person": "Doug Burgum",
-      "content": "Grateful to @POTUS for the honor to serve as Secretary of the Interior. We look forward to delivering on President Trump’s vision for Energy Dominance — which is the foundation of American prosperity,",
-      "created_at": "2025-02-01T20:48:40.000Z",
-      "keywords": [
-        "energy",
-        "rate",
-        "war"
-      ],
-      "suggested_ticker": "XLE"
-    },
-    {
-      "source": "Social Media",
-      "person": "Doug Burgum",
-      "content": "RT @SenJohnHoeven: Great strategy meeting with @DougBurgum to Make America Energy Dominant. As a member of @EnergyGOP, I’m working to get h…",
-      "created_at": "2024-11-27T03:12:52.000Z",
-      "keywords": [
-        "great",
-        "energy",
-        "rate"
-      ],
-      "suggested_ticker": "XLE"
-    },
-    {
-      "source": "Social Media",
-      "person": "Doug Burgum",
-      "content": "I’m deeply grateful to President @RealDonaldTrump for this amazing opportunity to serve the American people and achieve ENERGY DOMINANCE! 🇺🇸 https://t.co/iR8x54IZpK",
-      "created_at": "2024-11-15T20:41:41.000Z",
-      "keywords": [
-        "energy",
-        "rate"
-      ],
-      "suggested_ticker": "XLE"
-    },
-    {
-      "source": "Social Media",
-      "person": "Mitch McConnell",
-      "content": "Whether at a South China seaside resort or a stunning stay in the Greek islands, these resorts make the most of surrounding natural vistas. https://t.co/pyyuZVqoMb",
-      "created_at": "2022-11-18T14:04:00.000Z",
-      "keywords": [
-        "china"
-      ],
-      "suggested_ticker": "FXI"
-    },
-    {
-      "source": "Social Media",
-      "person": "Mitt Romney",
-      "content": "Rafe Pomerance was one of the earliest advocates in the fight against climate change. He rang the alarm and helped the United States government take the threat of a warming world seriously. Though the",
-      "created_at": "2026-05-22T19:56:22.000Z",
-      "keywords": [
-        "war"
-      ],
-      "suggested_ticker": "SPY"
-    },
-    {
-      "source": "Social Media",
-      "person": "Bernie Sanders",
-      "content": "Great Day at the @DetroitChamber 2026 Mackinac Policy Conference: the “Quest for Common Ground.”@KarenPence and I are grateful for the warm welcome and we loved being back on Mackinac Island! #MPC26! ",
-      "created_at": "2026-05-27T22:51:38.000Z",
-      "keywords": [
-        "great",
-        "rate",
-        "war"
-      ],
-      "suggested_ticker": "SPY"
-    },
-    {
-      "source": "Social Media",
-      "person": "Maria Cantwell",
-      "content": "We are now offering a lease option on our Commercial Energy Monitoring Systems.\nMaking them easier to budget for !! form a queue please !!",
-      "created_at": "2012-09-27T12:32:36.000Z",
-      "keywords": [
-        "energy",
-        "budget"
-      ],
-      "suggested_ticker": "XLE"
-    },
-    {
-      "source": "Social Media",
-      "person": "Maria Cantwell",
-      "content": "RT @Solarbuzzja: Why monitoring energy in your home or business is important http://t.co/nYRqJQXA",
-      "created_at": "2012-09-27T11:05:02.000Z",
-      "keywords": [
-        "energy"
-      ],
-      "suggested_ticker": "XLE"
-    },
-    {
-      "source": "Social Media",
-      "person": "Maria Cantwell",
-      "content": "Exciting Times ahead, EMS has recently secured a 100k Contract, We are looking forward to saving our new client a heap of Energy & Money!",
-      "created_at": "2010-03-14T23:06:34.000Z",
-      "keywords": [
-        "energy",
-        "war",
-        "contract"
-      ],
-      "suggested_ticker": "XLE"
-    }
-  ],
-  "truth_social": [],
-  "congressional_trades": [
-    {
-      "politician": "Bernie Moreno",
-      "chamber": "Senate",
-      "ticker": "ETOR",
-      "trade_type": "Sale",
-      "amount": "$100,001 - $250,000",
-      "date": "2026-05-06",
-      "asset": "ETORO GROUP LTD",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Fetterman",
-      "chamber": "Senate",
-      "ticker": "FCBN",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-04-24",
-      "asset": "First Citizens Bancorporation Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Fetterman",
-      "chamber": "Senate",
-      "ticker": "JPM",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-06-17",
-      "asset": "JPMorgan Chase & Co",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Gary Peters",
-      "chamber": "Senate",
-      "ticker": "PEP",
-      "trade_type": "Purchase",
-      "amount": "$15,001 - $50,000",
-      "date": "2026-04-23",
-      "asset": "PepsiCo Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "IEF",
-      "trade_type": "Purchase",
-      "amount": "$15,001 - $50,000",
-      "date": "2025-09-16",
-      "asset": "iShares 7-10 Year Treasury Bond ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "IVW",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-03-19",
-      "asset": "iShares S&P 500 Growth ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "IEI",
-      "trade_type": "Purchase",
-      "amount": "$15,001 - $50,000",
-      "date": "2025-09-16",
-      "asset": "iShares 3-7 Year Treasury Bond ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "ETN",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-09-12",
-      "asset": "Eaton Corp PLC",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "DTE",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-03-19",
-      "asset": "DTE Energy Co",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "GOOGL",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-09-17",
-      "asset": "Alphabet Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Gary Peters",
-      "chamber": "Senate",
-      "ticker": "CTVA",
-      "trade_type": "Sale",
-      "amount": "$15,001 - $50,000",
-      "date": "2026-04-23",
-      "asset": "Corteva Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "SCHP",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-09-16",
-      "asset": "Schwab US TIPS ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "SHY",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-09-16",
-      "asset": "iShares 1-3 Year Treasury Bond ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Gary Peters",
-      "chamber": "Senate",
-      "ticker": "SJM",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-23",
-      "asset": "The J M Smucker Company",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "ADBE",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2025-09-04",
-      "asset": "Adobe Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "CEG",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-02",
-      "asset": "CONSTELLATION ENE CORP",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "DVN",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-09",
-      "asset": "Devon Energy Corp",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "John Boozman",
-      "chamber": "Senate",
-      "ticker": "TBLL",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-02",
-      "asset": "INVESCO SHORT TERM TREAS ETF",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Shelley Moore Capito",
-      "chamber": "Senate",
-      "ticker": "AAPL",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-17",
-      "asset": "Apple Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Shelley Moore Capito",
-      "chamber": "Senate",
-      "ticker": "AVGO",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-13",
-      "asset": "Broadcom Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Thomas H. Kean",
-      "chamber": "House",
-      "ticker": "NVT",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-15",
-      "asset": "nVent Electric PLC",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Thomas H. Kean",
-      "chamber": "House",
-      "ticker": "FCNCA",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-14",
-      "asset": "First Citizens BancShares Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Thomas H. Kean",
-      "chamber": "House",
-      "ticker": "TTWO",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-21",
-      "asset": "Take-Two Interactive Software Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Thomas H. Kean",
-      "chamber": "House",
-      "ticker": "TXN",
-      "trade_type": "Purchase",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-14",
-      "asset": "Texas Instruments Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Thomas H. Kean",
-      "chamber": "House",
-      "ticker": "ADI",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-29",
-      "asset": "Analog Devices Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Jake Auchincloss",
-      "chamber": "House",
-      "ticker": "STT",
-      "trade_type": "Sale",
-      "amount": "$15,001 - $50,000",
-      "date": "2026-05-18",
-      "asset": "State Street Corporation (2)",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Jake Auchincloss",
-      "chamber": "House",
-      "ticker": "STT",
-      "trade_type": "Sale",
-      "amount": "$15,001 - $50,000",
-      "date": "2026-05-18",
-      "asset": "State Street Corporation (1)"
-    },
-    {
-      "politician": "Sara Jacobs",
-      "chamber": "House",
-      "ticker": "QCOM",
-      "trade_type": "Sale",
-      "amount": "$500,001 - $1,000,000",
-      "date": "2026-05-06",
-      "asset": "QUALCOMM Inc",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
-    },
-    {
-      "politician": "Sara Jacobs",
-      "chamber": "House",
-      "ticker": "QCOM",
-      "trade_type": "Sale",
-      "amount": "$500,001 - $1,000,000",
-      "date": "2026-05-07",
-      "asset": "QUALCOMM Inc"
-    },
-    {
-      "politician": "Daniel Meuser",
-      "chamber": "House",
-      "ticker": "NVDA",
-      "trade_type": "Sale",
-      "amount": "$1,001 - $15,000",
-      "date": "2026-04-24",
-      "asset": "NVIDIA Corporation",
-      "sentiment_score": 0,
-      "news_velocity": "NORMAL",
-      "articles_24h": 0
+      "agency": "General Services Administration",
+      "budget": 52278025724.25,
+      "obligated": 18447126347.02
     }
   ],
   "fec_donors": [],
   "lobbying": [
     {
-      "lobbying_firm": "MR. CHARLES DOLAN, JR",
+      "firm": "MR. CHARLES DOLAN, JR",
       "client": "ALI AZEMI F/B/O UNION ASSOCIATION OF IMK EX-STEEL PIPE FACTORY WORKERS",
-      "amount": null,
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
+      "lobbying_firm": "MR. CHARLES DOLAN, JR",
+      "amount": 0.0,
+      "period": "1st Quarter (Jan 1 - Mar 31)"
     },
     {
-      "lobbying_firm": "AMERICAN FAMILY MUTUAL INSURANCE COMPANY, S.I.",
+      "firm": "AMERICAN FAMILY MUTUAL INSURANCE COMPANY, S.I.",
       "client": "AMERICAN FAMILY MUTUAL INSURANCE COMPANY, S.I.",
-      "amount": null,
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
+      "lobbying_firm": "AMERICAN FAMILY MUTUAL INSURANCE COMPANY, S.I.",
+      "amount": 0.0,
+      "period": "1st Quarter (Jan 1 - Mar 31)"
     },
     {
-      "lobbying_firm": "CHECKMATE GOVERNMENT RELATIONS",
+      "firm": "CHECKMATE GOVERNMENT RELATIONS",
       "client": "SUMMIT SD, LLC",
-      "amount": "180000.00",
-      "period": "2nd Quarter (Apr 1 - June 30)",
-      "source": "LDA"
-    },
-    {
       "lobbying_firm": "CHECKMATE GOVERNMENT RELATIONS",
+      "amount": 180000.0,
+      "period": "2nd Quarter (Apr 1 - June 30)"
+    },
+    {
+      "firm": "CHECKMATE GOVERNMENT RELATIONS",
       "client": "KIDNEY CARE ACCESS COLAITION, INC.",
-      "amount": "80000.00",
-      "period": "2nd Quarter (Apr 1 - June 30)",
-      "source": "LDA"
+      "lobbying_firm": "CHECKMATE GOVERNMENT RELATIONS",
+      "amount": 80000.0,
+      "period": "2nd Quarter (Apr 1 - June 30)"
     },
     {
-      "lobbying_firm": "ALSTON & BIRD LLP",
+      "firm": "ALSTON & BIRD LLP",
       "client": "MOHAWK INDUSTRIES, INC.",
-      "amount": "80000.00",
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
+      "lobbying_firm": "ALSTON & BIRD LLP",
+      "amount": 80000.0,
+      "period": "1st Quarter (Jan 1 - Mar 31)"
     },
     {
-      "lobbying_firm": "WASHINGTON STRATEGIC CONSULTING",
+      "firm": "WASHINGTON STRATEGIC CONSULTING",
       "client": "ACADEMY OF DOCTORS OF AUDIOLOGY",
-      "amount": "20000.00",
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
+      "lobbying_firm": "WASHINGTON STRATEGIC CONSULTING",
+      "amount": 20000.0,
+      "period": "1st Quarter (Jan 1 - Mar 31)"
     },
     {
-      "lobbying_firm": "WASHINGTON STRATEGIC CONSULTING",
+      "firm": "WASHINGTON STRATEGIC CONSULTING",
       "client": "CENTRASTATE HEALTHCARE SYSTEM",
-      "amount": null,
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
-    },
-    {
-      "lobbying_firm": "THINK POLICY CONSULTING, LLC",
-      "client": "PHINANCE.GOLD",
-      "amount": null,
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
-    },
-    {
       "lobbying_firm": "WASHINGTON STRATEGIC CONSULTING",
-      "client": "VISITING NURSE ASSOCIATION HEALTH GROUP",
-      "amount": "5000.00",
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
+      "amount": 0.0,
+      "period": "1st Quarter (Jan 1 - Mar 31)"
     },
     {
+      "firm": "THINK POLICY CONSULTING, LLC",
+      "client": "PHINANCE.GOLD",
       "lobbying_firm": "THINK POLICY CONSULTING, LLC",
+      "amount": 0.0,
+      "period": "1st Quarter (Jan 1 - Mar 31)"
+    },
+    {
+      "firm": "WASHINGTON STRATEGIC CONSULTING",
+      "client": "VISITING NURSE ASSOCIATION HEALTH GROUP",
+      "lobbying_firm": "WASHINGTON STRATEGIC CONSULTING",
+      "amount": 5000.0,
+      "period": "1st Quarter (Jan 1 - Mar 31)"
+    },
+    {
+      "firm": "THINK POLICY CONSULTING, LLC",
       "client": "WELLHEAD ELECTRIC COMPANY",
-      "amount": null,
-      "period": "1st Quarter (Jan 1 - Mar 31)",
-      "source": "LDA"
+      "lobbying_firm": "THINK POLICY CONSULTING, LLC",
+      "amount": 0.0,
+      "period": "1st Quarter (Jan 1 - Mar 31)"
     }
   ],
-  "economic_indicators": [],
-  "cross_references": [
+  "insider_positions": [
     {
-      "contract_recipient": "THE BOEING COMPANY",
-      "contract_amount": 22428256008.84,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 29,
-      "congressional_trades": 0,
-      "corruption_indicators": 29,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "BECHTEL NATIONAL, INC.",
-      "contract_amount": 17244586105.74,
-      "awarding_agency": "Department of Energy",
-      "social_mentions": 0,
-      "congressional_trades": 0,
-      "corruption_indicators": 0,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "THE BOEING COMPANY",
-      "contract_amount": 10494204426.0,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 29,
-      "congressional_trades": 0,
-      "corruption_indicators": 29,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "AEROJET ROCKETDYNE OF DE, INC",
-      "contract_amount": 3272481574.49,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 0,
-      "congressional_trades": 0,
-      "corruption_indicators": 0,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "SPACE EXPLORATION TECHNOLOGIES CORP.",
-      "contract_amount": 3031624776.73,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 1,
-      "congressional_trades": 0,
-      "corruption_indicators": 1,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "SAVANNAH RIVER MISSION COMPLETION, LLC",
-      "contract_amount": 2374047167.02,
-      "awarding_agency": "Department of Energy",
-      "social_mentions": 0,
-      "congressional_trades": 0,
-      "corruption_indicators": 0,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "LOCKHEED MARTIN CORP",
-      "contract_amount": 2032336134.57,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 1,
-      "congressional_trades": 1,
-      "corruption_indicators": 2,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "AMENTUM TECHNOLOGY, INC.",
-      "contract_amount": 1930675316.56,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 0,
-      "congressional_trades": 0,
-      "corruption_indicators": 0,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-      "contract_amount": 1594955955.3,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 0,
-      "congressional_trades": 0,
-      "corruption_indicators": 0,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "HARRIS CORPORATION",
-      "contract_amount": 1558742368.63,
-      "awarding_agency": "Department of Transportation",
-      "social_mentions": 0,
-      "congressional_trades": 4,
-      "corruption_indicators": 4,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "HAMILTON SUNDSTRAND SPACE SYSTEMS INTERNATIONAL, INC.",
-      "contract_amount": 1420888745.1,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 0,
-      "congressional_trades": 0,
-      "corruption_indicators": 0,
-      "source": "CrossRef"
-    },
-    {
-      "contract_recipient": "KBR WYLE SERVICES, LLC",
-      "contract_amount": 1055535162.06,
-      "awarding_agency": "National Aeronautics and Space Administration",
-      "social_mentions": 0,
-      "congressional_trades": 0,
-      "corruption_indicators": 0,
-      "source": "CrossRef"
-    }
-  ],
-  "doge_signals": [],
-  "data_center_signals": [],
-  "stories": [],
-  "insider_tracker": [
-    {
-      "ticker": "FCBN",
-      "politician": "John Fetterman",
-      "date_bought": "2025-04-24",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
+      "politician": "john fetterman",
+      "politician_display": "John Fetterman",
       "ticker": "JPM",
-      "politician": "John Fetterman",
-      "date_bought": "2025-06-17",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 298.025,
+      "entry_date": "2026-05-27T16:25:28.307113+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 299.23,
+      "return_pct": 0.4,
       "days_tracked": 0
     },
     {
+      "politician": "gary peters",
+      "politician_display": "Gary Peters",
       "ticker": "PEP",
-      "politician": "Gary Peters",
-      "date_bought": "2026-04-23",
-      "date_tracked": "2026-05-27",
-      "amount": "$15,001 - $50,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 148.42,
+      "entry_date": "2026-05-27T16:25:28.739761+00:00",
+      "amount_midpoint": 32500,
+      "current_price": 147.69,
+      "return_pct": -0.49,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "IEF",
-      "politician": "John Boozman",
-      "date_bought": "2025-09-16",
-      "date_tracked": "2026-05-27",
-      "amount": "$15,001 - $50,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 94.375,
+      "entry_date": "2026-05-27T16:25:29.195602+00:00",
+      "amount_midpoint": 32500,
+      "current_price": 94.32,
+      "return_pct": -0.06,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "IEI",
-      "politician": "John Boozman",
-      "date_bought": "2025-09-16",
-      "date_tracked": "2026-05-27",
-      "amount": "$15,001 - $50,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 117.525,
+      "entry_date": "2026-05-27T16:25:29.455760+00:00",
+      "amount_midpoint": 32500,
+      "current_price": 117.455,
+      "return_pct": -0.06,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "ETN",
-      "politician": "John Boozman",
-      "date_bought": "2025-09-12",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 403.78,
+      "entry_date": "2026-05-27T16:25:29.712277+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 406.47,
+      "return_pct": 0.67,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "GOOGL",
-      "politician": "John Boozman",
-      "date_bought": "2025-09-17",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 391.325,
+      "entry_date": "2026-05-27T16:25:30.081417+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 389.87,
+      "return_pct": -0.37,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "SCHP",
-      "politician": "John Boozman",
-      "date_bought": "2025-09-16",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 26.74,
+      "entry_date": "2026-05-27T16:25:30.621269+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 26.745,
+      "return_pct": 0.02,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "SHY",
-      "politician": "John Boozman",
-      "date_bought": "2025-09-16",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 82.22,
+      "entry_date": "2026-05-27T16:25:30.890529+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 82.225,
+      "return_pct": 0.01,
       "days_tracked": 0
     },
     {
+      "politician": "gary peters",
+      "politician_display": "Gary Peters",
       "ticker": "SJM",
-      "politician": "Gary Peters",
-      "date_bought": "2026-04-23",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 103.9,
+      "entry_date": "2026-05-27T16:25:31.747734+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 102.995,
+      "return_pct": -0.87,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "ADBE",
-      "politician": "John Boozman",
-      "date_bought": "2025-09-04",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 239.12,
+      "entry_date": "2026-05-27T16:25:32.003147+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 238.2,
+      "return_pct": -0.38,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "CEG",
-      "politician": "John Boozman",
-      "date_bought": "2026-04-02",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 289.0,
+      "entry_date": "2026-05-27T16:25:32.297375+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 288.66,
+      "return_pct": -0.12,
       "days_tracked": 0
     },
     {
+      "politician": "john boozman",
+      "politician_display": "John Boozman",
       "ticker": "DVN",
-      "politician": "John Boozman",
-      "date_bought": "2026-04-09",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
+      "entry_price": 44.8,
+      "entry_date": "2026-05-27T16:25:32.764925+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 44.3,
+      "return_pct": -1.12,
       "days_tracked": 0
     },
     {
-      "ticker": "TXN",
-      "politician": "Thomas H. Kean",
-      "date_bought": "2026-04-14",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "GS",
-      "politician": "Josh Gottheimer",
-      "date_bought": "2026-04-16",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "AMD",
-      "politician": "Josh Gottheimer",
-      "date_bought": "2026-04-27",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "T",
-      "politician": "Tim Moore",
-      "date_bought": "2026-05-18",
-      "date_tracked": "2026-05-27",
-      "amount": "$15,001 - $50,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "RYCEY",
-      "politician": "Tim Moore",
-      "date_bought": "2026-05-07",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
-      "ticker": "IFNNY",
-      "politician": "Josh Gottheimer",
-      "date_bought": "2026-04-13",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "gain_pct": 0,
-      "days_tracked": 0
-    },
-    {
+      "politician": "john fetterman",
+      "politician_display": "John Fetterman",
       "ticker": "ATH",
-      "politician": "John Fetterman",
-      "date_bought": "2026-04-10",
-      "date_tracked": "2026-05-27",
-      "amount": "$1,001 - $15,000",
-      "price_at_tracking": 0.0,
-      "current_price": 0.0,
-      "change_pct_today": "0%",
-      "gain_pct": 0,
+      "entry_price": 83.32,
+      "entry_date": "2026-05-27T16:25:33.073568+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 83.32,
+      "return_pct": 0.0,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "DBEU",
+      "entry_price": 52.17,
+      "entry_date": "2026-05-27T16:25:33.579589+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 52.3,
+      "return_pct": 0.25,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "ACN",
+      "entry_price": 178.1,
+      "entry_date": "2026-05-27T16:25:34.115459+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 176.41,
+      "return_pct": -0.95,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "FTSL",
+      "entry_price": 44.93,
+      "entry_date": "2026-05-27T16:25:34.343361+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 44.965,
+      "return_pct": 0.08,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "SCIO",
+      "entry_price": 20.6,
+      "entry_date": "2026-05-27T16:25:34.959759+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 20.59,
+      "return_pct": -0.05,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "FITB",
+      "entry_price": 50.005,
+      "entry_date": "2026-05-27T16:25:35.644642+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 49.895,
+      "return_pct": -0.22,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "LGOV",
+      "entry_price": 21.33,
+      "entry_date": "2026-05-27T16:25:36.086896+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 21.355,
+      "return_pct": 0.12,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "TEAM",
+      "entry_price": 88.705,
+      "entry_date": "2026-05-27T16:25:36.552487+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 90.1,
+      "return_pct": 1.57,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "TOST",
+      "entry_price": 24.73,
+      "entry_date": "2026-05-27T16:25:36.693102+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 24.51,
+      "return_pct": -0.89,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "AAPL",
+      "entry_price": 311.39,
+      "entry_date": "2026-05-27T16:25:36.836929+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 310.68,
+      "return_pct": -0.23,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "HSY",
+      "entry_price": 199.14,
+      "entry_date": "2026-05-27T16:25:37.286908+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 197.77,
+      "return_pct": -0.69,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "MSFT",
+      "entry_price": 412.57,
+      "entry_date": "2026-05-27T16:25:37.703976+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 413.61,
+      "return_pct": 0.25,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "IWD",
+      "entry_price": 237.95,
+      "entry_date": "2026-05-27T16:25:37.818292+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 237.98,
+      "return_pct": 0.01,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "FTCB",
+      "entry_price": 20.8,
+      "entry_date": "2026-05-27T16:25:38.087723+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 20.805,
+      "return_pct": 0.02,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "BX",
+      "entry_price": 118.285,
+      "entry_date": "2026-05-27T16:25:38.380065+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 118.05,
+      "return_pct": -0.2,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "CEG",
+      "entry_price": 289.0,
+      "entry_date": "2026-05-27T16:25:38.698960+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 288.66,
+      "return_pct": -0.12,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "WFC",
+      "entry_price": 75.715,
+      "entry_date": "2026-05-27T16:25:38.915940+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 76.1,
+      "return_pct": 0.51,
+      "days_tracked": 0
+    },
+    {
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "IWF",
+      "entry_price": 125.545,
+      "entry_date": "2026-05-27T16:25:39.322542+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 125.72,
+      "return_pct": 0.14,
       "days_tracked": 0
     }
   ],
-  "top_gainers": [],
-  "politician_scorecard": [
+  "top_gainers": [
     {
-      "name": "John Fetterman",
-      "total_trades": 10,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "byron donalds",
+      "politician_display": "Byron Donalds",
+      "ticker": "MRVL",
+      "entry_price": 201.05,
+      "entry_date": "2026-05-27T16:25:54.318421+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 215.7,
+      "return_pct": 7.29,
+      "days_tracked": 0
     },
     {
-      "name": "Gary Peters",
-      "total_trades": 2,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "ro khanna",
+      "politician_display": "Ro Khanna",
+      "ticker": "META",
+      "entry_price": 611.785,
+      "entry_date": "2026-05-27T16:25:55.112271+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 636.61,
+      "return_pct": 4.06,
+      "days_tracked": 0
     },
     {
-      "name": "John Boozman",
-      "total_trades": 15,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "josh gottheimer",
+      "politician_display": "Josh Gottheimer",
+      "ticker": "CBZ",
+      "entry_price": 31.445,
+      "entry_date": "2026-05-27T16:25:49.256256+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 31.955,
+      "return_pct": 1.62,
+      "days_tracked": 0
     },
     {
-      "name": "Thomas H. Kean",
-      "total_trades": 1,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "ro khanna",
+      "politician_display": "Ro Khanna",
+      "ticker": "KKR",
+      "entry_price": 93.575,
+      "entry_date": "2026-05-27T16:48:08.361314+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 95.08,
+      "return_pct": 1.61,
+      "days_tracked": 0
     },
     {
-      "name": "Josh Gottheimer",
-      "total_trades": 8,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "mark warner",
+      "politician_display": "Mark Warner",
+      "ticker": "TEAM",
+      "entry_price": 88.705,
+      "entry_date": "2026-05-27T16:25:36.552487+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 90.1,
+      "return_pct": 1.57,
+      "days_tracked": 0
     },
     {
-      "name": "Tim Moore",
-      "total_trades": 3,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "ro khanna",
+      "politician_display": "Ro Khanna",
+      "ticker": "ORCL",
+      "entry_price": 189.3,
+      "entry_date": "2026-05-27T16:31:19.316721+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 192.22,
+      "return_pct": 1.54,
+      "days_tracked": 0
     },
     {
-      "name": "Mark Warner",
-      "total_trades": 18,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "john fetterman",
+      "politician_display": "John Fetterman",
+      "ticker": "AMZN",
+      "entry_price": 269.38,
+      "entry_date": "2026-05-27T16:25:44.973909+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 272.6,
+      "return_pct": 1.2,
+      "days_tracked": 0
     },
     {
-      "name": "Shelley Moore Capito",
-      "total_trades": 3,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "john fetterman",
+      "politician_display": "John Fetterman",
+      "ticker": "MU",
+      "entry_price": 919.99,
+      "entry_date": "2026-05-27T16:25:44.623812+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 930.4,
+      "return_pct": 1.13,
+      "days_tracked": 0
     },
     {
-      "name": "William R. Keating",
-      "total_trades": 6,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "ro khanna",
+      "politician_display": "Ro Khanna",
+      "ticker": "AVGO",
+      "entry_price": 418.99,
+      "entry_date": "2026-05-27T16:31:20.753018+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 423.42,
+      "return_pct": 1.06,
+      "days_tracked": 0
     },
     {
-      "name": "Steve Cohen",
-      "total_trades": 1,
-      "winning_trades": 0,
-      "total_gain_pct": 0,
-      "avg_gain_pct": 0.0,
-      "best_ticker": "",
-      "best_gain": 0,
-      "win_rate": 0.0
+      "politician": "ro khanna",
+      "politician_display": "Ro Khanna",
+      "ticker": "AMZN",
+      "entry_price": 269.98,
+      "entry_date": "2026-05-27T18:15:17.772778+00:00",
+      "amount_midpoint": 8000,
+      "current_price": 272.6,
+      "return_pct": 0.97,
+      "days_tracked": 0
     }
   ],
-  "watch_list": [
-    "Donald Trump",
-    "Jared Kushner",
-    "Ivanka Trump",
-    "Donald Trump Jr",
-    "Pam Bondi",
-    "Scott Bessent",
-    "Pete Hegseth",
-    "Harold Hamm",
-    "Marco Rubio",
-    "Secretary Rubio",
-    "Tulsi Gabbard",
-    "Doug Burgum",
-    "Chris Wright",
-    "RFK Jr",
-    "Mitch McConnell",
-    "Ted Cruz",
-    "Josh Hawley",
-    "Mitt Romney",
-    "Bernie Sanders",
-    "Rand Paul",
-    "Tommy Tuberville",
-    "Maria Cantwell",
-    "John Boozman",
-    "Gary Peters",
-    "John Fetterman",
-    "Nancy Pelosi",
-    "Alexandria Ocasio-Cortez",
-    "Dan Crenshaw",
-    "Markwayne Mullin",
-    "Michael McCaul",
-    "Josh Gottheimer",
-    "Dan Meuser",
-    "Gavin Newsom",
-    "Ron DeSantis",
-    "Greg Abbott",
-    "Gretchen Whitmer",
-    "JB Pritzker",
-    "Abigail Spanberger",
-    "SarahHuckSanders",
-    "Elon Musk",
-    "Sam Altman",
-    "Sundar Pichai",
-    "Mark Zuckerberg",
-    "Bill Gates",
-    "Jensen Huang",
-    "Satya Nadella",
-    "Larry Ellison",
-    "Brian Armstrong",
-    "Michael Saylor",
-    "Tyler Winklevoss",
-    "Cameron Winklevoss",
-    "Jeff Bezos",
-    "George Soros",
-    "Bill Ackman",
-    "Carl Icahn",
-    "Jamie Dimon",
-    "Larry Fink",
-    "Ray Dalio",
-    "Jim Cramer",
-    "Nouriel Roubini",
-    "Rupert Murdoch"
-  ]
+  "scorecard": [],
+  "political_holdings": [],
+  "economic_indicators": [],
+  "dark_pool": [],
+  "ngo_data": [],
+  "world_bank": [],
+  "fara": [],
+  "raw_counts": {
+    "trades": 199,
+    "insiders": 0,
+    "contracts": 32,
+    "bills": 30,
+    "lobbying": 25,
+    "donors": 0,
+    "social": 0,
+    "truth": 0,
+    "offshore": 0,
+    "economic": 0,
+    "dark_pool": 0,
+    "ngo": 0,
+    "agencies": 111,
+    "holdings": 0,
+    "worldbank": 0,
+    "fara": 0
+  }
 }
