@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-06-05 21:21",
-  "timestamp_iso": "2026-06-05T21:21:47.989143",
-  "cycle_seconds": 157.195168,
+  "timestamp": "2026-06-05 22:24",
+  "timestamp_iso": "2026-06-05T22:24:36.346648",
+  "cycle_seconds": 120.552744,
   "summary": {
     "long_candidates": 2,
     "short_candidates": 1,
     "decisions": 7,
     "entries_placed": 0,
-    "exits_placed": 1,
+    "exits_placed": 0,
     "open_positions": 11,
     "consensus_buys": 7,
     "consensus_sells": 3
@@ -38,7 +38,7 @@
         {
           "politician": "Josh Gottheimer",
           "date": "2026-06-04",
-          "amount": "$500,001 - $1,000,000",
+          "amount": "$250,001 - $500,000",
           "chamber": "House"
         }
       ],
@@ -48,7 +48,7 @@
       "source": "Consensus_BUY",
       "politician_or_entity": "4 politicians buying",
       "reason": "4 politicians buying MSFT: Warner, Boozman, Fetterman, Gottheimer",
-      "sentiment_score": 0.134,
+      "sentiment_score": 0.128,
       "article_count": 50
     },
     {
@@ -62,15 +62,15 @@
           "chamber": "Senate"
         },
         {
-          "politician": "Tim Walberg",
-          "date": "2026-06-04",
-          "amount": "$15,001 - $50,000",
-          "chamber": "House"
-        },
-        {
           "politician": "Cleo Fields",
           "date": "2026-06-04",
           "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        },
+        {
+          "politician": "Tim Walberg",
+          "date": "2026-06-04",
+          "amount": "$15,001 - $50,000",
           "chamber": "House"
         },
         {
@@ -85,7 +85,7 @@
       "action": "BUY",
       "source": "Consensus_BUY",
       "politician_or_entity": "4 politicians buying",
-      "reason": "4 politicians buying AAPL: Warner, Walberg, Fields, Case",
+      "reason": "4 politicians buying AAPL: Warner, Fields, Walberg, Case",
       "sentiment_score": 0.0,
       "article_count": 0
     }
@@ -112,113 +112,104 @@
       "ticker": "MSFT",
       "action": "BUY",
       "confidence": 0.72,
-      "reasoning": "4 politicians buying MSFT (Warner, Boozman, Fetterman, Gottheimer) is a meaningful cluster signal. Gottheimer's large purchase ($500K-$1M) via House Intelligence — which oversees tech — carries real weight. 3 are Senate, adding breadth. The short signal from Gottheimer is flagged separately but is the SAME trade (his buy, not a separate sale — the short signal appears to be a data artifact or misclassification). Net of 4 buyers vs. zero genuine sellers, cluster is valid. Positive news sentiment (50 articles, score 0.134) provides mild confirmation.",
-      "key_risk": "Cluster may partly reflect public AI/cloud momentum narrative rather than non-public information. Gottheimer's Intelligence committee oversight adds conviction but trades are spread across ~2 months, diluting the cluster signal."
+      "reasoning": "4 politicians buying (Warner, Boozman, Fetterman, Gottheimer) across both chambers creates a meaningful cluster signal. Gottheimer's large purchase ($250K-$500K) is the most significant individual bet. However, there is a conflicting short signal: Gottheimer simultaneously filed a large sale ($500K-$1M) with Intelligence committee oversight. This conflict likely reflects a portfolio rebalancing rather than pure insider conviction. The net of 4 buyers vs. 1 seller, with majority in the buy camp, tips toward BUY — but conviction is tempered by the cross-signal.",
+      "key_risk": "Gottheimer's large simultaneous sale creates a direct contradiction — he may be rotating out. Cluster could also be reacting to broadly known AI/cloud tailwinds rather than non-public information."
     },
     {
       "ticker": "AAPL",
-      "action": "HOLD",
-      "confidence": 0.48,
-      "reasoning": "Signal is mixed and nearly cancels out. 4 politicians buying (Warner, Walberg, Fields, Case) vs. 2 politicians selling (Capito, Taylor). Net buyer count is positive but the sellers reduce conviction meaningfully. Buy amounts are mostly small ($1K-$15K range), suggesting routine portfolio activity rather than conviction bets. Zero news sentiment articles for this signal is a yellow flag — no information edge is evident. AAPL is a universally held mega-cap; buying/selling is common and often reflects portfolio rebalancing, not inside info.",
-      "key_risk": "Competing buy and sell signals from politicians of similar seniority with no clear committee-oversight edge on either side. Mixed signal with low-dollar amounts warrants caution."
+      "action": "SKIP",
+      "confidence": 0.55,
+      "reasoning": "Mixed signals cancel each other out. 4 politicians buying (Warner, Fields, Walberg, Case) but simultaneously 2 politicians selling (Capito, Taylor). Net sentiment score is 0.0 with zero supporting articles. The buy amounts are all small ($1K-$50K range), suggesting routine portfolio activity rather than conviction. The sell cluster adds meaningful doubt. With no committee oversight edge on either side and flat sentiment, there is insufficient conviction to go long or short.",
+      "key_risk": "Opposing buy/sell clusters with small dollar amounts suggest routine rebalancing. No asymmetric informational edge identifiable."
     },
     {
       "ticker": "ETN",
       "action": "BUY",
       "confidence": 0.52,
-      "reasoning": "2 politicians buying (Boozman, Walberg) with Walberg's $15K-$50K position being reasonably sized. ETN (Eaton Corp) is an industrial/power management company with exposure to energy infrastructure and AI data center power — a thematic tailwind. Two-politician cluster is the minimum threshold; conviction is moderate but real enough to act on with a small position.",
-      "key_risk": "Only 2 actors, limiting cluster strength. No committee oversight angle identified. Could be coincidental sector rotation into industrials/energy infrastructure."
+      "reasoning": "2 politicians buying (Boozman, Walberg) in the industrials/energy infrastructure space. Walberg's position is more meaningful ($15K-$50K). ETN operates in power management which has strong secular tailwinds from electrification and data center demand. However, only 2 actors is a weak cluster, amounts are modest, and no committee oversight edge is confirmed. Borderline conviction — lean BUY but position size should be small.",
+      "key_risk": "Only 2 actors with small-to-moderate amounts. Could reflect broad market participation rather than informational edge. No committee oversight confirmed."
     },
     {
       "ticker": "GOOGL",
       "action": "BUY",
       "confidence": 0.5,
-      "reasoning": "2 Senate politicians buying (Boozman, Fetterman) with both also buying MSFT around the same period — suggesting a broader tech sector conviction rather than GOOGL-specific insight. Minimum viable cluster. Boozman and Fetterman sit on committees with some tech/telecom relevance. Holding conviction to minimum threshold.",
-      "key_risk": "Small dollar amounts ($1K-$15K each) and overlap with MSFT buyers suggests broad tech basket buying rather than GOOGL-specific non-public information. Antitrust overhang on GOOGL is a real macro risk."
+      "reasoning": "2 senators buying (Boozman, Fetterman) at small amounts ($1K-$15K each). Weak cluster with no large-dollar conviction and no confirmed committee oversight advantage. Both senators appear across multiple tech names (MSFT, ETN, AAPL area), suggesting broad tech allocation rather than GOOGL-specific information. Minimal edge but no opposing sell signal.",
+      "key_risk": "Very small dollar amounts from only 2 actors. Likely routine broad-tech allocation with no stock-specific informational edge. Regulatory antitrust overhang on GOOGL remains a structural risk."
     },
     {
       "ticker": "CEG",
       "action": "BUY",
       "confidence": 0.6,
-      "reasoning": "2 Senate politicians buying Constellation Energy (Boozman, Warner), both of whom also bought MSFT and other tech names. CEG is a nuclear energy play with strong AI data center power demand tailwind. Warner sits on Senate Intelligence and has broader energy/tech committee exposure. Nuclear/clean energy is a politically bipartisan theme with potential regulatory tailwinds. Slightly higher conviction than ETN/GOOGL given the specific policy angle.",
-      "key_risk": "Only 2 actors. Could reflect broad energy/nuclear thematic investing following public news about AI power demand. Regulatory changes in nuclear permitting could cut both ways."
+      "reasoning": "2 senators buying (Boozman, Warner) — both are experienced Senate insiders with oversight exposure to energy policy. CEG is a nuclear energy company with strong positioning around AI data center power demand and potential regulatory tailwinds. Senate-level buyers in the energy space carry more weight given energy committee exposure. Small amounts but the thematic alignment between Senate energy oversight and CEG's regulatory-driven business model adds incremental signal strength.",
+      "key_risk": "Only 2 actors with small amounts ($1K-$15K). Nuclear energy is highly policy-sensitive — any regulatory setback or DOE policy shift could reverse the thesis quickly."
     },
     {
       "ticker": "NVDA",
       "action": "SKIP",
-      "confidence": 0.55,
-      "reasoning": "Only 2 politicians selling NVDA (Whitehouse, Meuser), and the amounts are asymmetric — Whitehouse's $100K-$250K sale is meaningful but Meuser's is tiny ($1K-$15K). This is a weak short signal by the framework's own criteria (need 3+ committee-oversight politicians dumping for strong conviction). NVDA is in a powerful AI-driven uptrend; shorting a momentum leader on a thin 2-politician sell signal is high-risk. Selling by politicians may simply be profit-taking after NVDA's massive run, which is public-information-driven behavior.",
-      "key_risk": "NVDA's secular AI tailwind makes shorting extremely dangerous. A weak 2-politician sell cluster in a strong uptrend does not justify opening a short. Skipping rather than shorting to avoid asymmetric downside."
+      "confidence": 0.6,
+      "reasoning": "2 politicians selling (Whitehouse, Meuser) but the signal is weak. Whitehouse's sale is more meaningful ($100K-$250K) but NVDA is in a powerful structural uptrend driven by AI infrastructure demand. Shorting NVDA into a sector-wide AI buildout with only 2 sellers — one with a small amount — and no confirmed 3+ cluster of committee overseers dumping simultaneously is very high risk. The rule that shorts require real conviction in strong uptrends applies here. SKIP rather than short.",
+      "key_risk": "NVDA is in a strong secular uptrend. Only 2 sellers without confirmed committee oversight makes this a weak short signal. Unlimited downside risk of a short in a momentum name."
     },
     {
       "ticker": "T",
       "action": "SKIP",
-      "confidence": 0.45,
-      "reasoning": "2 politicians selling AT&T (Fetterman, Gottheimer) with minimal dollar amounts ($1K-$15K each). This is the weakest possible short signal — low actor count, no identified committee oversight angle specific to telecom, and small position sizes suggesting routine portfolio trimming. T is a slow-moving telecom stock with high dividend yield; these sales could easily be rebalancing. Not enough conviction to short.",
-      "key_risk": "Insufficient signal strength. Small dollar amounts and lack of committee-oversight context make this indistinguishable from routine portfolio maintenance. No genuine conviction to short."
+      "confidence": 0.52,
+      "reasoning": "2 politicians selling T (Fetterman, Gottheimer) but both at very small amounts ($1K-$15K each). T (AT&T) is a telecom utility with a high dividend, often held and sold for income/rebalancing reasons unrelated to inside information. Amounts are de minimis. No committee oversight edge confirmed. Insufficient conviction to short — the sell amounts suggest routine portfolio trimming rather than informed exit.",
+      "key_risk": "Small sell amounts suggest routine rebalancing, not informed conviction. T's telecom utility nature means selling could simply reflect dividend harvesting or tax-loss behavior."
     }
   ],
   "entries_placed": [],
-  "exits_placed": [
-    {
-      "symbol": "NVDA",
-      "qty": "3",
-      "side": "sell",
-      "reason": "signal_reversal (2 pols now selling, plpc=-3.3%)",
-      "order_id": "532f6cf6-c3c9-4e46-af1f-fc519d8ce71b",
-      "status": "accepted"
-    }
-  ],
+  "exits_placed": [],
   "open_positions": [
     {
       "symbol": "AMZN",
       "qty": 4.0,
       "side": "long",
       "avg_entry_price": 271.11,
-      "current_price": 245.7311,
-      "market_value": 982.9244,
-      "unrealized_pl": -101.5156,
-      "unrealized_plpc": -0.09361
+      "current_price": 246.03,
+      "market_value": 984.12,
+      "unrealized_pl": -100.32,
+      "unrealized_plpc": -0.09251
     },
     {
       "symbol": "BA",
       "qty": 52.0,
       "side": "long",
       "avg_entry_price": 221.340577,
-      "current_price": 214.54,
-      "market_value": 11156.08,
-      "unrealized_pl": -353.630004,
-      "unrealized_plpc": -0.03072
+      "current_price": 215.45,
+      "market_value": 11203.4,
+      "unrealized_pl": -306.310004,
+      "unrealized_plpc": -0.02661
     },
     {
       "symbol": "CEG",
       "qty": 24.9553,
       "side": "long",
       "avg_entry_price": 283.115547,
-      "current_price": 254.1902,
-      "market_value": 6343.392698,
-      "unrealized_pl": -721.840712,
-      "unrealized_plpc": -0.10217
+      "current_price": 254.83,
+      "market_value": 6359.359099,
+      "unrealized_pl": -705.874311,
+      "unrealized_plpc": -0.09991
     },
     {
       "symbol": "GS",
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 994.65,
-      "current_price": 1037.0,
-      "market_value": 2074.0,
-      "unrealized_pl": 84.7,
-      "unrealized_plpc": 0.04258
+      "current_price": 1038.68,
+      "market_value": 2077.36,
+      "unrealized_pl": 88.06,
+      "unrealized_plpc": 0.04427
     },
     {
       "symbol": "JPM",
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 298.1,
-      "current_price": 311.98,
-      "market_value": 623.96,
-      "unrealized_pl": 27.76,
-      "unrealized_plpc": 0.04656
+      "current_price": 312.37,
+      "market_value": 624.74,
+      "unrealized_pl": 28.54,
+      "unrealized_plpc": 0.04787
     },
     {
       "symbol": "LMT",
@@ -235,50 +226,50 @@
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 619.34,
-      "current_price": 589.76,
-      "market_value": 1179.52,
-      "unrealized_pl": -59.16,
-      "unrealized_plpc": -0.04776
+      "current_price": 593.0,
+      "market_value": 1186.0,
+      "unrealized_pl": -52.68,
+      "unrealized_plpc": -0.04253
     },
     {
       "symbol": "MSFT",
       "qty": 9.1719,
       "side": "long",
       "avg_entry_price": 412.401651,
-      "current_price": 412.5,
-      "market_value": 3783.40875,
-      "unrealized_pl": 0.902047,
-      "unrealized_plpc": 0.00024
+      "current_price": 416.67,
+      "market_value": 3821.655573,
+      "unrealized_pl": 39.14887,
+      "unrealized_plpc": 0.01035
     },
     {
       "symbol": "NVDA",
       "qty": 3.0,
       "side": "long",
       "avg_entry_price": 211.086667,
-      "current_price": 204.0378,
-      "market_value": 612.1134,
-      "unrealized_pl": -21.146601,
-      "unrealized_plpc": -0.03339
+      "current_price": 205.1,
+      "market_value": 615.3,
+      "unrealized_pl": -17.960001,
+      "unrealized_plpc": -0.02836
     },
     {
       "symbol": "QCOM",
       "qty": -8.0,
       "side": "short",
       "avg_entry_price": 241.789286,
-      "current_price": 212.18,
-      "market_value": -1697.44,
-      "unrealized_pl": 236.874288,
-      "unrealized_plpc": 0.12246
+      "current_price": 215.94,
+      "market_value": -1727.52,
+      "unrealized_pl": 206.794288,
+      "unrealized_plpc": 0.10691
     },
     {
       "symbol": "TSLA",
       "qty": 3.0,
       "side": "long",
       "avg_entry_price": 439.41,
-      "current_price": 391.32,
-      "market_value": 1173.96,
-      "unrealized_pl": -144.27,
-      "unrealized_plpc": -0.10944
+      "current_price": 391.0,
+      "market_value": 1173.0,
+      "unrealized_pl": -145.23,
+      "unrealized_plpc": -0.11017
     }
   ],
   "consensus_buys": [
@@ -307,7 +298,7 @@
         {
           "politician": "Josh Gottheimer",
           "date": "2026-06-04",
-          "amount": "$500,001 - $1,000,000",
+          "amount": "$250,001 - $500,000",
           "chamber": "House"
         }
       ],
@@ -317,7 +308,7 @@
       "source": "Consensus_BUY",
       "politician_or_entity": "4 politicians buying",
       "reason": "4 politicians buying MSFT: Warner, Boozman, Fetterman, Gottheimer",
-      "sentiment_score": 0.134,
+      "sentiment_score": 0.128,
       "article_count": 50
     },
     {
@@ -331,15 +322,15 @@
           "chamber": "Senate"
         },
         {
-          "politician": "Tim Walberg",
-          "date": "2026-06-04",
-          "amount": "$15,001 - $50,000",
-          "chamber": "House"
-        },
-        {
           "politician": "Cleo Fields",
           "date": "2026-06-04",
           "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        },
+        {
+          "politician": "Tim Walberg",
+          "date": "2026-06-04",
+          "amount": "$15,001 - $50,000",
           "chamber": "House"
         },
         {
@@ -354,7 +345,7 @@
       "action": "BUY",
       "source": "Consensus_BUY",
       "politician_or_entity": "4 politicians buying",
-      "reason": "4 politicians buying AAPL: Warner, Walberg, Fields, Case",
+      "reason": "4 politicians buying AAPL: Warner, Fields, Walberg, Case",
       "sentiment_score": 0.0,
       "article_count": 0
     },
@@ -559,7 +550,7 @@
       "score": 35,
       "breakdown": [
         "Trading activity (37): +10",
-        "Committee conflicts (12): +25"
+        "Committee conflicts (11): +25"
       ],
       "data_quality": "HIGH",
       "committees": [
@@ -699,19 +690,19 @@
       "committees": []
     },
     {
-      "name": "Jake Auchincloss",
+      "name": "Thomas H Kean",
       "score": 10,
       "breakdown": [
-        "Trading activity (2): +10"
+        "Trading activity (5): +10"
       ],
       "data_quality": "HIGH",
       "committees": []
     },
     {
-      "name": "Thomas H Kean",
+      "name": "Jake Auchincloss",
       "score": 10,
       "breakdown": [
-        "Trading activity (5): +10"
+        "Trading activity (2): +10"
       ],
       "data_quality": "HIGH",
       "committees": []
@@ -1739,9 +1730,61 @@
       "corruption_score": 35,
       "score_breakdown": [
         "Trading activity (37): +10",
-        "Committee conflicts (12): +25"
+        "Committee conflicts (11): +25"
       ],
       "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "ABBV",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-05",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "AbbVie Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "AMD",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-05",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Advanced Micro Devices Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "ABT",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-27",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Abbott Laboratories"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "TWLO",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-04",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Twilio Inc"
+        },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
@@ -1762,8 +1805,8 @@
           "politician_display": "Josh Gottheimer",
           "ticker": "MSFT",
           "trade_type": "sale",
-          "amount_raw": "$500,001 - $1,000,000",
-          "amount_midpoint": 750000,
+          "amount_raw": "$250,001 - $500,000",
+          "amount_midpoint": 375000,
           "transaction_date": "2026-05-19",
           "disclosure_date": "2026-06-04",
           "asset_description": "Microsoft Corp"
@@ -1773,13 +1816,65 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "MSFT",
+          "ticker": "PANW",
           "trade_type": "purchase",
-          "amount_raw": "$500,001 - $1,000,000",
-          "amount_midpoint": 750000,
-          "transaction_date": "2026-05-19",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-14",
           "disclosure_date": "2026-06-04",
-          "asset_description": "Microsoft Corp"
+          "asset_description": "Palo Alto Networks Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "NSRGY",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-05",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Nestle SA, Cham Und Vevey"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "NSRGY",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-14",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Nestle SA, Cham Und Vevey"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "TPH",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-15",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Tri Pointe Homes Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "SNDK",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "SANDISK CORP"
         },
         {
           "chamber": "House",
@@ -1812,23 +1907,10 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "NSRGY",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-14",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Nestle SA, Cham Und Vevey"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
           "ticker": "MSFT",
-          "trade_type": "sale",
-          "amount_raw": "$250,001 - $500,000",
-          "amount_midpoint": 375000,
+          "trade_type": "purchase",
+          "amount_raw": "$500,001 - $1,000,000",
+          "amount_midpoint": 750000,
           "transaction_date": "2026-05-19",
           "disclosure_date": "2026-06-04",
           "asset_description": "Microsoft Corp"
@@ -1838,26 +1920,13 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "LITE",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-22",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Lumentum Holdings Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "INTU",
+          "ticker": "MSFT",
           "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-22",
+          "amount_raw": "$500,001 - $1,000,000",
+          "amount_midpoint": 750000,
+          "transaction_date": "2026-05-19",
           "disclosure_date": "2026-06-04",
-          "asset_description": "Intuit Inc"
+          "asset_description": "Microsoft Corp"
         },
         {
           "chamber": "House",
@@ -1877,91 +1946,143 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "NSRGY",
+          "ticker": "INTU",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-05-05",
+          "transaction_date": "2026-05-22",
           "disclosure_date": "2026-06-04",
-          "asset_description": "Nestle SA, Cham Und Vevey"
+          "asset_description": "Intuit Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "PANW",
+          "ticker": "LITE",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-05-14",
+          "transaction_date": "2026-05-22",
           "disclosure_date": "2026-06-04",
-          "asset_description": "Palo Alto Networks Inc"
+          "asset_description": "Lumentum Holdings Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "SNDK",
+          "ticker": "FCX",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-05-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "SANDISK CORP"
+          "transaction_date": "2026-04-15",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Freeport-McMoRan Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "ABBV",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-05",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "AbbVie Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "TWLO",
+          "ticker": "FWRG",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-05-04",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Twilio Inc"
+          "transaction_date": "2026-04-06",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "FIRST WATCH RESTAURA GRO INC"
         },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "ABT",
+          "ticker": "TSCO",
           "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-27",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Abbott Laboratories"
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Tractor Supply Co"
         },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "TPH",
+          "ticker": "NOW",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-05-15",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Tri Pointe Homes Inc"
+          "transaction_date": "2026-04-24",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "ServiceNow Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "SYF",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Synchrony Financial"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "DLTR",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Dollar Tree Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "PFGC",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "PERFORMANCE FOOD GROUP COMPANY"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "NTES",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-06",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Netease Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "F",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "Ford Motor Co"
         },
         {
           "chamber": "House",
@@ -1972,8 +2093,8 @@
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-05-05",
-          "disclosure_date": "2026-06-04",
+          "transaction_date": "2026-04-27",
+          "disclosure_date": "2026-05-20",
           "asset_description": "Advanced Micro Devices Inc"
         },
         {
@@ -1981,39 +2102,13 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "CBZ",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-06",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "CBIZ Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "T",
+          "ticker": "MMM",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-04-09",
+          "transaction_date": "2026-04-28",
           "disclosure_date": "2026-05-20",
-          "asset_description": "AT&T Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "ALLY",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Ally Financial Inc"
+          "asset_description": "3M Co"
         },
         {
           "chamber": "House",
@@ -2027,45 +2122,6 @@
           "transaction_date": "2026-04-23",
           "disclosure_date": "2026-05-20",
           "asset_description": "Advanced Micro Devices Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "IFNNY",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-13",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Infineon Technologies AG"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "IBM",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-24",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "International Business Machines Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "GS",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-16",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "The Goldman Sachs Group Inc"
         },
         {
           "chamber": "House",
@@ -2098,37 +2154,11 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "HD",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "The Home Depot Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "DRI",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Darden Restaurants Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
           "ticker": "GS",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-16",
           "disclosure_date": "2026-05-20",
           "asset_description": "The Goldman Sachs Group Inc"
         },
@@ -2137,91 +2167,52 @@
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "HDB",
+          "ticker": "ALLY",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-04-13",
+          "transaction_date": "2026-04-09",
           "disclosure_date": "2026-05-20",
-          "asset_description": "H D F C Bank Ltd"
+          "asset_description": "Ally Financial Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "FWRG",
+          "ticker": "T",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-09",
+          "disclosure_date": "2026-05-20",
+          "asset_description": "AT&T Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Josh Gottheimer",
+          "politician": "josh gottheimer",
+          "politician_display": "Josh Gottheimer",
+          "ticker": "CBZ",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-04-06",
           "disclosure_date": "2026-05-20",
-          "asset_description": "FIRST WATCH RESTAURA GRO INC"
+          "asset_description": "CBIZ Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Josh Gottheimer",
           "politician": "josh gottheimer",
           "politician_display": "Josh Gottheimer",
-          "ticker": "SYF",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Synchrony Financial"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "PFGC",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-04-09",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "PERFORMANCE FOOD GROUP COMPANY"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "FCX",
+          "ticker": "IFNNY",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-04-15",
+          "transaction_date": "2026-04-13",
           "disclosure_date": "2026-05-20",
-          "asset_description": "Freeport-McMoRan Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "AMD",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-27",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "Advanced Micro Devices Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Josh Gottheimer",
-          "politician": "josh gottheimer",
-          "politician_display": "Josh Gottheimer",
-          "ticker": "MMM",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-28",
-          "disclosure_date": "2026-05-20",
-          "asset_description": "3M Co"
+          "asset_description": "Infineon Technologies AG"
         }
       ],
       "offshore_matches": [],
@@ -3510,6 +3501,136 @@
           "politician_raw": "Tim Walberg",
           "politician": "tim walberg",
           "politician_display": "Tim Walberg",
+          "ticker": "J",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2025-02-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Jacobs Engineering Group Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "UAA",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-02-10",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Under Armour Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "UAA",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-02-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Under Armour Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "LHX",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2025-02-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "L3Harris Technologies Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "LMT",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-02-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Lockheed Martin Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "FSSL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-02-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "FS SPECIALTY LENDING FUND"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "FSSL",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-01",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "FS SPECIALTY LENDING FUND"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "WFC",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2025-02-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Wells Fargo & Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "BA",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2025-02-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Boeing Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
+          "ticker": "ETN",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2025-02-07",
+          "disclosure_date": "2026-06-04",
+          "asset_description": "Eaton Corp PLC"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Tim Walberg",
+          "politician": "tim walberg",
+          "politician_display": "Tim Walberg",
           "ticker": "AAPL",
           "trade_type": "purchase",
           "amount_raw": "$15,001 - $50,000",
@@ -3549,19 +3670,6 @@
           "politician_raw": "Tim Walberg",
           "politician": "tim walberg",
           "politician_display": "Tim Walberg",
-          "ticker": "BA",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2025-02-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Boeing Co"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
           "ticker": "XOM",
           "trade_type": "purchase",
           "amount_raw": "$15,001 - $50,000",
@@ -3569,32 +3677,6 @@
           "transaction_date": "2025-02-07",
           "disclosure_date": "2026-06-04",
           "asset_description": "Exxon Mobil Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "BAC",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2025-02-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Bank of America Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "ETN",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2025-02-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Eaton Corp PLC"
         },
         {
           "chamber": "House",
@@ -3614,104 +3696,13 @@
           "politician_raw": "Tim Walberg",
           "politician": "tim walberg",
           "politician_display": "Tim Walberg",
-          "ticker": "FSSL",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2025-02-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "FS SPECIALTY LENDING FUND"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "UAA",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-02-10",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Under Armour Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "J",
+          "ticker": "BAC",
           "trade_type": "purchase",
           "amount_raw": "$15,001 - $50,000",
           "amount_midpoint": 32500,
           "transaction_date": "2025-02-07",
           "disclosure_date": "2026-06-04",
-          "asset_description": "Jacobs Engineering Group Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "UAA",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2025-02-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Under Armour Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "LMT",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2025-02-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Lockheed Martin Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "WFC",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2025-02-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "Wells Fargo & Co"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "FSSL",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-01",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "FS SPECIALTY LENDING FUND"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Tim Walberg",
-          "politician": "tim walberg",
-          "politician_display": "Tim Walberg",
-          "ticker": "LHX",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2025-02-07",
-          "disclosure_date": "2026-06-04",
-          "asset_description": "L3Harris Technologies Inc"
+          "asset_description": "Bank of America Corp"
         }
       ],
       "offshore_matches": [],
@@ -3750,6 +3741,74 @@
       "avg_return": 0,
       "data_quality": "HIGH"
     },
+    "Kevin Hern": {
+      "name": "Kevin Hern",
+      "committees": [],
+      "corruption_score": 10,
+      "score_breakdown": [
+        "Trading activity (4): +10"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Kevin Hern",
+          "politician": "kevin hern",
+          "politician_display": "Kevin Hern",
+          "ticker": "DVN",
+          "trade_type": "exchange",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-08",
+          "disclosure_date": "2026-06-03",
+          "asset_description": "Devon Energy Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Kevin Hern",
+          "politician": "kevin hern",
+          "politician_display": "Kevin Hern",
+          "ticker": "DVN",
+          "trade_type": "exchange",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-08",
+          "disclosure_date": "2026-06-03",
+          "asset_description": "Devon Energy Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Kevin Hern",
+          "politician": "kevin hern",
+          "politician_display": "Kevin Hern",
+          "ticker": "CTRA",
+          "trade_type": "exchange",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-08",
+          "disclosure_date": "2026-06-03",
+          "asset_description": "Coterra Energy Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Kevin Hern",
+          "politician": "kevin hern",
+          "politician_display": "Kevin Hern",
+          "ticker": "CTRA",
+          "trade_type": "exchange",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-08",
+          "disclosure_date": "2026-06-03",
+          "asset_description": "Coterra Energy Inc"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "HIGH"
+    },
     "Virginia Foxx": {
       "name": "Virginia Foxx",
       "committees": [],
@@ -3779,74 +3838,6 @@
       "avg_return": 0,
       "data_quality": "HIGH"
     },
-    "Kevin Hern": {
-      "name": "Kevin Hern",
-      "committees": [],
-      "corruption_score": 10,
-      "score_breakdown": [
-        "Trading activity (4): +10"
-      ],
-      "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "Kevin Hern",
-          "politician": "kevin hern",
-          "politician_display": "Kevin Hern",
-          "ticker": "CTRA",
-          "trade_type": "exchange",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-05-08",
-          "disclosure_date": "2026-06-03",
-          "asset_description": "Coterra Energy Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Kevin Hern",
-          "politician": "kevin hern",
-          "politician_display": "Kevin Hern",
-          "ticker": "CTRA",
-          "trade_type": "exchange",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-05-08",
-          "disclosure_date": "2026-06-03",
-          "asset_description": "Coterra Energy Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Kevin Hern",
-          "politician": "kevin hern",
-          "politician_display": "Kevin Hern",
-          "ticker": "DVN",
-          "trade_type": "exchange",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-05-08",
-          "disclosure_date": "2026-06-03",
-          "asset_description": "Devon Energy Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Kevin Hern",
-          "politician": "kevin hern",
-          "politician_display": "Kevin Hern",
-          "ticker": "DVN",
-          "trade_type": "exchange",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-05-08",
-          "disclosure_date": "2026-06-03",
-          "asset_description": "Devon Energy Corp"
-        }
-      ],
-      "offshore_matches": [],
-      "recent_posts": [],
-      "win_rate": 0,
-      "total_tracked_trades": 0,
-      "avg_return": 0,
-      "data_quality": "HIGH"
-    },
     "Christian Menefee": {
       "name": "Christian Menefee",
       "committees": [],
@@ -3855,6 +3846,19 @@
         "Trading activity (3): +10"
       ],
       "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Christian Menefee",
+          "politician": "christian menefee",
+          "politician_display": "Christian Menefee",
+          "ticker": "PINS",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-02-23",
+          "disclosure_date": "2026-06-02",
+          "asset_description": "Pinterest Inc"
+        },
         {
           "chamber": "House",
           "politician_raw": "Christian Menefee",
@@ -3878,19 +3882,6 @@
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-02-17",
-          "disclosure_date": "2026-06-02",
-          "asset_description": "Pinterest Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Christian Menefee",
-          "politician": "christian menefee",
-          "politician_display": "Christian Menefee",
-          "ticker": "PINS",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-02-23",
           "disclosure_date": "2026-06-02",
           "asset_description": "Pinterest Inc"
         }
@@ -3973,65 +3964,13 @@
           "politician_raw": "David Taylor",
           "politician": "david taylor",
           "politician_display": "David Taylor",
-          "ticker": "MEDP",
+          "ticker": "HD",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-15",
           "disclosure_date": "2026-05-29",
-          "asset_description": "Medpace Holdings Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "MEDP",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-15",
-          "disclosure_date": "2026-05-29",
-          "asset_description": "Medpace Holdings Inc (1)"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "T",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-15",
-          "disclosure_date": "2026-05-29",
-          "asset_description": "AT&T Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "MEDP",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-15",
-          "disclosure_date": "2026-05-29",
-          "asset_description": "Medpace Holdings Inc (2)"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "GOOGL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-15",
-          "disclosure_date": "2026-05-29",
-          "asset_description": "Alphabet Inc"
+          "asset_description": "The Home Depot Inc"
         },
         {
           "chamber": "House",
@@ -4051,39 +3990,13 @@
           "politician_raw": "David Taylor",
           "politician": "david taylor",
           "politician_display": "David Taylor",
-          "ticker": "PH",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-15",
-          "disclosure_date": "2026-05-29",
-          "asset_description": "Parker-Hannifin Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "GOOGL",
+          "ticker": "AAPL",
           "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-05-15",
-          "disclosure_date": "2026-05-29",
-          "asset_description": "Alphabet Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "PH",
-          "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-15",
           "disclosure_date": "2026-05-29",
-          "asset_description": "Parker-Hannifin Corp (1)"
+          "asset_description": "Apple Inc"
         },
         {
           "chamber": "House",
@@ -4116,26 +4029,91 @@
           "politician_raw": "David Taylor",
           "politician": "david taylor",
           "politician_display": "David Taylor",
-          "ticker": "HD",
+          "ticker": "PH",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-15",
           "disclosure_date": "2026-05-29",
-          "asset_description": "The Home Depot Inc"
+          "asset_description": "Parker-Hannifin Corp (1)"
         },
         {
           "chamber": "House",
           "politician_raw": "David Taylor",
           "politician": "david taylor",
           "politician_display": "David Taylor",
-          "ticker": "HD",
+          "ticker": "MEDP",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-15",
           "disclosure_date": "2026-05-29",
-          "asset_description": "The Home Depot Inc (1)"
+          "asset_description": "Medpace Holdings Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "PH",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-15",
+          "disclosure_date": "2026-05-29",
+          "asset_description": "Parker-Hannifin Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "MEDP",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-15",
+          "disclosure_date": "2026-05-29",
+          "asset_description": "Medpace Holdings Inc (2)"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "T",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-15",
+          "disclosure_date": "2026-05-29",
+          "asset_description": "AT&T Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "MEDP",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-15",
+          "disclosure_date": "2026-05-29",
+          "asset_description": "Medpace Holdings Inc (1)"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "GOOGL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-15",
+          "disclosure_date": "2026-05-29",
+          "asset_description": "Alphabet Inc"
         },
         {
           "chamber": "House",
@@ -4155,13 +4133,26 @@
           "politician_raw": "David Taylor",
           "politician": "david taylor",
           "politician_display": "David Taylor",
-          "ticker": "AAPL",
-          "trade_type": "sale",
+          "ticker": "HD",
+          "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-15",
           "disclosure_date": "2026-05-29",
-          "asset_description": "Apple Inc"
+          "asset_description": "The Home Depot Inc (1)"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "GOOGL",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-15",
+          "disclosure_date": "2026-05-29",
+          "asset_description": "Alphabet Inc"
         }
       ],
       "offshore_matches": [],
@@ -4184,6 +4175,19 @@
           "politician_raw": "Jonathan Jackson",
           "politician": "jonathan jackson",
           "politician_display": "Jonathan Jackson",
+          "ticker": "V",
+          "trade_type": "sale",
+          "amount_raw": "$50,001 - $100,000",
+          "amount_midpoint": 75000,
+          "transaction_date": "2026-04-24",
+          "disclosure_date": "2026-05-28",
+          "asset_description": "Visa Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Jonathan Jackson",
+          "politician": "jonathan jackson",
+          "politician_display": "Jonathan Jackson",
           "ticker": "ORLY",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
@@ -4197,26 +4201,13 @@
           "politician_raw": "Jonathan Jackson",
           "politician": "jonathan jackson",
           "politician_display": "Jonathan Jackson",
-          "ticker": "THC",
-          "trade_type": "sale",
+          "ticker": "SPG",
+          "trade_type": "purchase",
           "amount_raw": "$15,001 - $50,000",
           "amount_midpoint": 32500,
           "transaction_date": "2026-04-20",
           "disclosure_date": "2026-05-28",
-          "asset_description": "Tenet Healthcare Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Jonathan Jackson",
-          "politician": "jonathan jackson",
-          "politician_display": "Jonathan Jackson",
-          "ticker": "V",
-          "trade_type": "sale",
-          "amount_raw": "$50,001 - $100,000",
-          "amount_midpoint": 75000,
-          "transaction_date": "2026-04-24",
-          "disclosure_date": "2026-05-28",
-          "asset_description": "Visa Inc"
+          "asset_description": "Simon Property Group Inc"
         },
         {
           "chamber": "House",
@@ -4236,13 +4227,94 @@
           "politician_raw": "Jonathan Jackson",
           "politician": "jonathan jackson",
           "politician_display": "Jonathan Jackson",
-          "ticker": "SPG",
-          "trade_type": "purchase",
+          "ticker": "THC",
+          "trade_type": "sale",
           "amount_raw": "$15,001 - $50,000",
           "amount_midpoint": 32500,
           "transaction_date": "2026-04-20",
           "disclosure_date": "2026-05-28",
-          "asset_description": "Simon Property Group Inc"
+          "asset_description": "Tenet Healthcare Corp"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "HIGH"
+    },
+    "Thomas H Kean": {
+      "name": "Thomas H Kean",
+      "committees": [],
+      "corruption_score": 10,
+      "score_breakdown": [
+        "Trading activity (5): +10"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "TXN",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-14",
+          "disclosure_date": "2026-05-25",
+          "asset_description": "Texas Instruments Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "TTWO",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-21",
+          "disclosure_date": "2026-05-25",
+          "asset_description": "Take-Two Interactive Software Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "ADI",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-29",
+          "disclosure_date": "2026-05-25",
+          "asset_description": "Analog Devices Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "NVT",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-15",
+          "disclosure_date": "2026-05-25",
+          "asset_description": "nVent Electric PLC"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "FCNCA",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-04-14",
+          "disclosure_date": "2026-05-25",
+          "asset_description": "First Citizens BancShares Inc"
         }
       ],
       "offshore_matches": [],
@@ -4285,87 +4357,6 @@
           "transaction_date": "2026-05-18",
           "disclosure_date": "2026-05-25",
           "asset_description": "State Street Corporation (1)"
-        }
-      ],
-      "offshore_matches": [],
-      "recent_posts": [],
-      "win_rate": 0,
-      "total_tracked_trades": 0,
-      "avg_return": 0,
-      "data_quality": "HIGH"
-    },
-    "Thomas H Kean": {
-      "name": "Thomas H Kean",
-      "committees": [],
-      "corruption_score": 10,
-      "score_breakdown": [
-        "Trading activity (5): +10"
-      ],
-      "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "TTWO",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-21",
-          "disclosure_date": "2026-05-25",
-          "asset_description": "Take-Two Interactive Software Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "FCNCA",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-14",
-          "disclosure_date": "2026-05-25",
-          "asset_description": "First Citizens BancShares Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "ADI",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-29",
-          "disclosure_date": "2026-05-25",
-          "asset_description": "Analog Devices Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "TXN",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-14",
-          "disclosure_date": "2026-05-25",
-          "asset_description": "Texas Instruments Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "NVT",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-04-15",
-          "disclosure_date": "2026-05-25",
-          "asset_description": "nVent Electric PLC"
         }
       ],
       "offshore_matches": [],
