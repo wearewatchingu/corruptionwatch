@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-07-01 02:46",
-  "timestamp_iso": "2026-07-01T02:46:04.593751",
-  "cycle_seconds": 157.742884,
+  "timestamp": "2026-07-01 03:48",
+  "timestamp_iso": "2026-07-01T03:48:46.653447",
+  "cycle_seconds": 161.82011,
   "summary": {
     "long_candidates": 1,
-    "short_candidates": 1,
-    "decisions": 8,
+    "short_candidates": 2,
+    "decisions": 9,
     "entries_placed": 0,
     "exits_placed": 0,
     "open_positions": 8,
-    "consensus_buys": 4,
+    "consensus_buys": 5,
     "consensus_sells": 7
   },
   "long_candidates": [
@@ -84,6 +84,38 @@
       "reason": "3 politicians selling ACN: Boozman, Allen, Johnson",
       "sentiment_score": 0.0,
       "article_count": 0
+    },
+    {
+      "ticker": "NVDA",
+      "actor_count": 3,
+      "actors": [
+        {
+          "politician": "Sheldon Whitehouse",
+          "date": "2026-06-02",
+          "amount": "$100,001 - $250,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "Matt Van Epps",
+          "date": "2026-06-17",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        },
+        {
+          "politician": "Ro Khanna",
+          "date": "2026-06-11",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "sell",
+      "score": 75,
+      "action": "SELL_SHORT",
+      "source": "Consensus_SELL",
+      "politician_or_entity": "3 politicians selling",
+      "reason": "3 politicians selling NVDA: Whitehouse, Epps, Khanna",
+      "sentiment_score": 0.0,
+      "article_count": 0
     }
   ],
   "decisions": [
@@ -91,57 +123,64 @@
       "ticker": "GOOGL",
       "action": "BUY",
       "confidence": 0.72,
-      "reasoning": "4 politicians buying GOOGL (Boozman, Fields, Taylor, Khanna) across both chambers creates a meaningful cluster signal. Ro Khanna sits on the House Science/Tech committee, adding committee oversight weight. Trades span May–June 2026. Counterpoint: 2 politicians (Moran, Van Epps) are selling concurrently, diluting conviction — but the 4:2 buyer-to-seller ratio still favors longs. Sentiment score is modest (0.142) with high article count (50), suggesting the stock is in the public eye, which slightly reduces insider-edge premium. Overall, cluster size and committee presence justify a BUY at moderate confidence.",
-      "key_risk": "Concurrent selling by Moran and Van Epps creates mixed signal; trades may reflect public AI/antitrust news rather than non-public information"
+      "reasoning": "4 politicians buying (Boozman, Fields, Taylor, Khanna) across both chambers creates a meaningful cluster signal. Ro Khanna notably appears as a buyer here despite also appearing as a seller in the consensus_sellers list — that mixed signal from the same politician slightly dilutes conviction. However, the buyer cluster of 4 is stronger than the seller cluster of 2 (Moran, Van Epps). Net signal favors long. Trade amounts are small ($1K-$15K), limiting the insider-knowledge premium, but breadth of the cluster is genuine. Modest sentiment score (0.142, 50 articles) suggests no obvious public catalyst driving the buys.",
+      "key_risk": "Ro Khanna is simultaneously in both buy and sell lists on GOOGL — this contradiction suggests possible portfolio rebalancing rather than informed conviction. Also, all trades are small-dollar amounts, reducing the signal quality."
     },
     {
       "ticker": "ACN",
       "action": "SELL_SHORT",
-      "confidence": 0.65,
-      "reasoning": "3 politicians selling ACN in a tight 3-day window (June 15–17, 2026) — Boozman, Allen, and Johnson — constitutes a real cluster sell signal. The 3-actor threshold is met, which meaningfully strengthens the short thesis per the framework. Allen's position is larger ($15k–$50k), adding weight. Zero news articles and 0.0 sentiment score suggest this is NOT a reaction to public information, making the insider-edge hypothesis more plausible. Boozman is a Senate Appropriations member with oversight of IT/consulting contracts, relevant to Accenture's government business. Key caution: short has unlimited downside, and without confirmed committee oversight specifically on federal IT procurement, conviction is tempered.",
-      "key_risk": "ACN is a large-cap with significant government contract exposure — selling may reflect portfolio rebalancing, not adverse contract news; unlimited short downside if stock rallies"
-    },
-    {
-      "ticker": "JPM",
-      "action": "SKIP",
-      "confidence": 0.4,
-      "reasoning": "Only 2 politicians buying (Fetterman, Khanna), neither with confirmed direct banking committee oversight. Cluster size is below the threshold needed for genuine conviction. JPM is a widely held blue-chip that politicians routinely own as a diversified holding — this likely reflects general market positioning, not insider information. Score of 50 reflects weak signal.",
-      "key_risk": "Insufficient cluster size and no confirmed committee oversight; trade may simply reflect broad market bullishness on financials"
-    },
-    {
-      "ticker": "CEG",
-      "action": "BUY",
-      "confidence": 0.58,
-      "reasoning": "2 Senate-level politicians buying Constellation Energy (Boozman and Warner) in early May 2026. Senate members often sit on Energy committees and nuclear power is a key policy area (data center power demand, nuclear relicensing). Mark Warner in particular has been active on energy policy. Two senators buying a nuclear utility is a mildly compelling signal given the policy tailwind. However, 2 actors is a thin cluster and trade sizes are small ($1k–$15k), limiting conviction.",
-      "key_risk": "Small trade sizes and thin cluster (only 2 actors) reduce conviction; nuclear energy is a public policy theme, so trades may reflect macro views rather than non-public information"
-    },
-    {
-      "ticker": "AMCR",
-      "action": "SKIP",
-      "confidence": 0.35,
-      "reasoning": "2 politicians buying AMCR (Kean, Khanna) with minimal cluster signal. Amcor is a packaging/materials company with no obvious policy catalyst or committee oversight angle. Ro Khanna buying across multiple tickers on the same date (June 11) suggests portfolio rebalancing rather than targeted insider conviction. Insufficient signal to warrant a position.",
-      "key_risk": "No identifiable policy/committee angle; Khanna appears to be buying multiple names on the same date suggesting broad rebalancing, not targeted conviction"
+      "confidence": 0.62,
+      "reasoning": "3 politicians selling in a tight 3-day window (Jun 15-17) — a genuine cluster. Richard Allen's larger trade ($15K-$50K) adds weight. However, none of these politicians are confirmed to sit on committees with direct oversight of Accenture's key business lines (federal IT contracting, consulting). Sentiment score is zero with no articles, meaning no public news is driving this — which could be a positive sign (not just reacting to public info) or a sign of pure portfolio management. Short signal meets the 3-politician cluster threshold but lack of confirmed committee oversight and small dollar sizes temper conviction.",
+      "key_risk": "No confirmed committee oversight link. Sells could be routine profit-taking or tax-loss harvesting, not informed trading. ACN is a large-cap federal contractor — shorting it carries meaningful squeeze risk if government IT spending news is positive."
     },
     {
       "ticker": "NVDA",
       "action": "SKIP",
+      "confidence": 0.55,
+      "reasoning": "3 politicians selling (Whitehouse, Van Epps, Khanna), with Whitehouse's $100K-$250K sale being the most significant. However, NVDA is in an extraordinarily strong secular uptrend driven by AI infrastructure demand — shorting into this trend is high-risk even with a 3-politician sell cluster. Ro Khanna appears in both the GOOGL buy list and NVDA sell list, suggesting broad portfolio rebalancing rather than targeted informed selling. Whitehouse is an Environment/Climate senator — not a natural NVDA oversight figure. The short signal exists but the risk/reward of fighting the AI chip supercycle is unfavorable. Skipping rather than shorting.",
+      "key_risk": "NVDA's AI-driven uptrend makes this one of the most dangerous short candidates in the market. A short could face catastrophic squeeze. No confirmed committee oversight of semiconductor/AI sector among the sellers."
+    },
+    {
+      "ticker": "JPM",
+      "action": "HOLD",
+      "confidence": 0.45,
+      "reasoning": "Only 2 politicians buying (Fetterman, Khanna) — below the cluster threshold for genuine conviction. Ro Khanna appears in multiple buy lists simultaneously, suggesting passive ETF-style diversification rather than targeted informed buying. Fetterman sits in the Senate but is not on the Banking Committee. Signal is too weak to open a new long position.",
+      "key_risk": "Insufficient cluster size and lack of committee oversight confirmation. 2-politician consensus is the weakest signal tier."
+    },
+    {
+      "ticker": "CEG",
+      "action": "BUY",
+      "confidence": 0.6,
+      "reasoning": "2 senators buying Constellation Energy (Boozman, Warner) — both in the Senate, adding chamber weight. Mark Warner sits on the Senate Intelligence and Finance Committees and is known to be well-connected on energy policy. Constellation is a nuclear energy play with strong tailwinds from AI data center power demand and potential policy support. The buys are in early May 2026, a period of increasing nuclear energy policy discussion. Two-senator consensus in nuclear/energy with potential committee relevance is a modest but real signal.",
+      "key_risk": "Only 2 politicians and minimum dollar amounts. Could be a public-information trade on AI/nuclear energy narrative already widely known. Conviction is moderate, not high."
+    },
+    {
+      "ticker": "FITB",
+      "action": "SKIP",
+      "confidence": 0.35,
+      "reasoning": "Only 2 politicians buying (Warner, Khanna), small amounts, no confirmed banking committee oversight for either. Khanna is a tech-focused House member and Warner's Finance Committee role is broad. Fifth Third Bancorp is a regional bank — the signal is too thin and lacks committee specificity to justify a new long position.",
+      "key_risk": "Minimal signal quality. 2-politician cluster with no obvious oversight connection to regional banking."
+    },
+    {
+      "ticker": "AMCR",
+      "action": "SKIP",
       "confidence": 0.3,
-      "reasoning": "Only 2 politicians selling NVDA (Whitehouse and Van Epps). NVDA is in a strong secular AI uptrend — shorting against that momentum requires very high conviction, which is absent here. Whitehouse's sale is larger ($100k–$250k) but could easily be profit-taking on a major winner. Van Epps appears to be selling multiple tickers (GOOGL, NVDA, AAPL, INTC) on the same date, suggesting routine rebalancing rather than informed selling. Two actors selling the hottest AI stock in a bull market is not a short thesis.",
-      "key_risk": "NVDA is in a powerful AI-driven uptrend; shorting against sector momentum with only 2 sellers (one appearing to mass-sell on the same date) carries extreme asymmetric downside risk"
+      "reasoning": "2 politicians buying Amcor (Kean, Khanna) — a packaging company with no obvious policy catalyst or committee oversight angle. Khanna appears across many tickers in this dataset suggesting broad diversification. Signal is too weak and the sector lacks any obvious political information advantage.",
+      "key_risk": "No discernible committee oversight or policy catalyst. Weakest signal in the dataset."
     },
     {
       "ticker": "AAPL",
       "action": "SKIP",
-      "confidence": 0.3,
-      "reasoning": "Only 2 politicians selling (Capito, Van Epps). Van Epps is selling 4+ tickers on June 17, indicating portfolio liquidation rather than informed AAPL-specific selling. Capito's May 7 sale is isolated and small. No committee oversight angle confirmed. AAPL is a megacap with strong institutional support — insufficient conviction to short.",
-      "key_risk": "Van Epps pattern of mass-selling across tickers on the same date undermines the insider signal thesis; AAPL's market strength makes shorting dangerous without high conviction"
+      "confidence": 0.4,
+      "reasoning": "Only 2 politicians selling (Capito, Van Epps) — below the conviction threshold for a short. Apple is a large-cap mega-tech name in a generally strong uptrend. Capito and Van Epps have no obvious committee oversight of Apple's business lines. Matt Van Epps appears as a seller across multiple tickers (GOOGL, NVDA, AAPL, INTC) simultaneously, strongly suggesting a broad portfolio liquidation event rather than informed targeted selling. Not shorting.",
+      "key_risk": "Van Epps' multi-ticker simultaneous selling pattern indicates portfolio rebalancing, not insider knowledge. Shorting Apple without stronger conviction is high-risk."
     },
     {
       "ticker": "INTC",
       "action": "SKIP",
-      "confidence": 0.35,
-      "reasoning": "2 politicians selling INTC (Evans, Van Epps). Again, Van Epps is selling multiple names on the same date — this is a recurring pattern that severely undermines the signal quality. Evans' sale is small. INTC has been a weak performer with well-known public headwinds, meaning any selling could simply reflect public knowledge of Intel's competitive struggles. No incremental insider edge is evident.",
-      "key_risk": "Van Epps' same-date mass-selling pattern renders his trades unreliable as insider signals; INTC's weakness is already fully public information"
+      "confidence": 0.38,
+      "reasoning": "Only 2 politicians selling (Evans, Van Epps). Van Epps is selling across 4+ tickers simultaneously — this is almost certainly a portfolio liquidation event, not targeted informed selling on INTC specifically. Dwight Evans is a House member without confirmed semiconductor committee oversight. Signal quality is very low. While INTC has its own fundamental headwinds, the political signal here adds no meaningful edge.",
+      "key_risk": "Van Epps' simultaneous multi-stock selling undermines the informativeness of this signal entirely. No standalone conviction to short."
     }
   ],
   "entries_placed": [],
@@ -162,30 +201,30 @@
       "qty": 24.9553,
       "side": "long",
       "avg_entry_price": 283.115547,
-      "current_price": 248.34,
-      "market_value": 6197.399202,
-      "unrealized_pl": -867.834208,
-      "unrealized_plpc": -0.12283
+      "current_price": 247.5,
+      "market_value": 6176.43675,
+      "unrealized_pl": -888.79666,
+      "unrealized_plpc": -0.1258
     },
     {
       "symbol": "GOOGL",
       "qty": 14.7859,
       "side": "long",
       "avg_entry_price": 356.88,
-      "current_price": 355.35,
-      "market_value": 5254.169565,
-      "unrealized_pl": -22.622427,
-      "unrealized_plpc": -0.00429
+      "current_price": 354.48,
+      "market_value": 5241.305832,
+      "unrealized_pl": -35.48616,
+      "unrealized_plpc": -0.00672
     },
     {
       "symbol": "GS",
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 994.65,
-      "current_price": 1011.75,
-      "market_value": 2023.5,
-      "unrealized_pl": 34.2,
-      "unrealized_plpc": 0.01719
+      "current_price": 1005.71,
+      "market_value": 2011.42,
+      "unrealized_pl": 22.12,
+      "unrealized_plpc": 0.01112
     },
     {
       "symbol": "JPM",
@@ -202,30 +241,30 @@
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 532.56,
-      "current_price": 503.9,
-      "market_value": 1007.8,
-      "unrealized_pl": -57.32,
-      "unrealized_plpc": -0.05382
+      "current_price": 508.91,
+      "market_value": 1017.82,
+      "unrealized_pl": -47.3,
+      "unrealized_plpc": -0.04441
     },
     {
       "symbol": "META",
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 619.34,
-      "current_price": 563.0,
-      "market_value": 1126.0,
-      "unrealized_pl": -112.68,
-      "unrealized_plpc": -0.09097
+      "current_price": 560.92,
+      "market_value": 1121.84,
+      "unrealized_pl": -116.84,
+      "unrealized_plpc": -0.09433
     },
     {
       "symbol": "TSLA",
       "qty": 3.0,
       "side": "long",
       "avg_entry_price": 439.41,
-      "current_price": 417.85,
-      "market_value": 1253.55,
-      "unrealized_pl": -64.68,
-      "unrealized_plpc": -0.04907
+      "current_price": 417.78,
+      "market_value": 1253.34,
+      "unrealized_pl": -64.89,
+      "unrealized_plpc": -0.04923
     }
   ],
   "consensus_buys": [
@@ -316,6 +355,30 @@
       "reason": "2 politicians buying CEG: Boozman, Warner"
     },
     {
+      "ticker": "FITB",
+      "actor_count": 2,
+      "actors": [
+        {
+          "politician": "Mark Warner",
+          "date": "2026-05-01",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "Ro Khanna",
+          "date": "2026-06-11",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "buy",
+      "score": 50,
+      "action": "BUY",
+      "source": "Consensus_BUY",
+      "politician_or_entity": "2 politicians buying",
+      "reason": "2 politicians buying FITB: Warner, Khanna"
+    },
+    {
       "ticker": "AMCR",
       "actor_count": 2,
       "actors": [
@@ -374,6 +437,38 @@
       "article_count": 0
     },
     {
+      "ticker": "NVDA",
+      "actor_count": 3,
+      "actors": [
+        {
+          "politician": "Sheldon Whitehouse",
+          "date": "2026-06-02",
+          "amount": "$100,001 - $250,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "Matt Van Epps",
+          "date": "2026-06-17",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        },
+        {
+          "politician": "Ro Khanna",
+          "date": "2026-06-11",
+          "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "sell",
+      "score": 75,
+      "action": "SELL_SHORT",
+      "source": "Consensus_SELL",
+      "politician_or_entity": "3 politicians selling",
+      "reason": "3 politicians selling NVDA: Whitehouse, Epps, Khanna",
+      "sentiment_score": 0.0,
+      "article_count": 0
+    },
+    {
       "ticker": "GOOGL",
       "actor_count": 2,
       "actors": [
@@ -396,30 +491,6 @@
       "source": "Consensus_SELL",
       "politician_or_entity": "2 politicians selling",
       "reason": "2 politicians selling GOOGL: Moran, Epps"
-    },
-    {
-      "ticker": "NVDA",
-      "actor_count": 2,
-      "actors": [
-        {
-          "politician": "Sheldon Whitehouse",
-          "date": "2026-06-02",
-          "amount": "$100,001 - $250,000",
-          "chamber": "Senate"
-        },
-        {
-          "politician": "Matt Van Epps",
-          "date": "2026-06-17",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        }
-      ],
-      "direction": "sell",
-      "score": 50,
-      "action": "SELL_SHORT",
-      "source": "Consensus_SELL",
-      "politician_or_entity": "2 politicians selling",
-      "reason": "2 politicians selling NVDA: Whitehouse, Epps"
     },
     {
       "ticker": "AAPL",
@@ -474,15 +545,15 @@
       "actor_count": 2,
       "actors": [
         {
-          "politician": "Jonathan Jackson",
-          "date": "2026-06-17",
-          "amount": "$15,001 - $50,000",
-          "chamber": "House"
-        },
-        {
           "politician": "Matt Van Epps",
           "date": "2026-06-17",
           "amount": "$1,001 - $15,000",
+          "chamber": "House"
+        },
+        {
+          "politician": "Jonathan Jackson",
+          "date": "2026-06-17",
+          "amount": "$15,001 - $50,000",
           "chamber": "House"
         }
       ],
@@ -491,7 +562,7 @@
       "action": "SELL_SHORT",
       "source": "Consensus_SELL",
       "politician_or_entity": "2 politicians selling",
-      "reason": "2 politicians selling MSFT: Jackson, Epps"
+      "reason": "2 politicians selling MSFT: Epps, Jackson"
     },
     {
       "ticker": "AMZN",
@@ -539,7 +610,7 @@
       "score": 42,
       "breakdown": [
         "Trading activity (52): +10",
-        "Committee conflicts (3): +25",
+        "Committee conflicts (6): +25",
         "Win rate 50.0% (90 trades): +7"
       ],
       "data_quality": "HIGH",
@@ -721,19 +792,19 @@
       "committees": []
     },
     {
-      "name": "Julie Johnson",
+      "name": "David Taylor",
       "score": 10,
       "breakdown": [
-        "Trading activity (2): +10"
+        "Trading activity (7): +10"
       ],
       "data_quality": "HIGH",
       "committees": []
     },
     {
-      "name": "David Taylor",
+      "name": "Julie Johnson",
       "score": 10,
       "breakdown": [
-        "Trading activity (7): +10"
+        "Trading activity (2): +10"
       ],
       "data_quality": "HIGH",
       "committees": []
@@ -746,6 +817,18 @@
       ],
       "data_quality": "HIGH",
       "committees": []
+    },
+    {
+      "name": "John Mcguire",
+      "score": 10,
+      "breakdown": [
+        "Trading activity (2): +10"
+      ],
+      "data_quality": "HIGH",
+      "committees": [
+        "Armed Services",
+        "Agriculture"
+      ]
     },
     {
       "name": "Mitch Mcconnell",
@@ -804,18 +887,6 @@
       ],
       "data_quality": "HIGH",
       "committees": []
-    },
-    {
-      "name": "John Mcguire",
-      "score": 5,
-      "breakdown": [
-        "Trading activity (1): +5"
-      ],
-      "data_quality": "HIGH",
-      "committees": [
-        "Armed Services",
-        "Agriculture"
-      ]
     },
     {
       "name": "Chip Roy",
@@ -3030,35 +3101,6 @@
       "avg_return": -1.79,
       "data_quality": "HIGH"
     },
-    "Greg Stanton": {
-      "name": "Greg Stanton",
-      "committees": [],
-      "corruption_score": 5,
-      "score_breakdown": [
-        "Trading activity (1): +5"
-      ],
-      "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "Greg Stanton",
-          "politician": "greg stanton",
-          "politician_display": "Greg Stanton",
-          "ticker": "TCNNF",
-          "trade_type": "sale",
-          "amount_raw": "$100,001 - $250,000",
-          "amount_midpoint": 175000,
-          "transaction_date": "2026-05-28",
-          "disclosure_date": "2026-06-29",
-          "asset_description": "TRULIEVE CANNABIS CORP"
-        }
-      ],
-      "offshore_matches": [],
-      "recent_posts": [],
-      "win_rate": 0,
-      "total_tracked_trades": 0,
-      "avg_return": 0,
-      "data_quality": "HIGH"
-    },
     "Cleo Fields": {
       "name": "Cleo Fields",
       "committees": [],
@@ -3067,6 +3109,19 @@
         "Trading activity (4): +10"
       ],
       "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Cleo Fields",
+          "politician": "cleo fields",
+          "politician_display": "Cleo Fields",
+          "ticker": "MSFT",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-11",
+          "disclosure_date": "2026-06-29",
+          "asset_description": "Microsoft Corp"
+        },
         {
           "chamber": "House",
           "politician_raw": "Cleo Fields",
@@ -3098,19 +3153,6 @@
           "politician_raw": "Cleo Fields",
           "politician": "cleo fields",
           "politician_display": "Cleo Fields",
-          "ticker": "MSFT",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-11",
-          "disclosure_date": "2026-06-29",
-          "asset_description": "Microsoft Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Cleo Fields",
-          "politician": "cleo fields",
-          "politician_display": "Cleo Fields",
           "ticker": "GOOGL",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
@@ -3118,6 +3160,35 @@
           "transaction_date": "2026-06-15",
           "disclosure_date": "2026-06-29",
           "asset_description": "Alphabet Inc"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "HIGH"
+    },
+    "Greg Stanton": {
+      "name": "Greg Stanton",
+      "committees": [],
+      "corruption_score": 5,
+      "score_breakdown": [
+        "Trading activity (1): +5"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Greg Stanton",
+          "politician": "greg stanton",
+          "politician_display": "Greg Stanton",
+          "ticker": "TCNNF",
+          "trade_type": "sale",
+          "amount_raw": "$100,001 - $250,000",
+          "amount_midpoint": 175000,
+          "transaction_date": "2026-05-28",
+          "disclosure_date": "2026-06-29",
+          "asset_description": "TRULIEVE CANNABIS CORP"
         }
       ],
       "offshore_matches": [],
@@ -3182,19 +3253,6 @@
           "politician_raw": "Neal P. Dunn",
           "politician": "neal p dunn",
           "politician_display": "Neal P Dunn",
-          "ticker": "T",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-05-11",
-          "disclosure_date": "2026-06-24",
-          "asset_description": "AT&T Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Neal P. Dunn",
-          "politician": "neal p dunn",
-          "politician_display": "Neal P Dunn",
           "ticker": "RF",
           "trade_type": "sale",
           "amount_raw": "$50,001 - $100,000",
@@ -3202,6 +3260,19 @@
           "transaction_date": "2026-05-11",
           "disclosure_date": "2026-06-24",
           "asset_description": "Regions Financial Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Neal P. Dunn",
+          "politician": "neal p dunn",
+          "politician_display": "Neal P Dunn",
+          "ticker": "T",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-11",
+          "disclosure_date": "2026-06-24",
+          "asset_description": "AT&T Inc"
         }
       ],
       "offshore_matches": [],
@@ -3279,19 +3350,6 @@
           "politician_raw": "Thomas H. Kean",
           "politician": "thomas h kean",
           "politician_display": "Thomas H Kean",
-          "ticker": "BDX",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-21",
-          "disclosure_date": "2026-06-19",
-          "asset_description": "Becton Dickinson and Co"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
           "ticker": "EQT",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
@@ -3312,6 +3370,19 @@
           "transaction_date": "2026-06-01",
           "disclosure_date": "2026-06-19",
           "asset_description": "Check Point Software Technologies Ltd"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "BDX",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-21",
+          "disclosure_date": "2026-06-19",
+          "asset_description": "Becton Dickinson and Co"
         }
       ],
       "offshore_matches": [],
@@ -3334,13 +3405,13 @@
           "politician_raw": "Matt Van Epps",
           "politician": "matt van epps",
           "politician_display": "Matt Van Epps",
-          "ticker": "GEV",
+          "ticker": "GE",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-16",
           "disclosure_date": "2026-06-17",
-          "asset_description": "GE VERNOVA INC"
+          "asset_description": "General Electric Co"
         },
         {
           "chamber": "House",
@@ -3360,26 +3431,13 @@
           "politician_raw": "Matt Van Epps",
           "politician": "matt van epps",
           "politician_display": "Matt Van Epps",
-          "ticker": "GE",
+          "ticker": "GEV",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-16",
           "disclosure_date": "2026-06-17",
-          "asset_description": "General Electric Co"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "MSFT",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Microsoft Corp"
+          "asset_description": "GE VERNOVA INC"
         },
         {
           "chamber": "House",
@@ -3399,6 +3457,32 @@
           "politician_raw": "Matt Van Epps",
           "politician": "matt van epps",
           "politician_display": "Matt Van Epps",
+          "ticker": "META",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Meta Platforms Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
+          "ticker": "MSFT",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Microsoft Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
           "ticker": "IBM",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
@@ -3406,19 +3490,6 @@
           "transaction_date": "2026-06-16",
           "disclosure_date": "2026-06-17",
           "asset_description": "International Business Machines Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "LUV",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Southwest Airlines Co"
         },
         {
           "chamber": "House",
@@ -3438,6 +3509,19 @@
           "politician_raw": "Matt Van Epps",
           "politician": "matt van epps",
           "politician_display": "Matt Van Epps",
+          "ticker": "LUV",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Southwest Airlines Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
           "ticker": "INTC",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
@@ -3445,19 +3529,6 @@
           "transaction_date": "2026-06-16",
           "disclosure_date": "2026-06-17",
           "asset_description": "Intel Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "GOOGL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Alphabet Inc"
         },
         {
           "chamber": "House",
@@ -3477,19 +3548,6 @@
           "politician_raw": "Matt Van Epps",
           "politician": "matt van epps",
           "politician_display": "Matt Van Epps",
-          "ticker": "META",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Meta Platforms Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
           "ticker": "AMZN",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
@@ -3497,6 +3555,19 @@
           "transaction_date": "2026-06-16",
           "disclosure_date": "2026-06-17",
           "asset_description": "Amazon.com Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
+          "ticker": "GOOGL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Alphabet Inc"
         }
       ],
       "offshore_matches": [],
@@ -3532,19 +3603,6 @@
           "politician_raw": "Richard W. Allen",
           "politician": "richard w allen",
           "politician_display": "Richard W Allen",
-          "ticker": "AXP",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-08",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "American Express Co"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Richard W. Allen",
-          "politician": "richard w allen",
-          "politician_display": "Richard W Allen",
           "ticker": "TSM",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
@@ -3552,6 +3610,19 @@
           "transaction_date": "2026-05-08",
           "disclosure_date": "2026-06-17",
           "asset_description": "Taiwan Semiconductor Manufacturing Co Ltd"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Richard W. Allen",
+          "politician": "richard w allen",
+          "politician_display": "Richard W Allen",
+          "ticker": "AXP",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-08",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "American Express Co"
         }
       ],
       "offshore_matches": [],
@@ -3588,6 +3659,113 @@
       "win_rate": 100.0,
       "total_tracked_trades": 1,
       "avg_return": 10.02,
+      "data_quality": "HIGH"
+    },
+    "David Taylor": {
+      "name": "David Taylor",
+      "committees": [],
+      "corruption_score": 10,
+      "score_breakdown": [
+        "Trading activity (7): +10"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "AEP",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-06-15",
+          "asset_description": "American Electric Power Co Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "T",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-06-15",
+          "asset_description": "AT&T Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "AMZN",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-06-15",
+          "asset_description": "Amazon.com Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "KR",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-06-15",
+          "asset_description": "The Kroger Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "GOOGL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-06-15",
+          "asset_description": "Alphabet Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "LRCX",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-06-15",
+          "asset_description": "Lam Research Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "David Taylor",
+          "politician": "david taylor",
+          "politician_display": "David Taylor",
+          "ticker": "AMGN",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-06-15",
+          "asset_description": "Amgen Inc"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 75.0,
+      "total_tracked_trades": 4,
+      "avg_return": 8.03,
       "data_quality": "HIGH"
     },
     "Julie Johnson": {
@@ -3632,113 +3810,6 @@
       "avg_return": 0,
       "data_quality": "HIGH"
     },
-    "David Taylor": {
-      "name": "David Taylor",
-      "committees": [],
-      "corruption_score": 10,
-      "score_breakdown": [
-        "Trading activity (7): +10"
-      ],
-      "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "LRCX",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-06-15",
-          "asset_description": "Lam Research Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "GOOGL",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-06-15",
-          "asset_description": "Alphabet Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "AMZN",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-06-15",
-          "asset_description": "Amazon.com Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "AEP",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-06-15",
-          "asset_description": "American Electric Power Co Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "T",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-06-15",
-          "asset_description": "AT&T Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "AMGN",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-06-15",
-          "asset_description": "Amgen Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "David Taylor",
-          "politician": "david taylor",
-          "politician_display": "David Taylor",
-          "ticker": "KR",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-06-15",
-          "asset_description": "The Kroger Co"
-        }
-      ],
-      "offshore_matches": [],
-      "recent_posts": [],
-      "win_rate": 75.0,
-      "total_tracked_trades": 4,
-      "avg_return": 8.03,
-      "data_quality": "HIGH"
-    },
     "Mike Kelly": {
       "name": "Mike Kelly",
       "committees": [],
@@ -3752,19 +3823,6 @@
           "politician_raw": "Mike Kelly",
           "politician": "mike kelly",
           "politician_display": "Mike Kelly",
-          "ticker": "CMCSA",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-07",
-          "disclosure_date": "2026-06-12",
-          "asset_description": "Comcast Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Mike Kelly",
-          "politician": "mike kelly",
-          "politician_display": "Mike Kelly",
           "ticker": "BMY",
           "trade_type": "sale",
           "amount_raw": "$15,001 - $50,000",
@@ -3772,6 +3830,19 @@
           "transaction_date": "2026-05-07",
           "disclosure_date": "2026-06-12",
           "asset_description": "Bristol-Myers Squibb Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Mike Kelly",
+          "politician": "mike kelly",
+          "politician_display": "Mike Kelly",
+          "ticker": "CMCSA",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-07",
+          "disclosure_date": "2026-06-12",
+          "asset_description": "Comcast Corp"
         }
       ],
       "offshore_matches": [],
@@ -3791,322 +3862,10 @@
       "corruption_score": 42,
       "score_breakdown": [
         "Trading activity (52): +10",
-        "Committee conflicts (3): +25",
+        "Committee conflicts (6): +25",
         "Win rate 50.0% (90 trades): +7"
       ],
       "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "SCHW",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Schwab (Charles) Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "SNPS",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Synopsys Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "AME",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "AMETEK Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "CMG",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Chipotle Mexican Grill Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "SWK",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Stanley Black & Decker Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "CARR",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Carrier Global Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "RMD",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Resmed Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "CRH",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "CRH PLC"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "CMCSA",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Comcast Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "NXPI",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "NXP Semiconductors NV"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "LUV",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Southwest Airlines Co"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "COHR",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Coherent Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "BKNG",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Booking Holdings Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "ALL",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "The Allstate Corporation"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "MAS",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Masco Corporation"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "JNJ",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Johnson & Johnson"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "SOLV",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "SOLVENTUM CORP"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "WAB",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Westinghouse Air Brake Technologies Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "ISRG",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Intuitive Surgical Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "DHI",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "D.R. Horton Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "AMCR",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Amcor PLC"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "ALLY",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-15",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Ally Financial Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "ABBV",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "AbbVie Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "JPM",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-18",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "JPMorgan Chase & Co"
-        },
         {
           "chamber": "House",
           "politician_raw": "Ro Khanna",
@@ -4119,45 +3878,6 @@
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
           "asset_description": "Carnival Corporation & PLC"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "COF",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Capital One Financial Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "LII",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Lennox International Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "MA",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Mastercard Inc"
         },
         {
           "chamber": "House",
@@ -4177,26 +3897,65 @@
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "MRSH",
+          "ticker": "TER",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Marsh & McLennan Companies Inc"
+          "asset_description": "Teradyne Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "AXTA",
+          "ticker": "MU",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-26",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Axalta Coating Systems Ltd"
+          "asset_description": "Micron Technology Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "CARR",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Carrier Global Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "CMCSA",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Comcast Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "AME",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "AMETEK Inc"
         },
         {
           "chamber": "House",
@@ -4216,104 +3975,65 @@
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "AMZN",
-          "trade_type": "purchase",
+          "ticker": "AXTA",
+          "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
+          "transaction_date": "2026-05-26",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Amazon.com Inc"
+          "asset_description": "Axalta Coating Systems Ltd"
         },
         {
           "chamber": "House",
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "GOOGL",
+          "ticker": "SCHW",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Alphabet Inc"
+          "asset_description": "Schwab (Charles) Corp"
         },
         {
           "chamber": "House",
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "ZTS",
+          "ticker": "VMC",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Zoetis Inc"
+          "asset_description": "Vulcan Materials Co"
         },
         {
           "chamber": "House",
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "ECL",
+          "ticker": "MA",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Ecolab Inc"
+          "asset_description": "Mastercard Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "BAX",
+          "ticker": "TSCO",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Baxter International Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "OTIS",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Otis Worldwide Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "DASH",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "DoorDash Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "EME",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "EMCOR Group Inc"
+          "asset_description": "Tractor Supply Co"
         },
         {
           "chamber": "House",
@@ -4333,65 +4053,26 @@
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "TER",
+          "ticker": "HUBB",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Teradyne Inc"
+          "asset_description": "Hubbell Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "ON",
+          "ticker": "CVS",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "ON Semiconductor Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "ZBRA",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Zebra Technologies Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "AMRZ",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-21",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "AMRIZE LTD"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Ro Khanna",
-          "politician": "ro khanna",
-          "politician_display": "Ro Khanna",
-          "ticker": "WSM",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-01",
-          "disclosure_date": "2026-06-11",
-          "asset_description": "Williams-Sonoma Inc"
+          "asset_description": "CVS Health Corp"
         },
         {
           "chamber": "House",
@@ -4411,6 +4092,331 @@
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
+          "ticker": "LII",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Lennox International Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "JPM",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-18",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "JPMorgan Chase & Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "ITW",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Illinois Tool Works Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "AMRZ",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-21",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "AMRIZE LTD"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "ABBV",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "AbbVie Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "DXCM",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "DexCom Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "EXPD",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Expeditors International of Washington Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "PODD",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Insulet Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "XYL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Xylem Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "AMCR",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Amcor PLC"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "LUV",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Southwest Airlines Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "FITB",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Fifth Third Bancorp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "ALLY",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-15",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Ally Financial Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "ECL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Ecolab Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "COF",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Capital One Financial Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "UPS",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "United Parcel Service Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "NXPI",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "NXP Semiconductors NV"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "SOLV",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "SOLVENTUM CORP"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "MCHP",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Microchip Technology Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "AMT",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "American Tower Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "EME",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "EMCOR Group Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "ZBRA",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Zebra Technologies Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "UAL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "United Airlines Holdings Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "WSM",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Williams-Sonoma Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "GOOGL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Alphabet Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
           "ticker": "CVNA",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
@@ -4424,26 +4430,91 @@
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "APO",
+          "ticker": "ALL",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Apollo Global Management Inc"
+          "asset_description": "The Allstate Corporation"
         },
         {
           "chamber": "House",
           "politician_raw": "Ro Khanna",
           "politician": "ro khanna",
           "politician_display": "Ro Khanna",
-          "ticker": "VMC",
+          "ticker": "NVDA",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "NVIDIA Corporation"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "AMT",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "American Tower Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "ZTS",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-05-01",
           "disclosure_date": "2026-06-11",
-          "asset_description": "Vulcan Materials Co"
+          "asset_description": "Zoetis Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "MS",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Morgan Stanley"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "SWK",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Stanley Black & Decker Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Ro Khanna",
+          "politician": "ro khanna",
+          "politician_display": "Ro Khanna",
+          "ticker": "JNJ",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-01",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Johnson & Johnson"
         }
       ],
       "offshore_matches": [],
@@ -4459,11 +4530,24 @@
         "Armed Services",
         "Agriculture"
       ],
-      "corruption_score": 5,
+      "corruption_score": 10,
       "score_breakdown": [
-        "Trading activity (1): +5"
+        "Trading activity (2): +10"
       ],
       "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "John McGuire",
+          "politician": "john mcguire",
+          "politician_display": "John Mcguire",
+          "ticker": "META",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-04",
+          "disclosure_date": "2026-06-11",
+          "asset_description": "Meta Platforms Inc"
+        },
         {
           "chamber": "House",
           "politician_raw": "John McGuire",
@@ -4691,78 +4775,7 @@
       "obligated": 15288570265.13
     }
   ],
-  "fec_donors": [
-    {
-      "donor": "KELLOFF, ALEX",
-      "employer": "SELF EMPLOYED",
-      "amount": 100000.0,
-      "date": "2026-06-10",
-      "recipient": "ALEX KELLOFF FOR COLORADO"
-    },
-    {
-      "donor": "HOPE IN ACTION POLICY",
-      "employer": null,
-      "amount": 316000.0,
-      "date": "2026-06-05",
-      "recipient": "ACCOUNTABILITY PROJECT INC"
-    },
-    {
-      "donor": "CONSTANTINO, ANTHONY THOMAS",
-      "employer": "STICKER MULE",
-      "amount": 2400000.0,
-      "date": "2026-06-03",
-      "recipient": "CONSTANTINO FOR CONGRESS, INC."
-    },
-    {
-      "donor": "PUBLIC FIRST",
-      "employer": null,
-      "amount": 400000.0,
-      "date": "2026-06-03",
-      "recipient": "JOBS AND DEMOCRACY PAC"
-    },
-    {
-      "donor": "SCHLOSSBERG, JACK",
-      "employer": "SELF-EMPLOYED",
-      "amount": 500000.0,
-      "date": "2026-06-03",
-      "recipient": "JACK FOR NEW YORK"
-    },
-    {
-      "donor": "SCHLOSSBERG, JACK",
-      "employer": "SELF-EMPLOYED",
-      "amount": 250000.0,
-      "date": "2026-06-03",
-      "recipient": "JACK FOR NEW YORK"
-    },
-    {
-      "donor": "JEFFRIES MAJORITY FUND",
-      "employer": null,
-      "amount": 192000.0,
-      "date": "2026-06-03",
-      "recipient": "JEFFRIES FOR CONGRESS"
-    },
-    {
-      "donor": "BAREEBE, QUINCY",
-      "employer": "ROYAL HOME CARE AND STAFFING",
-      "amount": 750000.0,
-      "date": "2026-06-02",
-      "recipient": "QUINCY BAREEBE FOR CONGRESS"
-    },
-    {
-      "donor": "NORTH FUND",
-      "employer": null,
-      "amount": 300000.0,
-      "date": "2026-06-02",
-      "recipient": "WAY BACK PAC"
-    },
-    {
-      "donor": "C PORT LLC",
-      "employer": null,
-      "amount": 125000.0,
-      "date": "2026-06-02",
-      "recipient": "ACCOUNTABILITY PROJECT INC"
-    }
-  ],
+  "fec_donors": [],
   "lobbying": [
     {
       "firm": "RIVENDELL GROUP LLP",
@@ -5821,12 +5834,12 @@
     }
   },
   "raw_counts": {
-    "trades": 193,
+    "trades": 194,
     "insiders": 0,
     "contracts": 25,
     "bills": 30,
     "lobbying": 25,
-    "donors": 20,
+    "donors": 0,
     "social": 0,
     "truth": 0,
     "offshore": 0,
