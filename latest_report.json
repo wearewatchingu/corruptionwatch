@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-07-07 21:46",
-  "timestamp_iso": "2026-07-07T21:46:51.190256",
-  "cycle_seconds": 159.524011,
+  "timestamp": "2026-07-07 22:49",
+  "timestamp_iso": "2026-07-07T22:49:35.436609",
+  "cycle_seconds": 164.522209,
   "summary": {
     "long_candidates": 0,
-    "short_candidates": 1,
+    "short_candidates": 0,
     "decisions": 9,
     "entries_placed": 0,
     "exits_placed": 0,
@@ -13,103 +13,70 @@
     "consensus_sells": 6
   },
   "long_candidates": [],
-  "short_candidates": [
-    {
-      "ticker": "MSFT",
-      "actor_count": 3,
-      "actors": [
-        {
-          "politician": "Gilbert Cisneros",
-          "date": "2026-07-03",
-          "amount": "$15,001 - $50,000",
-          "chamber": "House"
-        },
-        {
-          "politician": "Matt Van Epps",
-          "date": "2026-06-17",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        },
-        {
-          "politician": "Jonathan Jackson",
-          "date": "2026-06-17",
-          "amount": "$15,001 - $50,000",
-          "chamber": "House"
-        }
-      ],
-      "direction": "sell",
-      "score": 75,
-      "action": "SELL_SHORT",
-      "source": "Consensus_SELL",
-      "politician_or_entity": "3 politicians selling",
-      "reason": "3 politicians selling MSFT: Cisneros, Epps, Jackson",
-      "sentiment_score": 0.132,
-      "article_count": 50
-    }
-  ],
+  "short_candidates": [],
   "decisions": [
-    {
-      "ticker": "MSFT",
-      "action": "SELL_SHORT",
-      "confidence": 0.62,
-      "reasoning": "3 politicians selling MSFT (Cisneros, Van Epps, Jackson) — this meets the cluster threshold for a short signal. However, none of the three appear to sit on key tech-oversight committees, and MSFT is a mega-cap in a broadly resilient tech sector. Amounts are modest ($1K–$50K range), limiting the conviction that this reflects privileged information vs. portfolio rebalancing. Short signal is real but not high-conviction given the sector tailwind and lack of confirmed committee oversight.",
-      "key_risk": "MSFT is a mega-cap in a strong secular uptrend (AI/cloud). Shorting into momentum is dangerous; sellers may simply be trimming gains rather than acting on adverse inside knowledge."
-    },
     {
       "ticker": "WFC",
       "action": "BUY",
-      "confidence": 0.52,
-      "reasoning": "Two senators (McConnell, Warner) buying WFC. Bipartisan buying is a mild positive signal. However, only 2 actors, amounts are small ($1K–$15K), and the trades are spread across nearly 2 months — weakening the cluster thesis. No confirmed banking-committee oversight cited. Modest BUY conviction.",
-      "key_risk": "Small trade amounts and a 2-month spread between trades suggest this may be routine portfolio activity, not informed positioning. Banking sector faces macro headwinds (rate uncertainty, credit quality)."
+      "confidence": 0.58,
+      "reasoning": "Two senators from opposite parties (McConnell-R, Warner-D) both buying WFC. Bipartisan consensus buying is a mild positive signal. Warner sits on the Senate Banking Committee, giving him direct oversight of financial institutions — meaningful overlap. However, trade sizes are small ($1K-$15K), and only 2 actors. The financial sector is well-covered by public news (rate environment, earnings), so this could reflect macro positioning rather than inside information.",
+      "key_risk": "Small trade sizes and only 2 actors limit conviction. Banking sector is highly sensitive to rate policy and public macro data — this could be reactionary rather than informational."
     },
     {
       "ticker": "GOOGL",
       "action": "SKIP",
       "confidence": 0.5,
-      "reasoning": "GOOGL has a split signal: 2 politicians buying (Boozman, Fields) and 2 politicians selling (Moran, Van Epps). Opposing signals cancel each other out. No dominant directional conviction can be drawn. Initiating any position here would be speculative.",
-      "key_risk": "Conflicting signals from buyers and sellers make this a noisy, low-conviction setup. Acting on either direction risks being on the wrong side of the dominant trade."
+      "reasoning": "GOOGL appears in BOTH consensus buyers (Boozman, Fields) AND consensus sellers (Moran, Van Epps), creating a direct contradiction. 2 politicians buying and 2 selling simultaneously is a wash — the signal cancels itself out. No net directional conviction can be derived. Shorting a mega-cap tech name with buyers present would be reckless.",
+      "key_risk": "Contradictory signals across buyers and sellers make any directional trade unreliable. GOOGL is a large-cap with strong underlying fundamentals, making a short particularly dangerous."
     },
     {
       "ticker": "PEP",
       "action": "HOLD",
-      "confidence": 0.48,
-      "reasoning": "2 politicians buying PEP (Peters, Self) across a ~7-week window. Cluster is weak — only 2 actors, small amounts, no confirmed committee oversight of consumer staples. PepsiCo has faced recent fundamental headwinds (volume softness, consumer trade-down). Signal is too weak to initiate a new long.",
-      "key_risk": "Consumer staples headwinds (inflation-weary consumer, private label competition) may be driving the stock lower regardless of political buying. Trade amounts are minimal and lack committee backing."
+      "confidence": 0.45,
+      "reasoning": "Two politicians buying PEP (Peters-Senate, Self-House), one with a larger $15K-$50K position. However, neither appears to sit on a committee with direct consumer staples oversight relevance. PEP is a defensive blue-chip that politicians routinely buy as a store of value. No committee overlap identified, no cluster of 3+. Signal is too weak to open a new long.",
+      "key_risk": "No clear committee oversight connection. Consumer staples buying by politicians is extremely common and likely reflects personal portfolio diversification rather than informational edge."
     },
     {
       "ticker": "CEG",
       "action": "BUY",
-      "confidence": 0.61,
-      "reasoning": "Two senators (Boozman, Warner) buying Constellation Energy within a tight 7-day window in early May — this is the strongest cluster on the long side. Energy/utilities oversight by Senate members adds mild committee relevance. CEG is a key AI data-center power play with strong fundamentals. The tight timing and bipartisan nature modestly elevate conviction above routine portfolio activity.",
-      "key_risk": "Small amounts ($1K–$15K each) limit confidence that this reflects privileged knowledge. CEG has already had a significant run-up; a mean-reversion pullback is possible."
+      "confidence": 0.65,
+      "reasoning": "Two senators buying Constellation Energy (Boozman and Warner), both around the same timeframe (May 2026). Warner sits on the Senate Energy and Natural Resources Committee, providing meaningful oversight overlap in the nuclear/power sector. CEG is a nuclear power operator benefiting from AI data center energy demand tailwinds — this could reflect policy-level insight into nuclear permitting, subsidies, or federal energy contracts. Bipartisan Senate buying with committee relevance is a credible signal.",
+      "key_risk": "Energy sector is highly regulated and CEG's valuation is already elevated from AI energy demand hype. Regulatory or policy setback could sharply reverse gains. Trade sizes remain small, limiting insider conviction signal."
     },
     {
       "ticker": "IBM",
-      "action": "HOLD",
-      "confidence": 0.44,
-      "reasoning": "2 politicians buying IBM (Doggett, Cisneros), but Cisneros simultaneously sold MSFT in the same window — suggesting general tech portfolio rotation rather than an IBM-specific bullish thesis. No confirmed committee oversight. IBM is a slower-growth enterprise name; the signal is too thin to act on.",
-      "key_risk": "Cisneros's simultaneous MSFT sell and IBM buy looks like a rotation trade, not an informed IBM-specific call. IBM's growth profile is modest and unlikely to deliver outsized returns from this signal alone."
+      "action": "BUY",
+      "confidence": 0.52,
+      "reasoning": "Two House members buying IBM (Doggett and Cisneros), with Cisneros putting in a larger $15K-$50K position. IBM is a major federal government IT contractor, so House members may have visibility into contract awards or federal AI spending. However, neither politician is known for sitting on a tech or appropriations committee with direct IBM oversight. Cisneros's larger position adds a slight edge. Moderate signal at best.",
+      "key_risk": "House members without clear committee oversight of tech/defense IT reduce the informational edge. IBM trades on federal contract flows which are frequently public. Cluster of only 2 is below the high-conviction threshold."
+    },
+    {
+      "ticker": "ACN",
+      "action": "SKIP",
+      "confidence": 0.5,
+      "reasoning": "Two politicians selling ACN (Boozman-Senate, Allen-House). Boozman notably also appears as a buyer in CEG and GOOGL around the same period, suggesting portfolio rebalancing rather than a targeted short thesis. Allen's $15K-$50K sell is notable but only 2 actors total. ACN is a professional services firm with diversified government exposure — a short signal needs stronger committee-specific oversight connection. Shorting a consulting giant without 3+ committee-connected sellers is insufficient conviction.",
+      "key_risk": "Only 2 sellers, no clear committee oversight connection identified. Boozman appears to be rebalancing broadly. ACN has strong federal contract revenue which would take time to deteriorate."
     },
     {
       "ticker": "NVDA",
       "action": "SKIP",
       "confidence": 0.55,
-      "reasoning": "2 politicians selling NVDA (Whitehouse, Meuser). Whitehouse's trade is notably larger ($100K–$250K), which adds some weight. However, only 2 actors and NVDA remains in one of the strongest AI-driven uptrends in the market. Shorting NVDA into momentum without stronger committee-oversight confirmation or a larger actor cluster is a low-conviction, high-risk trade. Whitehouse's large sale may be profit-taking after enormous gains.",
-      "key_risk": "NVDA has been one of the strongest momentum stocks in the market. Short interest against a secular AI tailwind carries substantial unlimited downside risk. 2-actor cluster is below the threshold for high conviction."
+      "reasoning": "Two politicians selling NVDA (Whitehouse-Senate with a large $100K-$250K position, Meuser-House). Whitehouse's large sell is noteworthy, but he sits on the Environment and Public Works Committee — not a direct tech/semiconductor oversight role. NVDA is in an extreme structural uptrend driven by AI infrastructure demand. Shorting NVDA without at least 3 committee-relevant sellers and in the face of one of the strongest momentum stories in market history carries asymmetric downside risk. The sell could reflect profit-taking on a massive gainer rather than inside information.",
+      "key_risk": "NVDA is in a dominant AI-driven uptrend — shorting carries unlimited downside risk. Whitehouse's committee role is not directly tied to semiconductor oversight. Profit-taking after NVDA's massive run is the most likely explanation."
     },
     {
       "ticker": "AAPL",
       "action": "SKIP",
-      "confidence": 0.5,
-      "reasoning": "2 politicians selling AAPL (Capito, Epps), both in modest amounts, spread across ~6 weeks. This is a weak short signal — only 2 actors, no confirmed committee oversight, small amounts, and AAPL is a mega-cap with deep institutional support. The signal does not clear the bar for a short position.",
-      "key_risk": "AAPL's size and liquidity make it a frequent routine portfolio adjustment target for politicians. Weak cluster with no committee backing does not justify the risk of a short."
+      "confidence": 0.48,
+      "reasoning": "Two politicians selling AAPL (Capito-Senate, Van Epps-House), both in small amounts ($1K-$15K). Capito sits on the Senate Commerce Committee which has some tech oversight relevance, but AAPL is a global consumer company and the most widely held stock by politicians across all chambers. Sells of this size are routine profit-taking or rebalancing. No cluster of 3+, no large position sizes. Insufficient conviction to short the world's largest company.",
+      "key_risk": "AAPL is the most widely held stock by politicians — small sells are routine and non-informational. No concentrated committee-level selling cluster. Shorting a $3T+ market cap leader without strong conviction is extremely risky."
     },
     {
-      "ticker": "T",
+      "ticker": "MSFT",
       "action": "SKIP",
-      "confidence": 0.48,
-      "reasoning": "2 House members selling AT&T (Self, Dunn). Self notably also bought PEP in the same period, suggesting general portfolio churn rather than informed sector-specific selling. Amounts are modest. No confirmed telecom committee oversight cited. AT&T also pays a substantial dividend, making it a common hold-and-trim name — not necessarily a bearish signal.",
-      "key_risk": "AT&T's high dividend yield attracts retail and institutional holders who trim regularly for income rebalancing. The 2-actor signal with no committee backing is insufficient for a short conviction call."
+      "confidence": 0.45,
+      "reasoning": "Two House members selling MSFT (Cisneros and Jackson), with Cisneros simultaneously buying IBM — suggesting a tech rotation trade rather than a fundamental negative thesis on MSFT. Jackson's committee assignments are not known to include direct tech oversight. Only 2 sellers, small-to-mid position sizes, and no clear committee connection make this a weak short signal. MSFT is a mega-cap with strong Azure/AI tailwinds and government cloud contracts.",
+      "key_risk": "Cisneros is simultaneously buying IBM while selling MSFT — this looks like rotation, not insider negative information on MSFT. Shorting a mega-cap cloud/AI leader without strong conviction signals risks significant upside exposure."
     }
   ],
   "entries_placed": [],
@@ -130,10 +97,10 @@
       "qty": 14.9147,
       "side": "long",
       "avg_entry_price": 359.563098,
-      "current_price": 366.65,
-      "market_value": 5468.474755,
-      "unrealized_pl": 105.699017,
-      "unrealized_plpc": 0.01971
+      "current_price": 367.5,
+      "market_value": 5481.15225,
+      "unrealized_pl": 118.376512,
+      "unrealized_plpc": 0.02207
     },
     {
       "symbol": "GS",
@@ -150,10 +117,10 @@
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 298.1,
-      "current_price": 338.9997,
-      "market_value": 677.9994,
-      "unrealized_pl": 81.7994,
-      "unrealized_plpc": 0.1372
+      "current_price": 339.13,
+      "market_value": 678.26,
+      "unrealized_pl": 82.06,
+      "unrealized_plpc": 0.13764
     },
     {
       "symbol": "LMT",
@@ -170,20 +137,20 @@
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 619.34,
-      "current_price": 612.97,
-      "market_value": 1225.94,
-      "unrealized_pl": -12.74,
-      "unrealized_plpc": -0.01029
+      "current_price": 613.36,
+      "market_value": 1226.72,
+      "unrealized_pl": -11.96,
+      "unrealized_plpc": -0.00966
     },
     {
       "symbol": "TSLA",
       "qty": 3.0,
       "side": "long",
       "avg_entry_price": 439.41,
-      "current_price": 403.3,
-      "market_value": 1209.9,
-      "unrealized_pl": -108.33,
-      "unrealized_plpc": -0.08218
+      "current_price": 403.42,
+      "market_value": 1210.26,
+      "unrealized_pl": -107.97,
+      "unrealized_plpc": -0.08191
     }
   ],
   "consensus_buys": [
@@ -310,38 +277,6 @@
   ],
   "consensus_sells": [
     {
-      "ticker": "MSFT",
-      "actor_count": 3,
-      "actors": [
-        {
-          "politician": "Gilbert Cisneros",
-          "date": "2026-07-03",
-          "amount": "$15,001 - $50,000",
-          "chamber": "House"
-        },
-        {
-          "politician": "Matt Van Epps",
-          "date": "2026-06-17",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        },
-        {
-          "politician": "Jonathan Jackson",
-          "date": "2026-06-17",
-          "amount": "$15,001 - $50,000",
-          "chamber": "House"
-        }
-      ],
-      "direction": "sell",
-      "score": 75,
-      "action": "SELL_SHORT",
-      "source": "Consensus_SELL",
-      "politician_or_entity": "3 politicians selling",
-      "reason": "3 politicians selling MSFT: Cisneros, Epps, Jackson",
-      "sentiment_score": 0.132,
-      "article_count": 50
-    },
-    {
       "ticker": "GOOGL",
       "actor_count": 2,
       "actors": [
@@ -364,6 +299,30 @@
       "source": "Consensus_SELL",
       "politician_or_entity": "2 politicians selling",
       "reason": "2 politicians selling GOOGL: Moran, Epps"
+    },
+    {
+      "ticker": "ACN",
+      "actor_count": 2,
+      "actors": [
+        {
+          "politician": "John Boozman",
+          "date": "2026-06-16",
+          "amount": "$1,001 - $15,000",
+          "chamber": "Senate"
+        },
+        {
+          "politician": "Richard W Allen",
+          "date": "2026-06-17",
+          "amount": "$15,001 - $50,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "sell",
+      "score": 50,
+      "action": "SELL_SHORT",
+      "source": "Consensus_SELL",
+      "politician_or_entity": "2 politicians selling",
+      "reason": "2 politicians selling ACN: Boozman, Allen"
     },
     {
       "ticker": "NVDA",
@@ -414,6 +373,30 @@
       "reason": "2 politicians selling AAPL: Capito, Epps"
     },
     {
+      "ticker": "MSFT",
+      "actor_count": 2,
+      "actors": [
+        {
+          "politician": "Gilbert Cisneros",
+          "date": "2026-07-03",
+          "amount": "$15,001 - $50,000",
+          "chamber": "House"
+        },
+        {
+          "politician": "Jonathan Jackson",
+          "date": "2026-06-17",
+          "amount": "$15,001 - $50,000",
+          "chamber": "House"
+        }
+      ],
+      "direction": "sell",
+      "score": 50,
+      "action": "SELL_SHORT",
+      "source": "Consensus_SELL",
+      "politician_or_entity": "2 politicians selling",
+      "reason": "2 politicians selling MSFT: Cisneros, Jackson"
+    },
+    {
       "ticker": "T",
       "actor_count": 2,
       "actors": [
@@ -436,30 +419,6 @@
       "source": "Consensus_SELL",
       "politician_or_entity": "2 politicians selling",
       "reason": "2 politicians selling T: Self, Dunn"
-    },
-    {
-      "ticker": "INTC",
-      "actor_count": 2,
-      "actors": [
-        {
-          "politician": "Dwight Evans",
-          "date": "2026-06-25",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        },
-        {
-          "politician": "Matt Van Epps",
-          "date": "2026-06-17",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        }
-      ],
-      "direction": "sell",
-      "score": 50,
-      "action": "SELL_SHORT",
-      "source": "Consensus_SELL",
-      "politician_or_entity": "2 politicians selling",
-      "reason": "2 politicians selling INTC: Evans, Epps"
     }
   ],
   "corruption_index": [
@@ -656,19 +615,19 @@
       "committees": []
     },
     {
-      "name": "Matt Van Epps",
+      "name": "Richard W Allen",
       "score": 10,
       "breakdown": [
-        "Trading activity (6): +10"
+        "Trading activity (2): +10"
       ],
       "data_quality": "HIGH",
       "committees": []
     },
     {
-      "name": "Richard W Allen",
+      "name": "Matt Van Epps",
       "score": 10,
       "breakdown": [
-        "Trading activity (2): +10"
+        "Trading activity (6): +10"
       ],
       "data_quality": "HIGH",
       "committees": []
@@ -3007,19 +2966,6 @@
           "politician_raw": "Lloyd Doggett",
           "politician": "lloyd doggett",
           "politician_display": "Lloyd Doggett",
-          "ticker": "JNJ",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-09",
-          "disclosure_date": "2026-07-07",
-          "asset_description": "Johnson & Johnson"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Lloyd Doggett",
-          "politician": "lloyd doggett",
-          "politician_display": "Lloyd Doggett",
           "ticker": "PPG",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
@@ -3027,6 +2973,19 @@
           "transaction_date": "2026-06-12",
           "disclosure_date": "2026-07-07",
           "asset_description": "PPG Industries Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Lloyd Doggett",
+          "politician": "lloyd doggett",
+          "politician_display": "Lloyd Doggett",
+          "ticker": "JNJ",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-09",
+          "disclosure_date": "2026-07-07",
+          "asset_description": "Johnson & Johnson"
         },
         {
           "chamber": "House",
@@ -3062,39 +3021,65 @@
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "LPLA",
+          "ticker": "AMD",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-11",
+          "transaction_date": "2026-06-05",
           "disclosure_date": "2026-07-03",
-          "asset_description": "LPL Financial Holdings Inc"
+          "asset_description": "Advanced Micro Devices Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "CMCSA",
-          "trade_type": "purchase",
+          "ticker": "AJINY",
+          "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
+          "transaction_date": "2026-06-09",
           "disclosure_date": "2026-07-03",
-          "asset_description": "Comcast Corp"
+          "asset_description": "Ajinomoto Co Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "VRSK",
+          "ticker": "COIN",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Coinbase Global Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "CAG",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Conagra Brands Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "BR",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-16",
           "disclosure_date": "2026-07-03",
-          "asset_description": "VERISK ANALYTICS Inc"
+          "asset_description": "Broadridge Financial Solutions Inc"
         },
         {
           "chamber": "House",
@@ -3114,117 +3099,26 @@
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "ZTS",
+          "ticker": "TXRH",
           "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Zoetis Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "FSV",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-11",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "FIRSTSERVICE CORP"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "FOXA",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Fox Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "GDDY",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "GoDaddy Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "GIS",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "General Mills Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "COO",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "The Cooper Cos Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "BNPQY",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-09",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "BNP Paribas"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "STRL",
-          "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-30",
           "disclosure_date": "2026-07-03",
-          "asset_description": "STERLING INFRASTRUCTURE INC"
+          "asset_description": "Texas Roadhouse Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "FIS",
+          "ticker": "EA",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-16",
           "disclosure_date": "2026-07-03",
-          "asset_description": "Fidelity National Information Services Inc"
+          "asset_description": "Electronic Arts Inc"
         },
         {
           "chamber": "House",
@@ -3244,182 +3138,13 @@
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "HQY",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-30",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "HealthEquity Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "SPOT",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-18",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Spotify Technology S.A"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "BOOT",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-30",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Boot Barn Holdings Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "ACN",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Accenture PLC"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "BIIB",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Biogen Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "MTN",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-10",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Vail Resorts Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "PGR",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "The Progressive Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "SAN",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-09",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Banco Santander SA"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "KVUE",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "KENVUE INC"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "JKHY",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Henry (Jack) & Associates Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "TXRH",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-30",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Texas Roadhouse Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
           "ticker": "LPLA",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
+          "transaction_date": "2026-06-11",
           "disclosure_date": "2026-07-03",
           "asset_description": "LPL Financial Holdings Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "BSX",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Boston Scientific Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "AMD",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Advanced Micro Devices Inc"
         },
         {
           "chamber": "House",
@@ -3439,13 +3164,429 @@
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "AGX",
+          "ticker": "STRL",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "STERLING INFRASTRUCTURE INC"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "PGR",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "The Progressive Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "CYTK",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-30",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "CYTOKINETICS INC"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "CMCSA",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Comcast Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "WRB",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Berkley (W.R.) Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "FSV",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-11",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "FIRSTSERVICE CORP"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "MELI",
           "trade_type": "purchase",
           "amount_raw": "$15,001 - $50,000",
           "amount_midpoint": 32500,
+          "transaction_date": "2026-06-10",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "MercadoLibre Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "HQY",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
           "transaction_date": "2026-06-30",
           "disclosure_date": "2026-07-03",
-          "asset_description": "Argan Inc"
+          "asset_description": "HealthEquity Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "SMTC",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-30",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Semtech Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "WDAY",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Workday Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "RBC",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-30",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "RBC Bearings Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "TOELY",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-09",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Tokyo Electron Ltd"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "LLY",
+          "trade_type": "purchase",
+          "amount_raw": "$50,001 - $100,000",
+          "amount_midpoint": 75000,
+          "transaction_date": "2026-06-10",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Eli Lilly and Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "GDDY",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "GoDaddy Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "ABT",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Abbott Laboratories"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "GIS",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "General Mills Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "LPLA",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "LPL Financial Holdings Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "MCHP",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-30",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Microchip Technology Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "IBM",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "International Business Machines Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "ACN",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Accenture PLC"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "TTD",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "The Trade Desk Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "FIS",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Fidelity National Information Services Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "SFTBY",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-30",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Softbank Group Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "FOXA",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Fox Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "SAN",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-09",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Banco Santander SA"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "BSX",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Boston Scientific Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "CBZ",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-30",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "CBIZ Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "MTN",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-10",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Vail Resorts Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "ZTS",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Zoetis Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "MU",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Micron Technology Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "SPOT",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-18",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "Spotify Technology S.A"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "STRL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-30",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "STERLING INFRASTRUCTURE INC"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Gilbert Cisneros",
+          "politician": "gilbert cisneros",
+          "politician_display": "Gilbert Cisneros",
+          "ticker": "VRSK",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-07-03",
+          "asset_description": "VERISK ANALYTICS Inc"
         },
         {
           "chamber": "House",
@@ -3478,234 +3619,52 @@
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "BRCM",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-30",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Broadcom Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "AJINY",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-09",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Ajinomoto Co Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "BSX",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Boston Scientific Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "CYTK",
+          "ticker": "BOOT",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-30",
           "disclosure_date": "2026-07-03",
-          "asset_description": "CYTOKINETICS INC"
+          "asset_description": "Boot Barn Holdings Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "DSGX",
+          "ticker": "JKHY",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-30",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "The Descartes Systems Group Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "WRB",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Berkley (W.R.) Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "STRL",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
           "transaction_date": "2026-06-16",
           "disclosure_date": "2026-07-03",
-          "asset_description": "STERLING INFRASTRUCTURE INC"
+          "asset_description": "Henry (Jack) & Associates Inc"
         },
         {
           "chamber": "House",
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "MSTR",
+          "ticker": "KVUE",
           "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-05",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
           "disclosure_date": "2026-07-03",
-          "asset_description": "MicroStrategy Inc"
+          "asset_description": "KENVUE INC"
         },
         {
           "chamber": "House",
           "politician_raw": "Gilbert Cisneros",
           "politician": "gilbert cisneros",
           "politician_display": "Gilbert Cisneros",
-          "ticker": "WDAY",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Workday Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "AAPL",
+          "ticker": "COO",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-05",
           "disclosure_date": "2026-07-03",
-          "asset_description": "Apple Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "CAG",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Conagra Brands Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "ADP",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Automatic Data Processing Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "CME",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "CME Group Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "TTD",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "The Trade Desk Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "MELI",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-10",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "MercadoLibre Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "CDRE",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-30",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "CADRE HOLDINGS INC"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "MSFT",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Microsoft Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Gilbert Cisneros",
-          "politician": "gilbert cisneros",
-          "politician_display": "Gilbert Cisneros",
-          "ticker": "SFTBY",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-30",
-          "disclosure_date": "2026-07-03",
-          "asset_description": "Softbank Group Corp"
+          "asset_description": "The Cooper Cos Inc"
         }
       ],
       "offshore_matches": [],
@@ -3799,26 +3758,13 @@
           "politician_raw": "Keith Self",
           "politician": "keith self",
           "politician_display": "Keith Self",
-          "ticker": "NVDA",
+          "ticker": "GPC",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2025-01-10",
           "disclosure_date": "2026-07-01",
-          "asset_description": "NVIDIA Corporation"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Keith Self",
-          "politician": "keith self",
-          "politician_display": "Keith Self",
-          "ticker": "MRK",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2025-01-10",
-          "disclosure_date": "2026-07-01",
-          "asset_description": "Merck & Co Inc"
+          "asset_description": "Genuine Parts Co"
         },
         {
           "chamber": "House",
@@ -3838,13 +3784,13 @@
           "politician_raw": "Keith Self",
           "politician": "keith self",
           "politician_display": "Keith Self",
-          "ticker": "GPC",
+          "ticker": "NVDA",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2025-01-10",
           "disclosure_date": "2026-07-01",
-          "asset_description": "Genuine Parts Co"
+          "asset_description": "NVIDIA Corporation"
         },
         {
           "chamber": "House",
@@ -3858,6 +3804,19 @@
           "transaction_date": "2025-01-10",
           "disclosure_date": "2026-07-01",
           "asset_description": "AT&T Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Keith Self",
+          "politician": "keith self",
+          "politician_display": "Keith Self",
+          "ticker": "MRK",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2025-01-10",
+          "disclosure_date": "2026-07-01",
+          "asset_description": "Merck & Co Inc"
         }
       ],
       "offshore_matches": [],
@@ -3875,32 +3834,6 @@
         "Trading activity (4): +10"
       ],
       "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "Cleo Fields",
-          "politician": "cleo fields",
-          "politician_display": "Cleo Fields",
-          "ticker": "GOOGL",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-15",
-          "disclosure_date": "2026-06-29",
-          "asset_description": "Alphabet Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Cleo Fields",
-          "politician": "cleo fields",
-          "politician_display": "Cleo Fields",
-          "ticker": "MSFT",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-11",
-          "disclosure_date": "2026-06-29",
-          "asset_description": "Microsoft Corp (2)"
-        },
         {
           "chamber": "House",
           "politician_raw": "Cleo Fields",
@@ -3926,6 +3859,32 @@
           "transaction_date": "2026-06-11",
           "disclosure_date": "2026-06-29",
           "asset_description": "Microsoft Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Cleo Fields",
+          "politician": "cleo fields",
+          "politician_display": "Cleo Fields",
+          "ticker": "MSFT",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-11",
+          "disclosure_date": "2026-06-29",
+          "asset_description": "Microsoft Corp (2)"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Cleo Fields",
+          "politician": "cleo fields",
+          "politician_display": "Cleo Fields",
+          "ticker": "GOOGL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-15",
+          "disclosure_date": "2026-06-29",
+          "asset_description": "Alphabet Inc"
         }
       ],
       "offshore_matches": [],
@@ -3977,19 +3936,6 @@
           "politician_raw": "Dwight Evans",
           "politician": "dwight evans",
           "politician_display": "Dwight Evans",
-          "ticker": "GD",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-10",
-          "disclosure_date": "2026-06-25",
-          "asset_description": "General Dynamics Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dwight Evans",
-          "politician": "dwight evans",
-          "politician_display": "Dwight Evans",
           "ticker": "INTC",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
@@ -3997,6 +3943,19 @@
           "transaction_date": "2026-06-10",
           "disclosure_date": "2026-06-25",
           "asset_description": "Intel Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dwight Evans",
+          "politician": "dwight evans",
+          "politician_display": "Dwight Evans",
+          "ticker": "GD",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-10",
+          "disclosure_date": "2026-06-25",
+          "asset_description": "General Dynamics Corp"
         }
       ],
       "offshore_matches": [],
@@ -4019,19 +3978,6 @@
           "politician_raw": "Neal P. Dunn",
           "politician": "neal p dunn",
           "politician_display": "Neal P Dunn",
-          "ticker": "RF",
-          "trade_type": "sale",
-          "amount_raw": "$50,001 - $100,000",
-          "amount_midpoint": 75000,
-          "transaction_date": "2026-05-11",
-          "disclosure_date": "2026-06-24",
-          "asset_description": "Regions Financial Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Neal P. Dunn",
-          "politician": "neal p dunn",
-          "politician_display": "Neal P Dunn",
           "ticker": "T",
           "trade_type": "sale",
           "amount_raw": "$15,001 - $50,000",
@@ -4039,6 +3985,19 @@
           "transaction_date": "2026-05-11",
           "disclosure_date": "2026-06-24",
           "asset_description": "AT&T Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Neal P. Dunn",
+          "politician": "neal p dunn",
+          "politician_display": "Neal P Dunn",
+          "ticker": "RF",
+          "trade_type": "sale",
+          "amount_raw": "$50,001 - $100,000",
+          "amount_midpoint": 75000,
+          "transaction_date": "2026-05-11",
+          "disclosure_date": "2026-06-24",
+          "asset_description": "Regions Financial Corp"
         }
       ],
       "offshore_matches": [],
@@ -4061,19 +4020,6 @@
           "politician_raw": "Jared Moskowitz",
           "politician": "jared moskowitz",
           "politician_display": "Jared Moskowitz",
-          "ticker": "COR",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-06",
-          "disclosure_date": "2026-06-22",
-          "asset_description": "Cencora Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Jared Moskowitz",
-          "politician": "jared moskowitz",
-          "politician_display": "Jared Moskowitz",
           "ticker": "GILD",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
@@ -4081,6 +4027,19 @@
           "transaction_date": "2026-05-06",
           "disclosure_date": "2026-06-22",
           "asset_description": "Gilead Sciences Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Jared Moskowitz",
+          "politician": "jared moskowitz",
+          "politician_display": "Jared Moskowitz",
+          "ticker": "COR",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-06",
+          "disclosure_date": "2026-06-22",
+          "asset_description": "Cencora Inc"
         }
       ],
       "offshore_matches": [],
@@ -4103,13 +4062,13 @@
           "politician_raw": "Thomas H. Kean",
           "politician": "thomas h kean",
           "politician_display": "Thomas H Kean",
-          "ticker": "AMCR",
+          "ticker": "EQT",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-05-14",
+          "transaction_date": "2026-06-01",
           "disclosure_date": "2026-06-19",
-          "asset_description": "Amcor PLC"
+          "asset_description": "EQT Corp"
         },
         {
           "chamber": "House",
@@ -4142,13 +4101,13 @@
           "politician_raw": "Thomas H. Kean",
           "politician": "thomas h kean",
           "politician_display": "Thomas H Kean",
-          "ticker": "EQT",
+          "ticker": "AMCR",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-01",
+          "transaction_date": "2026-05-14",
           "disclosure_date": "2026-06-19",
-          "asset_description": "EQT Corp"
+          "asset_description": "Amcor PLC"
         }
       ],
       "offshore_matches": [],
@@ -4156,142 +4115,6 @@
       "win_rate": 0.0,
       "total_tracked_trades": 1,
       "avg_return": -9.98,
-      "data_quality": "HIGH"
-    },
-    "Matt Van Epps": {
-      "name": "Matt Van Epps",
-      "committees": [],
-      "corruption_score": 10,
-      "score_breakdown": [
-        "Trading activity (6): +10"
-      ],
-      "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "MSFT",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Microsoft Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "INTC",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Intel Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "META",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Meta Platforms Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "TPR",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Tapestry Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "GOOGL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Alphabet Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Matt Van Epps",
-          "politician": "matt van epps",
-          "politician_display": "Matt Van Epps",
-          "ticker": "AAPL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-16",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Apple Inc"
-        }
-      ],
-      "offshore_matches": [],
-      "recent_posts": [],
-      "win_rate": 0,
-      "total_tracked_trades": 0,
-      "avg_return": 0,
-      "data_quality": "HIGH"
-    },
-    "Richard W Allen": {
-      "name": "Richard W Allen",
-      "committees": [],
-      "corruption_score": 10,
-      "score_breakdown": [
-        "Trading activity (2): +10"
-      ],
-      "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "Richard W. Allen",
-          "politician": "richard w allen",
-          "politician_display": "Richard W Allen",
-          "ticker": "TSM",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-08",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "Taiwan Semiconductor Manufacturing Co Ltd"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Richard W. Allen",
-          "politician": "richard w allen",
-          "politician_display": "Richard W Allen",
-          "ticker": "AXP",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-05-08",
-          "disclosure_date": "2026-06-17",
-          "asset_description": "American Express Co"
-        }
-      ],
-      "offshore_matches": [],
-      "recent_posts": [],
-      "win_rate": 0,
-      "total_tracked_trades": 0,
-      "avg_return": 0,
       "data_quality": "HIGH"
     },
     "Jonathan Jackson": {
@@ -4321,6 +4144,142 @@
       "win_rate": 100.0,
       "total_tracked_trades": 1,
       "avg_return": 10.02,
+      "data_quality": "HIGH"
+    },
+    "Richard W Allen": {
+      "name": "Richard W Allen",
+      "committees": [],
+      "corruption_score": 10,
+      "score_breakdown": [
+        "Trading activity (2): +10"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Richard W. Allen",
+          "politician": "richard w allen",
+          "politician_display": "Richard W Allen",
+          "ticker": "AXP",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-05-08",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "American Express Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Richard W. Allen",
+          "politician": "richard w allen",
+          "politician_display": "Richard W Allen",
+          "ticker": "ACN",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-08",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Accenture PLC"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "HIGH"
+    },
+    "Matt Van Epps": {
+      "name": "Matt Van Epps",
+      "committees": [],
+      "corruption_score": 10,
+      "score_breakdown": [
+        "Trading activity (6): +10"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
+          "ticker": "AAPL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Apple Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
+          "ticker": "GOOGL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Alphabet Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
+          "ticker": "AMZN",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Amazon.com Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
+          "ticker": "GE",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "General Electric Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
+          "ticker": "XOM",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "Exxon Mobil Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Matt Van Epps",
+          "politician": "matt van epps",
+          "politician_display": "Matt Van Epps",
+          "ticker": "GEV",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-16",
+          "disclosure_date": "2026-06-17",
+          "asset_description": "GE VERNOVA INC"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
       "data_quality": "HIGH"
     }
   },
@@ -4503,6 +4462,34 @@
   "fec_donors": [],
   "lobbying": [
     {
+      "firm": "CONFRERE STRATEGIES, LLC",
+      "client": "STATE FARM INSURANCE COMPANIES",
+      "lobbying_firm": "CONFRERE STRATEGIES, LLC",
+      "amount": 20000.0,
+      "period": "2nd Quarter (Apr 1 - June 30)"
+    },
+    {
+      "firm": "CONFRERE STRATEGIES, LLC",
+      "client": "NATIONAL ASSOCIATION OF MUTUAL INSURANCE COMPANIES",
+      "lobbying_firm": "CONFRERE STRATEGIES, LLC",
+      "amount": 21000.0,
+      "period": "2nd Quarter (Apr 1 - June 30)"
+    },
+    {
+      "firm": "STAPLETON & ASSOCIATES, LLC",
+      "client": "BG WORKFORCE",
+      "lobbying_firm": "STAPLETON & ASSOCIATES, LLC",
+      "amount": 40000.0,
+      "period": "2nd Quarter (Apr 1 - June 30)"
+    },
+    {
+      "firm": "STAPLETON & ASSOCIATES, LLC",
+      "client": "QUANTUM-SYSTEMS, INC.",
+      "lobbying_firm": "STAPLETON & ASSOCIATES, LLC",
+      "amount": 50000.0,
+      "period": "2nd Quarter (Apr 1 - June 30)"
+    },
+    {
       "firm": "MR. CRAIG CROTTEAU",
       "client": "LEKTRO, INC.",
       "lobbying_firm": "MR. CRAIG CROTTEAU",
@@ -4542,34 +4529,6 @@
       "client": "ARMY LITTORAL MANUEVER AND SEALIFT ALLIANCE",
       "lobbying_firm": "MADISON GOVERNMENT AFFAIRS",
       "amount": 0.0,
-      "period": "2nd Quarter (Apr 1 - June 30)"
-    },
-    {
-      "firm": "MADISON GOVERNMENT AFFAIRS",
-      "client": "ECONOMIC DEVELOPMENT COMMISSION OF FLORIDA'S SPACE COAST",
-      "lobbying_firm": "MADISON GOVERNMENT AFFAIRS",
-      "amount": 20000.0,
-      "period": "2nd Quarter (Apr 1 - June 30)"
-    },
-    {
-      "firm": "MADISON GOVERNMENT AFFAIRS",
-      "client": "INDUSTRIAL DEVELOPMENT AUTHORITY OF THE CITY OF NEWPORT NEWS",
-      "lobbying_firm": "MADISON GOVERNMENT AFFAIRS",
-      "amount": 20000.0,
-      "period": "2nd Quarter (Apr 1 - June 30)"
-    },
-    {
-      "firm": "MISSION STRATEGIES LLC (ENERGY)",
-      "client": "AMERICAN BUREAU OF SHIPPING",
-      "lobbying_firm": "MISSION STRATEGIES LLC (ENERGY)",
-      "amount": 20000.0,
-      "period": "2nd Quarter (Apr 1 - June 30)"
-    },
-    {
-      "firm": "MISSION STRATEGIES LLC (ENERGY)",
-      "client": "RAVEN-FLINT NUCLEAR CORP.",
-      "lobbying_firm": "MISSION STRATEGIES LLC (ENERGY)",
-      "amount": 30000.0,
       "period": "2nd Quarter (Apr 1 - June 30)"
     }
   ],
@@ -5053,7 +5012,7 @@
       "amount_midpoint": 8000,
       "current_price": 234.41,
       "return_pct": 19.03,
-      "days_tracked": 40,
+      "days_tracked": 41,
       "counted": true
     }
   ],
