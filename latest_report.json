@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-07-24 03:12",
-  "timestamp_iso": "2026-07-24T03:12:50.316430",
-  "cycle_seconds": 206.077654,
+  "timestamp": "2026-07-24 04:16",
+  "timestamp_iso": "2026-07-24T04:16:21.526377",
+  "cycle_seconds": 204.021663,
   "summary": {
     "long_candidates": 0,
     "short_candidates": 1,
-    "decisions": 5,
+    "decisions": 4,
     "entries_placed": 0,
     "exits_placed": 0,
     "open_positions": 6,
-    "consensus_buys": 1,
+    "consensus_buys": 0,
     "consensus_sells": 4
   },
   "long_candidates": [],
@@ -33,7 +33,7 @@
         {
           "politician": "Thomas H Kean",
           "date": "2026-07-16",
-          "amount": "$15,001 - $50,000",
+          "amount": "$1,001 - $15,000",
           "chamber": "House"
         }
       ],
@@ -43,7 +43,7 @@
       "source": "Consensus_SELL",
       "politician_or_entity": "3 politicians selling",
       "reason": "3 politicians selling GOOGL: Newhouse, Crenshaw, Kean",
-      "sentiment_score": -0.043,
+      "sentiment_score": -0.044,
       "article_count": 50
     }
   ],
@@ -52,36 +52,29 @@
       "ticker": "GOOGL",
       "action": "SELL_SHORT",
       "confidence": 0.62,
-      "reasoning": "3 politicians selling in a tight cluster (Jul 16–20) is the strongest signal in this dataset and meets the 3+ threshold for a meaningfully stronger short. However, none of Newhouse, Crenshaw, or Kean sit on committees with direct Big Tech/antitrust oversight (e.g., House Judiciary or Energy & Commerce AI subcommittees), which weakens the insider-knowledge angle. Sentiment is near-neutral (-0.043 across 50 articles), suggesting no obvious public catalyst driving the sells — slightly positive for the short thesis. Trade amounts are small ($1K–$50K), limiting conviction. Tech sector remains in a broad uptrend, adding short risk. Overall: cluster + direction alignment justifies a modest short, but sizing should be conservative.",
-      "key_risk": "GOOGL is in a strong long-term uptrend; sellers may simply be trimming positions for portfolio reasons rather than acting on adverse inside information. No confirmed committee oversight conflict identified."
-    },
-    {
-      "ticker": "SPGI",
-      "action": "BUY",
-      "confidence": 0.42,
-      "reasoning": "Only 2 politicians buying (Armstrong and McCaul), with amounts in the $1K–$15K range — very small. McCaul chairs the House Foreign Affairs Committee, which has limited direct oversight of financial data/ratings firms. Armstrong is a freshman Senator without an obvious relevant committee seat. Cluster is thin and amounts are minimal. Signal is weak; no strong insider-information edge is apparent.",
-      "key_risk": "Only 2 actors with no confirmed relevant committee oversight and very small trade sizes. Signal may reflect routine portfolio activity rather than informed positioning."
+      "reasoning": "3 politicians selling GOOGL (Newhouse, Crenshaw, Kean) within a tight 4-day window constitutes a meaningful cluster. The score of 75 and consensus sell signal add weight. However, conviction is tempered by: (1) trade amounts are very small ($1K–$15K), suggesting routine portfolio trimming rather than informed conviction; (2) no confirmed committee oversight over Big Tech antitrust/AI is noted for these specific members; (3) GOOGL is a mega-cap in a sector with strong secular tailwinds, making shorts inherently risky; (4) news sentiment is nearly flat (-0.044) despite 50 articles, suggesting no clear negative catalyst. Net: cluster is real but signal quality is moderate — short with limited size.",
+      "key_risk": "GOOGL is a mega-cap in a strong long-term uptrend; small trade amounts suggest routine profit-taking rather than informed selling; a broader tech rally could inflict significant losses on a short position."
     },
     {
       "ticker": "SYK",
       "action": "SKIP",
-      "confidence": 0.5,
-      "reasoning": "Only 2 politicians selling (Armstrong and Kean), with modest amounts ($1K–$50K combined). Per the framework, a short signal is weaker with fewer sellers. Healthcare/medtech (Stryker) is a regulated sector, but neither Armstrong nor Kean has a confirmed seat on a committee with direct oversight of medical devices (e.g., House Energy & Commerce health subcommittee). Cluster is too thin and committee linkage too uncertain to warrant opening a short position.",
-      "key_risk": "Only 2 sellers with no confirmed committee oversight of the healthcare/medtech sector. Shorting a large-cap medtech leader without strong conviction is high-risk."
+      "confidence": 0.65,
+      "reasoning": "Only 2 politicians selling (Armstrong and Kean), with mixed chambers (Senate + House). Score of 50 is weak. Trade amounts are small-to-moderate. No committee oversight data provided to strengthen the signal. Kean also appears in the GOOGL sell cluster, suggesting this may be routine portfolio rebalancing rather than sector-specific insider awareness. The signal does not meet the bar for a short — especially in healthcare/medtech which can be volatile and subject to macro tailwinds.",
+      "key_risk": "Insufficient cluster size and no committee oversight confirmation; SYK is a resilient medtech name that could continue appreciating regardless of these small sales."
     },
     {
       "ticker": "BAC",
       "action": "SKIP",
-      "confidence": 0.5,
-      "reasoning": "2 politicians selling (Himes and Lee) in small amounts ($1K–$15K each). Himes does sit on the House Financial Services Committee, which is a relevant oversight body for BAC — this is a mild positive for the short signal. However, only 2 sellers, very small amounts, and the financial sector has been broadly resilient. The signal does not meet the threshold for genuine conviction on a short. Himes selling alone is notable but insufficient without a larger cluster.",
-      "key_risk": "Only 2 sellers with minimal trade sizes. Banking stocks can be volatile and susceptible to macro reversals. A single committee-member sell is insufficient for confident short positioning."
+      "confidence": 0.68,
+      "reasoning": "2 politicians selling BAC (Himes and Lee), both small amounts ($1K–$15K). While Himes sits on the House Financial Services Committee which does provide oversight relevance, the position size is negligible and the cluster is only 2 actors — below the threshold for strong conviction. No sentiment data provided. Financials are sensitive to macro/rate narratives, and shorting a TBTF bank like BAC without a stronger signal is inadvisable. Signal is too weak to justify a short.",
+      "key_risk": "Only 2 sellers with minimal trade sizes; BAC is highly macro-sensitive and could rally on rate environment changes, making a short position dangerous without stronger conviction."
     },
     {
       "ticker": "INTU",
       "action": "SKIP",
-      "confidence": 0.5,
-      "reasoning": "2 politicians selling (Newhouse and Allen) in the $1K–$50K range. Newhouse sits on the House Appropriations Committee, not a primary tech/fintech oversight body. Allen does not have a confirmed relevant committee assignment. No clear insider-information edge identified. Cluster is too thin and amounts too small to justify a short on a large-cap fintech name in an uptrending market.",
-      "key_risk": "Only 2 sellers without confirmed relevant committee oversight. INTU is in a long-term uptrend; shorting without strong conviction risks significant drawdown."
+      "confidence": 0.7,
+      "reasoning": "2 politicians selling INTU (Newhouse and Allen). Newhouse also appears in the GOOGL sell, again suggesting broad portfolio rebalancing rather than INTU-specific insight. Allen's $15K–$50K sale is somewhat more notable but still not large in absolute terms. No committee oversight data provided. INTU is a high-quality software compounder in a strong secular uptrend (AI-driven tax/accounting automation). Shorting it without clear insider conviction or a known negative catalyst is too risky. Signal does not clear the bar.",
+      "key_risk": "INTU operates in a strong secular growth trend; 2-actor cluster with overlapping sellers from GOOGL signal suggests routine rebalancing; short squeeze risk is elevated for high-quality compounders."
     }
   ],
   "entries_placed": [],
@@ -102,10 +95,10 @@
       "qty": 21.6123,
       "side": "long",
       "avg_entry_price": 238.45,
-      "current_price": 275.39,
-      "market_value": 5951.811297,
-      "unrealized_pl": 798.358362,
-      "unrealized_plpc": 0.15492
+      "current_price": 274.53,
+      "market_value": 5933.224719,
+      "unrealized_pl": 779.771784,
+      "unrealized_plpc": 0.15131
     },
     {
       "symbol": "GS",
@@ -122,58 +115,33 @@
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 298.1,
-      "current_price": 350.5,
-      "market_value": 701.0,
-      "unrealized_pl": 104.8,
-      "unrealized_plpc": 0.17578
+      "current_price": 350.88,
+      "market_value": 701.76,
+      "unrealized_pl": 105.56,
+      "unrealized_plpc": 0.17705
     },
     {
       "symbol": "LMT",
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 532.56,
-      "current_price": 567.5,
-      "market_value": 1135.0,
-      "unrealized_pl": 69.88,
-      "unrealized_plpc": 0.06561
+      "current_price": 569.21,
+      "market_value": 1138.42,
+      "unrealized_pl": 73.3,
+      "unrealized_plpc": 0.06882
     },
     {
       "symbol": "META",
       "qty": 2.0,
       "side": "long",
       "avg_entry_price": 619.34,
-      "current_price": 607.44,
-      "market_value": 1214.88,
-      "unrealized_pl": -23.8,
-      "unrealized_plpc": -0.01921
+      "current_price": 609.48,
+      "market_value": 1218.96,
+      "unrealized_pl": -19.72,
+      "unrealized_plpc": -0.01592
     }
   ],
-  "consensus_buys": [
-    {
-      "ticker": "SPGI",
-      "actor_count": 2,
-      "actors": [
-        {
-          "politician": "Alan Armstrong",
-          "date": "2026-07-21",
-          "amount": "$1,001 - $15,000",
-          "chamber": "Senate"
-        },
-        {
-          "politician": "Michael Mccaul",
-          "date": "2026-07-13",
-          "amount": "$1,001 - $15,000",
-          "chamber": "House"
-        }
-      ],
-      "direction": "buy",
-      "score": 50,
-      "action": "BUY",
-      "source": "Consensus_BUY",
-      "politician_or_entity": "2 politicians buying",
-      "reason": "2 politicians buying SPGI: Armstrong, Mccaul"
-    }
-  ],
+  "consensus_buys": [],
   "consensus_sells": [
     {
       "ticker": "GOOGL",
@@ -194,7 +162,7 @@
         {
           "politician": "Thomas H Kean",
           "date": "2026-07-16",
-          "amount": "$15,001 - $50,000",
+          "amount": "$1,001 - $15,000",
           "chamber": "House"
         }
       ],
@@ -204,7 +172,7 @@
       "source": "Consensus_SELL",
       "politician_or_entity": "3 politicians selling",
       "reason": "3 politicians selling GOOGL: Newhouse, Crenshaw, Kean",
-      "sentiment_score": -0.043,
+      "sentiment_score": -0.044,
       "article_count": 50
     },
     {
@@ -311,7 +279,7 @@
       "name": "Michael Mccaul",
       "score": 10,
       "breakdown": [
-        "Trading activity (14): +10"
+        "Trading activity (12): +10"
       ],
       "data_quality": "HIGH",
       "committees": [
@@ -374,22 +342,19 @@
       "committees": []
     },
     {
-      "name": "Byron Donalds",
-      "score": 10,
-      "breakdown": [
-        "Trading activity (6): +10"
-      ],
-      "data_quality": "HIGH",
-      "committees": [
-        "Financial Services",
-        "Budget"
-      ]
-    },
-    {
       "name": "Thomas H Kean",
       "score": 10,
       "breakdown": [
         "Trading activity (15): +10"
+      ],
+      "data_quality": "HIGH",
+      "committees": []
+    },
+    {
+      "name": "Jonathan Jackson",
+      "score": 10,
+      "breakdown": [
+        "Trading activity (3): +10"
       ],
       "data_quality": "HIGH",
       "committees": []
@@ -404,13 +369,16 @@
       "committees": []
     },
     {
-      "name": "Jonathan Jackson",
+      "name": "Byron Donalds",
       "score": 10,
       "breakdown": [
-        "Trading activity (3): +10"
+        "Trading activity (6): +10"
       ],
       "data_quality": "HIGH",
-      "committees": []
+      "committees": [
+        "Financial Services",
+        "Budget"
+      ]
     },
     {
       "name": "Josh Gottheimer",
@@ -466,6 +434,24 @@
     },
     {
       "name": "Debbie Wasserman Schultz",
+      "score": 5,
+      "breakdown": [
+        "Trading activity (1): +5"
+      ],
+      "data_quality": "HIGH",
+      "committees": []
+    },
+    {
+      "name": "Virginia Foxx",
+      "score": 5,
+      "breakdown": [
+        "Trading activity (1): +5"
+      ],
+      "data_quality": "HIGH",
+      "committees": []
+    },
+    {
+      "name": "Rick Larsen",
       "score": 5,
       "breakdown": [
         "Trading activity (1): +5"
@@ -965,32 +951,6 @@
           "politician_raw": "Dan Crenshaw",
           "politician": "dan crenshaw",
           "politician_display": "Dan Crenshaw",
-          "ticker": "AAPL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-01",
-          "disclosure_date": "2026-07-17",
-          "asset_description": "Apple Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Crenshaw",
-          "politician": "dan crenshaw",
-          "politician_display": "Dan Crenshaw",
-          "ticker": "GOOGL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-01",
-          "disclosure_date": "2026-07-17",
-          "asset_description": "Alphabet Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Crenshaw",
-          "politician": "dan crenshaw",
-          "politician_display": "Dan Crenshaw",
           "ticker": "META",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
@@ -998,6 +958,45 @@
           "transaction_date": "2026-04-28",
           "disclosure_date": "2026-07-17",
           "asset_description": "Meta Platforms Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Crenshaw",
+          "politician": "dan crenshaw",
+          "politician_display": "Dan Crenshaw",
+          "ticker": "FAS",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-01",
+          "disclosure_date": "2026-07-17",
+          "asset_description": "Direxion Daily Financial Bull 3X"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Crenshaw",
+          "politician": "dan crenshaw",
+          "politician_display": "Dan Crenshaw",
+          "ticker": "META",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-01",
+          "disclosure_date": "2026-07-17",
+          "asset_description": "Meta Platforms Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Crenshaw",
+          "politician": "dan crenshaw",
+          "politician_display": "Dan Crenshaw",
+          "ticker": "AAPL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-01",
+          "disclosure_date": "2026-07-17",
+          "asset_description": "Apple Inc"
         },
         {
           "chamber": "House",
@@ -1030,26 +1029,13 @@
           "politician_raw": "Dan Crenshaw",
           "politician": "dan crenshaw",
           "politician_display": "Dan Crenshaw",
-          "ticker": "FAS",
+          "ticker": "GOOGL",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-01",
           "disclosure_date": "2026-07-17",
-          "asset_description": "Direxion Daily Financial Bull 3X"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Crenshaw",
-          "politician": "dan crenshaw",
-          "politician_display": "Dan Crenshaw",
-          "ticker": "META",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-01",
-          "disclosure_date": "2026-07-17",
-          "asset_description": "Meta Platforms Inc"
+          "asset_description": "Alphabet Inc"
         }
       ],
       "offshore_matches": [],
@@ -1084,7 +1070,7 @@
       ],
       "corruption_score": 10,
       "score_breakdown": [
-        "Trading activity (14): +10"
+        "Trading activity (12): +10"
       ],
       "trades": [
         {
@@ -1092,39 +1078,13 @@
           "politician_raw": "Michael McCaul",
           "politician": "michael mccaul",
           "politician_display": "Michael Mccaul",
-          "ticker": "VVV",
-          "trade_type": "sale",
+          "ticker": "MELI",
+          "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-18",
+          "transaction_date": "2026-06-15",
           "disclosure_date": "2026-07-13",
-          "asset_description": "Valvoline Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Michael McCaul",
-          "politician": "michael mccaul",
-          "politician_display": "Michael Mccaul",
-          "ticker": "WWD",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-13",
-          "asset_description": "Woodward Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Michael McCaul",
-          "politician": "michael mccaul",
-          "politician_display": "Michael Mccaul",
-          "ticker": "HLI",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-18",
-          "disclosure_date": "2026-07-13",
-          "asset_description": "Houlihan Lokey Inc"
+          "asset_description": "MercadoLibre Inc"
         },
         {
           "chamber": "House",
@@ -1132,10 +1092,10 @@
           "politician": "michael mccaul",
           "politician_display": "Michael Mccaul",
           "ticker": "ATR",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-18",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-12",
           "disclosure_date": "2026-07-13",
           "asset_description": "AptarGroup Inc"
         },
@@ -1144,52 +1104,65 @@
           "politician_raw": "Michael McCaul",
           "politician": "michael mccaul",
           "politician_display": "Michael Mccaul",
-          "ticker": "MWA",
+          "ticker": "AER",
           "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-18",
-          "disclosure_date": "2026-07-13",
-          "asset_description": "Mueller Water Products Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Michael McCaul",
-          "politician": "michael mccaul",
-          "politician_display": "Michael Mccaul",
-          "ticker": "CSL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-18",
-          "disclosure_date": "2026-07-13",
-          "asset_description": "Carlisle Cos Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Michael McCaul",
-          "politician": "michael mccaul",
-          "politician_display": "Michael Mccaul",
-          "ticker": "MA",
-          "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-29",
           "disclosure_date": "2026-07-13",
-          "asset_description": "Mastercard Inc"
+          "asset_description": "AerCap Holdings NV"
         },
         {
           "chamber": "House",
           "politician_raw": "Michael McCaul",
           "politician": "michael mccaul",
           "politician_display": "Michael Mccaul",
-          "ticker": "MSA",
+          "ticker": "DELL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-18",
+          "disclosure_date": "2026-07-13",
+          "asset_description": "Dell Technologies Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Michael McCaul",
+          "politician": "michael mccaul",
+          "politician_display": "Michael Mccaul",
+          "ticker": "LPX",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-18",
           "disclosure_date": "2026-07-13",
-          "asset_description": "MSA Safety Inc"
+          "asset_description": "LOUISIANA-PACIFIC CORP"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Michael McCaul",
+          "politician": "michael mccaul",
+          "politician_display": "Michael Mccaul",
+          "ticker": "IFNNY",
+          "trade_type": "purchase",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-09",
+          "disclosure_date": "2026-07-13",
+          "asset_description": "Infineon Technologies AG"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Michael McCaul",
+          "politician": "michael mccaul",
+          "politician_display": "Michael Mccaul",
+          "ticker": "OMF",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-18",
+          "disclosure_date": "2026-07-13",
+          "asset_description": "OneMain Holdings Inc"
         },
         {
           "chamber": "House",
@@ -1209,13 +1182,26 @@
           "politician_raw": "Michael McCaul",
           "politician": "michael mccaul",
           "politician_display": "Michael Mccaul",
-          "ticker": "SSD",
-          "trade_type": "sale",
+          "ticker": "INTU",
+          "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-18",
+          "transaction_date": "2026-06-03",
           "disclosure_date": "2026-07-13",
-          "asset_description": "Simpson Manufacturing Co. Inc"
+          "asset_description": "Intuit Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Michael McCaul",
+          "politician": "michael mccaul",
+          "politician_display": "Michael Mccaul",
+          "ticker": "MA",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-29",
+          "disclosure_date": "2026-07-13",
+          "asset_description": "Mastercard Inc"
         },
         {
           "chamber": "House",
@@ -1235,19 +1221,6 @@
           "politician_raw": "Michael McCaul",
           "politician": "michael mccaul",
           "politician_display": "Michael Mccaul",
-          "ticker": "SPGI",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-25",
-          "disclosure_date": "2026-07-13",
-          "asset_description": "S&P Global Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Michael McCaul",
-          "politician": "michael mccaul",
-          "politician_display": "Michael Mccaul",
           "ticker": "WDAY",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
@@ -1255,19 +1228,6 @@
           "transaction_date": "2026-06-17",
           "disclosure_date": "2026-07-13",
           "asset_description": "Workday Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Michael McCaul",
-          "politician": "michael mccaul",
-          "politician_display": "Michael Mccaul",
-          "ticker": "TSM",
-          "trade_type": "purchase",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-18",
-          "disclosure_date": "2026-07-13",
-          "asset_description": "Taiwan Semiconductor Manufacturing Co Ltd"
         }
       ],
       "offshore_matches": [],
@@ -2333,8 +2293,8 @@
           "politician_display": "Debbie Dingell",
           "ticker": "HONA",
           "trade_type": "exchange",
-          "amount_raw": "$50,001 - $100,000",
-          "amount_midpoint": 75000,
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
           "transaction_date": "2026-06-29",
           "disclosure_date": "2026-07-15",
           "asset_description": "HONEYWELL AEROSPACE INC"
@@ -2346,8 +2306,8 @@
           "politician_display": "Debbie Dingell",
           "ticker": "HONA",
           "trade_type": "exchange",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
+          "amount_raw": "$50,001 - $100,000",
+          "amount_midpoint": 75000,
           "transaction_date": "2026-06-29",
           "disclosure_date": "2026-07-15",
           "asset_description": "HONEYWELL AEROSPACE INC"
@@ -2386,19 +2346,6 @@
           "politician_raw": "James A. Himes",
           "politician": "james a himes",
           "politician_display": "James A Himes",
-          "ticker": "XOM",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-07-20",
-          "disclosure_date": "2026-07-21",
-          "asset_description": "Exxon Mobil Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "James A. Himes",
-          "politician": "james a himes",
-          "politician_display": "James A Himes",
           "ticker": "HD",
           "trade_type": "sale",
           "amount_raw": "$15,001 - $50,000",
@@ -2406,6 +2353,19 @@
           "transaction_date": "2026-07-20",
           "disclosure_date": "2026-07-21",
           "asset_description": "The Home Depot Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "James A. Himes",
+          "politician": "james a himes",
+          "politician_display": "James A Himes",
+          "ticker": "XOM",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-07-20",
+          "disclosure_date": "2026-07-21",
+          "asset_description": "Exxon Mobil Corp"
         }
       ],
       "offshore_matches": [],
@@ -2441,104 +2401,13 @@
           "politician_raw": "Dan Newhouse",
           "politician": "dan newhouse",
           "politician_display": "Dan Newhouse",
-          "ticker": "DE",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "DEERE & COMPANY"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "APH",
+          "ticker": "FE",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-07-10",
           "disclosure_date": "2026-07-20",
-          "asset_description": "Amphenol Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "AMD",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Advanced Micro Devices Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "ACN",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Accenture PLC"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "ANET",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Arista Networks Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "GOOGL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Alphabet Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "COST",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Costco Wholesale Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "AMCR",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Amcor PLC"
+          "asset_description": "FirstEnergy Corp"
         },
         {
           "chamber": "House",
@@ -2571,117 +2440,156 @@
           "politician_raw": "Dan Newhouse",
           "politician": "dan newhouse",
           "politician_display": "Dan Newhouse",
-          "ticker": "NVDA",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "NVIDIA Corporation"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "FTNT",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Fortinet Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "HSY",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "The Hershey Co"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "FE",
+          "ticker": "AMCR",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-07-10",
           "disclosure_date": "2026-07-20",
-          "asset_description": "FirstEnergy Corp"
+          "asset_description": "Amcor PLC"
         },
         {
           "chamber": "House",
           "politician_raw": "Dan Newhouse",
           "politician": "dan newhouse",
           "politician_display": "Dan Newhouse",
-          "ticker": "MPC",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Marathon Petroleum Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "INTU",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Intuit Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "MU",
+          "ticker": "ACN",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-07-10",
           "disclosure_date": "2026-07-20",
-          "asset_description": "Micron Technology Inc"
+          "asset_description": "Accenture PLC"
         },
         {
           "chamber": "House",
           "politician_raw": "Dan Newhouse",
           "politician": "dan newhouse",
           "politician_display": "Dan Newhouse",
-          "ticker": "MS",
+          "ticker": "COST",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-07-10",
           "disclosure_date": "2026-07-20",
-          "asset_description": "Morgan Stanley"
+          "asset_description": "Costco Wholesale Corp"
         },
         {
           "chamber": "House",
           "politician_raw": "Dan Newhouse",
           "politician": "dan newhouse",
           "politician_display": "Dan Newhouse",
-          "ticker": "HONA",
+          "ticker": "ANET",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Arista Networks Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "APH",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Amphenol Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "DE",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-07-10",
           "disclosure_date": "2026-07-20",
-          "asset_description": "HONEYWELL AEROSPACE INC"
+          "asset_description": "DEERE & COMPANY"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "GOOGL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Alphabet Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "AMD",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Advanced Micro Devices Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "HON",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Honeywell International Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "MGA",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Magna International Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "AMAT",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Applied Materials Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "UBER",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Uber Technologies Inc"
         },
         {
           "chamber": "House",
@@ -2714,13 +2622,13 @@
           "politician_raw": "Dan Newhouse",
           "politician": "dan newhouse",
           "politician_display": "Dan Newhouse",
-          "ticker": "UBER",
+          "ticker": "FIS",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-07-10",
           "disclosure_date": "2026-07-20",
-          "asset_description": "Uber Technologies Inc"
+          "asset_description": "Fidelity National Information Services Inc"
         },
         {
           "chamber": "House",
@@ -2740,65 +2648,13 @@
           "politician_raw": "Dan Newhouse",
           "politician": "dan newhouse",
           "politician_display": "Dan Newhouse",
-          "ticker": "MGA",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Magna International Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "FIS",
+          "ticker": "DUK",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-07-10",
           "disclosure_date": "2026-07-20",
-          "asset_description": "Fidelity National Information Services Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "FMC",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "FMC Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "HON",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Honeywell International Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Dan Newhouse",
-          "politician": "dan newhouse",
-          "politician_display": "Dan Newhouse",
-          "ticker": "AMAT",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-10",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Applied Materials Inc"
+          "asset_description": "Duke Energy Corp"
         },
         {
           "chamber": "House",
@@ -2818,13 +2674,117 @@
           "politician_raw": "Dan Newhouse",
           "politician": "dan newhouse",
           "politician_display": "Dan Newhouse",
-          "ticker": "DUK",
+          "ticker": "FMC",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "FMC Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "HSY",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "The Hershey Co"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "MU",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-07-10",
           "disclosure_date": "2026-07-20",
-          "asset_description": "Duke Energy Corp"
+          "asset_description": "Micron Technology Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "NVDA",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "NVIDIA Corporation"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "HONA",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "HONEYWELL AEROSPACE INC"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "FTNT",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Fortinet Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "MPC",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Marathon Petroleum Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "MS",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Morgan Stanley"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Dan Newhouse",
+          "politician": "dan newhouse",
+          "politician_display": "Dan Newhouse",
+          "ticker": "INTU",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-10",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Intuit Inc"
         }
       ],
       "offshore_matches": [],
@@ -2862,11 +2822,24 @@
           "politician_display": "Laurel Lee",
           "ticker": "NOK",
           "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-05-11",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-06",
           "disclosure_date": "2026-07-20",
-          "asset_description": "Nokia Corp"
+          "asset_description": "Nokia Corp (2)"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Laurel Lee",
+          "politician": "laurel lee",
+          "politician_display": "Laurel Lee",
+          "ticker": "NOK",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-06",
+          "disclosure_date": "2026-07-20",
+          "asset_description": "Nokia Corp (1)"
         },
         {
           "chamber": "House",
@@ -2888,11 +2861,11 @@
           "politician_display": "Laurel Lee",
           "ticker": "NOK",
           "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-06",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-05-11",
           "disclosure_date": "2026-07-20",
-          "asset_description": "Nokia Corp (1)"
+          "asset_description": "Nokia Corp"
         },
         {
           "chamber": "House",
@@ -2919,19 +2892,6 @@
           "transaction_date": "2026-06-02",
           "disclosure_date": "2026-07-20",
           "asset_description": "Nokia Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Laurel Lee",
-          "politician": "laurel lee",
-          "politician_display": "Laurel Lee",
-          "ticker": "NOK",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-07-06",
-          "disclosure_date": "2026-07-20",
-          "asset_description": "Nokia Corp (2)"
         }
       ],
       "offshore_matches": [],
@@ -2989,7 +2949,7 @@
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-26",
           "disclosure_date": "2026-07-17",
-          "asset_description": "NVIDIA Corporation (2)"
+          "asset_description": "NVIDIA Corporation"
         },
         {
           "chamber": "House",
@@ -3002,7 +2962,7 @@
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-26",
           "disclosure_date": "2026-07-17",
-          "asset_description": "NVIDIA Corporation"
+          "asset_description": "NVIDIA Corporation (2)"
         },
         {
           "chamber": "House",
@@ -3025,103 +2985,6 @@
       "avg_return": 1.13,
       "data_quality": "HIGH"
     },
-    "Byron Donalds": {
-      "name": "Byron Donalds",
-      "committees": [
-        "Financial Services",
-        "Budget"
-      ],
-      "corruption_score": 10,
-      "score_breakdown": [
-        "Trading activity (6): +10"
-      ],
-      "trades": [
-        {
-          "chamber": "House",
-          "politician_raw": "Byron Donalds",
-          "politician": "byron donalds",
-          "politician_display": "Byron Donalds",
-          "ticker": "MPWR",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Monolithic Power Systems Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Byron Donalds",
-          "politician": "byron donalds",
-          "politician_display": "Byron Donalds",
-          "ticker": "MPWR",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Monolithic Power Systems Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Byron Donalds",
-          "politician": "byron donalds",
-          "politician_display": "Byron Donalds",
-          "ticker": "CDNS",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Cadence Design Systems Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Byron Donalds",
-          "politician": "byron donalds",
-          "politician_display": "Byron Donalds",
-          "ticker": "CDNS",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-05",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Cadence Design Systems Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Byron Donalds",
-          "politician": "byron donalds",
-          "politician_display": "Byron Donalds",
-          "ticker": "ZTS",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-09",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Zoetis Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Byron Donalds",
-          "politician": "byron donalds",
-          "politician_display": "Byron Donalds",
-          "ticker": "ZTS",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-09",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Zoetis Inc"
-        }
-      ],
-      "offshore_matches": [],
-      "recent_posts": [],
-      "win_rate": 100.0,
-      "total_tracked_trades": 2,
-      "avg_return": 25.35,
-      "data_quality": "HIGH"
-    },
     "Thomas H Kean": {
       "name": "Thomas H Kean",
       "committees": [],
@@ -3135,65 +2998,13 @@
           "politician_raw": "Thomas H. Kean",
           "politician": "thomas h kean",
           "politician_display": "Thomas H Kean",
-          "ticker": "GOOGL",
-          "trade_type": "sale",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-24",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Alphabet Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "GIL",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-17",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Gildan Activewear Inc"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "SYK",
-          "trade_type": "sale",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-02",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "Stryker Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "EQT",
-          "trade_type": "purchase",
-          "amount_raw": "$1,001 - $15,000",
-          "amount_midpoint": 8000,
-          "transaction_date": "2026-06-01",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "EQT Corp"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Thomas H. Kean",
-          "politician": "thomas h kean",
-          "politician_display": "Thomas H Kean",
-          "ticker": "JNJ",
+          "ticker": "MKL",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-29",
           "disclosure_date": "2026-07-16",
-          "asset_description": "Johnson & Johnson"
+          "asset_description": "Markel Corp"
         },
         {
           "chamber": "House",
@@ -3214,10 +3025,10 @@
           "politician": "thomas h kean",
           "politician_display": "Thomas H Kean",
           "ticker": "GIL",
-          "trade_type": "purchase",
+          "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-02",
+          "transaction_date": "2026-06-17",
           "disclosure_date": "2026-07-16",
           "asset_description": "Gildan Activewear Inc"
         },
@@ -3226,13 +3037,39 @@
           "politician_raw": "Thomas H. Kean",
           "politician": "thomas h kean",
           "politician_display": "Thomas H Kean",
-          "ticker": "MKL",
+          "ticker": "JNJ",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-29",
           "disclosure_date": "2026-07-16",
-          "asset_description": "Markel Corp"
+          "asset_description": "Johnson & Johnson"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "EQT",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-01",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "EQT Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "GIL",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-02",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "Gildan Activewear Inc"
         },
         {
           "chamber": "House",
@@ -3252,13 +3089,13 @@
           "politician_raw": "Thomas H. Kean",
           "politician": "thomas h kean",
           "politician_display": "Thomas H Kean",
-          "ticker": "MKL",
+          "ticker": "GOOGL",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-02",
           "disclosure_date": "2026-07-16",
-          "asset_description": "Markel Corp"
+          "asset_description": "Alphabet Inc"
         },
         {
           "chamber": "House",
@@ -3267,11 +3104,24 @@
           "politician_display": "Thomas H Kean",
           "ticker": "GOOGL",
           "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-24",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "Alphabet Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "SYK",
+          "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
           "transaction_date": "2026-06-02",
           "disclosure_date": "2026-07-16",
-          "asset_description": "Alphabet Inc"
+          "asset_description": "Stryker Corp"
         },
         {
           "chamber": "House",
@@ -3324,6 +3174,19 @@
           "transaction_date": "2026-06-02",
           "disclosure_date": "2026-07-16",
           "asset_description": "Johnson & Johnson"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Thomas H. Kean",
+          "politician": "thomas h kean",
+          "politician_display": "Thomas H Kean",
+          "ticker": "MKL",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-02",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "Markel Corp"
         }
       ],
       "offshore_matches": [],
@@ -3331,6 +3194,61 @@
       "win_rate": 0.0,
       "total_tracked_trades": 1,
       "avg_return": -9.98,
+      "data_quality": "HIGH"
+    },
+    "Jonathan Jackson": {
+      "name": "Jonathan Jackson",
+      "committees": [],
+      "corruption_score": 10,
+      "score_breakdown": [
+        "Trading activity (3): +10"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Jonathan Jackson",
+          "politician": "jonathan jackson",
+          "politician_display": "Jonathan Jackson",
+          "ticker": "MSGE",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-15",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "Madison Square Garden Entertainment Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Jonathan Jackson",
+          "politician": "jonathan jackson",
+          "politician_display": "Jonathan Jackson",
+          "ticker": "MCK",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-15",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "McKesson Corp"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Jonathan Jackson",
+          "politician": "jonathan jackson",
+          "politician_display": "Jonathan Jackson",
+          "ticker": "HLT",
+          "trade_type": "purchase",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-15",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "Hilton Worldwide Holdings Inc"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 100.0,
+      "total_tracked_trades": 1,
+      "avg_return": 10.02,
       "data_quality": "HIGH"
     },
     "Kevin Hern": {
@@ -3341,6 +3259,19 @@
         "Trading activity (4): +10"
       ],
       "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Kevin Hern",
+          "politician": "kevin hern",
+          "politician_display": "Kevin Hern",
+          "ticker": "HONA",
+          "trade_type": "exchange",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-29",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "HONEYWELL AEROSPACE INC"
+        },
         {
           "chamber": "House",
           "politician_raw": "Kevin Hern",
@@ -3365,7 +3296,7 @@
           "amount_midpoint": 175000,
           "transaction_date": "2026-07-02",
           "disclosure_date": "2026-07-16",
-          "asset_description": "Exxon Mobil Corp"
+          "asset_description": "Exxon Mobil Corp (2)"
         },
         {
           "chamber": "House",
@@ -3378,20 +3309,7 @@
           "amount_midpoint": 175000,
           "transaction_date": "2026-07-02",
           "disclosure_date": "2026-07-16",
-          "asset_description": "Exxon Mobil Corp (2)"
-        },
-        {
-          "chamber": "House",
-          "politician_raw": "Kevin Hern",
-          "politician": "kevin hern",
-          "politician_display": "Kevin Hern",
-          "ticker": "HONA",
-          "trade_type": "exchange",
-          "amount_raw": "$15,001 - $50,000",
-          "amount_midpoint": 32500,
-          "transaction_date": "2026-06-29",
-          "disclosure_date": "2026-07-16",
-          "asset_description": "HONEYWELL AEROSPACE INC"
+          "asset_description": "Exxon Mobil Corp"
         }
       ],
       "offshore_matches": [],
@@ -3401,59 +3319,101 @@
       "avg_return": 0,
       "data_quality": "HIGH"
     },
-    "Jonathan Jackson": {
-      "name": "Jonathan Jackson",
-      "committees": [],
+    "Byron Donalds": {
+      "name": "Byron Donalds",
+      "committees": [
+        "Financial Services",
+        "Budget"
+      ],
       "corruption_score": 10,
       "score_breakdown": [
-        "Trading activity (3): +10"
+        "Trading activity (6): +10"
       ],
       "trades": [
         {
           "chamber": "House",
-          "politician_raw": "Jonathan Jackson",
-          "politician": "jonathan jackson",
-          "politician_display": "Jonathan Jackson",
-          "ticker": "HLT",
+          "politician_raw": "Byron Donalds",
+          "politician": "byron donalds",
+          "politician_display": "Byron Donalds",
+          "ticker": "ZTS",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-15",
+          "transaction_date": "2026-06-09",
           "disclosure_date": "2026-07-16",
-          "asset_description": "Hilton Worldwide Holdings Inc"
+          "asset_description": "Zoetis Inc"
         },
         {
           "chamber": "House",
-          "politician_raw": "Jonathan Jackson",
-          "politician": "jonathan jackson",
-          "politician_display": "Jonathan Jackson",
-          "ticker": "MCK",
+          "politician_raw": "Byron Donalds",
+          "politician": "byron donalds",
+          "politician_display": "Byron Donalds",
+          "ticker": "MPWR",
           "trade_type": "sale",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-15",
+          "transaction_date": "2026-06-05",
           "disclosure_date": "2026-07-16",
-          "asset_description": "McKesson Corp"
+          "asset_description": "Monolithic Power Systems Inc"
         },
         {
           "chamber": "House",
-          "politician_raw": "Jonathan Jackson",
-          "politician": "jonathan jackson",
-          "politician_display": "Jonathan Jackson",
-          "ticker": "MSGE",
+          "politician_raw": "Byron Donalds",
+          "politician": "byron donalds",
+          "politician_display": "Byron Donalds",
+          "ticker": "CDNS",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "Cadence Design Systems Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Byron Donalds",
+          "politician": "byron donalds",
+          "politician_display": "Byron Donalds",
+          "ticker": "ZTS",
           "trade_type": "purchase",
           "amount_raw": "$1,001 - $15,000",
           "amount_midpoint": 8000,
-          "transaction_date": "2026-06-15",
+          "transaction_date": "2026-06-09",
           "disclosure_date": "2026-07-16",
-          "asset_description": "Madison Square Garden Entertainment Corp"
+          "asset_description": "Zoetis Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Byron Donalds",
+          "politician": "byron donalds",
+          "politician_display": "Byron Donalds",
+          "ticker": "CDNS",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "Cadence Design Systems Inc"
+        },
+        {
+          "chamber": "House",
+          "politician_raw": "Byron Donalds",
+          "politician": "byron donalds",
+          "politician_display": "Byron Donalds",
+          "ticker": "MPWR",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-06-05",
+          "disclosure_date": "2026-07-16",
+          "asset_description": "Monolithic Power Systems Inc"
         }
       ],
       "offshore_matches": [],
       "recent_posts": [],
       "win_rate": 100.0,
-      "total_tracked_trades": 1,
-      "avg_return": 10.02,
+      "total_tracked_trades": 2,
+      "avg_return": 25.35,
       "data_quality": "HIGH"
     },
     "Richard W Allen": {
@@ -3505,6 +3465,64 @@
           "transaction_date": "2026-06-17",
           "disclosure_date": "2026-07-15",
           "asset_description": "Ichor Holdings Ltd"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0,
+      "total_tracked_trades": 0,
+      "avg_return": 0,
+      "data_quality": "HIGH"
+    },
+    "Virginia Foxx": {
+      "name": "Virginia Foxx",
+      "committees": [],
+      "corruption_score": 5,
+      "score_breakdown": [
+        "Trading activity (1): +5"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Virginia Foxx",
+          "politician": "virginia foxx",
+          "politician_display": "Virginia Foxx",
+          "ticker": "EFC",
+          "trade_type": "sale",
+          "amount_raw": "$15,001 - $50,000",
+          "amount_midpoint": 32500,
+          "transaction_date": "2026-06-18",
+          "disclosure_date": "2026-07-13",
+          "asset_description": "ELLINGTON FINANCIAL INC"
+        }
+      ],
+      "offshore_matches": [],
+      "recent_posts": [],
+      "win_rate": 0.0,
+      "total_tracked_trades": 1,
+      "avg_return": -6.94,
+      "data_quality": "HIGH"
+    },
+    "Rick Larsen": {
+      "name": "Rick Larsen",
+      "committees": [],
+      "corruption_score": 5,
+      "score_breakdown": [
+        "Trading activity (1): +5"
+      ],
+      "trades": [
+        {
+          "chamber": "House",
+          "politician_raw": "Rick Larsen",
+          "politician": "rick larsen",
+          "politician_display": "Rick Larsen",
+          "ticker": "ABT",
+          "trade_type": "sale",
+          "amount_raw": "$1,001 - $15,000",
+          "amount_midpoint": 8000,
+          "transaction_date": "2026-07-08",
+          "disclosure_date": "2026-07-13",
+          "asset_description": "Abbott Laboratories"
         }
       ],
       "offshore_matches": [],
@@ -3695,6 +3713,62 @@
     {
       "donor": "WINRED",
       "employer": null,
+      "amount": 100430.05,
+      "date": "2026-06-30",
+      "recipient": "TEAM ROGERS"
+    },
+    {
+      "donor": "QAZI, MOHAMMAD A.",
+      "employer": "CIENA HEALTHCARE",
+      "amount": 100000.0,
+      "date": "2026-06-30",
+      "recipient": "TEAM ROGERS"
+    },
+    {
+      "donor": "HUIZENGA, HEIDI",
+      "employer": null,
+      "amount": 100000.0,
+      "date": "2026-06-30",
+      "recipient": "GROW THE MAJORITY"
+    },
+    {
+      "donor": "BLACKBURN TENNESSEE VICTORY FUND",
+      "employer": null,
+      "amount": 208296.12,
+      "date": "2026-06-30",
+      "recipient": "MARSHA FOR SENATE"
+    },
+    {
+      "donor": "ACTBLUE",
+      "employer": null,
+      "amount": 889895.74,
+      "date": "2026-06-30",
+      "recipient": "CAMPAIGN FOR DEMOCRACY COMMITTEE"
+    },
+    {
+      "donor": "CONTRIBUTIONS, UNITEMIZED",
+      "employer": "LOCAL 0030 COMP ROOFERS UNION",
+      "amount": 121223.46,
+      "date": "2026-06-30",
+      "recipient": "COMPOSITION ROOFERS LOCAL UNION #30 POLITICAL ACTION & EDUCATION FUND"
+    },
+    {
+      "donor": "WHATLEY VICTORY COMMITTEE",
+      "employer": null,
+      "amount": 168922.4,
+      "date": "2026-06-30",
+      "recipient": "WHATLEY FOR SENATE"
+    },
+    {
+      "donor": "WHATLEY VICTORY COMMITTEE",
+      "employer": null,
+      "amount": 705417.83,
+      "date": "2026-06-30",
+      "recipient": "WHATLEY FOR SENATE"
+    },
+    {
+      "donor": "WINRED",
+      "employer": null,
       "amount": 251331.64,
       "date": "2026-06-30",
       "recipient": "TRUMP NATIONAL COMMITTEE JFC, INC."
@@ -3705,62 +3779,6 @@
       "amount": 325283.51,
       "date": "2026-06-30",
       "recipient": "TRUMP NATIONAL COMMITTEE JFC, INC."
-    },
-    {
-      "donor": "WINRED",
-      "employer": null,
-      "amount": 106638.5,
-      "date": "2026-06-30",
-      "recipient": "TRUMP NATIONAL COMMITTEE JFC, INC."
-    },
-    {
-      "donor": "ACTBLUE",
-      "employer": null,
-      "amount": 290895.82,
-      "date": "2026-06-30",
-      "recipient": "DEMOCRATIC MOVEMENT"
-    },
-    {
-      "donor": "CHAIN BRIDGE BANK NA",
-      "employer": null,
-      "amount": 177092.62,
-      "date": "2026-06-30",
-      "recipient": "NEVER SURRENDER, INC."
-    },
-    {
-      "donor": "ACTBLUE",
-      "employer": null,
-      "amount": 9492322.26,
-      "date": "2026-06-30",
-      "recipient": "COOPER VICTORY FUND"
-    },
-    {
-      "donor": "NEVER SURRENDER, INC.",
-      "employer": null,
-      "amount": 667000.0,
-      "date": "2026-06-30",
-      "recipient": "SAVE AMERICA"
-    },
-    {
-      "donor": "WINRED",
-      "employer": null,
-      "amount": 123503.37,
-      "date": "2026-06-30",
-      "recipient": "TEAM SCALISE"
-    },
-    {
-      "donor": "WINRED",
-      "employer": null,
-      "amount": 104425.32,
-      "date": "2026-06-30",
-      "recipient": "OPERATION RED STRIKE"
-    },
-    {
-      "donor": "TALARICO VICTORY FUND",
-      "employer": null,
-      "amount": 2300000.0,
-      "date": "2026-06-30",
-      "recipient": "TALARICO FOR TEXAS"
     }
   ],
   "lobbying": [
